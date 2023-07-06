@@ -61,7 +61,7 @@ font-family: 'Klee One';
   background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
   margin-top: 5%;
   margin-left: 37%;
-  height: 550px;
+  height: 600px;
   width: 400px;
   border-radius: 10px;
   border: 24px solid rgba(173, 216, 230, 0.5); /* Borde semi-transparente */
@@ -86,7 +86,14 @@ font-family: 'Klee One';
   padding: 12px;
   width: 250px;
   margin-bottom: 20px;
-  margin-top: 10px;
+  margin-top: 6px;
+}
+.Boton_crear{
+  margin-left: 6vw;
+  padding: 8px;
+  width: 200px;
+  margin-bottom: 20px;
+  margin-top: 6px;
 }
 
 .fecha {
@@ -146,4 +153,5 @@ font-family: 'Klee One';
     margin-bottom: 10px;
     margin-top: 10px;
   }
+  
 }
