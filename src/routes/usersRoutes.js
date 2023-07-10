@@ -7,12 +7,9 @@ router.get('/register', controladorUsers.registrarse);
 
 router.get('/login', controladorUsers.iniciarSesion);
 
-/*router.get('/list', (req, res) => {
- res.render('userList', {"usuarios": usuarios});
-});*/
-
 router.get('/list', controladorUsers.list);
 
+router.get('/search', controladorUsers.buscarUsuario);
  
  
 
