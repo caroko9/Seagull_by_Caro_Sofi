@@ -1,9 +1,14 @@
 let productosController = 
 
 {
-  producto: (req,res) => {
-    res.render("Producto");
+  comprar: (req,res) => {
+    res.render("carrito");
+  },
+
+  listadoProducto: (req,res) => {
+    res.render("productos");
   }
+
 }
 
 module.exports = productosController;
