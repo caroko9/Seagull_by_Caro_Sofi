@@ -1,19 +1,19 @@
 const controladorUsers =
 {
   iniciarSesion: (req, res) => {
-    res.render("users/login");
+    res.render("login");
   },
 
   registrarse: (req, res) => {
-    res.render("users/register");
+    res.render("register");
   },
 
 
-  list: function (req, res) {
+  list: (req, res) => {
     let usuarios = [
       { id: 1, name: 'Carolina'},
-      { id: 2, name: 'Sofía' }
-    ];
+      { id: 2, name: 'Sofía' },
+      ];
 
     res.render("userList", { "usuarios": usuarios });
   }

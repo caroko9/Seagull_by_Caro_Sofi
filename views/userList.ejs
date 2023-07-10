@@ -19,9 +19,13 @@
  <main>   
 <h1>Lista de Usuarios</h1>
 <ul>
-<% for (let i = 0; i< usuarios.length; i++) { %>
+<% for (let i = 0; i < usuarios.length; i++) { %>
 <li>
-<%= usuarios[i].name %>
+
+ <!-- <a href="users/details?userId= --> <!--% = usuarios[i].id %>"> --> 
+    
+<%= usuarios[i].name %></a>
+
 </li>
 <% } %>
 
