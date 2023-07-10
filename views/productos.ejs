@@ -1,25 +1,116 @@
 
 <!DOCTYPE html>
 <html lang="en">
+    <link rel="stylesheet" href="/css/productos.css">
 
 <%- include ('partials/head.ejs') %>
 <body>
 
-  <header class="inicio">
-    <nav class="iconitos">
-      <a href="/register"><img src="/img/icono-tabla.svg" class="iconoheader" alt="login"></a>
-      <a href="/carrito"><img src="/img/carritocompra.svg" class="iconoheader" alt="login"></a>
-      <a href="/login"><img src="/img/icono-manito.svg" class="iconoheader" alt="login"></a>
-      <a href="#Donde estamos"><img src="/img/icono-furgoneta.svg" class="iconoheader" alt="login"></a>
-      <a href="#Donde Surfar"><img src="/img/icono-surfer.svg" class="iconoheader" alt="login"></a>
-    </nav>
-    <div>
-      <img src="/img/loguito.svg" class="logo" alt="">
-    </div>
-  </header>
-
+    <%- include ('partials/header.ejs') %>
   <main>
 
     <h1>PRODUCTOS</h1>
+
+
+    <div class="contenedor">
+        
+      <article class="producto1">
+          <a href="/producto/#traje"><img src="/img/traje.jpeg" class="product"></a>
+          <div class="Caja_producto">
+              <i class="fa-solid fa-truck" style="color:#39b54a"></i>
+              <div class="cafeDatos">
+                  <p class="precio">100.00</p>
+                  <p class="descuento">50% off</p>
+                  <p class="descripcion">Cafetera Eléctrica</p>
+              </div>
+          </div>
+      </article>
+
+      <article class="producto2">
+          <a href="/producto/#macbook"><img src="/img/traje-corto.jpeg" class="product"></a>
+          <div class="Caja_producto">
+              <i class="fa-solid fa-truck" style="color:#39b54a"></i>
+              <div class="compuDatos">
+                  <p class="precio">230.000</p>
+                  <p class="descuento">20% off</p>
+                  <p class="descripcion">MacBook Pro 2019</p>
+              </div>
+          </div>
+      </article>
+      <article class="producto3">
+          <a href="/producto/#tv-samsung"><img src="/img/trajeee.jpeg" class="product" ></a>
+          <div class="Caja_producto">
+              <i class="fa-solid fa-truck" style="color:#39b54a"></i>
+              <div class="teleDatos">
+                  <p class="precio">85.000</p>
+                  <p class="descuento">0% off</p>
+                  <p class="descripcion">TV Samsung</p>
+              </div>
+          </div>
+      </article>
+
+      <article class="producto4">
+          <a href="/producto/#tv-samsung"><img src="/img/corto.jpeg" class="product"></a>
+          <div class="Caja_producto">
+              <i class="fa-solid fa-truck" style="color:#39b54a"></i>
+              <div class="fonoDatos">
+                  <p class="precio">55.000</p>
+                  <p class="descuento">5% off</p>
+                  <p class="descripcion">Samsung Galaxy S10</p>
+              </div>
+          </div>
+      </article>
+</div>
+<div class="espaciador"></div>
+<div class="contenedor">
+  
+  <article class="producto1">
+      <a href="/producto/#cafetera"><img src="/img/funda.jpeg" class="product"></a>
+      <div class="Caja_producto">
+          <i class="fa-solid fa-truck" style="color:#39b54a"></i>
+          <div class="cafeDatos">
+              <p class="precio">7.000</p>
+              <p class="descuento">5% off</p>
+              <p class="descripcion">Teclado Gorilla Games</p>
+          </div>
+      </div>
+  </article>
+
+  <article class="producto2">
+      <a href="/producto/#macbook"><img src="/img/tablaa.jpg" class="product"></a>
+      <div class="Caja_producto">
+          <i class="fa-solid fa-truck" style="color:#39b54a"></i>
+          <div class="compuDatos">
+              <p class="precio">44.000</p>
+              <p class="descuento">10% off</p>
+              <p class="descripcion">Botines Adidas</p>
+          </div>
+      </div>
+  </article>
+  <article class="producto3">
+      <a href="/producto/#tv-samsung"><img src="/img/funda2.jpeg" class="product"></a>
+      <div class="Caja_producto">
+          <i class="fa-solid fa-truck" style="color:#39b54a"></i>
+          <div class="teleDatos">
+              <p class="precio">30.000</p>
+              <p class="descuento">0% off</p>
+              <p class="descripcion">liquadora Marelli</p>
+          </div>
+      </div>
+  </article>
+
+  <article class="producto4">
+      <a href="/producto/#tv-samsung"><img src="/img/tabla2.png" class="product"></a>
+      <div class="Caja_producto">
+          <i class="fa-solid fa-truck" style="color:#39b54a"></i>
+          <div class="fonoDatos">
+              <p class="precio">35.000</p>
+              <p class="descuento">5% off</p>
+              <p class="descripcion">JBL Charge 5</p>
+          </div>
+      </div>
+  </article>
+</div>
     
   <%- include ('partials/footer.ejs') %>
+  </main>
