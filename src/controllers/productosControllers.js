@@ -7,8 +7,11 @@ let productosController =
 
   listadoProducto: (req,res) => {
     res.render("productos");
-  }
-
+  },
+ 
+  detalleProducto: (req,res) => {
+    res.render("producto");
+  },
 }
 
 module.exports = productosController;
