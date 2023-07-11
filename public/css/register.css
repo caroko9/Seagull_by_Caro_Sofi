@@ -1,7 +1,10 @@
 
+* {
+  font-family: 'Roboto Mono', monospace !important;
+}
 
 body {
-  background-image: url("../img/caribe.jpg");
+  background-image: url("../img/register.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -51,20 +54,20 @@ header {
 h1{
 display: flex;
 justify-content: center;
-font-family: 'Klee One';
+font-family: 'Roboto Mono', monospace;
   font-weight: 100; 
   font-size: 24px;
   color: #5F6368;
 }
 
 .div_form {
-  background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+  background-color: rgba(255, 255, 255, 0.5); /* Fondo semi-transparente */
   margin-top: 5%;
   margin-left: 37%;
   height: 600px;
   width: 400px;
   border-radius: 10px;
-  border: 24px solid rgba(173, 216, 230, 0.5); /* Borde semi-transparente */
+  border: 24px solid rgba(31, 99, 121, 0.5); /* Borde semi-transparente */
 }
 
 .form {
@@ -87,6 +90,8 @@ font-family: 'Klee One';
   width: 250px;
   margin-bottom: 20px;
   margin-top: 6px;
+  border-radius: 3px;
+  background-color: transparent;
 }
 .Boton_crear{
   margin-left: 6vw;
@@ -94,6 +99,8 @@ font-family: 'Klee One';
   width: 200px;
   margin-bottom: 20px;
   margin-top: 6px;
+  background-color: transparent;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .fecha {

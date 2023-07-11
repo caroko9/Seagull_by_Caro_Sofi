@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   text-decoration: none;
+  font-family: 'Roboto Mono', monospace !important;
 }
 
 .iconitos {
@@ -20,7 +21,7 @@
 }
 
 body {
-  background-image: url("/img/fondo_inicio_sesion.jpeg");
+  background-image: url("/img/logind.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -68,7 +69,7 @@ body {
   background-color: rgba(255, 255, 255, 0.6);
   width: 30vw;
   border-radius: 10px;
-  border: 24px solid lightblue;
+  border: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
