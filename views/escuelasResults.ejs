@@ -19,10 +19,11 @@
  <main>   
 <h3>Lista de Usuarios</h3>
 <ul>
-<% for (let i = 0; i < usuarios.length; i++) { %>
+    
+<% for (let i = 0; i < escuelaBuscada.length; i++) { %>
 <li>
 
- <a href="users/details<%= usuarios[i].id %>"> <%= usuarios[i].name %></a>
+ <a href="users/details<%= escuelaBuscada[i].id %>"><%= escuelaBuscada[i].name %></a>
 </li>
 
 <% } %>
@@ -31,7 +32,7 @@
 <h4>Search</h4>
 <form action="/search" method="GET">
 <input type="text" name="buscar">
-<input type="submit" value="search">
+<input type="submit" value="buscar">
 </form>
 
 </main>
