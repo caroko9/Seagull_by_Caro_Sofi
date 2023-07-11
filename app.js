@@ -13,13 +13,15 @@ app.use(express.static(path.resolve(__dirname, './public')));
 
 app.set ('view engine', 'ejs');
 
-app.use ('/', productosRoutes);
-app.use('/', usersRoutes); 
-app.use('/', mainRoutes);
-app.use('/', escuelasRoutes);
-
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
+
+app.use ('/productos', productosRoutes);
+app.use('/users', usersRoutes); 
+app.use('/', mainRoutes);
+app.use('/escuelas', escuelasRoutes);
+
+
 
 app.use ('*', function (req, res){
   res.send("ruta erronea")
