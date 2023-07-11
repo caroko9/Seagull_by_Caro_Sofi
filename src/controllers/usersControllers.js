@@ -7,6 +7,10 @@ const controladorUsers =
   registrarse: (req, res) => {
     res.render("register");
   },
+  create: (req, res) => {
+    res.send(req.body)
+  },
+
 
 
   list: (req, res) => {
