@@ -73,11 +73,12 @@ header{
   margin-left: 10vw;
   margin-top: 20px; 
 }
+
 h3{
   color: #165A7A;
   font-family: 'Klee One';
 }
-h3, h4 {
+ h4 {
   margin-top: 0;
   margin-bottom: 5px;
 }
