@@ -10,7 +10,7 @@ const controladorUsers =
 
 
   list: (req, res) => {
-    let usuarios = [
+    let escuelas = [
       { id: 1,name: 'Cyclone'},
       { id: 2, name: 'Piratas de Geriba' },
       { id: 3, name: 'Bai Bai' },
@@ -18,32 +18,31 @@ const controladorUsers =
       
       ];
 
-    res.render("userList", { "usuarios": usuarios });
+    res.render("escuelasList", { "escuelas": escuelas });
   },
 
-  buscarUsuario: function (req, res) {
-    let usuarioEncontrado = req.query.buscar;
+   buscarEscuela: function (req, res) {
+    let escuelaEncontrada = req.query.buscar;
+    res.send (escuelaEncontrada);
 
-    let usuarios = [
+   let escuelas = [
       { id: 1, name: 'Cyclone' },
       { id: 2, name: 'Piratas de Geriba' },
       { id: 3, name: 'Bai Bai' },
-      { id: 4, name: 'AFT Amantes' },
+      { id: 4, name: 'AFT Amantes' }
     ];
 
-    let usersResults = [];
+     let escuelaBuscada = [];
 
-    for (let i = 0; i < usuarios.lenght; i++) {
-      if (usuarios[i].name.includes(usuarioEncontrado)) {
-        usersResults.push(usuarios[i]);
+    for (let i = 0; i < escuelas.lenght; i++) {
+      if (escuelas[i].name.includes(escuelaEncontrada)) {
+      escuelaBuscada.push(escuelas[i]);
       }
     }
-
-    res.render('usuariosBuscados', { 'usersResults': usersResults });
-
+ // console.log(escuelaBuscada);
+res.render("escuelasResults", { "escuelasResults": escuelaBuscada });
   }
 
 }
-
 
 module.exports = controladorUsers;
