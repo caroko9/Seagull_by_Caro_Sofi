@@ -11,6 +11,7 @@ let escuelasController =
     let escuelasRegistradas = {
       email: req.body.email,
       descripcion: req.body.descripcion,
+      imagen: req.body.imagen,
       pais: req.body.pais,
     }
     //GUARDARLO EN UN JSON
