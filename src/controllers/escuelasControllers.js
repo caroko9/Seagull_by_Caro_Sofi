@@ -6,7 +6,7 @@ let escuelasController =
 
 
   creaEscuela: (req, res) => {
-    res.send('Escuela registrada con éxito!');
+    res.send(req.body);
     // mensaje cuando la escuela termina de completar el form.
   //no esta llenando con ningún dato! importante para ver
     // res.send(req.body);

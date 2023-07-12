@@ -4,7 +4,7 @@ const controladorUsers =
     res.render("login");
   },
 
-  registrarse: (req, res) => {
+  register: (req, res) => {
     res.render("register");
   },
 

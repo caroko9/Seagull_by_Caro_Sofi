@@ -16,13 +16,7 @@ header{
   padding: 0 10px;
   margin-top: -10px;
 }
-.iconoheader {
-  width: 3vw;
-  border-radius: 5px;
-  box-sizing: border-box;
-  margin-bottom: 2%;
 
-}
 .contenedor {
   display: flex;
   justify-content: center;
