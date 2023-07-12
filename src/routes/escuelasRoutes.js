@@ -10,5 +10,7 @@ router.post('/registro', escuelasController.create); //guarda la info del form
 
 router.get('/listado', escuelasController.list);
 
+router.post('/escuelas', escuelasController.creaEscuela)
+
 
 module.exports = router;

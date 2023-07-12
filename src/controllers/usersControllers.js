@@ -11,6 +11,7 @@ const controladorUsers =
   create: (req, res) => {
     res.send(req.body)
   },
+  
 
   list: (req, res) => {
     let escuelas = [

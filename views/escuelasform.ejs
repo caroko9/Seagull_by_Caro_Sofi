@@ -19,14 +19,14 @@
   <div class="input-1">
     <div class="inputF">
       <label for="exampleFormControlInput1" class="nombre-input">Email</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nombre@ejemplo.com">
+      <input type="email" class="form-control" name="email" id="email" placeholder="nombre@ejemplo.com" required>
     </div>
     <div class="espaciador">
 
     </div>
     <div class="inputF">
       <label for="exampleFormControlTextarea1" class="nombre-input">Describí tu emprendimiento</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea required>
     </div>
   </div>
 <!--<div class="contenedor-archivos">  
@@ -41,7 +41,7 @@
 <div class="input-2">
 
     <label for="exampleDataList" class="nombre-input">Pais</label>
-    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="">
+    <input class="form-control" list="datalistOptions" name="pais" id="pais" placeholder="http://website.com" required>
     <datalist id="datalistOptions">
     <option value="Argentina">
     <option value="Brasil">
