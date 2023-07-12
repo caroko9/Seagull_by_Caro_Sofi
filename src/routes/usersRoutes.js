@@ -6,9 +6,7 @@ const controladorUsers = require ('../controllers/usersControllers');
 router.get('/register', controladorUsers.registrarse);
 
 router.get('/login', controladorUsers.iniciarSesion);
-router.post('/register', controladorUsers.create)
-
-router.get('/list', controladorUsers.list);
+router.post('/register', controladorUsers.create);
 
 router.get('/search', controladorUsers.buscarEscuela);
  
