@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/escuelas.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+</head>
+<%- include ('partials/head.ejs') %>
+<body>
+ 
+  <%- include ('partials/header.ejs') %>
+
+  <form action="/escuelas" method="POST">
+
+  <div class="input-1">
+    <div class="inputF">
+      <label for="exampleFormControlInput1" class="nombre-input">Email</label>
+      <input type="email" class="form-control" name="email" id="email" placeholder="nombre@ejemplo.com" required>
+    </div>
+    <div class="espaciador">
+
+    </div>
+    <div class="inputF">
+      <label for="exampleFormControlTextarea1" class="nombre-input">Describí tu emprendimiento</label>
+      <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea required>
+    </div>
+  </div>
+<div class="contenedor-archivos">
+
+ <div class="mb-3">
+  <label for="formFileMultiple" class="nombre-input">Sube hasta tres fotos</label>
+  <input class="form-control" type="file" name="imagen" id="imagen" multiple accept="image/*" required>
+</div>
+
+  
+</div>
+<div class="input-2">
+
+    <label for="exampleDataList" class="nombre-input">Pais</label>
+    <input class="form-control" list="datalistOptions" name="pais" id="pais" placeholder="http://website.com" required>
+    <datalist id="datalistOptions">
+    <option value="Argentina">
+    <option value="Brasil">
+    <option value="Colombia">
+    <option value="Costa Rica">
+    <option value="Panama">
+    <option value="Uruguay">
+
+  </datalist>
+  <br>
+  <input type="submit" value="Enviar" class="boton-submit">
+</div>
+
+</form>
+<script src="ruta/a/jquery.js"></script>
+<script src="ruta/a/bootstrap.js"></script>
+
+</body>
+</html>
