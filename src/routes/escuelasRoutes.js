@@ -4,13 +4,16 @@ const router = express.Router();
 const escuelasController = require('../controllers/escuelasControllers');
 
 
-router.get('/registro', escuelasController.sumaEscuela);
+router.get('/escuelascreate', escuelasController.sumaEscuela);
+
+router.post('/escuelascreate', escuelasController.sumaEscuela);
 
 router.post('/registro', escuelasController.create); //guarda la info del form
 
-router.get('/listado', escuelasController.list);
+//router.get('/listado', escuelasController.list);
 
-router.post('/escuelas', escuelasController.creaEscuela)
+//router.post('/escuelas', escuelasController.creaEscuela)
+
 
 
 module.exports = router;

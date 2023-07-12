@@ -1,8 +1,7 @@
-
 let escuelasController = 
 {
   sumaEscuela: (req, res) => {
-    res.render("escuelas");
+    res.render("escuelascreate");
   },
 
 
