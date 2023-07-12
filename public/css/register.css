@@ -1,0 +1,155 @@
+
+* {
+  font-family: 'Roboto Mono', monospace !important;
+}
+
+body {
+  background-image: url("../img/register.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin: 0;
+}
+
+body::after {
+  content: '';
+  background: #333;
+  position: absolute;
+  width: calc(100vw + 30vw);
+  height: calc(100% + 30vh);
+  left: -30vw;
+  top: -20vh;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+header {
+  width: 100%;
+  height: 7vh;
+  background-image: url("../img/PlayaCaribe.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+  background-color: #ccc;
+}
+
+
+.contenedor_form {
+  border-radius: 10px;
+  margin: 10px;
+}
+h1{
+display: flex;
+justify-content: center;
+font-family: 'Roboto Mono', monospace;
+  font-weight: 100; 
+  font-size: 24px;
+  color: #5F6368;
+}
+
+.div_form {
+  background-color: rgba(255, 255, 255, 0.5); /* Fondo semi-transparente */
+  margin-top: 5%;
+  margin-left: 37%;
+  height: 600px;
+  width: 400px;
+  border-radius: 10px;
+  border: 24px solid rgba(31, 99, 121, 0.5); /* Borde semi-transparente */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.icono_form {
+  width: 100px;
+  height: 90px;
+  margin-left: 35%;
+}
+
+
+.nombre {
+  margin-left: 4vw;
+  padding: 12px;
+  width: 250px;
+  margin-bottom: 20px;
+  margin-top: 6px;
+  border-radius: 3px;
+  background-color: transparent;
+}
+.Boton_crear{
+  margin-left: 6vw;
+  padding: 8px;
+  width: 200px;
+  margin-bottom: 20px;
+  margin-top: 6px;
+  background-color: transparent;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.fecha {
+  margin-left: 3vw;
+  padding: 5px;
+  width: 200px;
+  margin-bottom: 15px;
+}
+
+
+
+@media only screen and (max-width: 700px) and (min-width: 375px) {
+  body {
+    background-image: url("../img/caribe.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    height: 100vh; /* Ajustar altura al 100% de la ventana */
+  }
+  
+  body::after {
+    content: '';
+    background: #333;
+    position: absolute;
+    width: calc(300vw + 200vw);
+    height: calc(300% + 200vh);
+    left: -30vw;
+    top: 0vh;
+    opacity: 0.4;
+    z-index: -1;
+  }
+  
+  header {
+    width: 375px;
+  }
+  
+  .contenedor_form .div_form {
+    margin-left: 10%;
+    margin-top: 100px;
+    width: 65%;
+    height: auto;
+  }
+  
+  .icono_form {
+    width: 80px;
+    height: 70px;
+    margin-left: 35%;
+  }
+  
+  .nombre {
+    margin-left: 7vw;
+    padding: 10px;
+    width: 150px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+}

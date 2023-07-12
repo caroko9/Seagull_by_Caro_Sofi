@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('partials/head.ejs') %>
+<link rel="stylesheet" href="/css/register.css">
+
+<body>
+    <%- include ('partials/header.ejs') %>
+    
+    <main>
+        <div class="contenedor_form">
+            <div class="div_form">
+                <form  method="POST" action="/users/register" class="formulario">
+
+                    <img src="/img/icono-furgoneta.svg" class="icono_form">
+                   <h1>¡REGÍSTRATE!</h1>
+                    <br>
+                    <input name="nombre" type="text" placeholder="Nombre Completo" class="nombre">
+                    <input name="email" type="email" placeholder="E-mail" class="nombre">
+                    <input name="contraseña" type="password" placeholder="Contraseña" class="nombre">
+                    <input name="repetir contraseña" type="password" placeholder="Repetir Contraseña" class="nombre">
+                    <input name="telefono" type="tel" placeholder="Telefono" class="nombre">
+                    <input name="Boton" type="submit" value="CREAR CUENTA" class="Boton_crear">
+
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

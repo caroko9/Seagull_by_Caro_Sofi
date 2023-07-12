@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('partials/head.ejs') %>
+
+    <link href="/css/login.css" rel="stylesheet">
+    
+<body>
+    <%- include ('partials/header.ejs') %>
+        
+        <main>
+
+            <section class="contenedor_form">
+                <div class="div_form">
+                    <form action="/login" method="POST" class="formulario">
+                        <img src="/img/icono-manito.svg" class="icono_form">
+
+                        <h1 class="iniciosesion">INICIAR SESION</h1>
+
+                        <input type="email" placeholder="E-mail" class="input">
+                        <input type="password" placeholder="Contraseña" class="input">
+
+                        <a class="TextoOlvido">¡Ups! No recuerdo mi contraseña. </a>
+                        <br>
+                        <a href="/register" class="TextoCreaCuenta">Crea tu cuenta</a>
+                     
+                        <br>
+                        <div>
+
+                        <div class="text-center">
+                           <input type="submit" value="INICIAR SESION" formaction="" >
+                            
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <%- include ('partials/footer.ejs') %>
+        </body>
+        
+        </html>

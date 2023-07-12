@@ -1,0 +1,16 @@
+
+.iconitos {
+  display: flex;
+  justify-content: end;
+  background-color: rgb(179, 197, 197);
+  opacity: 0.9;
+}
+
+
+.iconoheader {
+  width: 3vw;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 2%;
+  margin-right: 20px;
+}

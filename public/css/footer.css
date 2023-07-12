@@ -1,0 +1,59 @@
+.finpagina {
+    background-color: #B0DEE4;
+    width: 100%;
+    opacity: 0,9%;
+    background-color:rgba(176, 223, 229, 0.79);
+}
+
+.final {
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15px;
+    line-height: 33px;
+    letter-spacing: 1px;
+    color:#5a717c;
+    }
+
+.email {
+    text-decoration: none;
+    color: #5a717c;
+   } 
+
+ul {
+    list-style-type: none;
+}
+
+.sponsor{
+    display: flex;
+    box-sizing: border-box;
+    margin: auto;
+    opacity: 0.6;
+    justify-content: center;
+    align-items: center;
+     }
+ 
+     .marca {
+     width: 12vw;
+     border-radius: 5px;
+     box-sizing: border-box;
+     margin: auto;
+     margin-bottom: 2%;
+     }
+
+     .socialmedia {
+    font-size: 1.3rem;
+    letter-spacing: 10px;   
+     }
+
+     @media (min-width: 769px) {
+        .marca {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    @media (min-width: 361px) {
+        .marca {
+            justify-content: center;
+        }
+            }

@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto Mono', monospace !important;
+}
+
+
+
+body {
+  background-image: url("/img/logind.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow-y: scroll; /* Agrega esta propiedad para habilitar el scroll vertical */
+  margin: 0;
+}
+
+
+
+
+
+
+
+.contenedor_form {
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  margin-top: 40px;
+  ;
+  margin-bottom: 40px;
+
+
+}
+
+.div_form h1 {
+  display: flex;
+  justify-content: center;
+  font-family: 'Klee One';
+  font-weight: 20;
+  font-size: 24px;
+  color: #5F6368;
+}
+
+.div_form {
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 30vw;
+  border-radius: 10px;
+  border: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.icono_form {
+  width: 100px;
+  height: 90px;
+  margin-left: 35%;
+}
+.TextoOlvido{
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: #5F6368;
+  font-family: 'klee one';
+  font-size: 12px;
+}
+.TextoCreaCuenta{
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: rgba(60, 133, 143);
+  font-family: 'klee one';
+  font-size: 20px;
+}
+
+#Botones {
+  background-color: #ccc;
+  border-color: #ccc;
+}
+
+.iniciosesion {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.input {
+  margin: 3vw;
+  width: 20vw;
+  height: 3vw;
+  margin-top: 1vw;
+}
+
+@media (min-width: 769px) {
+  .icono_form {
+    width: 30%;
+    height: 30%;
+  }
+
+  .iniciosesion {
+    font-size: 1rem
+  }
+
+  .input {
+    font-size: 1rem
+  }
+
+}
+
+@media (min-width: 361px) {
+  .icono_form {
+    width: 30%;
+    height: 30%;
+  }
+
+  .iniciosesion {
+    font-size: 0.7rem;
+  }
+
+  .input {
+    font-size: 1rem
+  }
+}
