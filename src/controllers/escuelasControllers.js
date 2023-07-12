@@ -5,7 +5,7 @@ let escuelasController =
   },
 
 
-  create: (req, res) => {
+  creaEscuela: (req, res) => {
     res.send('Escuela registrada con éxito!');
     // mensaje cuando la escuela termina de completar el form.
   //no esta llenando con ningún dato! importante para ver
@@ -13,12 +13,12 @@ let escuelasController =
   }
 }
     
-    /*let escuelas = {
+   /* let escuelas = {
       pais: req.body.pais,
       email: req.body.email,
     }
     res.send(escuelas);
-  }, */
+  },
 
   //listado de escuelas que se iran agregando del formulario de crear escuela
    /*list: (req, res) => {
