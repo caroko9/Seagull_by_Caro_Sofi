@@ -18,6 +18,7 @@ app.use('/', usersRoutes);
 app.use('/', mainRoutes);
 app.use('/', escuelasRoutes);
 
+
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 
