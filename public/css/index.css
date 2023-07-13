@@ -1,3 +1,9 @@
+h1{
+    font-family: 'Klee One';
+    font-size: medium;
+    color: #061D28;
+}
+
 p
 {
     font-family: 'Roboto Mono', monospace;
@@ -41,12 +47,12 @@ p
 
 .search input[type="search"] {
     font-family: 'Klee One', cursive;
-    font-size: 16px;
+    font-size: 12px;
     color: #333333;
 }
 
 .search .form-inline label {
-    font-family: 'Klee One', cursive;
+    font-family: 'Klee One';
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -57,16 +63,17 @@ p
 }
 
 #Botones {
-    color: #061D28;
-    background-color: #B0DEE4;
+    font-family: 'Klee One';
+    color: #03131a;
+    background-color: #c9ebf0;
     border: #FFFFFF;
-    font-family: 'Klee One', cursive;
     font-size: 16px;
-
 }
-.imagenes{
-    border: red;
-    }
+
+.search{
+    width: 500px; 
+    height: 40px; 
+}
 
 .figure {
     padding: 2%;
