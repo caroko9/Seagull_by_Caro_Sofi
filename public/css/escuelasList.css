@@ -4,8 +4,14 @@
 
 }
 .ola {
- 
-  margin-bottom: 25%;
+  background-color: white;
+  opacity: 0.9;
+  border: 8px solid #92C1D0;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  width: 30%;;
+  height:35vw; 
 }
 
 
@@ -15,7 +21,7 @@ main{
 }
 
 main p {
-color: white;
+color:#92C1D0;
 margin-top: 1%;
 font-size: 40px;
 font-weight: 0;

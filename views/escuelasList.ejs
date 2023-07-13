@@ -14,27 +14,22 @@
 
   <%- include ('./partials/header.ejs') %> 
 <div class="ola">
- <main>
     <main>   
-        <p>Escuelas</p>
+      <p>Escuelas</p>
+      <h4>Search</h4>
+      <form action="/search" method="GET">
+      <input type="text" name="buscar">
+      <input type="submit" value="buscar">
+      </form>
         <ul>
           <% for (let i = 0; i < escuelasRegistradas.length; i++) { %>
             <li>
-              <a href="<%= escuelasRegistradas[i].url %>"><%= escuelasRegistradas[i].nombre %></a>
+              <a href="<%= escuelasRegistradas[i].url %>"><%= escuelasRegistradas[i].nombre %> </a>
 
             </li>
           <% } %>       
         </ul>
-        
-        <h4>Search</h4>
-        <form action="/search" method="GET">
-        <input type="text" name="buscar">
-        <input type="submit" value="buscar">
-        </form>
-   
         </main>
-  </main>
- 
 </div>
   
 </body>
