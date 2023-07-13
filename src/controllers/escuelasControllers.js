@@ -1,34 +1,38 @@
-let escuelasController = 
-{
+const fs = require('fs');
+
+const path = require('path');
+
+const escuelasFilePath = path.join(__dirname, '../../src/data/escuelas.json');
+
+
+const escuela = JSON.parse(fs.readFileSync(escuelasFilePath, 'utf-8'));
+
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+const controller = {
+
   sumaEscuela: (req, res) => {
     res.render("escuelascreate");
   },
 
+	creaEscuela: (req, res) => {
 
-  creaEscuela: (req, res) => {
-  
-    let escuelasRegistradas = {
-      email: req.body.email,
-      descripcion: req.body.descripcion,
-      imagen: req.body.imagen,
-      pais: req.body.pais,
-    }
-    //GUARDARLO EN UN JSON
-     
-     res.redirect("listado");
-  },
+		let escuelaNueva = req.body;
+	
+		let objNuevaEscuela= {
+			email: escuelaNueva.email,
+			descripcion: escuelaNueva.descripcion,
+			imagen: escuelaNueva.imagen,
+      pais: escuelaNueva.pais,
+		};
 
- 
-  list: (req, res) => {
-  let nuevaEscuela = req.query.escuelaCreada;
-  res.send ('Escuela ingresada con éxito!');
-  }
-} 
+	    escuela.push(objNuevaEscuela);
+		fs.writeFileSync(escuelasFilePath, JSON.stringify(escuela,null,' '));
+		res.redirect('/');
+	},
+}
 
-module.exports = escuelasController;
-
-
-
+module.exports = controller;
 //CÓDIGO PARA USAR EN LA BARRA DE BUSQUEDA DE ESCUELAS
 
      /*res.render("escuelasList", { "escuelas": nuevaEscuela });
