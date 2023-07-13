@@ -4,8 +4,16 @@ const path = require('path');
 
 const escuelasFilePath = path.join(__dirname, '../../src/data/escuelas.json');
 
+let escuela = [];
 
-const escuela = JSON.parse(fs.readFileSync(escuelasFilePath, 'utf-8'));
+if (fs.existsSync(escuelasFilePath)) {
+  const fileContent = fs.readFileSync(escuelasFilePath, 'utf-8');
+
+  if (fileContent) {
+    escuela = JSON.parse(fileContent);
+  }
+}
+
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -30,9 +38,11 @@ const controller = {
 		fs.writeFileSync(escuelasFilePath, JSON.stringify(escuela,null,' '));
 		res.redirect('/');
 	},
-}
+};
 
 module.exports = controller;
+
+
 //CÓDIGO PARA USAR EN LA BARRA DE BUSQUEDA DE ESCUELAS
 
      /*res.render("escuelasList", { "escuelas": nuevaEscuela });

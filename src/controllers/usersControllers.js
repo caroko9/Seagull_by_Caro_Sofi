@@ -15,6 +15,7 @@ const controladorUsers =
 
   list: (req, res) => {
     let escuelas = [
+      
       { id: 1,name: 'Cyclone'},
       { id: 2, name: 'Piratas de Geriba' },
       { id: 3, name: 'Bai Bai' },
