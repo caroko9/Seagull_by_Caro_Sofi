@@ -1,3 +1,19 @@
+const fs = require('fs');
+
+const path = require('path');
+
+const usuariosFilePath = path.join(__dirname, '../../src/data/usuarios.json');
+
+let usuarios = []
+
+if (fs.existsSync(usuariosFilePath)) {
+  const fileContent = fs.readFileSync(usuariosFilePath, 'utf-8');
+
+  if (fileContent) {
+    usuarios = JSON.parse(fileContent);
+  }
+}
+
 const controladorUsers =
 {
   iniciarSesion: (req, res) => {
@@ -9,7 +25,18 @@ const controladorUsers =
   },
 
   create: (req, res) => {
-    res.send(req.body)
+    let nuevosUsuarios = req.body
+    
+    let objetoUsuariosNuevos =  {
+      nombre: nuevosUsuarios.nombre,
+      email: nuevosUsuarios.email,
+      contraseña: nuevosUsuarios.contraseña,
+      repetir_contraseña: nuevosUsuarios.repetir_contraseña,
+      telefono: nuevosUsuarios.telefono
+    }  
+    usuarios.push(objetoUsuariosNuevos)
+    fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios,null,' '));
+    res.redirect("/"); 
   },
   
 
