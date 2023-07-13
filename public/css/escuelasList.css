@@ -48,3 +48,12 @@ body{
 .deportes{
   font-size: 20px;
 }
+.linkss a {
+margin-left: 4vw;
+text-decoration: none;
+color:#92C1D0
+}
+
+.buscador{
+  margin-bottom: 2vw;
+}

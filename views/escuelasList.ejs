@@ -20,15 +20,16 @@
       <h4>Search</h4>
       <form action="/search" method="GET">
       <input type="text" name="buscar">
-      <input type="submit" value="buscar">
+      <input class="buscador" type="submit" value="buscar">
       </form>
         <ul>
+          <div class="linkss">
           <% for (let i = 0; i < escuelasRegistradas.length; i++) { %>
             <li>
               <a href="<%= escuelasRegistradas[i].url %>"><%= escuelasRegistradas[i].nombre %> </a>
-
             </li>
-          <% } %>       
+          <% } %>   
+        </div>    
         </ul>
         </main>
 </div>

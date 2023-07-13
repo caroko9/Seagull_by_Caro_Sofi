@@ -59,14 +59,10 @@ buscarEscuela: (req, res) => {
   res.render("escuelasResults", { results: escuelaBuscada });
 },
 
-
-
 };
 
-
 module.exports = controller;
-
-     //res.render("escuelasList", { "escuelas": nuevaEscuela });
+ 
 
 
 
