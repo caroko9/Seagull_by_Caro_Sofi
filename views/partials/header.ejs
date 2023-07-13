@@ -1,16 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  <link rel="stylesheet" href="\css\header.css">
 </head>
-<header class="inicio">
-  <nav class="iconitos">
-    <a href="/users/login"><img src="/img/icono-tabla.svg" class="iconoheader" alt="login"></a>
-    <a href="/users/register"><img src="/img/icono-manito.svg" class="iconoheader" alt="login"></a>
-    <a href="/productos/carrito"><img src="/img/carritocompra.svg" class="iconoheader" alt="login"></a>
-    <a href="/productos/productos"><img src="/img/icono-surfer.svg" class="iconoheader" alt="login"></a>
-    <a href="/escuelas/escuelascreate"><img src="/img/icono-furgoneta.svg" class="iconoheader" alt="login"></a>
-   
+<header class="navbar-seagull">
+ 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <div class="container-fluid">
+      <a class="navbar-logo" href="views\index.ejs">
+        <img class= "imagenlogo" src="\img\iconografia\logoseagull.png" alt="Logo">
+      </a>
+    </div>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="nav-bar iconografia justify-content" id="navbarNav">
+        <ul class="navbar-nav justify-content-end">
+
+          <!-- ESCUELAS DE SURF -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="icono1Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img class= "icono-tabla" src="\img\iconografia\surf.png" alt="Icono Escuela">
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="iconoDropdown">
+                <li><a class="dropdown-item" href="/views/escuelasList.ejs">Escuelas de Surf</a></li>
+                <li><a class="dropdown-item" href="\escuelascreate.ejs">¡Suma tu escuela!</a></li>
+               </ul>
+  
+          
+           <!-- TIENDA DE SURF -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="icono1Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img class= "iconoTienda" src="\img\iconografia\tienda-de-surf.png" alt="Icono Tienda">
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="iconoDropdown">
+                <li><a class="dropdown-item" href="\productos.ejs">Productos Online</a></li>
+                <li><a class="dropdown-item" href="#">Tiendas fisicas</a></li>
+               </ul>
+
+
+          <!-- FURGONETA -->
+           <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="icono1Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img class= "icono-furgoneta" src="\img\iconografia\furgoneta-de-surf.png" alt="Icono Furgoneta">
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="iconoDropdown">
+              <li><a class="dropdown-item" href="#">Nuestros lugares</a></li>
+              <li><a class="dropdown-item" href="#">Tips para tus viajes</a></li>
+             </ul>
+
+          
+           <!-- NOSOTROS (MANITO)-->
+           <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="icono1Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img class= "icono-nosotros" src="\img\iconografia\icononosotros.png" alt="Icono Nosotros">
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="iconoDropdown">
+              <li><a class="dropdown-item" href="#">¿Quiénes somos?</a></li>
+              <li><a class="dropdown-item" href="#">Trabaja con nosotros</a></li>
+             </ul>
+          
+          
+          <!-- CARRITO -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="icono1Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img class= "iconos" src="\img\iconografia\carrito-de-compras.png" alt="Icono Carrito">
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="iconoDropdown">
+              <li><a class="dropdown-item" href="/views/">Mis compras</a></li>
+              <li><a class="dropdown-item" href="#">Seguimiento de envío</a></li>
+             </ul>
+          
+        
+          <!-- PERFIL -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="icono1Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img class= "iconos" src="\img\iconografia\perfil.png" alt="Icono Perfil">
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="iconoDropdown">
+              <li><a class="dropdown-item" href="\login.ejs">Mi perfil</a></li>
+              <li><a class="dropdown-item" href="#">Configuración</a></li>
+             </ul>
+            
+        </ul>
+      </div>
+    </div>
   </nav>
- </header>
+  
+
+</header>
  </html>
+
+ 
