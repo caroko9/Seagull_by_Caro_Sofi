@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/carrito.css">
-  <link href="https://fonts.googleapis.com/css2?family=Klee+One&family=Roboto&display=swap" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
-  <title>Document</title>
-
-</head>
+  <%- include ('partials/head.ejs') %>
 
 <body>
+
+  <%- include ('./partials/header.ejs') %> 
+
 
   <h2>CARRITO DE COMPRA</h2>
   <section class="contenedor">
@@ -68,15 +64,14 @@
     </div>
   </section>
   <footer>
+    <form action="/productos/carrito?_method=DELETE" method="post">
+      <input type="submit" value="Borrar Productos" class="Boton_borrar">
+    </form>
+  </footer>
     <div class="precio-total">
       <p>TOTAL</p>
       <p>$2.200 ARS</p>
     </div>
-    <div class="contenedor-input">
-      <div class="input-like">
-        CONFIRMAR COMPRA
-      </div>
-    </div>
-  </footer>
+    
 </body>
 </html>

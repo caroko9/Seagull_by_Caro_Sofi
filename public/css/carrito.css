@@ -146,6 +146,17 @@ h2 {
   text-align: center;
   color: white;
 }
+.Boton_borrar {
+  width: 44vh;
+  height: 6vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; 
+  background-color: rgba(60, 133, 143, 0.8);
+  border-radius: 7px;
+}
+
 
 
 footer{

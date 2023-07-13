@@ -5,6 +5,10 @@ let productosController =
     res.render("carrito");
   },
 
+  deleteCarrito: (req, res) => {
+  res.send ("soy delete!")
+  },
+
   listadoProducto: (req,res) => {
     res.render("productos");
   },
