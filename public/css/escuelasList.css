@@ -35,7 +35,7 @@ main h4{
 
 body{
   
-  background-image: url("../img/btes.jpg");
+  background-image: url("../img/fondovistaec.avif");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -44,4 +44,7 @@ body{
   overflow-y: scroll;
   margin: 0;
 
+}
+.deportes{
+  font-size: 20px;
 }
