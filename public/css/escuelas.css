@@ -16,7 +16,7 @@ body{
 }
 
 .espaciador{
-  margin-bottom: 170px;
+  margin-bottom: 20px;
 }
 .input-1 {
   display: flex;
@@ -43,7 +43,7 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+
   padding: 10px; /* Ajusta el valor según tus preferencias */
   width: 80%; /* Ajusta el valor según tus preferencias */
   margin-bottom: 10px;
@@ -73,7 +73,9 @@ body{
 
 
 input[type="text"],
-input[type="email"],
+input[type="email"]{
+color: white;
+}
 textarea,
 input[list],
 input[type="file"]

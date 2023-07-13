@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="/css/escuelas.css">
+  <link rel="stylesheet" href="/css/escuelasList.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
@@ -13,14 +13,15 @@
 <body>
 
   <%- include ('./partials/header.ejs') %> 
-
+<div class="ola">
  <main>
     <main>   
-        <h3>Escuelas</h3>
+        <p>Escuelas</p>
         <ul>
           <% for (let i = 0; i < escuelasRegistradas.length; i++) { %>
             <li>
-              <a href="/listado/details<%= escuelasRegistradas[i].id %>"><%= escuelasRegistradas[i].email %></a>
+              <a href="<%= escuelasRegistradas[i].url %>"><%= escuelasRegistradas[i].nombre %></a>
+
             </li>
           <% } %>       
         </ul>
@@ -30,9 +31,11 @@
         <input type="text" name="buscar">
         <input type="submit" value="buscar">
         </form>
-        
+   
         </main>
   </main>
+ 
+</div>
   
 </body>
 </html>

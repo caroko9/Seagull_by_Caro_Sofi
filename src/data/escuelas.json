@@ -1,62 +1,16 @@
 [
  {
-  "email": "taquinibautista@gmail.com",
-  "descripcion": "cjcjc",
+  "nombre": "Bai Bai",
+  "email": "baibai@hotmail.com",
+  "descripcion": "dixn1in1i1",
+  "imagen": "Captura de pantalla 2023-07-13 a la(s) 00.09.40.png",
+  "pais": "Argentina"
+ },
+ {
+  "nombre": "la posada",
+  "email": "laposada@gmail.com",
+  "descripcion": "somos el hostel mas amistoso del pueblo",
   "imagen": "images.jpg",
-  "pais": "Panama"
- },
- {
-  "email": "taquinibautista@gmail.com",
-  "descripcion": "jjejeejej",
-  "imagen": "Captura de pantalla 2023-07-13 a la(s) 00.09.40.png",
-  "pais": "Brasil"
- },
- {
-  "email": "taquinibautista@gmail.com",
-  "descripcion": "drr",
-  "imagen": "Captura de pantalla 2023-07-13 a la(s) 00.09.40.png",
   "pais": "Costa Rica"
- },
- {
-  "email": "taquinibautista@gmail.com",
-  "descripcion": "drr",
-  "imagen": "Captura de pantalla 2023-07-13 a la(s) 00.09.40.png",
-  "pais": "Costa Rica"
- },
- {
-  "email": "taquinibautista@gmail.com",
-  "descripcion": "drr",
-  "imagen": "Captura de pantalla 2023-07-13 a la(s) 00.09.40.png",
-  "pais": "Costa Rica"
- },
- {
-  "email": "taquinibautista@gmail.com",
-  "descripcion": "drr",
-  "imagen": "Captura de pantalla 2023-07-13 a la(s) 00.09.40.png",
-  "pais": "Costa Rica"
- },
- {
-  "email": "taquinibautista@gmail.com",
-  "descripcion": "doicdidi",
-  "imagen": "Captura de pantalla 2023-07-13 a la(s) 00.09.40.png",
-  "pais": "Panama"
- },
- {
-  "email": "taquinibautista@gmail.com",
-  "descripcion": "doicdidi",
-  "imagen": "Captura de pantalla 2023-07-13 a la(s) 00.09.40.png",
-  "pais": "Panama"
- },
- {
-  "email": "taquinibautista@gmail.com",
-  "descripcion": "doicdidi",
-  "imagen": "Captura de pantalla 2023-07-13 a la(s) 00.09.40.png",
-  "pais": "Panama"
- },
- {
-  "email": "taquinibautista@gmail.com",
-  "descripcion": "doicdidi",
-  "imagen": "Captura de pantalla 2023-07-13 a la(s) 00.09.40.png",
-  "pais": "Panama"
  }
 ]

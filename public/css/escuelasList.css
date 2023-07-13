@@ -1,0 +1,41 @@
+
+* {
+  font-family: 'Roboto Mono', monospace !important;
+
+}
+.ola {
+ 
+  margin-bottom: 25%;
+}
+
+
+main{
+  margin-left: 3%;
+ 
+}
+
+main p {
+color: white;
+margin-top: 1%;
+font-size: 40px;
+font-weight: 0;
+
+}
+
+main h4{
+  color: white;
+}
+
+
+body{
+  
+  background-image: url("../img/btes.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin: 0;
+
+}

@@ -28,6 +28,7 @@ const controller = {
 		let escuelaNueva = req.body;
 	
 		let objNuevaEscuela= {
+      nombre: escuelaNueva.nombre,
 			email: escuelaNueva.email,
 			descripcion: escuelaNueva.descripcion,
 			imagen: escuelaNueva.imagen,
@@ -49,7 +50,7 @@ buscarEscuela: (req, res) => {
   let escuelaBuscada = [];
 
   for (let i = 0; i < escuelas.length; i++) {
-    if (escuelas[i].email.includes(escuelaEncontrada))  {
+    if (escuelas[i].nombre.includes(escuelaEncontrada))  {
       escuelaBuscada.push(escuelas[i]);
     }
   }

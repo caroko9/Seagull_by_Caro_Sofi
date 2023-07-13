@@ -17,8 +17,12 @@
 
   <form action="/escuelas/escuelascreate" method="POST" name="escuelaCreada">
 
+  
+
   <div class="input-1">
     <div class="inputF">
+      <br>
+      <input type="text" class="form-control"  name="nombre" placeholder="Nombre del emprendimiento">
       <label for="exampleFormControlInput1" class="nombre-input">Email</label>
       <input type="email" class="form-control" name="email" id="email" placeholder="nombre@ejemplo.com" required>
     </div>
@@ -33,7 +37,7 @@
 <div class="contenedor-archivos">
 
  <div class="mb-3">
-  <label for="formFileMultiple" class="nombre-input">Sube hasta tres fotos</label>
+  <label for="formFileMultiple" class="nombre-input">Carga hasta tres fotos</label>
   <input class="form-control" type="file" name="imagen" id="imagen" multiple accept="image/*" required>
 </div>
 
@@ -42,7 +46,7 @@
 <div class="input-2">
 
     <label for="exampleDataList" class="nombre-input">Pais</label>
-    <input class="form-control" list="datalistOptions" name="pais" id="pais" placeholder="http://website.com" required>
+    <input class="form-control" list="datalistOptions" name="pais" id="pais" placeholder="" required>
     <datalist id="datalistOptions">
     <option value="Argentina">
     <option value="Brasil">
