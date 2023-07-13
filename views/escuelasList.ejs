@@ -13,16 +13,16 @@
 
 <body>
 
-  <%- include ('./partials/header.ejs') %>-->
+  <%- include ('./partials/header.ejs') %> 
 
  <main>
     <main>   
         <h3>Escuelas</h3>
         <ul>
-        <% for (let i = 0; i < escuelas.length; i++) { %>
+        <% for (let i = 0; i < escuelasRegistradas.length; i++) { %>
         <li>
         
-         <a href="escuelasList/details<%= escuelas[i].id %>"> <%= escuelas[i].name %></a>
+         <a href="/listado/details<%= escuelasRegistradas[i].id %>"> <%= escuelasRegistradas[i].email %></a>
         </li>
         
         <% } %>
