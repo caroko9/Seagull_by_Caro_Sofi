@@ -4,13 +4,13 @@ const path = require('path');
 
 const escuelasFilePath = path.join(__dirname, '../../src/data/escuelas.json');
 
-let escuela = [];
+let escuelas = [];
 
 if (fs.existsSync(escuelasFilePath)) {
   const fileContent = fs.readFileSync(escuelasFilePath, 'utf-8');
 
   if (fileContent) {
-    escuela = JSON.parse(fileContent);
+    escuelas = JSON.parse(fileContent);
   }
 }
 
@@ -34,42 +34,42 @@ const controller = {
       pais: escuelaNueva.pais,
 		};
 
-	    escuela.push(objNuevaEscuela);
-		fs.writeFileSync(escuelasFilePath, JSON.stringify(escuela,null,' '));
-		res.redirect('/');
+	    escuelas.push(objNuevaEscuela);
+		fs.writeFileSync(escuelasFilePath, JSON.stringify(escuelas,null,' '));
+    res.redirect("./escuelasList"); 
 	},
+
+  list: (req, res) => {
+    res.render("escuelasList", { escuelasRegistradas: escuelas });
+  },
+
+
+buscarEscuela: (req, res) => {
+  let escuelaEncontrada = req.query.buscar;
+  let escuelaBuscada = [];
+
+  for (let i = 0; i < escuelas.length; i++) {
+    if (escuelas[i].email.includes(escuelaEncontrada))  {
+      escuelaBuscada.push(escuelas[i]);
+    }
+  }
+
+  console.log(escuelaBuscada);
+  res.render("escuelasResults", { results: escuelaBuscada });
+},
+
+
+
 };
+
 
 module.exports = controller;
 
-
-//CÓDIGO PARA USAR EN LA BARRA DE BUSQUEDA DE ESCUELAS
-
-     /*res.render("escuelasList", { "escuelas": nuevaEscuela });
-  }
-  },
-
-  buscarEscuela: function (req, res) {
-    let escuelaEncontrada = req.query.buscar;
-    res.send (escuelaEncontrada);
-
-   let escuelas = [
-      {  
-
-      }
-    ];
-
-     let escuelaBuscada = [];
-
-    for (let i = 0; i < escuelas.lenght; i++) {
-      if (escuelas[i].name.includes(escuelaEncontrada)) {
-      escuelaBuscada.push(escuelas[i]);
-      }
-    }
- // console.log(escuelaBuscada);
-res.render("escuelasResults", { "results": escuelaBuscada });
-  }*/
+     //res.render("escuelasList", { "escuelas": nuevaEscuela });
 
 
 
+
+
+  
 

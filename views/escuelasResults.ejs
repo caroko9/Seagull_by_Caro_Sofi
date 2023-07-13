@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,31 +9,27 @@
     <link href="./css/login.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>SEAGULL Project</title>
-    <title>Document</title>
 </head>
-
+<%- include ('partials/head.ejs') %>
 <body>
-    <%- include ('partials/header.ejs') %>
+    <%- include('partials/header.ejs') %>
 
- <main>   
-<h3>Escuelas</h3>
-<ul>
-    
-<% for (let i = 0; i < escuelaBuscada.length; i++) { %>
-<li>
+    <main>   
+        <h3>Escuelas</h3>
+        <ul>
+        <% for (let i = 0; i < results.length; i++) { %>
+            <li>
+                <a href="escuelasList/details<%= results[i].id %>"><%= results[i].name %></a>
+            </li>
+        <% } %>
+        </ul>
 
- <a href="escuelasList/details<%= escuelaBuscada[i].id %>"><%= escuelaBuscada[i].name %></a>
-</li>
-
-<% } %>
-</ul>
-
-<h4>Search</h4>
-<form action="/search" method="GET">
-<input type="text" name="buscar">
-<input type="submit" value="buscar">
-</form>
-
-</main>
+        <h4>Search</h4>
+        <form action="/search" method="GET">
+            <input type="text" name="buscar">
+            <input type="submit" value="buscar">
+        </form>
+    </main>
+</body>
 
 </html>
