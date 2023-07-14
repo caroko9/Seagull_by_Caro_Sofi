@@ -8,17 +8,17 @@
   <%- include ('./partials/header.ejs') %> 
 
 
-  <h2>CARRITO DE COMPRA</h2>
+  <h1 class="titulo">CARRITO DE COMPRA</h1>
   <section class="contenedor">
     <div class="contenedor-items">
       <div class="item-1">
         <div class="item-contenedor">
           <div class="img-container" href="/views/products/">
-            <img src="/img/tote-bag.jpg" alt="" class="img-item">
+            <img src="\img\productos\totebag.png" alt="" class="img-item">
           </div>
           <div class="texto-contenedor" href="/views/products/producto">
-            <h3>TOTEBAG-SEAGULL</h3>
-            <h4>Resumen del pedido</h4>
+            <h2 class="nombreProd">TOTEBAG-SEAGULL</h2>
+            <h3>Resumen del pedido</h3>
             <div class="texto-bajo">
               <div class="texto-izquierda">
                 <span>Productos (1 item)</span>
@@ -41,11 +41,11 @@
       <div class="item-1">
         <div class="item-contenedor">
           <div class="img-container">
-            <img src="/img/funda-celular.jpg" alt="" class="img-item-2">
+            <img src="\img\productos\funda.png" alt="" class="img-item">
           </div>
           <div class="texto-contenedor">
-            <h3>FUNDA SEAGULL</h3>
-            <h4>Resumen del pedido</h4>
+            <h2 class="nombreProd">FUNDA SEAGULL</h2>
+            <h3>Resumen del pedido</h3>
             <div class="texto-bajo">
               <div class="texto-izquierda">
                 <span>Productos (1 item)</span>
@@ -58,20 +58,19 @@
                 <span>Gratis</span>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
   <footer>
     <form action="/productos/carrito?_method=DELETE" method="post">
-      <input type="submit" value="Borrar Productos" class="Boton_borrar">
+      <input type="submit" class="Boton_borrar" value="ELIMINAR PRODUCTOS" >
     </form>
   </footer>
     <div class="precio-total">
       <p>TOTAL</p>
       <p>$2.200 ARS</p>
     </div>
-    
+    <div class="boton text-center"> 
+      <a class="btn  btn-color" href=""> CONFIRMAR COMPRA</a>
+  </div>
 </body>
 </html>
