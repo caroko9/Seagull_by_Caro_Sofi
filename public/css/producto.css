@@ -1,44 +1,59 @@
-h1{
-    font-family: 'Klee One', cursive;
-    font-weight: normal;
-    font-size: 50;
-    color: #137DB0;
-  }
-  
-  h2{
-    font-family: 'Klee One', cursive;
-    font-weight: normal;
-    font-size: 50;
-    color: #165A7A;
-  }
-  
-  .navbar-light {
-    background-color: #666666;
-  }
-  
-  #Miboton{
-    background-color: #1A545C;
-    font-family: 'Klee One', cursive
-  }
+.titulo{
+  font-family: 'Klee One';
+  font-size: 24px;
+  color: #137DB0;
+  text-align: center;
+  font-style: bold;
+    }
 
-  #mediospago{
-    font-family: 'Roboto Mono', monospace;
-  }
+h2 {
+  font-family: 'Klee One', cursive;
+  font-weight: normal;
+  font-size: 50px;
+  color: #165A7A;
+}
 
- .parrafo-1{
+.navbar-light {
+  background-color: #666666;
+}
+
+#Miboton {
+  background-color: #1A545C;
+  font-family: 'Klee One', cursive;
+}
+
+#mediospago {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.parrafo-1 {
   font-family: 'Klee One', cursive;
   color: #165A7A;
- }
+}
 
- .parrafo-2{
+.parrafo-2 {
   font-family: 'Roboto Mono', monospace;
   color: #696A6C;
   font-size: 16px;
- }
+}
 
- .row{
+.row {
   font-family: 'Roboto Mono', monospace;
   color: #696A6C;
   font-size: 16px;
- }
- 
+}
+
+.btn {
+  color: white !important;
+  font-family: "Klee One";
+  font-size: 15px;
+}
+
+.btn-color {
+  background-color: #1A545C !important;
+  color: #FFFFFF;
+}
+
+.btn-color:hover {
+  color: #a2cdd3 !important;
+}

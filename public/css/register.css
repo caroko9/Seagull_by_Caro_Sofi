@@ -89,6 +89,7 @@ p{
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  font-size: 12px;
   
 }
 
@@ -105,7 +106,7 @@ p{
 
 .btn {
   color: white;
-  font-family: "Klee One";
+  font-family: "Klee One" !important;
 }
 
 .btn-color {

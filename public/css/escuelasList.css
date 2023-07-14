@@ -1,40 +1,8 @@
-
 * {
-  font-family: 'Roboto Mono', monospace !important;
-
-}
-.ola {
-  background-color: white;
-  opacity: 0.9;
-  border: 8px solid #92C1D0;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 10px;
-  width: 30%;;
-  height:35vw; 
+  font-family: 'Roboto Mono', monospace;
 }
 
-
-main{
-  margin-left: 3%;
- 
-}
-
-main p {
-color:#92C1D0;
-margin-top: 1%;
-font-size: 40px;
-font-weight: 0;
-
-}
-
-main h4{
-  color: white;
-}
-
-
-body{
-  
+body {
   background-image: url("../img/fondovistaec.avif");
   background-repeat: no-repeat;
   background-size: cover;
@@ -43,17 +11,68 @@ body{
   overflow: hidden;
   overflow-y: scroll;
   margin: 0;
-
 }
-.deportes{
+
+.escuelas{
+  font-family: "Klee One";
+}
+.ola {
+  background-color: white;
+  opacity: 0.9;
+  border: 8px solid #92C1D0;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.icono {
+  width: 24%;
+  height: auto;
+  opacity: 0.5;
+}
+
+main {
+  margin-left: 3%;
+}
+
+main p {
+  color: #92C1D0;
+  margin-top: 1%;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+main h4 {
+  color: white;
+}
+
+.deportes {
   font-size: 20px;
 }
+
 .linkss a {
-margin-left: 4vw;
-text-decoration: none;
-color:#92C1D0
+  margin-left: 4vw;
+  text-decoration: none;
+  color: #92C1D0;
+  font-size: 12px;
 }
 
-.buscador{
+.buscador {
   margin-bottom: 2vw;
+  font-family: "Klee One";
+  color: white;
+  font-size: 15px;
+  background-color: #1A545C;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
 }
+
+.buscador:hover {
+  background-color: #a2cdd3;
+  color: white;
+}
+

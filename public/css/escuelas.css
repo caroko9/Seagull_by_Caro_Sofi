@@ -12,12 +12,12 @@ body{
   overflow: hidden;
   overflow-y: scroll;
   margin: 0;
-
 }
 
 .espaciador{
   margin-bottom: 20px;
 }
+
 .input-1 {
   display: flex;
   flex-direction: column;
@@ -52,8 +52,9 @@ body{
   display: flex;
   justify-content: center;
 }
-/* Escuelas.css */
 
+
+/* Escuelas.css */
 .input-1 textarea {
   background-color: transparent; /* Establece el fondo transparente */
   color: white; /* Cambia el color del texto a blanco */
@@ -68,10 +69,11 @@ body{
   width: 50%;
   margin-left: 25%;
 }
+
+
+
+
 /* Escuelas.css */
-
-
-
 input[type="text"],
 input[type="email"]{
 color: white;
@@ -92,7 +94,36 @@ input[type="file"]
 
 
 
+/* EXTRAS CSS */
+.contenedor-celeste {
+  background-color: #4ab9df57;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
 
+.titulo {
+  font-family: 'Klee One' !important;
+  font-size: 30px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+}
+
+.boton-submit {
+  color: white;
+  font-family: "Klee One";
+  font-size: 15px;
+  background-color: #1A545C !important;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  }
+
+.boton-submit:hover {
+  color: #a2cdd3 !important;
+}
 
 
 
