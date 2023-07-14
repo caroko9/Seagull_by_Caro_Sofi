@@ -3,6 +3,7 @@
   font-family: 'Roboto Mono', monospace !important;
 }
 
+
 body {
   background-image: url("../img/register.jpg");
   background-repeat: no-repeat;
@@ -28,11 +29,11 @@ body::after {
 
 header {
   width: 100%;
-  height: 7vh;
+  height: 3vh;
   background-image: url("../img/PlayaCaribe.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: top;
   opacity: 0.4;
   background-color: #ccc;
 }
@@ -42,23 +43,31 @@ header {
   border-radius: 10px;
   margin: 10px;
 }
+
 h1{
 display: flex;
 justify-content: center;
-font-family: 'Roboto Mono', monospace;
+font-family: "Klee One" !important;
   font-weight: 100; 
   font-size: 24px;
-  color: #5F6368;
+  color: #137DB0;
 }
 
+p{
+  font-family: "Klee One";
+  font-size: 12px;
+  color:#1A545C;
+  text-align: center;
+}
 .div_form {
-  background-color: rgba(255, 255, 255, 0.5); /* Fondo semi-transparente */
+  background-color: white;
   margin-top: 5%;
-  margin-left: 37%;
-  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px; 
   width: 400px;
   border-radius: 10px;
-  border: 24px solid rgba(31, 99, 121, 0.5); /* Borde semi-transparente */
+  border: 24px solid rgba(31, 99, 121, 0.5); 
 }
 
 .form {
@@ -66,6 +75,7 @@ font-family: 'Roboto Mono', monospace;
   flex-direction: column;
   position: relative;
   z-index: 1;
+  align-items: center;
 }
 
 .icono_form {
@@ -74,25 +84,39 @@ font-family: 'Roboto Mono', monospace;
   margin-left: 35%;
 }
 
+.completar{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  
+}
 
 .nombre {
-  margin-left: 4vw;
+  margin-left: 2vw;
   padding: 12px;
   width: 250px;
   margin-bottom: 20px;
   margin-top: 6px;
   border-radius: 3px;
   background-color: transparent;
+  border: #a2cdd3 solid 2px ;
 }
-.Boton_crear{
-  margin-left: 6vw;
-  padding: 8px;
-  width: 200px;
-  margin-bottom: 20px;
-  margin-top: 6px;
-  background-color: transparent;
-  font-family: 'Roboto Mono', monospace;
+
+.btn {
+  color: white;
+  font-family: "Klee One";
 }
+
+.btn-color {
+  background-color: #1A545C !important;
+  color: #FFFFFF;
+}
+
+.btn-color:hover {
+  color: #a2cdd3 !important;
+}
+
 
 .fecha {
   margin-left: 3vw;
@@ -112,7 +136,7 @@ font-family: 'Roboto Mono', monospace;
     position: relative;
     overflow: hidden;
     margin: 0;
-    height: 100vh; /* Ajustar altura al 100% de la ventana */
+    height: 100vh; 
   }
   
   body::after {

@@ -5,31 +5,33 @@
 
     <link href="/css/login.css" rel="stylesheet">
     
+     <%- include ('partials/header.ejs') %>
 <body>
-    <%- include ('partials/header.ejs') %>
         
         <main>
 
-            <section class="contenedor_form">
-                <div class="div_form">
+            <section class="contenedor_form ">
+                <div class="div_form borde-celeste">
                     <form action="/login" method="POST" class="formulario">
-                        <img src="/img/icono-manito.svg" class="icono_form">
+                        <img class="icono" src="/img/iconografia/surf.png">
 
-                        <h1 class="iniciosesion">INICIAR SESION</h1>
-
-                        <input type="email" placeholder="E-mail" class="input">
-                        <input type="password" placeholder="Contraseña" class="input">
+                        <h1 class="iniciosesion">INICIO DE SESION</h1>
+                        <P> ¡Bienvenido otra vez surfer, te extrañamos!</P>
+                         <div class="completar">
+                            
+                        <input type="email" placeholder="  e-mail" class="input">
+                        <input type="password" placeholder="  contraseña" class="input">
+                    </div>
 
                         <a class="TextoOlvido">¡Ups! No recuerdo mi contraseña. </a>
                         <br>
-                        <a href="/users/register" class="TextoCreaCuenta">Crea tu cuenta</a>
+                        <a href="/users/register" class="TextoCreaCuenta">CREA TU CUENTA</a>
                      
                         <br>
                         <div>
 
-                        <div class="text-center">
-                           <input type="submit" value="INICIAR SESION" formaction="" >
-                            
+                        <div class="boton text-center"> 
+                            <a class="btn  btn-color" href="">INICIAR SESION</a>
                         </div>
                     </form>
                 </div>
