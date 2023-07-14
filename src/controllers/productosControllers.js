@@ -14,7 +14,7 @@ let productosController =
   },
  
   detalleProducto: (req,res) => {
-    res.render("producto");
+    res.render("detalleProducto");
   },
 }
 

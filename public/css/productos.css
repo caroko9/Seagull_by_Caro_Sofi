@@ -92,7 +92,10 @@ body {
   .producto .detalle {
     text-align: center;
   }
-  
+  .producto:hover {
+    transform: scale(1.05);
+  }
+
   .detalle {
     font-family: 'Klee One';
     margin: 0;
