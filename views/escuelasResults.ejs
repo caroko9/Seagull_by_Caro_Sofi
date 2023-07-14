@@ -17,15 +17,15 @@
     <main>   
         <h3>Escuelas</h3>
         <ul>
-        <% for (let i = 0; i < results.length; i++) { %>
+        <% for (let i = 0; i < escuelasBuscadas.length; i++) { %>
             <li>
-                <a href="escuelasList/details<%= results[i].id %>"><%= results[i].name %></a>
+                <a href=""><%= escuelasBuscadas[i].nombre %></a>
             </li>
         <% } %>
         </ul>
 
         <h4>Search</h4>
-        <form action="/search" method="GET">
+        <form action="/escuelas/escuelasResults" method="GET">
             <input type="text" name="buscar">
             <input type="submit" value="buscar">
         </form>

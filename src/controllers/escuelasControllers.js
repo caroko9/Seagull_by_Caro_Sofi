@@ -47,16 +47,23 @@ const controller = {
 
 buscarEscuela: (req, res) => {
   let escuelaEncontrada = req.query.buscar;
-  let escuelaBuscada = [];
+  let escuelasBuscadasArray = [];
+
+console.log("Hola" , escuelas);
+console.log("Hola dos" , escuelaEncontrada);
 
   for (let i = 0; i < escuelas.length; i++) {
-    if (escuelas[i].nombre.includes(escuelaEncontrada))  {
-      escuelaBuscada.push(escuelas[i]);
+    if ( (escuelas[i].nombre.includes(escuelaEncontrada.toUpperCase())) 
+    ||
+    (escuelas[i].nombre.includes(escuelaEncontrada.toLowerCase()))
+    
+    )  {
+      escuelasBuscadasArray.push(escuelas[i]);
     }
   }
 
-  console.log(escuelaBuscada);
-  res.render("escuelasResults", { results: escuelaBuscada });
+  console.log(escuelasBuscadasArray);
+  res.render("escuelasResults", { escuelasBuscadas: escuelasBuscadasArray });
 },
 
 };

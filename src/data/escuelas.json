@@ -12,5 +12,26 @@
   "descripcion": "somos el hostel mas amistoso del pueblo",
   "imagen": "images.jpg",
   "pais": "Costa Rica"
+ },
+ {
+  "nombre": "Cyclone",
+  "email": "cyclonebz@cyclone.com",
+  "descripcion": "Escuela de surf para adultos y niños.",
+  "imagen": "Cyclone.jpg",
+  "pais": "Brasil"
+ },
+ {
+  "nombre": "Piratas de Geribá",
+  "email": "piratasgeri@gmail.com",
+  "descripcion": "Escuela de surf y skate para niños. Aulong de longboards.",
+  "imagen": "piratasDeGeri.jpg",
+  "pais": "Brasil"
+ },
+ {
+  "nombre": "Arreyes Academia",
+  "email": "arreyesacademia@gmail.com",
+  "descripcion": "Clases de surf para niños y adultos. Método Arreyes.",
+  "imagen": "arreyes.jpg",
+  "pais": "Brasil"
  }
 ]
