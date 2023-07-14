@@ -12,7 +12,7 @@ router.get('/escuelasList', escuelasController.list); //muestra el listado de es
 
 router.get('/escuelasResults', escuelasController.buscarEscuela); //muestra el resultado de las escuelas buscadas por el usuario
 
-//router.get('/escuelasList/id', escuelasController.detalleEscuela); // muestra el detalle por escuela
+router.get('/escuela-detalle/:id', escuelasController.idEscuela); // muestra el detalle por escuela
 
 
 

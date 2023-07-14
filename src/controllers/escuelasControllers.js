@@ -71,6 +71,15 @@ buscarEscuela: (req, res) => {
   res.render("escuelasResults", { escuelasBuscadas: escuelasBuscadasArray });
 },
 
+idEscuela : (req, res) => {
+  let escuelaId = req.params.id;
+  
+  let escuela = escuelas.find((escuela) => escuela.id === escuelaId);
+
+  res.render('escuela-detalle', { escuela });
+ //res.send(detalleEscuela)
+},
+
 };
 
 module.exports = controller;
