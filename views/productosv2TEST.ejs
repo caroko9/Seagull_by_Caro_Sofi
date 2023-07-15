@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="/css/productos.css">
+<%- include ('partials/head.ejs') %>
+<body>
+
+    <%- include ('partials/header.ejs') %>
+  <main>
+    <div class="buscador mt-5 mx-auto text-center">
+        <h1 class="titulo">NUESTROS PRODUCTOS</h1>
+        <div class="search container-sm">
+          <nav class="navbar navbar-#B0DEE4 bg-#B0DEE4">
+            <form class="form-inlin w-100">
+              <input class="form-control mx-auto" type="search" placeholder= "¿Qué producto estás buscando?" aria-label="Search">
+      </div>
+      </div>
+   
+    <div class="contenedor">
+        <form action="/productos/productos" method="GET">   
+      <article class="producto">
+       
+        <ul>
+        <div class="linea"></div>
+        <div class="detalle">
+
+          <% for (let i = 0; i < listadoProductos.length; i++) { %>
+    
+          <li>    
+        <div class="imagen"><%= listadoProductos[i].imagen %></a>   
+        <p class="nombre"><%= listadoProductos[i].nombre %> </p>
+        <p class="precio"><%= listadoProductos[i].precio %></p>
+        <p class="descuento"><%= listadoProductos[i].descuento %></p>
+    </li>
+    <% } %> 
+</ul> 
+     </div>
+          </div>
+      </article>
+
+      <!---
+      <article class="producto">
+        <div class="imagen">
+       <a href="\img\productos\buzo.png>"><img src= "\img\productos\buzo.png" class="product1"></a>
+       <div class="linea"></div>
+       <div class="detalle">
+       <p class="nombre">BUZO SEAGULL</p>
+       <p class="precio"> $7.000</p>
+       <p class="descuento">5% off</p>
+       </div>
+         </div>
+     </article>
+
+     <article class="producto">
+        <div class="imagen">
+       <a href="\img\productos\funda.png"><img src="\img\productos\funda.png" class="product1"></a>
+       
+       <div class="linea"></div>
+       <div class="detalle">
+       <p class="nombre">FUNDA PARA EL CELULAR</p>
+       <p class="precio"> $1.200</p>
+    
+       </div>
+         </div>
+     </article>
+
+     <article class="producto">
+        <div class="imagen">
+       <a href="\img\productos\perfume.png"><img src="\img\productos\perfume.png" class="product1"></a>
+       <div class="linea"></div>
+       <div class="detalle">
+       <p class="nombre">PERFUME SEAGULL</p>
+       <p class="precio"> $6.800</p>
+       </div>
+         </div>
+     </article>
+
+     <article class="producto">
+        <div class="imagen">
+       <a href="\img\productos\protectorsolar.png"><img src="\img\productos\protectorsolar.png" class="product1"></a>
+       <div class="linea"></div>
+       <div class="detalle">
+       <p class="nombre">PROTECTOR SOLAR</p>
+       <p class="precio"> $3.500</p>
+       <p class="descuento">3% off</p>
+       </div>
+         </div>
+     </article>
+
+     <article class="producto">
+        <div class="imagen">
+       <a href="\img\productos\remerabasica.png"><img src="\img\productos\remerabasica.png" class="product1"></a>
+       <div class="linea"></div>
+       <div class="detalle">
+       <p class="nombre">REMERA BÁSICA</p>
+       <p class="precio"> $4.700</p>
+       <p class="descuento">5% off</p>
+       </div>
+         </div>
+     </article>
+
+     <article class="producto">
+        <div class="imagen">
+       <a href="\img\productos\tazaceramica.png"><img src="\img\productos\tazaceramica.png" class="product1"></a>
+       <div class="linea"></div>
+       <div class="detalle">
+        
+       </div>
+         </div>
+
+      
+     </article>
+
+     <article class="producto">
+        <div class="imagen">
+       <a href="\img\productos\tazatermica.png"><img src="\img\productos\tazatermica.png" class="product1"></a>
+       <div class="linea"></div>
+       <div class="detalle">
+       <p class="nombre">TAZA TÉRMICA</p>
+       <p class="precio"> $.500</p>
+       <p class="descuento">10% off</p>
+       </div>
+         </div>
+     </article>
+
+     <article class="producto">
+        <div class="imagen">
+       <a href="\img\productos\vasocafe.png"><img src="\img\productos\vasocafe.png" class="product1"></a>
+       <div class="linea"></div>
+       <div class="detalle">
+       <p class="nombre">VASO PARA CAFÉ</p>
+       <p class="precio"> $1.500</p>
+       <p class="descuento">15% off</p>
+       </div>
+         </div>
+     </article>
+
+     <article class="producto">
+        <div class="imagen">
+       <a href="/productos/detalleProducto"><img src="\img\productos\totebag.png" class="product1"></a>
+       <div class="linea"></div>
+       <div class="detalle">
+       <p class="nombre">TOTE BAG </p>
+       <p class="precio"> $1.200</p>
+       </div>
+         </div>
+     </article>-->
+    
+
+</div>
+
+
+  <%- include ('partials/footer.ejs') %>
+  </main>
+</body>
+</html>
