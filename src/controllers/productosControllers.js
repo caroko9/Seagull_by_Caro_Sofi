@@ -49,8 +49,9 @@ let productosController =
     
     let producto = productos.find((producto) => producto.id === productoId);
   
-    res.render('producto-detalle', { producto});
+    res.render('producto-detalle', {producto});
    //res.send(productoId)
+   console.log(producto)
   
   },
   comprar: (req,res) => {
@@ -71,17 +72,22 @@ let productosController =
   },
   
 
-  listadoProducto: (req,res) => {
-  //res.render("productosv2TEST", { listadoProductos: productos}); //TEST para listado de productos por id
- res.render("productos", { listadoProductos: productos}); 
-  },
-    
- 
-  detalleProducto: (req, res) => {
-    res.render("producto-detalle");
+  listadoProducto: (req, res) => {
+    res.render("productos", { listadoProductos: productos });
   },
   
-
+    
+  detalleProducto: (req, res) => {
+    const productoId = req.params.id;
+    const producto = productos.find((producto) => producto.id === productoId);
+  
+    if (producto) {
+      res.render("producto-detalle", { producto });
+    } else {
+      res.send("Producto no encontrado");
+    }
+  },
+  
   sumaProducto: (req, res) => {
     res.render("productos-create");
   },
