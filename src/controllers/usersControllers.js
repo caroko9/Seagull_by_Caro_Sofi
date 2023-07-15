@@ -57,13 +57,6 @@ const controladorUsers =
     let escuelaEncontrada = req.query.buscar;
     res.send (escuelaEncontrada);
 
-   let escuelas = [
-      { id: 1, name: 'Cyclone' },
-      { id: 2, name: 'Piratas de Geriba' },
-      { id: 3, name: 'Bai Bai' },
-      { id: 4, name: 'AFT Amantes' }
-    ];
-
      let escuelaBuscada = [];
 
     for (let i = 0; i < escuelas.lenght; i++) {

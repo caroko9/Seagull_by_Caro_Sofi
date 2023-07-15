@@ -12,6 +12,8 @@ router.get('/login', controladorUsers.iniciarSesion);
 router.get('/list', controladorUsers.list);
 
 router.get('/search', controladorUsers.buscarEscuela);
+
+
  
  
 

@@ -37,29 +37,29 @@
  {
   "id": "0006",
   "nombre": "TAZA DE CERÁMICA",
-"imagen": "images.jpg",
-"precio": "2.500",
-"descuento": "10% off"
-},
-{
-"id": "0007",
-"nombre": "TAZA TÉRMICA",
-"imagen": "images.jpg",
-"precio": "500",
-"descuento": "10% off"
-},
-{
-"id": "0008",
-"nombre": "VASO TÉRMICO PARA CAFÉ",
-"imagen": "images.jpg",
-"precio": "1.500",
-"descuento": "15% off"
-},
-{
-"id": "0009",
-"nombre": "TOTE BAG",
-"imagen": "images.jpg",
-"precio": "1.200",
-"descuento": ""
-}
+  "imagen": "images.jpg",
+  "precio": "2.500",
+  "descuento": "10% off"
+ },
+ {
+  "id": "0007",
+  "nombre": "TAZA TÉRMICA",
+  "imagen": "images.jpg",
+  "precio": "500",
+  "descuento": "10% off"
+ },
+ {
+  "id": "0008",
+  "nombre": "VASO TÉRMICO PARA CAFÉ",
+  "imagen": "images.jpg",
+  "precio": "1.500",
+  "descuento": "15% off"
+ },
+ {
+  "id": "0009",
+  "nombre": "TOTE BAG",
+  "imagen": "images.jpg",
+  "precio": "1.200",
+  "descuento": ""
+ }
 ]

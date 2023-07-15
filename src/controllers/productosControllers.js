@@ -23,14 +23,14 @@ let productosController =
   creaProducto: (req, res) => {
 
 		let productoNuevo = req.body;
-	
-		let objNuevoProducto = {
-                        id: generarId(),
-                        nombre: objNuevoProducto.nombre,
-			                  descripcion: escuelaNueva.descripcion,
-			                  precio: escuelaNueva.precio,
-		       };
 
+    let objNuevoProducto = {
+      id: generarId(),
+      nombre: productoNuevo.nombre,
+      descripcion: productoNuevo.descripcion,
+      precio: productoNuevo.precio,
+
+    };
           
 	    productos.push(objNuevoProducto);
       fs.writeFileSync(productosFilePath, JSON.stringify(productos,null,' '));
@@ -58,8 +58,18 @@ let productosController =
   },
 
   deleteCarrito: (req, res) => {
-  res.send ("soy delete!")
+    let idProducto = req.params.idProducto;
+
+    let nuevoArregloProductos = productos.filter(function(e){
+
+    return e.id != idProducto;
+
+  });
+          
+    fs.writeFileSync(productosFilePath, JSON.stringify(nuevoArregloProductos,null,' '));	
+    res.redirect('/');
   },
+  
 
   listadoProducto: (req,res) => {
   //res.render("productosv2TEST", { listadoProductos: productos}); //TEST para listado de productos por id
@@ -67,9 +77,10 @@ let productosController =
   },
     
  
-  detalleProducto: (req,res) => {
-    res.render("productos-detalle");
+  detalleProducto: (req, res) => {
+    res.render("producto-detalle");
   },
+  
 
   sumaProducto: (req, res) => {
     res.render("productos-create");
