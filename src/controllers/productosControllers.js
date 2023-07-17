@@ -89,12 +89,14 @@ let productosController =
   },
   
   //Al seleccionar el producto, muestra el detalle del producto a traves de la vista idProducto.ejs
-  idProducto: (req, res) => {
+  idProducto : (req, res) => {
     let productoId = req.params.id;
+    
+    let productoSeleccionado = productos.find((productoSeleccionado) => productoSeleccionado.id === productoId);
   
-    let productoSeleccionado = productos.filter(producto => producto.id === productoId);
+   res.render('idProducto', {productoSeleccionado});
   
-    res.render('idProducto', { productoSeleccionado: productoSeleccionado });
+     
   },
   
   
