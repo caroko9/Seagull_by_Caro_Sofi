@@ -16,28 +16,19 @@
       </div>
    
     <div class="contenedor">
-        <form action="/productos/productos" method="GET">   
+        
       <article class="producto">
-       
-        <ul>
+         <div class="imagen">
+        <a href="\img\productos\botella.png"><img src="\img\productos\botella.png" class="product1"></a>
         <div class="linea"></div>
         <div class="detalle">
-
-          <% for (let i = 0; i < listadoProductos.length; i++) { %>
-    
-          <li>    
-        <div class="imagen"><%= listadoProductos[i].imagen %></a>   
-        <p class="nombre"><%= listadoProductos[i].nombre %> </p>
-        <p class="precio"><%= listadoProductos[i].precio %></p>
-        <p class="descuento"><%= listadoProductos[i].descuento %></p>
-    </li>
-    <% } %> 
-</ul> 
-     </div>
+        <p class="nombre">BOTELLA TÉRMICA</p>
+        <p class="precio"> $8.500</p>
+        <p class="descuento">10% off</p>
+        </div>
           </div>
       </article>
 
-      <!---
       <article class="producto">
         <div class="imagen">
        <a href="\img\productos\buzo.png>"><img src= "\img\productos\buzo.png" class="product1"></a>
@@ -103,11 +94,11 @@
        <a href="\img\productos\tazaceramica.png"><img src="\img\productos\tazaceramica.png" class="product1"></a>
        <div class="linea"></div>
        <div class="detalle">
-        
+       <p class="nombre">TAZA DE CERÁMICA</p>
+       <p class="precio"> $2.500</p>
+       <p class="descuento">10% off</p>
        </div>
          </div>
-
-      
      </article>
 
      <article class="producto">
@@ -143,7 +134,7 @@
        <p class="precio"> $1.200</p>
        </div>
          </div>
-     </article>-->
+     </article>
     
 
 </div>

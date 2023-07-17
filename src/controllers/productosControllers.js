@@ -29,7 +29,7 @@ let productosController =
       nombre: productoNuevo.nombre,
       descripcion: productoNuevo.descripcion,
       precio: productoNuevo.precio,
-
+      imagen: img/productos/nombre_imagen.png,
     };
           
 	    productos.push(objNuevoProducto);
@@ -49,7 +49,7 @@ let productosController =
     
     let producto = productos.find((producto) => producto.id === productoId);
   
-    res.render('producto-detalle', {producto});
+    res.render('idProducto', {producto});
    //res.send(productoId)
    console.log(producto)
   
@@ -77,12 +77,12 @@ let productosController =
   },
   
     
-  detalleProducto: (req, res) => {
+  detalle_producto: (req, res) => {
     const productoId = req.params.id;
     const producto = productos.find((producto) => producto.id === productoId);
   
     if (producto) {
-      res.render("producto-detalle", { producto });
+      res.render("idProducto", { producto });
     } else {
       res.send("Producto no encontrado");
     }

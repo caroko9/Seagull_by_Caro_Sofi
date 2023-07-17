@@ -2,63 +2,63 @@
  {
   "id": "0001",
   "nombre": "BOTELLA TÉRMICA",
-  "imagen": "images.jpg",
+  "imagen": "botella.png",
   "precio": "8.500",
   "descuento": "10 off"
  },
  {
   "id": "0002",
   "nombre": "BUZO SEAGULL",
-  "imagen": "images.jpg",
+  "imagen": "buzo.png",
   "precio": "7.000",
   "descuento": "5 off"
  },
  {
   "id": "0003",
   "nombre": "FUNDA PARA EL CELULAR",
-  "imagen": "images.jpg",
+  "imagen": "funda.png",
   "precio": "1.200",
   "descuento": ""
  },
  {
   "id": "0004",
   "nombre": "PROTECTOR SOLAR",
-  "imagen": "images.jpg",
+  "imagen": "protectorsolar.png",
   "precio": "3.500",
   "descuento": ""
  },
  {
   "id": "0005",
   "nombre": "REMERA BÁSICA",
-  "imagen": "images.jpg",
+  "imagen": "remerabasica.png",
   "precio": "4.700",
   "descuento": "5% off"
  },
  {
   "id": "0006",
   "nombre": "TAZA DE CERÁMICA",
-  "imagen": "images.jpg",
+  "imagen": "tazaceramica.png",
   "precio": "2.500",
   "descuento": "10% off"
  },
  {
   "id": "0007",
   "nombre": "TAZA TÉRMICA",
-  "imagen": "images.jpg",
+  "imagen": "tazatermica.png",
   "precio": "500",
   "descuento": "10% off"
  },
  {
   "id": "0008",
   "nombre": "VASO TÉRMICO PARA CAFÉ",
-  "imagen": "images.jpg",
+  "imagen": "vasocafe.png",
   "precio": "1.500",
   "descuento": "15% off"
  },
  {
   "id": "0009",
   "nombre": "TOTE BAG",
-  "imagen": "images.jpg",
+  "imagen": "totebag.png",
   "precio": "1.200",
   "descuento": ""
  }

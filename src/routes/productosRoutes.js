@@ -14,6 +14,6 @@ router.delete('/carrito', productosController.deleteCarrito)
 
 router.get('/productos', productosController.listadoProducto);
 
-router.get('/productos-detalle/:id', productosController.detalleProducto);
+router.get('/idProducto/:id', productosController.idProducto);
 
 module.exports = router;

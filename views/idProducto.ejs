@@ -12,22 +12,23 @@
   <%- include ('./partials/header.ejs') %>
   
   <div class="container text-center">
-    <h1 class="titulo">NUESTROS PRODUCTOS</h1>
+    <h1 class="titulo">NUESTROS PRODUCTO</h1>
   </div>
       
   <div class="row g-2">
     <div class="col-6">
       <div class="p-3 no-border text-left">
-        <img src="/img/tote-bag.jpg" alt="Producto toteBag" width="100%">
+      <img src="/productos/producto-detalle//<%= listadoProductos[i].imagen%>" alt="Producto toteBag" width="100%">
       </div>
     </div>
     <div class="col-6">
       <div class="p-3 no-border">
-        <h2>TOTEBAG - SEAGULL</h2>
+        <h2><%= producto[i].nombre %></h2>
         <hr>
         <dl class="row">
-          <dt class="col-sm-3">$1.200</dt>
-          <dd class="col-sm-9 text-end">3 CUOTAS SIN INTERÉS DE $400</dd>
+          <dt class="col-sm-3"><%= producto[i].precio %></dt>
+          <dd class="col-sm-9 text-end">3 CUOTAS SIN INTERÉS</dd>
+          <dd class="col-sm-9 text-end"><%= producto[i].descuento %></dd>
         </dl>
         <hr>
         <div class="iconos1" id="mediospago">
@@ -38,7 +39,7 @@
           <a class="btn btn-color" id="Miboton" href="/productos/carrito">AGREGAR AL CARRITO</a>
         </div>
         <hr>
-        <div class="detalle del Producto">
+       <!-- <div class="detalle del Producto">
           <figure class="text-center">
             <blockquote class="blockquote">
               <p class="parrafo-1">¿POR QUÉ USAR UNA TOTE-BAG?</p>
@@ -47,7 +48,7 @@
               <p class="parrafo-1">DIMENSIONES</p>
               <p class="parrafo-2">30x40x10</p>
             </blockquote>
-          </figure>
+          </figure>-->
         </div>
       </div>
     </div>
