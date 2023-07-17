@@ -6,6 +6,9 @@ const productosFilePath = path.join(__dirname, '../../src/data/productos.json');
 //JSON CON LA LISTA DE PRODUCTOS
 let productos = [];
 
+var carrito = [];
+
+
 if (fs.existsSync(productosFilePath)) {
   const fileContent = fs.readFileSync(productosFilePath, 'utf-8');
 
@@ -43,24 +46,41 @@ let productosController =
       return uuidv4();
     }
 	},
+
+  agregarAlCarrito: (req, res) => {
+    const productoId = req.query.productoId;
   
+    // Encuentra el producto seleccionado
+    const productoSeleccionado = productos.find((producto) => producto.id === productoId);
   
+    // Agrega el producto al carrito
+    carrito.push(productoSeleccionado);
   
-  comprar: (req,res) => {
-    res.render("carrito");
+    // Redirige al carrito
+    res.redirect('/carrito');
   },
+  
+  mostrarCarrito: (req, res) => {
+    res.render('carrito', { productoSeleccionado: carrito });
+  },
+  
+  
+  
+  
 
   deleteCarrito: (req, res) => {
-    let idProducto = req.params.idProducto;
-
-    let nuevoArregloProductos = productos.filter(function(e){
-
-    return e.id != idProducto;
-
-  });
-          
-    fs.writeFileSync(productosFilePath, JSON.stringify(nuevoArregloProductos,null,' '));	
-    res.redirect('/');
+    let productoId = req.params.productoId;
+  
+    // Filtra los productos, excluyendo el que se desea eliminar
+    let nuevoArregloProductos = productos.filter(function (producto) {
+      return producto.id !== productoId;
+    });
+  
+    // Actualiza el arreglo de productos en el archivo JSON
+    fs.writeFileSync(productosFilePath, JSON.stringify(nuevoArregloProductos, null, ' '));
+  
+    // Redirige a la vista del carrito actualizada
+    res.redirect('/productos/carrito');
   },
   
 
@@ -69,15 +89,16 @@ let productosController =
   },
   
   //Al seleccionar el producto, muestra el detalle del producto a traves de la vista idProducto.ejs
-  idProducto : (req, res) => {
+  idProducto: (req, res) => {
     let productoId = req.params.id;
-    
-    let productoSeleccionado = productos.find((productoSeleccionado) => productoSeleccionado.id === productoId);
   
-   res.render('idProducto', {productoSeleccionado});
+    let productoSeleccionado = productos.filter(producto => producto.id === productoId);
   
-     
+    res.render('idProducto', { productoSeleccionado: productoSeleccionado });
   },
+  
+  
+  
     
   
   sumaProducto: (req, res) => {

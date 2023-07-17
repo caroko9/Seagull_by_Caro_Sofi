@@ -11,52 +11,43 @@
   <%- include ('partials/head.ejs') %>
   <%- include ('./partials/header.ejs') %>
   
-  <% { %>
-    <div class="container text-center">
+  <div class="container text-center">
     <h1 class="titulo">DETALLE DEL PRODUCTO SELECCIONADO</h1>
+  </div>
+
+  <div class="row g-2">
+    <div class="col-6">
+      <div class="p-3 no-border text-center">
+        <img src="/img/productos/<%= productoSeleccionado.imagen %>" width="60%">
+      </div>
     </div>
-  
-    <div class="row g-2">
-      <div class="col-6">
-        <div class="p-3 no-border text-center"><img src="/img/productos/<%= productoSeleccionado.imagen %> %>" width="60%">
-        </div>
-      </div>
-    
-      <div class="col-6">
-        <div class="p-3 no-border">
-          <h3 class="nombreProd">
-            <%= productoSeleccionado.nombre %>
-          </h3>
-          <hr>
-          <dl class="row"></dl>
-          <h4>
-            <%= productoSeleccionado.precio %>
-          </h4>
-          <h4>
-            <%= productoSeleccionado.descuento %>
-          </h4>
-          </dl>
-          <hr>
-    
-          <div class="iconos1" id="mediospago">
-            <img src="/img/creditcard.svg" alt="icon creditcard">
-            <p>MEDIOS DE PAGO</p>
-            <img src="/img/shipping.svg" alt="icon shipping">
-            <p>MEDIOS DE ENVIO</p>
-          </div>
-    
-          <div class="boton de compra text-center">
-            <a class="btn btn-color" id="Miboton" href="/productos/carrito">AGREGAR AL CARRITO</a>
-          </div>
-    
-          <hr>
-        </div>
-        </div>
-      </div>
-    
-      <% } %>
 
-      
+    <div class="col-6">
+      <div class="p-3 no-border">
+        <h3 class="nombreProd">
+          <%= productoSeleccionado.nombre %>
+        </h3>
+        <hr>
+        <dl class="row">
+          <h4><%= productoSeleccionado.precio %></h4>
+          <h4><%= productoSeleccionado.descuento %></h4>
+        </dl>
+        <hr>
 
+        <div class="iconos1" id="mediospago">
+          <img src="/img/creditcard.svg" alt="icon creditcard">
+          <p>MEDIOS DE PAGO</p>
+          <img src="/img/shipping.svg" alt="icon shipping">
+          <p>MEDIOS DE ENVIO</p>
+        </div>
+
+        <div class="boton de compra text-center">
+          <a class="btn btn-color" id="Miboton" href="/productos/carrito?productoId=<%= productoSeleccionado.id %>">AGREGAR AL CARRITO</a>
+        </div>
+
+        <hr>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

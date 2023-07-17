@@ -10,67 +10,48 @@
 
   <h1 class="titulo">CARRITO DE COMPRA</h1>
   <section class="contenedor">
-    <div class="contenedor-items">
-      <div class="item-1">
-        <div class="item-contenedor">
-          <div class="img-container" href="/views/products/">
-            <img src="\img\productos\totebag.png" alt="" class="img-item">
-          </div>
-          <div class="texto-contenedor" href="/views/products/producto">
-            <h2 class="nombreProd">TOTEBAG-SEAGULL</h2>
-            <h3>Resumen del pedido</h3>
-            <div class="texto-bajo">
-              <div class="texto-izquierda">
-                <span>Productos (1 item)</span>
-                <span>Descuentos</span>
-                <span>Envio</span>
-              </div>
-              <div class="texto-derecha">
-                <span>$1200 ARS</span>
-                <span>0</span>
-                <span>Gratis</span>
+    <% productoSeleccionado.forEach(function (producto) { %>
+      <div class="contenedor-items">
+        <div class="item-1">
+          <div class="item-contenedor">
+            <div class="img-container">
+              <img src="<%= producto.imagen %>" alt="" class="img-item">
+            </div>
+            <div class="texto-contenedor">
+              <h2 class="nombreProd"><%= producto.nombre %></h2>
+              <h3>Resumen del pedido</h3>
+              <div class="texto-bajo">
+                <div class="texto-izquierda">
+                  <span>Productos (1 item)</span>
+                  <span>Descuentos</span>
+                  <span>Envio</span>
+                </div>
+                <div class="texto-derecha">
+                  <span><%= producto.precio %> ARS</span>
+                  <span>0</span>
+                  <span>Gratis</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="espaciador"></div>
+        <div class="contenedor-iconos">
+          <form action="/carrito/<%= producto.id %>?_method=DELETE" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" class="Boton_borrar" value="ELIMINAR PRODUCTO">
+          </form>
+        </div>
       </div>
-    </div>
-    <div class="espaciador">
-    </div>
-    <div class="contenedor-items">
-      <div class="item-1">
-        <div class="item-contenedor">
-          <div class="img-container">
-            <img src="\img\productos\funda.png" alt="" class="img-item">
-          </div>
-          <div class="texto-contenedor">
-            <h2 class="nombreProd">FUNDA SEAGULL</h2>
-            <h3>Resumen del pedido</h3>
-            <div class="texto-bajo">
-              <div class="texto-izquierda">
-                <span>Productos (1 item)</span>
-                <span>Descuentos</span>
-                <span>Envio</span>
-              </div>
-              <div class="texto-derecha">
-                <span>$1200 ARS</span>
-                <span>0</span>
-                <span>Gratis</span>
-              </div>
-            </div>
-    </div>
+    <% }); %>
   </section>
-  <footer>
-    <form action="/productos/carrito?_method=DELETE" method="post">
-      <input type="submit" class="Boton_borrar" value="ELIMINAR PRODUCTOS" >
-    </form>
-  </footer>
+  
     <div class="precio-total">
       <p>TOTAL</p>
       <p>$2.200 ARS</p>
     </div>
     <div class="boton text-center"> 
-      <a class="btn  btn-color" href="">CONFIRMAR COMPRA</a>
+      <a class="btn btn-color" id="Miboton" href="/productos/carrito?productoId=<%= productoSeleccionado.id %>">AGREGAR AL CARRITO</a>
   </div>
 </body>
 </html>

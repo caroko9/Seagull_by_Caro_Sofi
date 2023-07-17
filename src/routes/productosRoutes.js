@@ -8,9 +8,11 @@ router.get('/productos-create', productosController.sumaProducto); //Te lleva al
 
 router.post('/productos-create', productosController.creaProducto);
 
-router.get('/carrito', productosController.comprar);
+router.get('/carrito', productosController.mostrarCarrito);
 
-router.delete('/carrito', productosController.deleteCarrito)
+router.get('/carrito', productosController.agregarAlCarrito);
+
+router.delete('/carrito/:productoId', productosController.deleteCarrito);
 
 router.get('/productos', productosController.listadoProducto);
 
