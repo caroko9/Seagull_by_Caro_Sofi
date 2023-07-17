@@ -29,7 +29,7 @@ let productosController =
       nombre: productoNuevo.nombre,
       descripcion: productoNuevo.descripcion,
       precio: productoNuevo.precio,
-      imagen: img/productos/nombre_imagen.png,
+      imagen: '/img/productos/${productoNuevo.imagen}',
     };
           
 	    productos.push(objNuevoProducto);
@@ -44,16 +44,8 @@ let productosController =
     }
 	},
   
-  idProducto : (req, res) => {
-    let productoId = req.params.id;
-    
-    let producto = productos.find((producto) => producto.id === productoId);
   
-    res.render('idProducto', {producto});
-   //res.send(productoId)
-   console.log(producto)
   
-  },
   comprar: (req,res) => {
     res.render("carrito");
   },
@@ -76,17 +68,17 @@ let productosController =
     res.render("productos", { listadoProductos: productos });
   },
   
+  //Al seleccionar el producto, muestra el detalle del producto a traves de la vista idProducto.ejs
+  idProducto : (req, res) => {
+    let productoId = req.params.id;
     
-  detalle_producto: (req, res) => {
-    const productoId = req.params.id;
-    const producto = productos.find((producto) => producto.id === productoId);
+    let productoSeleccionado = productos.find((productoSeleccionado) => productoSeleccionado.id === productoId);
   
-    if (producto) {
-      res.render("idProducto", { producto });
-    } else {
-      res.send("Producto no encontrado");
-    }
+   res.render('idProducto', {productoSeleccionado});
+  
+     
   },
+    
   
   sumaProducto: (req, res) => {
     res.render("productos-create");

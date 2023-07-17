@@ -14,6 +14,6 @@ router.delete('/carrito', productosController.deleteCarrito)
 
 router.get('/productos', productosController.listadoProducto);
 
-router.get('/idProducto/:id', productosController.idProducto);
+router.get('/idProducto/:id', productosController.idProducto); //Al seleccionar un producto en la vista anterior, muestra el detalle del mismo
 
 module.exports = router;

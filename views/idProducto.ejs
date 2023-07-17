@@ -11,48 +11,52 @@
   <%- include ('partials/head.ejs') %>
   <%- include ('./partials/header.ejs') %>
   
-  <div class="container text-center">
-    <h1 class="titulo">NUESTROS PRODUCTO</h1>
-  </div>
+  <% { %>
+    <div class="container text-center">
+    <h1 class="titulo">DETALLE DEL PRODUCTO SELECCIONADO</h1>
+    </div>
+  
+    <div class="row g-2">
+      <div class="col-6">
+        <div class="p-3 no-border text-center"><img src="/img/productos/<%= productoSeleccionado.imagen %> %>" width="60%">
+        </div>
+      </div>
+    
+      <div class="col-6">
+        <div class="p-3 no-border">
+          <h3 class="nombreProd">
+            <%= productoSeleccionado.nombre %>
+          </h3>
+          <hr>
+          <dl class="row"></dl>
+          <h4>
+            <%= productoSeleccionado.precio %>
+          </h4>
+          <h4>
+            <%= productoSeleccionado.descuento %>
+          </h4>
+          </dl>
+          <hr>
+    
+          <div class="iconos1" id="mediospago">
+            <img src="/img/creditcard.svg" alt="icon creditcard">
+            <p>MEDIOS DE PAGO</p>
+            <img src="/img/shipping.svg" alt="icon shipping">
+            <p>MEDIOS DE ENVIO</p>
+          </div>
+    
+          <div class="boton de compra text-center">
+            <a class="btn btn-color" id="Miboton" href="/productos/carrito">AGREGAR AL CARRITO</a>
+          </div>
+    
+          <hr>
+        </div>
+        </div>
+      </div>
+    
+      <% } %>
+
       
-  <div class="row g-2">
-    <div class="col-6">
-      <div class="p-3 no-border text-left">
-      <img src="/productos/producto-detalle//<%= listadoProductos[i].imagen%>" alt="Producto toteBag" width="100%">
-      </div>
-    </div>
-    <div class="col-6">
-      <div class="p-3 no-border">
-        <h2><%= producto[i].nombre %></h2>
-        <hr>
-        <dl class="row">
-          <dt class="col-sm-3"><%= producto[i].precio %></dt>
-          <dd class="col-sm-9 text-end">3 CUOTAS SIN INTERÉS</dd>
-          <dd class="col-sm-9 text-end"><%= producto[i].descuento %></dd>
-        </dl>
-        <hr>
-        <div class="iconos1" id="mediospago">
-          <img src="/img/creditcard.svg" alt="icon creditcard"> <p>MEDIOS DE PAGO</p>
-          <img src="/img/shipping.svg" alt="icon shipping"> <p>MEDIOS DE ENVIO</p>
-        </div>
-        <div class="boton de compra text-center"> 
-          <a class="btn btn-color" id="Miboton" href="/productos/carrito">AGREGAR AL CARRITO</a>
-        </div>
-        <hr>
-       <!-- <div class="detalle del Producto">
-          <figure class="text-center">
-            <blockquote class="blockquote">
-              <p class="parrafo-1">¿POR QUÉ USAR UNA TOTE-BAG?</p>
-              <p class="parrafo-2">Nuestras eco-bolsas de tela se pueden reusar, reutilizar infinidades de veces, eliminando así gran parte del plástico de uso diario en nuestras vidas.</p>
-              <p class="parrafo-2">Su pequeño tamaño y lo livianas que son facilitan su transporte sin olvidar que disponen de una agarradera para hacerlo aún más fácilmente. Pueden lavarse en lavadora y son capaces de resistir hasta 10 Kg de peso.</p>
-              <p class="parrafo-1">DIMENSIONES</p>
-              <p class="parrafo-2">30x40x10</p>
-            </blockquote>
-          </figure>-->
-        </div>
-      </div>
-    </div>
-  </div>
 
 </body>
 </html>
