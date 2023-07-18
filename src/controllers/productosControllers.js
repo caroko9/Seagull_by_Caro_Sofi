@@ -81,6 +81,10 @@ let productosController = {
     res.render('carrito', { carrito: carrito });
   },
 
+  editandoCarrito: (req, res) => {
+    res.send("fui por put")
+  }
+
 };
 
   

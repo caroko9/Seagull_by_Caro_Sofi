@@ -171,7 +171,24 @@ body {
 .Boton_borrar:hover {
   color: #1A545C;
 }
-
+.Boton_editar {
+  width: 30vh;
+  height: 6vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: rgba(62, 135, 145, 0.459);
+  border-radius: 7px;
+  font-family: "Roboto Mono";
+  font-size: 12px;
+  color: beige;
+  border: #FFFFFF;
+  margin-top: 2%;
+}
+.Boton_editar:hover {
+  color: #1A545C;
+}
 .btn {
   font-family: "Klee One" !important;
   color: white !important;
