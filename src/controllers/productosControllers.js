@@ -6,9 +6,6 @@ const productosFilePath = path.join(__dirname, '../../src/data/productos.json');
 //JSON CON LA LISTA DE PRODUCTOS
 let productos = [];
 
-var carrito = [];
-
-
 if (fs.existsSync(productosFilePath)) {
   const fileContent = fs.readFileSync(productosFilePath, 'utf-8');
 
@@ -47,40 +44,17 @@ let productosController =
     }
 	},
 
-  agregarAlCarrito: (req, res) => {
-    const productoId = req.query.productoId;
-  
-    // Encuentra el producto seleccionado
-    const productoSeleccionado = productos.find((producto) => producto.id === productoId);
-  
-    // Agrega el producto al carrito
-    carrito.push(productoSeleccionado);
-  
-    // Redirige al carrito
-    res.redirect('/carrito');
-  },
-  
-  mostrarCarrito: (req, res) => {
-    res.render('carrito', { productoSeleccionado: carrito });
-  },
-  
-  
-  
-  
-
   deleteCarrito: (req, res) => {
-    let productoId = req.params.productoId;
-  
-    // Filtra los productos, excluyendo el que se desea eliminar
-    let nuevoArregloProductos = productos.filter(function (producto) {
-      return producto.id !== productoId;
-    });
-  
-    // Actualiza el arreglo de productos en el archivo JSON
-    fs.writeFileSync(productosFilePath, JSON.stringify(nuevoArregloProductos, null, ' '));
-  
-    // Redirige a la vista del carrito actualizada
-    res.redirect('/productos/carrito');
+    let idProducto = req.params.idProducto;
+
+    let nuevoArregloProductos = productos.filter(function(e){
+
+    return e.id != idProducto;
+
+  });
+          
+    fs.writeFileSync(productosFilePath, JSON.stringify(nuevoArregloProductos,null,' '));	
+    res.redirect('/');
   },
   
 
@@ -98,7 +72,34 @@ let productosController =
   
      
   },
+  idProducto: (req, res) => {
+    let productoId = req.params.id;
+    let productoSeleccionado = productos.find((productoSeleccionado) => productoSeleccionado.id === productoId);
   
+    res.render('idProducto', { productoSeleccionado });
+  },
+  
+  comprar: (req, res) => {
+  let productoId = req.body.productoId; 
+  let productoSeleccionado = productos.find((producto) => producto.id === productoId);
+  
+    if (!productoSeleccionado) {
+      // Handle case when the selected product is not found
+      return res.status(404).send("Product not found");
+    }
+  
+    let productoEnCarrito = {
+      id: productoSeleccionado.id,
+      nombre: productoSeleccionado.nombre,
+      precio: productoSeleccionado.precio,
+      imagen: productoSeleccionado.imagen
+    };
+  
+    let carrito = [];
+    carrito.push(productoEnCarrito);
+  
+    res.render('carrito', { carrito });
+  },
   
   
     
