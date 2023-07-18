@@ -13,9 +13,10 @@ body {
   margin: 0;
 }
 
-.escuelas{
+.escuelas {
   font-family: "Klee One";
 }
+
 .ola {
   background-color: white;
   opacity: 0.9;
@@ -24,7 +25,8 @@ body {
   margin: 20px;
   border-radius: 10px;
   display: inline-block;
-  width: fit-content;
+  width: 100%;
+  max-width: 500px; 
 }
 
 .icono {
@@ -69,10 +71,11 @@ main h4 {
   padding: 10px 20px;
   border-radius: 10px;
   cursor: pointer;
+  width: 100%;
+  max-width: 200px; 
 }
 
 .buscador:hover {
   background-color: #a2cdd3;
   color: white;
 }
-

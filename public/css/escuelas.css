@@ -1,9 +1,8 @@
-
 * {
   font-family: 'Roboto Mono', monospace !important;
 }
 
-body{
+body {
   background-image: url("../img/buseo.avif");
   background-repeat: no-repeat;
   background-size: cover;
@@ -14,7 +13,7 @@ body{
   margin: 0;
 }
 
-.espaciador{
+.espaciador {
   margin-bottom: 20px;
 }
 
@@ -22,111 +21,76 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px; /* Ajusta el valor según tus preferencias */
+  padding: 10px;
 }
 
 .inputF {
-  width: 80%; /* Ajusta el valor según tus preferencias */
-  margin-bottom: 10px; /* Ajusta el valor según tus preferencias */
-
+  width: 80%;
+  margin-bottom: 10px;
 }
 
 .inputF label {
-  font-size: 1.2em; /* Ajusta el valor según tus preferencias */
+  font-size: 1.2em;
 }
-.nombre-input{
+
+.nombre-input {
   color: white;
   font-family: 'Roboto Mono';
   font-weight: 0;
 }
-.mb-3{
+
+.mb-3 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  padding: 10px; /* Ajusta el valor según tus preferencias */
-  width: 80%; /* Ajusta el valor según tus preferencias */
+  padding: 10px;
+  width: 80%;
   margin-bottom: 10px;
 }
-.contenedor-archivos{
+
+.contenedor-archivos {
   display: flex;
   justify-content: center;
 }
 
-
-/* Escuelas.css */
 .input-1 textarea {
-  background-color: transparent; /* Establece el fondo transparente */
-  color: white; /* Cambia el color del texto a blanco */
+  background-color: transparent;
+  color: white;
 }
 
-.input-2{
+.input-2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items:center ;
-  padding: 10px; /* Ajusta el valor según tus preferencias */
+  align-items: center;
+  padding: 10px;
   width: 50%;
   margin-left: 25%;
 }
 
-
-
-
-/* Escuelas.css */
 input[type="text"],
-input[type="email"]{
-color: white;
-}
+input[type="email"],
 textarea,
 input[list],
-input[type="file"]
-
- {
-  font-family: 'Roboto Mono', monospace; /* Cambia la fuente a Roboto Mono o a una fuente monoespaciada */
-  font-size: 14px; /* Cambia el tamaño de la fuente a 14 píxeles */
-  color: white; /* Cambia el color del texto a blanco */
-  background-color: transparent; /* Establece el fondo transparente */
-  border: solid; /* Elimina el borde */
-  border-bottom: 1px solid #ccc; /* Agrega un borde inferior para indicar el campo */
-  outline: none; /* Elimina el contorno cuando se selecciona */
-}
-
-
-
-/* EXTRAS CSS */
-.contenedor-celeste {
-  background-color: #4ab9df57;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 10px;
-}
-
-.titulo {
-  font-family: 'Klee One' !important;
-  font-size: 30px;
-  color: #ffffff;
-  text-align: center;
-  font-weight: bold;
-}
-
-.boton-submit {
+input[type="file"] {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
   color: white;
-  font-family: "Klee One";
-  font-size: 15px;
-  background-color: #1A545C !important;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  }
-
-.boton-submit:hover {
-  color: #a2cdd3 !important;
+  background-color: transparent;
+  border: solid;
+  border-bottom: 1px solid #ccc;
+  outline: none;
 }
 
+@media (max-width: 768px) {
+  .input-2 {
+    width: 100%;
+    margin-left: 0;
+  }
+}
 
-
-
-
-
+@media (max-width: 480px) {
+  .inputF {
+    width: 100%;
+  }
+}
