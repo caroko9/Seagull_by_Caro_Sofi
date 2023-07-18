@@ -1,10 +1,10 @@
-NOMBRE DE LA MARCA: "SEAGULL"
+<em>  CENTROS DE SURF: SEAGULL </em>
 
 NEGOCIO:
 Centros y locales de surf
 
 TEMÁTICA Y DESCRIPCIÓN DEL SITIO:
-El sitio buscar proporcionar soluciones a los aficionados de deportes acuáticos, ofreciéndoles ayuda con respecto a dónde y cuándo practicar, condiciones climáticas, y equipamiento.
+El sitio buscar proporcionar soluciones a los aficionados de deportes acuáticos, ofreciéndoles ayuda con respecto a dónde y cuándo practicar, condiciones climáticas, y escuelas de surf.
 
 
 PÚBLICO OBJETIVO:
@@ -28,21 +28,12 @@ INTEGRANTES DEL GRUPO:
 
 Carolina Kobalenko: Soy Argentina, actualmente vivo en Brasil en la ciudad de Armação dos Búzios - RJ. Soy Analista en Economía y Negocios, título otorgado por la UNSAM - Universidad de San Martín. Trabajo en la empresa Lenovo desde 2008, actualmente ejerciendo el rol de Senior Commission Analyst.
 
-Nicolas Benitez: Hola, soy Argentino, tengo 28 años y hace mas de un año trabajo en una empresa de automatizacion
-industrial, llamada MSI integracion de sistemas. Me desempeño en la compra/venta de materiales y en la cotización
-de proyectos.
-
-Diego Miranda: Hola, soy de Argentina, Mendoza. ¡Tengo 29 años, Me apasiona el Futbol, e-Sport y el basketball, Trabajo
-en una bodega de mi zona. ¡Desde chico me apasiona la tecnología y la informática y amo a Messi!!
-
-Diego Morales "Daf": Hola! es un placer conocerlos a todos. Mi nombre es Diego Fabian Morales Salinas. Les saludo desde la hermosa Colombia y mas especificamente de la calurosa & preciosa ciudad de Cartagena de indias, me apasiona aprender, los idiomas, la musica, el arte y me vuelven loco los videojuegos! Espero podamos compartir de una manera genial y aprendamos muchisimo entre todos. Bendiciones :D
-
 Felix Taquini: Buenas! Soy de Argentina, Buennos Aires pilar provincia. Tengo 18 años, mi tiempo esta mayormente dedicado hacia este curso ya que es mi unica y mayor tarea actualmente. Tengo varias pasiones como por ejemplo el deporte y la fotografia. Hasta el momento mi unico trabajo que me quita tiempo es en un torneo de futbol el cual asisto unicamente los miercoles de 20 a 23 hrs.
 
 Juan Bautista Taquini: Hola , Soy Argentino , de Buenos Aires Pilar. Tengo 23 años . Actualmente vivo en capital federal , me apasiona muchisimo la musica la fotografia y la pintura. Estudio Artes Multimediales en la Universidad de la artes. Me interesa muchisimo la electronica en general , estoy muy entusiasmado con el proyecto y espero que podamos aprender bien los conceptos y trabajar bien en equipo.
 Trabajo dias aislados segun la propuesta que me ofrezcan. De todos modos tengo mucha disponibilidad para trabajar en este proyecto. Saludos y bendiciones a todos.
 
-Sofia Guzmán Celedón: Vivo en Salta, Argentina, tengo 24 años. Soy Prof. en Educación Inicial y trabajo de ello actualemente. Realice un curso de Diseño UX/UI debido a que amo todo lo relacionado con diseñar. Me encanta la música y el cine.
+Sofia Guzmán Celedón: Hola! Vivo en Salta, Argentina. Tengo 24 años. Soy Profesora en Educación Inicial y trabajo de ello actualmente. Realice un curso de Diseño UX/UI debido a que amo todo lo relacionado con diseñar, con lo visual y las paletas de colores. Me encanta la música y el cine.
 
 
 TABLEROS DE TRABAJO:
