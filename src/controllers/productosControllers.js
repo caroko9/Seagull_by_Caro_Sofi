@@ -1,10 +1,20 @@
 const fs = require('fs');
-
 const path = require('path');
 
 const productosFilePath = path.join(__dirname, '../../src/data/productos.json');
-//JSON CON LA LISTA DE PRODUCTOS
+const carritoFilePath = path.join(__dirname, '../../src/data/carrito.json');
+
 let productos = [];
+
+let carrito = [] 
+  
+if (fs.existsSync(carritoFilePath)) {
+  const fileContent = fs.readFileSync(carritoFilePath, 'utf-8');
+
+  if (fileContent) {
+    carrito = JSON.parse(fileContent);
+  }
+}
 
 if (fs.existsSync(productosFilePath)) {
   const fileContent = fs.readFileSync(productosFilePath, 'utf-8');
@@ -16,93 +26,58 @@ if (fs.existsSync(productosFilePath)) {
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-let productosController = 
+function generarId() {
+  const { v4: uuidv4 } = require('uuid');
+  return uuidv4();
+}
 
-{
-//FORMULARIO INTERNO PARA CREAR PRODUCTO. NO ESTÁ LINKEADO A ÍCONOS YA QUE ES INTERNO
-  creaProducto: (req, res) => {
-
-		let productoNuevo = req.body;
-
-    let objNuevoProducto = {
-      id: generarId(),
-      nombre: productoNuevo.nombre,
-      descripcion: productoNuevo.descripcion,
-      precio: productoNuevo.precio,
-      imagen: '/img/productos/${productoNuevo.imagen}',
-    };
-          
-	    productos.push(objNuevoProducto);
-      fs.writeFileSync(productosFilePath, JSON.stringify(productos,null,' '));
-      res.redirect("./productos"); 
-   
-
-    function generarId() {
-
-      const { v4: uuidv4 } = require('uuid');
-      return uuidv4();
-    }
-	},
-
-  deleteCarrito: (req, res) => {
-    let idProducto = req.params.idProducto;
-
-    let nuevoArregloProductos = productos.filter(function(e){
-
-    return e.id != idProducto;
-
-  });
-          
-    fs.writeFileSync(productosFilePath, JSON.stringify(nuevoArregloProductos,null,' '));	
-    res.redirect('/');
-  },
-  
+let productosController = {
 
   listadoProducto: (req, res) => {
     res.render("productos", { listadoProductos: productos });
   },
   
-  //Al seleccionar el producto, muestra el detalle del producto a traves de la vista idProducto.ejs
-  idProducto : (req, res) => {
+  idProducto: (req, res) => {
     let productoId = req.params.id;
-    
     let productoSeleccionado = productos.find((productoSeleccionado) => productoSeleccionado.id === productoId);
-  
-   res.render('idProducto', {productoSeleccionado});
-    
+    res.render('idProducto', { productoSeleccionado });
   },
 
-  
   comprar: (req, res) => {
-  let productoId = req.body.productoId; 
-  let productoSeleccionado = productos.find((producto) => producto.id === productoId);
-  
+    let productoId = req.body.productoId; 
+    let productoSeleccionado = productos.find((producto) => producto.id === productoId);
+
     if (!productoSeleccionado) {
-      // Handle case when the selected product is not found
+  
       return res.status(404).send("Product not found");
     }
-  
+
     let productoEnCarrito = {
       id: productoSeleccionado.id,
       nombre: productoSeleccionado.nombre,
       precio: productoSeleccionado.precio,
       imagen: productoSeleccionado.imagen
     };
-  
+
     let carrito = [];
     carrito.push(productoEnCarrito);
-  
     res.render('carrito', { carrito });
   },
-  
-  
-    
-  
-  sumaProducto: (req, res) => {
-    res.render("productos-create");
-  },
 
- 
-}
+  deleteCarrito: (req, res) => {
+    let productoId = req.body.productoId;
+    
+    // Filtrar el carrito y excluir el producto a eliminar
+    carrito = carrito.filter((producto) => producto.id !== productoId);
+    
+    // Guardar el estado actualizado del carrito en el archivo JSON
+    fs.writeFileSync(carritoFilePath, JSON.stringify(carrito), 'utf-8');
+    
+    res.render('carrito', { carrito: carrito });
+  }
+};
+
+  
+
 
 module.exports = productosController;

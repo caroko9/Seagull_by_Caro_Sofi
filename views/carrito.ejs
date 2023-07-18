@@ -17,7 +17,7 @@
         <div class="item-1">
           <div class="item-contenedor">
             <div class="img-container">
-              <img src="<%= producto.imagen %>" alt="" class="img-item"> 
+              <img src="<%= producto.imagen %>" alt="<%= producto.nombre %>">
             </div>
             <div class="texto-contenedor">
               <h2 class="nombreProd"><%= producto.nombre %></h2> 
@@ -39,8 +39,7 @@
         </div>
         <div class="espaciador"></div>
         <div class="contenedor-iconos">
-          <form action="/carrito/<%= producto.id %>?_method=DELETE" method="POST">
-            <input type="hidden" name="_method" value="DELETE">
+          <form action="/productos/carrito/<%=producto.id%>?_method=DELETE" method="POST" >
             <input type="submit" class="Boton_borrar" value="ELIMINAR PRODUCTO">
           </form>
         </div>
