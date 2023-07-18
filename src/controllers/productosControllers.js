@@ -64,6 +64,11 @@ let productosController = {
     res.render('carrito', { carrito });
   },
 
+  vistaCarrito: (req, res) => {
+    res.render("carrito")
+    res.render('carrito', { carrito: carrito });
+  },
+
   deleteCarrito: (req, res) => {
     let productoId = req.body.productoId;
     
@@ -74,7 +79,8 @@ let productosController = {
     fs.writeFileSync(carritoFilePath, JSON.stringify(carrito), 'utf-8');
     
     res.render('carrito', { carrito: carrito });
-  }
+  },
+
 };
 
   
