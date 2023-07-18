@@ -46,40 +46,43 @@ let productosController = {
   comprar: (req, res) => {
     let productoId = req.body.productoId; 
     let productoSeleccionado = productos.find((producto) => producto.id === productoId);
+    
+      if (!productoSeleccionado) {
+        // Handle case when the selected product is not found
+        return res.status(404).send("Product not found");
+      }
+    
+      let productoEnCarrito = {
+        id: productoSeleccionado.id,
+        nombre: productoSeleccionado.nombre,
+        precio: productoSeleccionado.precio,
+        imagen: productoSeleccionado.imagen
+      };
+    
+      
+      carrito.push(productoEnCarrito);
 
-    if (!productoSeleccionado) {
-  
-      return res.status(404).send("Product not found");
-    }
-
-    let productoEnCarrito = {
-      id: productoSeleccionado.id,
-      nombre: productoSeleccionado.nombre,
-      precio: productoSeleccionado.precio,
-      imagen: productoSeleccionado.imagen
-    };
-
-    let carrito = [];
-    carrito.push(productoEnCarrito);
-    res.render('carrito', { carrito });
-  },
-
+      res.render('carrito', { carrito });
+    },
+    
+    
   vistaCarrito: (req, res) => {
     res.render("carrito")
     res.render('carrito', { carrito: carrito });
   },
-
+  
   deleteCarrito: (req, res) => {
-    let productoId = req.body.productoId;
+    let productoId = req.params.id;
     
-    // Filtrar el carrito y excluir el producto a eliminar
+
     carrito = carrito.filter((producto) => producto.id !== productoId);
-    
-    // Guardar el estado actualizado del carrito en el archivo JSON
+  
+
     fs.writeFileSync(carritoFilePath, JSON.stringify(carrito), 'utf-8');
-    
+  
     res.render('carrito', { carrito: carrito });
   },
+  
 
   editandoCarrito: (req, res) => {
     res.send("fui por put")
