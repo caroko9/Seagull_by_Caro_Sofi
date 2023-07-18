@@ -13,6 +13,6 @@ router.post('/carrito', productosController.comprar);
 
 router.delete('/carrito/:id', productosController.deleteCarrito);
 
-router.put('/carrito', productosController.editandoCarrito)
+
 
 module.exports = router;

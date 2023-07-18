@@ -39,23 +39,21 @@
         </div>
         <div class="espaciador"></div>
         <div class="contenedor-iconos">
-          <form action="/productos/carrito/<%=producto.id%>?_method=DELETE" method="POST" >
-            <input type="submit" class="Boton_borrar" value="ELIMINAR PRODUCTOS">
-          </form>
-          <form action="/productos/carrito/?_method=PUT" method="POST" >
-            <input type="submit" class="Boton_editar" value="EDITAR CARRITO">
-          </form>
-        </div>
+        </div>        
       </div>
+      <form action="/productos/carrito/<%=producto.id%>?_method=DELETE" method="POST" >
+        <input type="submit" class="Boton_borrar" value="ELIMINAR PRODUCTO">
+      </form>
     <% }); %>
   </section>
-  
+
   <div class="precio-total">
     <p>TOTAL</p>
-    <p>$2.200 ARS</p>   
+
+     <p></p>   
   </div>
   <div class="boton text-center"> 
-    <a class="btn btn-color" id="Miboton" href="/productos/carrito">AGREGAR AL CARRITO</a>
+    <a class="btn btn-color" id="Miboton" href="/productos/carrito">PAGAR</a>
   </div>
 </body>
 </html>

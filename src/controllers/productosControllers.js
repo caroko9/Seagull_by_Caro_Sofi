@@ -31,6 +31,7 @@ function generarId() {
   return uuidv4();
 }
 
+
 let productosController = {
 
   listadoProducto: (req, res) => {
@@ -74,23 +75,14 @@ let productosController = {
   deleteCarrito: (req, res) => {
     let productoId = req.params.id;
     
-
     carrito = carrito.filter((producto) => producto.id !== productoId);
   
-
     fs.writeFileSync(carritoFilePath, JSON.stringify(carrito), 'utf-8');
   
     res.render('carrito', { carrito: carrito });
   },
-  
-
-  editandoCarrito: (req, res) => {
-    res.send("fui por put")
-  }
 
 };
-
-  
 
 
 module.exports = productosController;
