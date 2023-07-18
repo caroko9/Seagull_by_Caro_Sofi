@@ -69,15 +69,9 @@ let productosController =
     let productoSeleccionado = productos.find((productoSeleccionado) => productoSeleccionado.id === productoId);
   
    res.render('idProducto', {productoSeleccionado});
-  
-     
+    
   },
-  idProducto: (req, res) => {
-    let productoId = req.params.id;
-    let productoSeleccionado = productos.find((productoSeleccionado) => productoSeleccionado.id === productoId);
-  
-    res.render('idProducto', { productoSeleccionado });
-  },
+
   
   comprar: (req, res) => {
   let productoId = req.body.productoId; 
