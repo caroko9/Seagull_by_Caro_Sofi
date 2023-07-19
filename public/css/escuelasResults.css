@@ -1,0 +1,33 @@
+body {
+    background-image: url(/img/fondoMar.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    overflow-y: scroll;
+    margin: 0;
+  }
+
+  .TextEscuelas{
+    margin-left: 35%;
+    font-family: 'Klee One';
+    font-size: 36px;
+    color: #061D28;
+    margin-bottom: 30px;
+}
+.contenedorMayor{
+background-color: #8edced;
+border-radius: 4px;
+width: 300px;
+height: 240px;
+margin-left: 37%;
+}
+.contenedorEscuelas{
+   
+    font-family: 'Klee One';
+    font-size: 22px;
+}
+footer{
+margin-top: auto;
+}
