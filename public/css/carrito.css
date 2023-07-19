@@ -17,10 +17,10 @@ body {
   text-align: center;
   font-weight: bold;
   margin-top: 1%;
+  margin-bottom: 150px;
 }
 
 .texto-contenedor h3 {
-  margin-top: 0;
   font-family: "Roboto Mono";
   margin-top: 2%;
   font-size: 14px;
@@ -31,10 +31,14 @@ body {
 .contenedor {
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
-  height: 120vh;
+  flex-direction: column;
   margin-top: -180px;
+  padding-top: 20px;
+  position: relative;
+  height: calc(100vh - 180px);
+  display: grid;
+  overflow: auto;
 }
 
 .item-contenedor {
@@ -46,6 +50,8 @@ body {
   border-radius: 7px;
   height: 180px;
   transition: transform 0.3s ease;
+  margin-bottom: 20px;
+  margin-top: 40px;
 }
 
 .item-contenedor:hover {
@@ -129,6 +135,7 @@ body {
   font-family: 'Roboto Mono';
 }
 
+
 .contenedor-input {
   display: flex;
   justify-content: center;
@@ -152,28 +159,9 @@ body {
   color: #5F6368;
 }
 
-.Boton_borrar {
-  width: 30vh;
-  height: 6vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  background-color: rgba(62, 135, 145, 0.459);
-  border-radius: 7px;
-  font-family: "Roboto Mono";
-  font-size: 12px;
-  color: beige;
-  border: #FFFFFF;
-  margin-top: -3%;
-}
-
-.Boton_borrar:hover {
-  color: #1A545C;
-}
+.Boton_borrar,
 .Boton_editar {
   width: 30vh;
-  height: 6vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -184,11 +172,13 @@ body {
   font-size: 12px;
   color: beige;
   border: #FFFFFF;
-  margin-top: 2%;
 }
+
+.Boton_borrar:hover,
 .Boton_editar:hover {
   color: #1A545C;
 }
+
 .btn {
   font-family: "Klee One" !important;
   color: white !important;
@@ -208,6 +198,8 @@ body {
 footer {
   margin-top: -130px;
 }
+
+
 
 /* Estilos responsivos */
 @media screen and (max-width: 1200px) {
