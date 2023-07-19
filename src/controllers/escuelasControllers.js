@@ -77,7 +77,6 @@ idEscuela : (req, res) => {
   let escuela = escuelas.find((escuela) => escuela.id === escuelaId);
 
   res.render('escuela-detalle', { escuela });
- //res.send(detalleEscuela)
 },
 
 };
