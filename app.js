@@ -24,6 +24,8 @@ app.use('/escuelas', escuelasRoutes);
 
 
 
+
+
 app.use ('*', function (req, res){
   res.send("ruta erronea")
 });
