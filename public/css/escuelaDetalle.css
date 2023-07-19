@@ -5,7 +5,6 @@ body {
     background-position: center;
     position: relative;
     overflow-y: scroll; 
-    margin-left: 20px !important;
   }
 
 h1{
@@ -13,18 +12,19 @@ h1{
     color: #137DB0 !important;
     font-size: 90px !important;
     text-transform: uppercase;
+    margin-left: 20px !important;
 }
 
 h2{
     font-family: "Klee One";
     color: #165A7A !important;
-    font-size: 20px;
+    font-size: 20px !important;
 }
 
 p{
     font-family: "Roboto Mono";
     color: #333333;
-    font-size: 16px;
+    font-size: 12px;
     text-align: justify;
 }
 
@@ -39,7 +39,8 @@ p{
   }
   
   .container {
-    margin-bottom: 40px;
+    margin-left: 20px !important;
+    margin-bottom: 20px;
     background-color: rgba(255, 255, 255, 0.466);
     border: 5px solid #afe3f5a6;
     border-radius: 10px;

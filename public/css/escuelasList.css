@@ -2,17 +2,6 @@
   font-family: 'Roboto Mono', monospace;
 }
 
-body {
-  background-image: url("../img/fondovistaec.avif");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  overflow: hidden;
-  overflow-y: scroll;
-  margin: 0;
-}
-
 .escuelas {
   font-family: "Klee One";
 }
