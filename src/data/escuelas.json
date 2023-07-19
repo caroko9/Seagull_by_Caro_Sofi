@@ -2,9 +2,10 @@
  {
   "id": "0001",
   "nombre": "Bai Bai",
-  "email": "baibai@hotmail.com",
-  "descripcion": "dixn1in1i1",
-  "imagen": "Captura de pantalla 2023-07-13 a la(s) 00.09.40.png",
+  "email": "ola@baibai.surf",
+  "descripcion"
+  : "Hace más de 3 años Bai Bai eligió subirse a una combi y decirle chau a la ciudad para estar más cerca del mar, del surf y toda la magia que lo rodea.nace desde el estimulo de transmitir el surf con la gente que vive lejos del mar y contagiar el estilo de vida que el oceano propone.Proponemos actividades tales como yoga, gourmet experience, fogatas, entre otras muchas. Te invitamos a visitar nuestra pagina web: https://baibai.surf/ para conocer nuestros servicios y precios en detalle." ,
+  "imagen": "/img/escuelas/bai-bailogo.jpeg",
   "pais": "Argentina"
  },
  {
@@ -40,7 +41,7 @@
   "pais": "Brasil"
  },
  {
-  "id": "02e845c2-a2d2-4cdf-886a-7cccb8d8c264",
+  "id": "0006",
   "nombre": "Tamarindo Surf Acadey",
   "email": "tamarindocr@gmail.com",
   "descripcion": "Our personalized teaching method makes us the best surf school in Tamarindo Beach.\r\nPerfect for your children or group to learn this exciting sport in a safe and fun way.",

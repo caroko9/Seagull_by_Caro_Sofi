@@ -1,0 +1,94 @@
+body {
+    background-image: url("/img/escuelas/fondoPlaya.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow-y: scroll; 
+    margin-left: 20px !important;
+  }
+
+h1{
+    font-family: "Klee One";
+    color: #137DB0 !important;
+    font-size: 90px !important;
+    text-transform: uppercase;
+}
+
+h2{
+    font-family: "Klee One";
+    color: #165A7A !important;
+    font-size: 20px;
+}
+
+p{
+    font-family: "Roboto Mono";
+    color: #333333;
+    font-size: 16px;
+    text-align: justify;
+}
+
+.leftColumn {
+    float: left;
+    width: 50%;
+  }
+  
+  .rightColumn {
+    float: right;
+    width: 50%;
+  }
+  
+  .container {
+    margin-bottom: 40px;
+    background-color: rgba(255, 255, 255, 0.466);
+    border: 5px solid #afe3f5a6;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+  }
+  
+
+.containerImagen {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  
+  .containerImagen img:first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+  }
+  
+  .containerImagen img:last-child {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+  
+  .containerImagen img:last-child:before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    background-image: url("/img/escuelas/bordePolaroid.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  
