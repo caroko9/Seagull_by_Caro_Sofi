@@ -26,7 +26,7 @@
           <div class="linkss">
           <% for (let i = 0; i < escuelasRegistradas.length; i++) { %>
             <li>
-              <a href="<%= escuelasRegistradas[i].url %>"><%= escuelasRegistradas[i].nombre %> </a>
+              <a href="/escuelas/escuela-detalle/<%= escuelasRegistradas[i].id %>"><%= escuelasRegistradas[i].nombre %> </a>
             </li>
           <% } %>   
         </div>    
