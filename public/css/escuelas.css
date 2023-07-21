@@ -2,6 +2,14 @@
   font-family: 'Roboto Mono', monospace !important;
 }
 
+.titulo{
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  justify-content:center ;
+  color: #7cb1b8;
+  margin-top:2vw ;
+}
+
 body {
   background-image: url("../img/buseo.avif");
   background-repeat: no-repeat;
