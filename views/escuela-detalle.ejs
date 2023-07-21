@@ -34,7 +34,13 @@
                   <img src="\img\escuelas\bordePolaroid.png" alt="Imagen polaroid">
                   <img class= "imagenjson" src="/img/escuelas/<%= escuela.imagen %>" alt="Imagen de la escuela">
                 </div>
-              </div>   
+              </div>    
+              
        </main>
+       <div class="contenedor_boton">
+       <form action="/productos/carrito/?_method=PUT" method="POST" >
+        <input type="submit" class="Boton_editar" value="EDITAR ESCUELA">
+      </form>
+    </div>
     </body>
 </html>

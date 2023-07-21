@@ -91,5 +91,21 @@ p{
     position: relative;
     z-index: 2;
   }
+  .contenedor_boton{
+  display: flex;
+  }
+.Boton_editar{
+  background-color: rgba(255, 255, 255, 0.466);
+  border: 5px solid #afe3f5a6;
+  border-radius: 10px;
+  position: relative;
+  margin-top: 20px;
+  margin-left: 180px;
+  width: 400px;
+  height: 70px;
+  font-family: "Klee One";
+  color: #165A7A !important;
+  font-size: 20px !important;
+}
   
   
