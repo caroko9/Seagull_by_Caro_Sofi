@@ -12,7 +12,19 @@ if (fs.existsSync(escuelasFilePath)) {
   if (fileContent) {
     escuelas = JSON.parse(fileContent);
   }
+  
 }
+
+const getSchoolById = (schoolId) => {
+  const foundSchool = escuelas.find((escuela) => escuela.id === schoolId);
+
+  if (!foundSchool) {
+    console.log(`School not found for ID: ${schoolId}`);
+  }
+
+  return foundSchool;
+};
+
 
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -79,7 +91,28 @@ idEscuela : (req, res) => {
   res.render('escuela-detalle', { escuela });
 },
 
+
+
+
+editarEscuela: (req, res) => {
+  const escuelaId = req.params.id;
+  const escuela = getSchoolById(escuelaId);
+
+  if (!escuela) {
+    return res.status(404).send("School not found");
+  }
+
+  res.render("editarEscuela", { escuela });
+},
+
+// ...
 };
+
+
+
+
+
+
 
 module.exports = controller;
  

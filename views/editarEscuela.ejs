@@ -1,0 +1,20 @@
+<!-- editarEscuela.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Include your head content here -->
+</head>
+<body>
+  <h1>Edit School</h1>
+  <form action="/submitEditedSchool" method="POST">
+    <!-- Populate the form fields with school data -->
+    <input type="text" name="nombre" value="<%= escuela ? escuela.nombre : '' %>">
+    <input type="text" name="email" value="<%= escuela ? escuela.email : '' %>">
+    <textarea name="descripcion"><%= escuela ? escuela.descripcion : '' %></textarea>
+    <input type="text" name="pais" value="<%= escuela ? escuela.pais : '' %>">
+    <!-- Add other form fields as needed -->
+
+    <button type="submit">Save Changes</button>
+  </form>
+</body>
+</html>
