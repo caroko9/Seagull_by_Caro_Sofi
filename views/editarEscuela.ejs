@@ -6,15 +6,15 @@
 </head>
 <body>
   <h1>Edit School</h1>
-  <form action="/submitEditedSchool" method="POST">
-    <!-- Populate the form fields with school data -->
+  <form action="/escuelas/editarEscuela/<%= escuela.id %>" method="POST">
+    <!-- Rellena los campos del formulario con los datos de la escuela -->
     <input type="text" name="nombre" value="<%= escuela ? escuela.nombre : '' %>">
     <input type="text" name="email" value="<%= escuela ? escuela.email : '' %>">
     <textarea name="descripcion"><%= escuela ? escuela.descripcion : '' %></textarea>
     <input type="text" name="pais" value="<%= escuela ? escuela.pais : '' %>">
-    <!-- Add other form fields as needed -->
-
-    <button type="submit">Save Changes</button>
+    <!-- Añade otros campos del formulario según sea necesario -->
+  
+    <button type="submit">Guardar Cambios</button>
   </form>
 </body>
 </html>

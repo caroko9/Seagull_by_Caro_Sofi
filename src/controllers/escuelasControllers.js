@@ -25,8 +25,6 @@ const getSchoolById = (schoolId) => {
   return foundSchool;
 };
 
-
-
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
@@ -99,14 +97,28 @@ editarEscuela: (req, res) => {
   const escuela = getSchoolById(escuelaId);
 
   if (!escuela) {
-    return res.status(404).send("School not found");
+    return res.status(404).send("Escuela no encontrada");
   }
 
-  res.render("editarEscuela", { escuela });
-},
+  if (req.method === "GET") {
+    // Si la solicitud es GET, renderiza la vista de edición con los detalles de la escuela
+    res.render("editarEscuela", { escuela });
+  } else if (req.method === "POST") {
+    // Si la solicitud es POST, actualiza los detalles de la escuela con los datos del formulario enviado
+    escuela.nombre = req.body.nombre;
+    escuela.email = req.body.email;
+    escuela.descripcion = req.body.descripcion;
+    escuela.pais = req.body.pais;
 
-// ...
+    // Guarda la lista de escuelas actualizada de nuevo en el archivo JSON
+    fs.writeFileSync(escuelasFilePath, JSON.stringify(escuelas, null, " "));
+
+    // Redirige a la página de detalle de la escuela con los detalles actualizados
+    res.redirect(`/escuelas/escuela-detalle/${escuelaId}`);
+  }
+},
 };
+
 
 
 
