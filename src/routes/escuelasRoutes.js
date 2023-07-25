@@ -15,6 +15,9 @@ router.get('/escuelasResults', escuelasController.buscarEscuela); //muestra el r
 
 router.get('/escuela-detalle/:id', escuelasController.idEscuela); // muestra el detalle por escuela
 
+router.get('/editarEscuela/:id', escuelasController.editarEscuela);
+router.post('/editarEscuela/:id', escuelasController.editarEscuela);
+
 
 
 

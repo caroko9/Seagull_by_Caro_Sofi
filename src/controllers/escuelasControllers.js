@@ -12,8 +12,18 @@ if (fs.existsSync(escuelasFilePath)) {
   if (fileContent) {
     escuelas = JSON.parse(fileContent);
   }
+  
 }
 
+const getSchoolById = (schoolId) => {
+  const foundSchool = escuelas.find((escuela) => escuela.id === schoolId);
+
+  if (!foundSchool) {
+    console.log(`School not found for ID: ${schoolId}`);
+  }
+
+  return foundSchool;
+};
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -79,7 +89,42 @@ idEscuela : (req, res) => {
   res.render('escuela-detalle', { escuela });
 },
 
+
+
+
+editarEscuela: (req, res) => {
+  const escuelaId = req.params.id;
+  const escuela = getSchoolById(escuelaId);
+
+  if (!escuela) {
+    return res.status(404).send("Escuela no encontrada");
+  }
+
+  if (req.method === "GET") {
+    // Si la solicitud es GET, renderiza la vista de edición con los detalles de la escuela
+    res.render("editarEscuela", { escuela });
+  } else if (req.method === "POST") {
+    // Si la solicitud es POST, actualiza los detalles de la escuela con los datos del formulario enviado
+    escuela.nombre = req.body.nombre;
+    escuela.email = req.body.email;
+    escuela.descripcion = req.body.descripcion;
+    escuela.pais = req.body.pais;
+
+    // Guarda la lista de escuelas actualizada de nuevo en el archivo JSON
+    fs.writeFileSync(escuelasFilePath, JSON.stringify(escuelas, null, " "));
+
+    // Redirige a la página de detalle de la escuela con los detalles actualizados
+    res.redirect(`/escuelas/escuela-detalle/${escuelaId}`);
+  }
+},
 };
+
+
+
+
+
+
+
 
 module.exports = controller;
  
