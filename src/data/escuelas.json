@@ -4,7 +4,11 @@
   "nombre": "Bai Bai",
   "email": "ola@baibai.surf",
   "descripcion": "Hace un poco más de 3 años Bai Bai eligió subirse a una combi y decirle chau a la ciudad para estar más cerca del mar, del surf y toda la magia que lo rodea.nace desde el estimulo de transmitir el surf con la gente que vive lejos del mar y contagiar el estilo de vida que el oceano propone.Proponemos actividades tales como yoga, gourmet experience, fogatas, entre otras muchas. Te invitamos a visitar nuestra pagina web: https://baibai.surf/ para conocer nuestros servicios y precios en detalle.",
-  "imagen": "bai-bailogo.jpeg",
+  "imagen":  [ 
+    {
+        "filename": "bai-bailogo.jpeg"
+ }
+ ],
   "pais": "Argentina"
  },
  {
@@ -12,7 +16,11 @@
   "nombre": "la posada",
   "email": "laposada@gmail.com",
   "descripcion": "somos el hostel mas amistoso del pueblo",
-  "imagen": "laPosadaCR.png",
+  "imagen":  [ 
+    {
+        "filename": "laPosadaCR.png"
+ }
+ ],
   "pais": "Costa Rica"
  },
  {
@@ -20,7 +28,11 @@
   "nombre": "Cyclone",
   "email": "cyclonebz@cyclone.com",
   "descripcion": "Escuela de surf para adultos y niños.",
-  "imagen": "Cyclone.jpg",
+  "imagen": [ 
+    {
+        "filename": "Cyclone.jpg"
+ }
+ ],
   "pais": "Brasil"
  },
  {
@@ -28,7 +40,11 @@
   "nombre": "Piratas de Geribá",
   "email": "piratasgeri@gmail.com",
   "descripcion": "Escuela de surf y skate para niños. Aulong de longboards.",
-  "imagen": "piratasDeGeri.jpg",
+  "imagen": [ 
+    {
+        "filename": "piratasDeGeri.jpg"
+ }
+ ],
   "pais": "Brasil"
  },
  {
@@ -36,7 +52,11 @@
   "nombre": "Arreyes Academia",
   "email": "arreyesacademia@gmail.com",
   "descripcion": "Clases de surf para niños y adultos. Método Arreyes.",
-  "imagen": "arreyes.jpg",
+  "imagen": [ 
+    {
+        "filename": "arreyes.jpg"
+ }
+ ],
   "pais": "Brasil"
  },
  {
@@ -44,7 +64,23 @@
   "nombre": "Tamarindo Surf Acadey",
   "email": "tamarindocr@gmail.com",
   "descripcion": "Our personalized teaching method makes us the best surf school in Tamarindo Beach.\r\nPerfect for your children or group to learn this exciting sport in a safe and fun way.",
-  "imagen": "Tamarindo CR.jpg",
+  "imagen": [ 
+    {
+        "filename": "Tamarindo CR.jpg"
+ }
+ ],
   "pais": "Costa Rica"
+ },
+ {
+  "id": "3e64d44f-fabb-439e-9758-d2c5d720bc0d",
+  "nombre": "KiteSurf Uruguay",
+  "email": "contacto@kitesurfuruguay.com",
+  "descripcion": "KitesurfUruguay es una escuela con más de 10 años de experiencia, que nace a partir de la pasión por este deporte y del ánimo de transmitir esta sensación única que sólo el kitesurf brinda.",
+  "imagen": [
+   {
+    "filename": "1691200111218KiteSurf_Uruguay.jpg"
+   }
+  ],
+  "pais": "Uruguay"
  }
 ]

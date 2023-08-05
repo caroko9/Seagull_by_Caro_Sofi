@@ -32,7 +32,10 @@
               <div class="rightColumn">
                 <div class="containerImagen">
                   <img src="\img\escuelas\bordePolaroid.png" alt="Imagen polaroid">
-                  <img class= "imagenjson" src="/img/escuelas/<%= escuela.imagen %>" alt="Imagen de la escuela">
+                  <!-- se crea un if para que tome las fotos subidas en el array dentro el JSON-->
+                  <% if (escuela.imagen && escuela.imagen.length > 0) { %>
+                  <img class= "imagenjson" src="/img/escuelas/<%= escuela.imagen[0].filename %>" alt="Imagen de la escuela">
+                  <% } %>
                 </div>
               </div>    
               

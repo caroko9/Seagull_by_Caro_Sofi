@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
 /* vinculando con el archivo productosRoutes.js */
 const controladorUsers = require ('../controllers/usersControllers');
+
 
 router.get('/register', controladorUsers.register);
 

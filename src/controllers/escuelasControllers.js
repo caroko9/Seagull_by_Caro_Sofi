@@ -1,8 +1,8 @@
 const fs = require('fs');
-
 const path = require('path');
-
 const escuelasFilePath = path.join(__dirname, '../../src/data/escuelas.json');
+
+
 //JSON CON LA LISTA DE ESCUELAS
 let escuelas = [];
 
@@ -11,7 +11,7 @@ if (fs.existsSync(escuelasFilePath)) {
 
   if (fileContent) {
     escuelas = JSON.parse(fileContent);
-  }
+  } 
   
 }
 
@@ -30,23 +30,33 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controller = {
 
   sumaEscuela: (req, res) => {
+    
     res.render("escuelascreate");
   },
 //FORMULARIO ESCUELA NUEVA
 	creaEscuela: (req, res) => {
+   
 
-		let escuelaNueva = req.body;
-	
+    let escuelaNueva = req.body;
+    let escuelaimgUpload = req.files;
+//el form de escuela acepta varias fotos. Este array toma las fotos subidas y las envia al JSON
+    let escuelaimagen = [];
+    escuelaimgUpload.forEach((file) => {
+      escuelaimagen.push({
+        filename: file.filename,
+      });
+    });
+  
 		let objNuevaEscuela= {
       id: generarId(),
       nombre: escuelaNueva.nombre,
 			email: escuelaNueva.email,
 			descripcion: escuelaNueva.descripcion,
-			imagen: escuelaNueva.imagen,
+			imagen: escuelaimagen, //viene de la var creada en el paso anterior
       pais: escuelaNueva.pais,
 		};
 
-	    escuelas.push(objNuevaEscuela);
+	  escuelas.push(objNuevaEscuela);
 		fs.writeFileSync(escuelasFilePath, JSON.stringify(escuelas,null,' '));
     res.redirect("./escuelasList"); 
 
@@ -108,6 +118,7 @@ editarEscuela: (req, res) => {
     escuela.nombre = req.body.nombre;
     escuela.email = req.body.email;
     escuela.descripcion = req.body.descripcion;
+    escuela.imagen = req.body.imagen;
     escuela.pais = req.body.pais;
 
     // Guarda la lista de escuelas actualizada de nuevo en el archivo JSON
