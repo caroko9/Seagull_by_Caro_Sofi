@@ -35,8 +35,7 @@ const controller = {
   },
 //FORMULARIO ESCUELA NUEVA
 	creaEscuela: (req, res) => {
-   
-
+  
     let escuelaNueva = req.body;
     let escuelaimgUpload = req.files;
 //el form de escuela acepta varias fotos. Este array toma las fotos subidas y las envia al JSON

@@ -10,23 +10,25 @@
     <main>
         <div class="contenedor_form">
             <div class="div_form">
-                <form  method="POST" action="/users/register" enctype="multipart/form-data" class="formulario">
+                <form  method="POST" action="/users/register" enctype="multipart/form-data" class="formulario" name="formularioUsuario">
 
                     <img src="\img\iconografia\tabla-de-surf.png" class="icono_form">
-                   <h1>¡CREA TU CUENTA!</h1>
-                   <P> Regístrate y serás parte de la familia Seagull</P>
+                    <h1>¡CREA TU CUENTA!</h1>
+                    <P> Regístrate y serás parte de la familia Seagull</P>
                     <div class="completar">
-                    <input name="nombre" type="text" placeholder="Nombre completo" class="nombre">
-                    <input name="email" type="email" placeholder="E-mail" class="nombre">
-                    <input name="contraseña" type="password" placeholder="Contraseña" class="nombre">
-                    <input name="repetir_contraseña" type="password" placeholder="Repetir contraseña" class="nombre">
-                    <input name="telefono" type="tel" placeholder="Teléfono" class="nombre">
-                </div>
-
-                    <div class="boton text-center"> 
-                        <a class="btn  btn-color" href=""> REGISTRARME </a>
+                        <input name="nombre" type="text" placeholder="Nombre completo" class="nombre">
+                        <input name="email" type="email" placeholder="E-mail" class="nombre">
+                        <input name="contraseña" type="password" placeholder="Contraseña" class="nombre">
+                        <input name="repetir_contraseña" type="password" placeholder="Repetir contraseña" class="nombre">
+                        <input name="telefono" type="tel" placeholder="Teléfono" class="nombre">
+                    
+                        <label>Carga una foto de perfil</label>
+                        <input name="imagenPerfil" type="file" placeholder="usuarioimg" value="REGISTRARME" class="nombre">
                     </div>
-                </form>
+                    <div class="boton text-center">
+                        <input type="submit" value="REGISTRARME" class="btn  btn-color" href="">
+                    </div>
+                    </form>
             </div>
         </div>
     </main>

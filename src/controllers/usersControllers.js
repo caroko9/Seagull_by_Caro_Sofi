@@ -14,7 +14,7 @@ if (fs.existsSync(usuariosFilePath)) {
   }
 }
 
-const controladorUsers =
+const controladorUsuario =
 {
   iniciarSesion: (req, res) => {
     res.render("login");
@@ -22,21 +22,26 @@ const controladorUsers =
 
   register: (req, res) => {
     res.render("register");
+  
   },
 
   create: (req, res) => {
-    let nuevosUsuarios = req.body
+
+    let nuevosUsuarios = req.body;
+    let imgperfilUpload = req.file.filename;
     
     let objetoUsuariosNuevos =  {
       nombre: nuevosUsuarios.nombre,
       email: nuevosUsuarios.email,
       contraseña: nuevosUsuarios.contraseña,
       repetir_contraseña: nuevosUsuarios.repetir_contraseña,
-      telefono: nuevosUsuarios.telefono
-    }  
+      telefono: nuevosUsuarios.telefono,
+      imagenPerfil: imgperfilUpload,
+    };
+
     usuarios.push(objetoUsuariosNuevos)
     fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios,null,' '));
-    res.redirect("/"); 
+    res.redirect("/");
   },
   
 
@@ -70,4 +75,4 @@ res.render("escuelasResults", { "escuelasResults": escuelaBuscada });
 
 }
 
-module.exports = controladorUsers;
+module.exports = controladorUsuario;
