@@ -22,3 +22,7 @@ ya que todos tenemos visibilidad de la evolución del proyecto.
 - Qué aprendimos?
 Qué si bien tenemos el perfil de programadores, la comunicación es clave para entendernos, y que el trabajo en equipo nos ayuda
 a expandir nuestro conocimiento, aprendiendo del otro y corrigiendo errores propios.
+
+Retro.md Sprint 5:
+
+El Sprint 5 nos encuentra más consolidados a nivel grupo, ya que tuvimos muchos cambios durante la cursada. Depués de 2 sprints desparejos en cuánto a balance de trabajo y dos bajas en el equipo, pudimos reinventarnos, conocernos más y trabajar en nuestra debilidades para mejorar, así como también aprovechar las fortalezas individuales en pos del equipo.
