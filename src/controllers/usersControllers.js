@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { validationResult} = require('express-validator');
+let bcrypt = require('bcryptjs');
 
 const usuariosFilePath = path.join(__dirname, '../../src/data/usuarios.json');
 
@@ -41,7 +42,7 @@ const controladorUsuario =
     let objetoUsuariosNuevos =  {
       nombre: nuevosUsuarios.nombre,
       email: nuevosUsuarios.email,
-      contraseña: nuevosUsuarios.contraseña,
+      contraseña: bcrypt.hashSync(req.body.contraseña, 10),
       repetir_contraseña: nuevosUsuarios.repetir_contraseña,
       telefono: nuevosUsuarios.telefono,
       imagenPerfil: imgperfilUpload,
