@@ -1,6 +1,6 @@
 const fs = require('fs');
-
 const path = require('path');
+const { validationResult} = require('express-validator');
 
 const usuariosFilePath = path.join(__dirname, '../../src/data/usuarios.json');
 
@@ -27,6 +27,14 @@ const controladorUsuario =
 
   create: (req, res) => {
 
+   const resultValidation = validationResult(req);
+
+     if ( resultValidation.errors.length > 0) {
+    return res.render('register', {
+    errors : resultValidation.mapped()
+    });
+  }
+
     let nuevosUsuarios = req.body;
     let imgperfilUpload = req.file.filename;
     
@@ -39,13 +47,14 @@ const controladorUsuario =
       imagenPerfil: imgperfilUpload,
     };
 
+
     usuarios.push(objetoUsuariosNuevos)
     fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios,null,' '));
     res.redirect("/");
   },
   
 
-  list: (req, res) => {
+ /* list: (req, res) => {
     let escuelas = [
       
       { id: 1,name: 'Cyclone'},
@@ -71,7 +80,7 @@ const controladorUsuario =
     }
  // console.log(escuelaBuscada);
 res.render("escuelasResults", { "escuelasResults": escuelaBuscada });
-  }
+  }*/
 
 }
 

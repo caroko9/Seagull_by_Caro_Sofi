@@ -9,6 +9,15 @@
     
     <main>
         <div class="contenedor_form">
+            <!-- Para verificar errores en el formulario-->
+            <% if ( locals.errors ) { %>
+                <% for (let oneError in errors ) { %>
+                    <p>
+                        <%= errors[oneError].msg %>
+                    </p>
+                    <% } %>
+                        <% } %>
+
             <div class="div_form">
                 <form  method="POST" action="/users/register" enctype="multipart/form-data" class="formulario" name="formularioUsuario">
 
@@ -17,10 +26,41 @@
                     <P> Regístrate y serás parte de la familia Seagull</P>
                     <div class="completar">
                         <input name="nombre" type="text" placeholder="Nombre completo" class="nombre">
+                      <!-- Para mostrar msjs de errores en el formulario-->
+                        <% if ( locals.errors && errors.nombre) { %>
+                            <div class="text-error" >
+                            <%= errors.nombre.msg %>
+                            </div>
+                            <% } %>
+
                         <input name="email" type="email" placeholder="E-mail" class="nombre">
+                         <!-- Para mostrar msjs de errores en el formulario-->
+                         <% if ( locals.errors && errors.mail) { %>
+                            <div class="text-error" >
+                            <%= errors.mail.msg %>
+                            </div>
+                            <% } %>
                         <input name="contraseña" type="password" placeholder="Contraseña" class="nombre">
+                        <!-- Para mostrar msjs de errores en el formulario-->
+                        <% if ( locals.errors && errors.contraseña) { %>
+                            <div class="text-error" >
+                            <%= errors.contraseña.msg %>
+                            </div>
+                            <% } %>
+
                         <input name="repetir_contraseña" type="password" placeholder="Repetir contraseña" class="nombre">
+                        <% if ( locals.errors && errors.repetir_contraseña) { %>
+                            <div class="text-error" >
+                            <%= errors.repetir_contraseña.msg %>
+                            </div>
+                            <% } %>
+
                         <input name="telefono" type="tel" placeholder="Teléfono" class="nombre">
+                        <% if ( locals.errors && errors.telefono) { %>
+                            <div class="text-error" >
+                            <%= errors.telefono.msg %>
+                            </div>
+                            <% } %>
                     
                         <label>Carga una foto de perfil</label>
                         <input name="imagenPerfil" type="file" placeholder="usuarioimg" value="REGISTRARME" class="nombre">
