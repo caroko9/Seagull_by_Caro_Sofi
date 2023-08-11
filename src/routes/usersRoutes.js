@@ -35,11 +35,6 @@ router.post('/register', usuarioimgUpload.single('imagenPerfil'), validations, c
 
 router.get('/login', controladorUsers.iniciarSesion);
 
-//router.get('/list', controladorUsers.list);
-
-//router.get('/search', controladorUsers.buscarEscuela);
-
-
  
  
 module.exports = router;

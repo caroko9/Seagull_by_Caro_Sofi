@@ -5,6 +5,7 @@ let bcrypt = require('bcryptjs');
 
 const usuariosFilePath = path.join(__dirname, '../../src/data/usuarios.json');
 
+
 let usuarios = []
 
 if (fs.existsSync(usuariosFilePath)) {
@@ -26,9 +27,11 @@ const controladorUsuario =
   
   },
 
+
+
   create: (req, res) => {
 
-   const resultValidation = validationResult(req);
+      const resultValidation = validationResult(req);
 
      if ( resultValidation.errors.length > 0) {
     return res.render('register', {
@@ -52,37 +55,9 @@ const controladorUsuario =
     usuarios.push(objetoUsuariosNuevos)
     fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios,null,' '));
     res.redirect("/");
-  },
+  }
   
-
- /* list: (req, res) => {
-    let escuelas = [
-      
-      { id: 1,name: 'Cyclone'},
-      { id: 2, name: 'Piratas de Geriba' },
-      { id: 3, name: 'Bai Bai' },
-      { id: 4, name: 'AFT Amantes' },
-      
-      ];
-
-    res.render("escuelasList", { "escuelas": escuelas });
-  },
-
-   buscarEscuela: function (req, res) {
-    let escuelaEncontrada = req.query.buscar;
-    res.send (escuelaEncontrada);
-
-     let escuelaBuscada = [];
-
-    for (let i = 0; i < escuelas.lenght; i++) {
-      if (escuelas[i].name.includes(escuelaEncontrada)) {
-      escuelaBuscada.push(escuelas[i]);
-      }
-    }
- // console.log(escuelaBuscada);
-res.render("escuelasResults", { "escuelasResults": escuelaBuscada });
-  }*/
-
 }
+
 
 module.exports = controladorUsuario;
