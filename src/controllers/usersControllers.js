@@ -45,8 +45,8 @@ const controladorUsuario =
     let objetoUsuariosNuevos =  {
       nombre: nuevosUsuarios.nombre,
       email: nuevosUsuarios.email,
-      contraseña: bcrypt.hashSync(req.body.contraseña, 10),
-      repetir_contraseña: nuevosUsuarios.repetir_contraseña,
+      contrasena: bcrypt.hashSync(req.body.contrasena, 10),
+      repetir_contrasena: nuevosUsuarios.repetir_contrasena,
       telefono: nuevosUsuarios.telefono,
       imagenPerfil: imgperfilUpload,
     };

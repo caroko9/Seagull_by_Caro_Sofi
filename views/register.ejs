@@ -40,18 +40,18 @@
                             <%= errors.mail.msg %>
                             </div>
                             <% } %>
-                        <input name="contraseña" type="password" placeholder="Contraseña" class="nombre">
+                        <input name="contrasena" type="password" placeholder="Contraseña" class="nombre">
                         <!-- Para mostrar msjs de errores en el formulario-->
-                        <% if ( locals.errors && errors.contraseña) { %>
+                        <% if ( locals.errors && errors.contrasena) { %>
                             <div class="text-error" >
-                            <%= errors.contraseña.msg %>
+                            <%= errors.contrasena.msg %>
                             </div>
                             <% } %>
 
-                        <input name="repetir_contraseña" type="password" placeholder="Repetir contraseña" class="nombre">
-                        <% if ( locals.errors && errors.repetir_contraseña) { %>
+                        <input name="repetir_contrasena" type="password" placeholder="Repetir contraseña" class="nombre">
+                        <% if ( locals.errors && errors.repetir_contrasena) { %>
                             <div class="text-error" >
-                            <%= errors.repetir_contraseña.msg %>
+                            <%= errors.repetir_contrasena.msg %>
                             </div>
                             <% } %>
 
