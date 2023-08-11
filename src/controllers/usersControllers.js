@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require ('fs');
 const path = require('path');
 const { validationResult} = require('express-validator');
 let bcrypt = require('bcryptjs');
@@ -28,24 +28,23 @@ const controladorUsuario =
   },
 
 
-
   create: (req, res) => {
 
-      const resultValidation = validationResult(req);
+    const resultValidation = validationResult(req);
 
-     if ( resultValidation.errors.length > 0) {
-    return res.render('register', {
-    errors : resultValidation.mapped()
-    });
-  }
-
+    if ( resultValidation.errors.length > 0) {
+   return res.render('register', {
+   errors : resultValidation.mapped()
+   });
+ }
+    
     let nuevosUsuarios = req.body;
     let imgperfilUpload = req.file.filename;
     
     let objetoUsuariosNuevos =  {
       nombre: nuevosUsuarios.nombre,
       email: nuevosUsuarios.email,
-      contrasena: bcrypt.hashSync(req.body.contrasena, 10),
+      contrasena: bcrypt.hashSync (nuevosUsuarios.contrasena, 10),
       repetir_contrasena: nuevosUsuarios.repetir_contrasena,
       telefono: nuevosUsuarios.telefono,
       imagenPerfil: imgperfilUpload,
