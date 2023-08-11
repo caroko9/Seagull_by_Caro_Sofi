@@ -10,8 +10,8 @@ const controladorUsers = require ('../controllers/usersControllers');
 const validations = [
     body('nombre').notEmpty().withMessage('Tienes que ingresar tu nombre'),
     body('email').notEmpty().withMessage('Tienes que ingresar tu email'),
-    body('contraseña').notEmpty().withMessage('Tienes que ingresar una contraseña'),
-    body('repetir_contraseña').notEmpty().withMessage('Tienes que ingresar repetir tu contraseña'),
+    body('contrasena').notEmpty().withMessage('Tienes que ingresar una contraseña'),
+    body('repetir_contrasena').notEmpty().withMessage('Tienes que ingresar repetir tu contraseña'),
     body('telefono').notEmpty().withMessage('Tienes que ingresar tu teléfono'),
     ]
 

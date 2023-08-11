@@ -4,5 +4,13 @@
   "email": "felutaquini@gmail.com",
   "contraseña": "1111111",
   "telefono": "1136278684"
+ },
+ {
+  "nombre": "Sasha",
+  "email": "sashabz@gmail.com",
+  "contrasena": "$2a$10$s6vEXVkKywqIN0TmxEHVj.pamMslY2TKugyjNN09brKpfcj6pHqBq",
+  "repetir_contrasena": "1234",
+  "telefono": "87654",
+  "imagenPerfil": "1691797793851IMG_20230726_155239.jpg"
  }
 ]

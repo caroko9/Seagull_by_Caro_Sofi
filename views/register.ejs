@@ -21,9 +21,8 @@
             <div class="div_form">
                 <form  method="POST" action="/users/register" enctype="multipart/form-data" class="formulario" name="formularioUsuario">
 
-                    <img src="\img\iconografia\tabla-de-surf.png" class="icono_form">
-                    <h1>¡CREA TU CUENTA!</h1>
                     <P> Regístrate y serás parte de la familia Seagull</P>
+
                     <div class="completar">
                         <input name="nombre" type="text" placeholder="Nombre completo" class="nombre">
                       <!-- Para mostrar msjs de errores en el formulario-->
@@ -61,7 +60,7 @@
                             <%= errors.telefono.msg %>
                             </div>
                             <% } %>
-                    
+
                         <label>Carga una foto de perfil</label>
                         <input name="imagenPerfil" type="file" placeholder="usuarioimg" value="REGISTRARME" class="nombre">
                     </div>
@@ -73,8 +72,6 @@
         </div>
     </main>
     <footer>
-
     </footer>
 </body>
-
 </html>
