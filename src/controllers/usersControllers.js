@@ -1,6 +1,7 @@
 const fs = require('fs');
-
 const path = require('path');
+const { validationResult} = require('express-validator');
+let bcrypt = require('bcryptjs');
 
 const usuariosFilePath = path.join(__dirname, '../../src/data/usuarios.json');
 
@@ -27,17 +28,26 @@ const controladorUsuario =
 
   create: (req, res) => {
 
+   const resultValidation = validationResult(req);
+
+     if ( resultValidation.errors.length > 0) {
+    return res.render('register', {
+    errors : resultValidation.mapped()
+    });
+  }
+
     let nuevosUsuarios = req.body;
     let imgperfilUpload = req.file.filename;
     
     let objetoUsuariosNuevos =  {
       nombre: nuevosUsuarios.nombre,
       email: nuevosUsuarios.email,
-      contraseña: nuevosUsuarios.contraseña,
+      contraseña: bcrypt.hashSync(req.body.contraseña, 10),
       repetir_contraseña: nuevosUsuarios.repetir_contraseña,
       telefono: nuevosUsuarios.telefono,
       imagenPerfil: imgperfilUpload,
     };
+
 
     usuarios.push(objetoUsuariosNuevos)
     fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios,null,' '));
@@ -45,7 +55,7 @@ const controladorUsuario =
   },
   
 
-  list: (req, res) => {
+ /* list: (req, res) => {
     let escuelas = [
       
       { id: 1,name: 'Cyclone'},
@@ -71,7 +81,7 @@ const controladorUsuario =
     }
  // console.log(escuelaBuscada);
 res.render("escuelasResults", { "escuelasResults": escuelaBuscada });
-  }
+  }*/
 
 }
 
