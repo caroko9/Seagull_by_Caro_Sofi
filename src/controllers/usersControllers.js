@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require ('fs');
 const path = require('path');
 const { validationResult} = require('express-validator');
 let bcrypt = require('bcryptjs');
@@ -28,9 +28,8 @@ const controladorUsuario =
   },
 
 
-
   create: (req, res) => {
-
+    
       const resultValidation = validationResult(req);
 
      if ( resultValidation.errors.length > 0) {
@@ -45,8 +44,7 @@ const controladorUsuario =
     let objetoUsuariosNuevos =  {
       nombre: nuevosUsuarios.nombre,
       email: nuevosUsuarios.email,
-      contraseña: bcrypt.hashSync(req.body.contraseña, 10),
-      repetir_contraseña: nuevosUsuarios.repetir_contraseña,
+      contrasena: bcrypt.hashSync (nuevosUsuarios.contrasena, 10),
       telefono: nuevosUsuarios.telefono,
       imagenPerfil: imgperfilUpload,
     };

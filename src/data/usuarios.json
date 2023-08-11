@@ -1,20 +1,9 @@
 [
  {
-  "nombre": "Felix Taquini",
-  "email": "felutaquini@gmail.com",
-  "contraseña": "1111111",
-  "telefono": "1136278684"
- },
- {
-  "nombre": "Sasha",
-  "email": "sashabz@gmail.com",
-  "telefono": "87654",
-  "imagenPerfil": "1691272170777IMG_20230726_155239.jpg"
- },
- {
-  "nombre": "Felix",
-  "email": "pepetaquini@gmail.com",
-  "telefono": "11234564543",
-  "imagenPerfil": "1691708758875Captura de Pantalla 2023-08-08 a la(s) 11.22.31.png"
+  "nombre": "Juan",
+  "email": "taquinibautista@gmail.com",
+  "contrasena": "$2a$10$pURIW4yxov4KFVSvItq16uFbBUkEF52gZLsmFXbMdZaItHhpmuRp6",
+  "telefono": "1139290545",
+  "imagenPerfil": "1691784260347images.jpg"
  }
 ]
