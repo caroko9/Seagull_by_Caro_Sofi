@@ -66,6 +66,12 @@
 
                         <label>Carga una foto de perfil</label>
                         <input name="imagenPerfil" type="file" placeholder="usuarioimg" value="REGISTRARME" class="nombre">
+                        <% if ( locals.errors && errors.imagenPerfil) { %>
+                            <div class="text-error" >
+                            <%= errors.imagenPerfil.msg %>
+                            </div>
+                            <% } %>
+                    
                     </div>
                     <div class="boton text-center">
                         <input type="submit" value="REGISTRARME" class="btn  btn-color" href="">
