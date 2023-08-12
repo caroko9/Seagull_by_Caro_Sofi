@@ -34,7 +34,8 @@ const controladorUsuario =
 
     if ( resultValidation.errors.length > 0) {
    return res.render('register', {
-   errors : resultValidation.mapped()
+   errors : resultValidation.mapped(),
+   oldData : req.body //para mantener la data ingresada visible en caso de que haya un error al completar el form
    });
  }
     

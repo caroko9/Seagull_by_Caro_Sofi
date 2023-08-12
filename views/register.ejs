@@ -24,7 +24,8 @@
                     <P> Regístrate y serás parte de la familia Seagull</P>
 
                     <div class="completar">
-                        <input name="nombre" type="text" placeholder="Nombre completo" class="nombre">
+                        <input name="nombre" type="text" placeholder="Nombre completo" class="nombre"
+                        value="<%= locals.oldData ? oldData.nombre : null %>">
                       <!-- Para mostrar msjs de errores en el formulario-->
                         <% if ( locals.errors && errors.nombre) { %>
                             <div class="text-error" >
