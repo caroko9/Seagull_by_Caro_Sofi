@@ -17,7 +17,7 @@ const validations = [
         let file = req.file;
         if(!file) {
            throw new Error('Tienes que subir una imagen');}
-        
+           return true;
     }),
     ]
 
