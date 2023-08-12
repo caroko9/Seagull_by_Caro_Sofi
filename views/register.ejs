@@ -33,7 +33,8 @@
                             </div>
                             <% } %>
 
-                        <input name="email" type="email" placeholder="E-mail" class="nombre">
+                        <input name="email" type="email" placeholder="E-mail" class="nombre"
+                        value="<%= locals.oldData ? oldData.email : null %>">
                          <!-- Para mostrar msjs de errores en el formulario-->
                          <% if ( locals.errors && errors.mail) { %>
                             <div class="text-error" >
@@ -55,7 +56,8 @@
                             </div>
                             <% } %>
 
-                        <input name="telefono" type="tel" placeholder="Teléfono" class="nombre">
+                        <input name="telefono" type="tel" placeholder="Teléfono" class="nombre"
+                        value="<%= locals.oldData ? oldData.telefono : null %>">
                         <% if ( locals.errors && errors.telefono) { %>
                             <div class="text-error" >
                             <%= errors.telefono.msg %>
