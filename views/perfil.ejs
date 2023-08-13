@@ -16,9 +16,11 @@
         <div class="image d-flex flex-column justify-content-center align-items-center">
             <!-- Mostrar la imagen y los detalles del usuario -->
             <button class="btn btn-secondary">
-                <img src="<%= usuario.imagenPerfil %>" height="100" width="100" />
+                <img src="/img/usuarios/<%= usuario.imagenPerfil %>" height="100" width="100" />
+            </button>
             </button>
             <span class="name mt-3"><%= usuario.nombre %></span>
+            <span class="email"><%= usuario.email %></span> <!-- Agrega esta línea -->
             <!-- Mostrar otros detalles del usuario según tu estructura -->
         </div>
     </div>
