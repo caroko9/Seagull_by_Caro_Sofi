@@ -41,6 +41,10 @@ router.post('/register', usuarioimgUpload.single('imagenPerfil'), validations, c
 
 router.get('/login', controladorUsers.iniciarSesion);
 
+router.get('/perfil/:userId', controladorUsers.obtenerUsuario);
+
+router.get('/perfil' , controladorUsers.perfil);
+
  
  
 module.exports = router;

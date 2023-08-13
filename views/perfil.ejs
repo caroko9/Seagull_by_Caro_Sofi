@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('partials/head.ejs') %>
+
+    <link href="/css/perfil.css" rel="stylesheet">
+
+<body>
+    <%- include ('partials/header.ejs') %>
+        <main>
+
+  <!-- Resto de tu código HTML -->
+
+<div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+    <div class="card p-4">
+        <div class="image d-flex flex-column justify-content-center align-items-center">
+            <!-- Mostrar la imagen y los detalles del usuario -->
+            <button class="btn btn-secondary">
+                <img src="<%= usuario.imagenPerfil %>" height="100" width="100" />
+            </button>
+            <span class="name mt-3"><%= usuario.nombre %></span>
+            <!-- Mostrar otros detalles del usuario según tu estructura -->
+        </div>
+    </div>
+</div>
+
+<!-- Resto de tu código HTML -->
+
+        </main>
+        <%- include ('partials/footer.ejs') %>
+        </body>
+        
+        </html>

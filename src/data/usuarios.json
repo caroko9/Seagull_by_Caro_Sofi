@@ -1,24 +1,11 @@
 [
  {
-  "nombre": "Juan",
+  "id": "0001",
+  "nombre": "Bai Bai",
   "email": "taquinibautista@gmail.com",
-  "contrasena": "$2a$10$pURIW4yxov4KFVSvItq16uFbBUkEF52gZLsmFXbMdZaItHhpmuRp6",
+  "contrasena": "$2a$10$84ZfQq6EASzMthGpyQ4LnOt36lYEWv4JQfFPv4yncjSgBb7fRHUsW",
+  "repetir_contrasena": "jojo",
   "telefono": "1139290545",
-  "imagenPerfil": "1691784260347images.jpg"
- },
- {
-  "nombre": "zapatillas nike",
-  "email": "taquinibautista@gmail.com",
-  "contrasena": "$2a$10$PvQgCilt0QhHjkHMLmek4uyNx4vxJJpPfCss5YyHIYrx5.41h0m4u",
-  "telefono": "1139290545",
-  "imagenPerfil": "1691786319889images.jpg"
- },
- {
-  "nombre": "Sasha",
-  "email": "sashabz@gmail.com",
-  "contrasena": "$2a$10$.paWWW/aZzwhJeaOgWURNeRll6Gdo.DUJ2E3koitM4T6tNqmxcI16",
-  "repetir_contrasena": "1234",
-  "telefono": "87654",
-  "imagenPerfil": "1691798624984IMG_20230726_155239.jpg"
+  "imagenPerfil": "1691966017573images.jpg"
  }
 ]
