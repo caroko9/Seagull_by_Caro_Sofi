@@ -18,7 +18,10 @@ app.set ('view engine', 'ejs');
 app.use(express.urlencoded({extended: false})) //configuracion de express para seguridad de la info (post)
 app.use(express.json()) //capturar lo que venga de un formulario en un objeto literal
 app.use(methodOverride("_method"))
-app.use (session({secret:"clave secreta"}))
+app.use (session({secret:"clave secreta",
+resave:false,
+saveUninitialized:false,
+}))
 
 app.use ('/productos', productosRoutes);
 app.use('/users', usersRoutes); 

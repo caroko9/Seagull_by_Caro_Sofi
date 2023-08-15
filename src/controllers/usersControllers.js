@@ -39,6 +39,7 @@ const controladorUsuario =
 
   iniciarSesion: (req, res) => {
     res.render("login");
+    console.log(req.session)
   },
 
   processLogin: (req, res) => {
@@ -68,10 +69,15 @@ const controladorUsuario =
   
     if (usuarioAloguearse === null) {
       return res.render('login', { errors: errorsValidation.array() }); // Pasar los errores a la vista
+
+
     }
-  
+
     req.session.usuarioLogueado = usuarioAloguearse;
-    res.redirect(`/users/perfil/${usuarioAloguearse.id}`);
+  
+    res.redirect ('/')
+
+
   }
   
 ,  
