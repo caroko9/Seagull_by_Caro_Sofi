@@ -6,6 +6,7 @@ const { body, check } = require('express-validator'); //usamos express validator
 /* vinculando con el archivo productosRoutes.js */
 const controladorUsers = require ('../controllers/usersControllers');
 
+
 //middleware que se usa en la ruta POST de register
 const validations = [
     body('nombre').notEmpty().withMessage('Tienes que ingresar tu nombre'),
@@ -44,11 +45,11 @@ router.get('/login', controladorUsers.iniciarSesion);
 router.post('/login', [
     check('email').isEmail().withMessage('Email invalido'),
     check('contrasena').isLength({min: 8}).withMessage('la contraseña tiene que tener minimo 8 caracteres')
-], controladorUsers.processLogin);
+], controladorUsers.processLogin);  
 
 router.get('/perfil/:userId', controladorUsers.obtenerUsuario);
 
-router.get('/perfil' , controladorUsers.perfil);
+router.get('/perfil/:userId' , controladorUsers.perfil);
 
  
  

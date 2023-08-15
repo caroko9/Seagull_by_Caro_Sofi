@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <%- include ('partials/head.ejs') %>
-
-    <link href="/css/login.css" rel="stylesheet">
-
+<link href="/css/login.css" rel="stylesheet">
 <body>
     <%- include ('partials/header.ejs') %>
-        <main>
-
-            <section class="contenedor_form ">
-                <div class="div_form borde-celeste">
-                    <form action="/login" method="POST" class="formulario">
-                        <img class="icono" src="/img/iconografia/surf.png">
-
-                        <h1 class="iniciosesion">INICIO DE SESION</h1>
-                        <P> ¡Bienvenido otra vez surfer, te extrañamos!</P>
-                         <div class="completar">
-                            
-                        <input type="email" placeholder="  e-mail" class="input">
-                        <input type="password" placeholder="  contraseña" class="input">
+    <main>
+        <section class="contenedor_form">
+            <div class="div_form borde-celeste">
+                <form action="/users/login" method="POST" class="formulario">
+                    <img class="icono" src="/img/iconografia/surf.png">
+                    <h1 class="iniciosesion">INICIO DE SESION</h1>
+                    <p>¡Bienvenido otra vez surfer, te extrañamos!</p>
+                    <div class="completar">
+                        <input type="email" placeholder="  e-mail" name="email" class="input">
+                        <input type="password" placeholder="  contraseña" name="contrasena" class="input">
                     </div>
-
-                        <a class="TextoOlvido">¡Ups! No recuerdo mi contraseña. </a>
-                        <br>
-                        <a href="/users/register" class="TextoCreaCuenta">CREA TU CUENTA</a>
-                     
-                        <br>
-                        <div>
-
-                        <div class="boton text-center"> 
-                            <a class="btn  btn-color" href="">INICIAR SESION</a>
+                    <!-- Mostrar errores de validación -->
+                    <% if (locals.errors) { %>
+                        <div class="error-message">
+                            <% for (let error of locals.errors) { %>
+                                <p><%= error.msg %></p>
+                            <% } %>
                         </div>
-                    </form>
-                </div>
-            </section>
-        </main>
-        <%- include ('partials/footer.ejs') %>
-        </body>
-        
-        </html>
+                    <% } %>
+                    <a class="TextoOlvido">¡Ups! No recuerdo mi contraseña. </a>
+                    <br>
+                    <a href="/users/register" class="TextoCreaCuenta">CREA TU CUENTA</a>
+                    <br>
+                    <div>
+                        <div class="boton text-center">
+                            <button type="submit" class="btn btn-color">INICIAR SESION</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <%- include ('partials/footer.ejs') %>
+</body>
+</html>

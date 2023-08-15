@@ -10,6 +10,7 @@ const path = require ('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
 
+
 app.use(express.static(path.resolve(__dirname, './public')));
 
 app.set ('view engine', 'ejs');

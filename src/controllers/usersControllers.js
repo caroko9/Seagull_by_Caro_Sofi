@@ -3,7 +3,7 @@ const path = require('path');
 const { validationResult} = require('express-validator');
 let bcrypt = require('bcryptjs');
 const { v4: uuidv4 } = require('uuid');
-let session = require ('express-session')
+
 
 
 const usuariosFilePath = path.join(__dirname, '../../src/data/usuarios.json');
@@ -42,13 +42,39 @@ const controladorUsuario =
   },
 
   processLogin: (req, res) => {
-    let errors = validationResult(req);
-    if (errors.isEmpty()){
-      
-    } else {
-      return res.render ('login',{errors: errors.errors})
+    let errorsValidation = validationResult(req);
+
+    if (errorsValidation.errors.length > 0) {
+        return res.render('login', {
+            errors: errorsValidation.array(), // Pasar los errores a la vista
+            oldData: req.body,
+        });
     }
-  },
+
+  
+    const fileContent = fs.readFileSync(usuariosFilePath, 'utf-8');
+    const usuarios = JSON.parse(fileContent);
+  
+    let usuarioAloguearse = null;
+  
+    for (let i = 0; i < usuarios.length; i++) {
+      if (usuarios[i].email === req.body.email) {
+        if (bcrypt.compareSync(req.body.contrasena, usuarios[i].contrasena)) {
+          usuarioAloguearse = usuarios[i];
+          break;
+        }
+      }
+    }
+  
+    if (usuarioAloguearse === null) {
+      return res.render('login', { errors: errorsValidation.array() }); // Pasar los errores a la vista
+    }
+  
+    req.session.usuarioLogueado = usuarioAloguearse;
+    res.redirect(`/users/perfil?userId=${usuarioAloguearse.id}`);
+  }
+  
+,  
 
   register: (req, res) => {
     res.render("register");

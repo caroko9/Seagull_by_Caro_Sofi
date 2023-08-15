@@ -16,5 +16,14 @@
   "repetir_contrasena": "909090",
   "telefono": "1139297897",
   "imagenPerfil": "1692050762017Alan_Turing.jpg"
+ },
+ {
+  "id": "000111",
+  "nombre": "camila",
+  "email": "cami-estrada@hotmail.com",
+  "contrasena": "$2a$10$l4nKjHl52nTPTdfk6RScT.Tn8ZFB0QVBX1lGZj0wRexwiXrZyrAwC",
+  "repetir_contrasena": "espiuito",
+  "telefono": "1139290545",
+  "imagenPerfil": "1692070453537Ada_Lovelace_Chalon.jpg"
  }
 ]
