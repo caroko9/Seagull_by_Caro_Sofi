@@ -71,7 +71,7 @@ const controladorUsuario =
     }
   
     req.session.usuarioLogueado = usuarioAloguearse;
-    res.redirect(`/users/perfil?userId=${usuarioAloguearse.id}`);
+    res.redirect(`/users/perfil/${usuarioAloguearse.id}`);
   }
   
 ,  
@@ -90,10 +90,12 @@ const controladorUsuario =
     }
   
     res.render('perfil', { usuario: usuario });
+
+    
   },
   
 
-
+  
   create: (req, res) => {
     const resultValidation = validationResult(req);
 
@@ -128,3 +130,9 @@ const controladorUsuario =
 }
 
 module.exports = controladorUsuario;
+
+
+
+
+
+

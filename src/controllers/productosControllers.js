@@ -73,6 +73,7 @@ let productosController = {
   },
   
   deleteCarrito: (req, res) => {
+    
     let productoId = req.params.id;
     
     carrito = carrito.filter((producto) => producto.id !== productoId);
@@ -86,3 +87,5 @@ let productosController = {
 
 
 module.exports = productosController;
+
+
