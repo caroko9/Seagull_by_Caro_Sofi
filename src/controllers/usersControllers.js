@@ -3,6 +3,7 @@ const path = require('path');
 const { validationResult} = require('express-validator');
 let bcrypt = require('bcryptjs');
 const { v4: uuidv4 } = require('uuid');
+let session = require ('express-session')
 
 
 const usuariosFilePath = path.join(__dirname, '../../src/data/usuarios.json');
@@ -38,6 +39,15 @@ const controladorUsuario =
 
   iniciarSesion: (req, res) => {
     res.render("login");
+  },
+
+  processLogin: (req, res) => {
+    let errors = validationResult(req);
+    if (errors.isEmpty()){
+      
+    } else {
+      return res.render ('login',{errors: errors.errors})
+    }
   },
 
   register: (req, res) => {

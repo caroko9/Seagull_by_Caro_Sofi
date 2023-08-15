@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const multer = require('multer');
-const { body } = require('express-validator'); //usamos express validator para validar los datos del form
+const { body, check } = require('express-validator'); //usamos express validator para validar los datos del form
 /* vinculando con el archivo productosRoutes.js */
 const controladorUsers = require ('../controllers/usersControllers');
 
@@ -40,6 +40,11 @@ router.get('/register', controladorUsers.register);
 router.post('/register', usuarioimgUpload.single('imagenPerfil'), validations, controladorUsers.create);
 
 router.get('/login', controladorUsers.iniciarSesion);
+
+router.post('/login', [
+    check('email').isEmail().withMessage('Email invalido'),
+    check('contrasena').isLength({min: 8}).withMessage('la contraseña tiene que tener minimo 8 caracteres')
+], controladorUsers.processLogin);
 
 router.get('/perfil/:userId', controladorUsers.obtenerUsuario);
 

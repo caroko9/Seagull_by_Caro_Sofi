@@ -7,5 +7,14 @@
   "repetir_contrasena": "surfing",
   "telefono": "1139290545",
   "imagenPerfil": "baibai.jpg"
+ },
+ {
+  "id": "00011",
+  "nombre": "lucas rodriguez",
+  "email": "lucasr@gmail.com",
+  "contrasena": "$2a$10$C3GOl3kKRrbspyltshWOiuegtYzx7gD97DkKC43KRe9snl1uVl0fa",
+  "repetir_contrasena": "909090",
+  "telefono": "1139297897",
+  "imagenPerfil": "1692050762017Alan_Turing.jpg"
  }
 ]
