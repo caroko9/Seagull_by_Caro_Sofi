@@ -130,12 +130,6 @@ editarEscuela: (req, res) => {
 };
 
 
-
-
-
-
-
-
 module.exports = controller;
  
 

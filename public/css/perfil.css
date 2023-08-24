@@ -1,0 +1,13 @@
+*{
+  font-family: 'Klee One';
+}
+body {
+  background-image: url(/img/perfil.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin: 0;
+}
