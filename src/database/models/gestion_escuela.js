@@ -25,23 +25,24 @@ function gestion_escuela_Data(sequelize, Datatypes){
         }
     }
 
-
     let config_gestion_escuela = { timestamps: false };
-
-    // Definir relación con el modelo Actividad
-    gestion_escuela.belongsTo(escuela, {
-        foreignKey: 'escuela_id',
-        as: 'escuela'
-    });
-
-    // Definir relación con el modelo Ciudad
-    gestion_escuela.belongsTo(usuario, {
-        foreignKey: 'usuario_id',
-        as: 'usuario'
-    });
-
-
+    
+    
     const school_admin = sequelize.define(alias_gestion_escuela, cols_gestion_escuela, config_gestion_escuela)
+
+    // Definir relación con el modelo Actividad 
+    gestion_escuela.associate = function (models) {
+        gestion_escuela.belongsTo(models.escuela, {
+        as: 'escuela',
+        foreignKey: 'escuela_id'
+        });
+
+        // Definir relación con el modelo Ciudad
+        gestion_escuela.belongsTo(models.usuario, {
+            as: 'usuario',
+            foreignKey: 'usuario_id'
+        });
+    }
 
     return school_admin;
 }

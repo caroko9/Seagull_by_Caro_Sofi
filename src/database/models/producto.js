@@ -38,17 +38,23 @@ function productoData(sequelize, Datatypes){
  
  
      let configProducto = {timestamps: false};
+
  
-     // Definir relación con el modelo Actividad
- producto.belongsTo(usuario, {
-     foreignKey: 'usuario_id',
-     as: 'usuario'
-   });
-   
- 
-     const product = sequelize.define(aliasProducto ,colsProducto , configProducto)
- 
-     return product;
- }
+  const product = sequelize.define(aliasProducto, colsProducto, configProducto)
+
+  // Definir relación con el modelo Actividad
+  producto.associate = function (models) {
+    producto.belongsTo(models.usuario, {
+      as: 'usuario',
+      foreignKey: 'usuario_id'
+    });
+    producto.hasMany(models.venta, {
+      as: 'venta',
+      foreignKey: 'producto_id'
+  });
+  }
+
+  return product;
+}
  
      module.exports = productoData;

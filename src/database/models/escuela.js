@@ -57,24 +57,30 @@ function escuelasData(sequelize, Datatypes){
           }
     }
 
+  let configEscuelas = { timestamps: false };
 
-    let configEscuelas = {timestamps: false};
+  const surfSchool = sequelize.define(aliasEscuelas, colsEscuelas, configEscuelas)
 
-    // Definir relación con el modelo Actividad
-escuela.belongsTo(actividad, {
-    foreignKey: 'actividad_id',
-    as: 'actividad'
-  });
-  
-  // Definir relación con el modelo Ciudad
-  escuela.belongsTo(ciudad, {
-    foreignKey: 'ciudad_id',
-    as: 'ciudad'
-  });
+  escuela.associate = function (models) {
+    escuela.belongsTo(models.actividad, {  // Definir relación con el modelo Ciudad
+      as: 'actividad',
+      foreignKey: 'actividad_id'
+    });
 
-    const surfschool = sequelize.define(aliasEscuelas ,colsEscuelas, configEscuelas)
+    escuela.belongsTo(models.ciudad, {
+      as: 'ciudad',
+      foreignKey: 'ciudad_id'
+    });
+    //una escuela tiene id gestion escuela NO SE SI ESTA BIEN
+    escuela.associate = function (models) {
+      escuela.hasMany(models.gestion_escuela, {
+      as: 'gestion_escuela',
+      foreignKey: 'escuela_id'
+      });
+    }
+  }
 
-    return surfschool;
+  return surfSchool;
 }
 
     module.exports = escuelasData;

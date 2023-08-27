@@ -17,18 +17,25 @@ function ciudadData(sequelize, Datatypes){
     }
     }
 
-    let configCiudad = {timestamps: false};
+    let configCiudad = {timestamps: false};    
+ 
+    const schoolCity = sequelize.define(aliasCiudad, colsCiudad, configCiudad)
 
-     // Definir relación con el modelo pais
-    ciudad.belongsTo(pais, {
-        foreignKey: 'pais_id',
-        as: 'pais'
-      });
- 
-     const schoolCity = sequelize.define(aliasCiudad , colsCiudad, configCiudad)
- 
-     return schoolCity;
- 
+    // Definir relación con el modelo Ciudad
+    ciudad.associate = function (models) {
+        ciudad.belongsTo(models.pais, {
+            foreignKey: 'pais_id',
+            as: 'pais'
+        });
+
+        ciudad.hasMany(models.escuela, {
+            as: 'escuela',
+            foreignKey: 'ciudad_id'
+        });
     }
+
+    return schoolCity;
+
+}
 
      module.exports = ciudadData;

@@ -16,10 +16,17 @@ function paisData(sequelize, Datatypes){
 
     let configPais = {timestamps: false};
  
-     const schoolCountry = sequelize.define(aliasPais , colsPais, configPais)
- 
-     return schoolCountry;
- 
+    const schoolCountry = sequelize.define(aliasPais, colsPais, configPais)
+
+    pais.associate = function (models) {
+        pais.hasMany(models.ciudad, {
+            as: 'ciudad',
+            foreignKey: 'pais_id'
+        });
     }
+
+    return schoolCountry;
+
+}
 
      module.exports = paisData;

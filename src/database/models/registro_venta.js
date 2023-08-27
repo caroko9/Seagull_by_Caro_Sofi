@@ -26,12 +26,17 @@ function registro_venta_Data(sequelize, Datatypes) {
 
     }
 
-
     let config_registro_venta = { timestamps: false };
 
 
     const sale_admin = sequelize.define(alias_registro_venta, cols_registro_venta, config_registro_venta)
 
+    registro_venta.associate = function (models) {
+        registro_venta.hasMany(models.venta, {
+            as: 'venta',
+            foreignKey: 'registro_venta_id'
+        });
+    }
     return sale_admin;
 }
 

@@ -33,15 +33,33 @@ function usuarioData(sequelize, Datatypes){
              allowNull: false
            }
      }
- 
- 
+  
      let configUsuario = {timestamps: false};
-   
- 
-     const user = sequelize.define(aliasUsuario ,colsUsuario , configUsuario)
- 
-     return user;
- }
+
+    
+  const user = sequelize.define(aliasUsuario, colsUsuario, configUsuario)
+
+  usuario.associate = function (models) {
+    usuario.hasMany(models.gestion_escuela, {
+      as: 'gestion_escuela',
+      foreignKey: 'gestion_escuela_id'
+    });
+    usuario.hasMany(models.producto, {
+      as: 'producto',
+      foreignKey: 'producto_id'
+    });
+
+    //un usuario tiene id gestion escuela NO SE SI ESTA BIEN
+    usuario.associate = function (models) {
+      usuario.hasMany(models.gestion_escuela, {
+        as: 'gestion_escuela',
+        foreignKey: 'usuario_id'
+      });
+    }
+  }
+
+  return user;
+}
  
      module.exports = usuarioData;
  

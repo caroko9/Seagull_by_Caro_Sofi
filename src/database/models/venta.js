@@ -25,26 +25,28 @@ function ventasData(sequelize, Datatypes){
              allowNull: false
            }
      }
- 
- 
-     let configVenta = {timestamps: false};
- 
-  // Definir relación con el modelo Actividad
- venta.belongsTo(registro_venta, {
-     foreignKey: 'registro_venta_id',
-     as: 'registro_venta'
-   });
-   
-   // Definir relación con el modelo Ciudad
- venta.belongsTo(producto, {
-     foreignKey: 'producto_id',
-     as: 'producto'
-   });
-   
- 
-     const sale = sequelize.define(aliasVenta , colsVenta, configVenta)
- 
-     return sale;
- }
+
+
+    let configVenta = { timestamps: false };
+
+
+    const sale = sequelize.define(aliasVenta, colsVenta, configVenta)
+
+    // Definir relación con el modelo Actividad
+    venta.associate = function (models) {
+        venta.belongsTo(models.registro_venta, {
+            as: 'registro_venta',
+            foreignKey: 'registro_venta_id'
+        });
+
+        // Definir relación con el modelo Ciudad
+        venta.belongsTo(models.producto, {
+            as: 'producto',
+            foreignKey: 'producto_id'
+        });
+    }
+
+    return sale;
+}
  
      module.exports = ventasData;
