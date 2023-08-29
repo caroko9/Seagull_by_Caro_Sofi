@@ -1,4 +1,4 @@
-function usuarioData(sequelize, Datatypes){
+/*function usuarioData(sequelize, Datatypes){
    
     let aliasUsuario = 'usuario'; //nombre de la tabla
  
@@ -12,12 +12,12 @@ function usuarioData(sequelize, Datatypes){
              allowNull: false
            },
            email: {
-             type: DataTypes.STRING(40),
+             type: Datatypes.STRING(40),
              allowNull: false
            },
  
            clave: {
-             type: DataTypes.STRING(40),
+             type: Datatypes.STRING(40),
              allowNull: false
            },
            fecha_creacion: {
@@ -37,29 +37,29 @@ function usuarioData(sequelize, Datatypes){
      let configUsuario = {timestamps: false};
 
     
-  const user = sequelize.define(aliasUsuario, colsUsuario, configUsuario)
+  const usuarios = sequelize.define(aliasUsuario, colsUsuario, configUsuario)
 
-  usuario.associate = function (models) {
-    usuario.hasMany(models.gestion_escuela, {
-      as: 'gestion_escuela',
+  usuarios.associate = function (modelos) {
+    usuarios.hasMany(modelos.gestion_escuelas, {
+      as: 'gestion_escuelas',
       foreignKey: 'gestion_escuela_id'
     });
-    usuario.hasMany(models.producto, {
-      as: 'producto',
+    usuarios.hasMany(modelos.productos, {
+      as: 'productos',
       foreignKey: 'producto_id'
     });
 
     //un usuario tiene id gestion escuela NO SE SI ESTA BIEN
-    usuario.associate = function (models) {
-      usuario.hasMany(models.gestion_escuela, {
-        as: 'gestion_escuela',
+    usuarios.associate = function (modelos) {
+      usuarios.hasMany(modelos.gestion_escuelas, {
+        as: 'gestion_escuelas',
         foreignKey: 'usuario_id'
       });
     }
   }
 
-  return user;
+  return usuarios;
 }
  
      module.exports = usuarioData;
- 
+ */

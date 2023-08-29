@@ -1,4 +1,4 @@
-function ventasData(sequelize, Datatypes){
+/*function ventasData(sequelize, Datatypes){
    
     let aliasVenta = 'venta'; //nombre de la tabla
  
@@ -8,7 +8,7 @@ function ventasData(sequelize, Datatypes){
              primaryKey: true,
            },
          monto_unidad: {
-             type: DataTypes.FLOAT,
+             type: Datatypes.FLOAT,
              allowNull: false
            },
            cantidad: {
@@ -16,12 +16,12 @@ function ventasData(sequelize, Datatypes){
              allowNull: false
            },
            registro_venta_id: {
-             type: DataTypes.INTEGER(11),
+             type: Datatypes.INTEGER(11),
              allowNull: false
            },
  
            producto_id: {
-             type: DataTypes.INTEGER(11),
+             type: Datatypes.INTEGER(11),
              allowNull: false
            }
      }
@@ -30,23 +30,24 @@ function ventasData(sequelize, Datatypes){
     let configVenta = { timestamps: false };
 
 
-    const sale = sequelize.define(aliasVenta, colsVenta, configVenta)
+    const ventas = sequelize.define(aliasVenta, colsVenta, configVenta)
 
     // Definir relación con el modelo Actividad
-    venta.associate = function (models) {
-        venta.belongsTo(models.registro_venta, {
-            as: 'registro_venta',
+    ventas.associate = function (modelos) {
+        ventas.belongsTo(modelos.registro_ventas, {
+            as: 'registro_ventas',
             foreignKey: 'registro_venta_id'
         });
 
         // Definir relación con el modelo Ciudad
-        venta.belongsTo(models.producto, {
-            as: 'producto',
+        ventas.belongsTo(modelos.productos, {
+            as: 'productos',
             foreignKey: 'producto_id'
         });
     }
 
-    return sale;
+    return ventas;
 }
  
      module.exports = ventasData;
+     */

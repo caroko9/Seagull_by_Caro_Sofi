@@ -1,4 +1,4 @@
-//esto es para comunicarme con la base de datos
+//Los modelos/entidades son para comunicarme con la base de datos
 
 //creo una funcion con dos parámetro. Por standard se ponen estos 
 function actividadData(sequelize, Datatypes){
@@ -24,17 +24,17 @@ function actividadData(sequelize, Datatypes){
 
 
  //variable donde pongo de parámetros las 3 variables anteriores
-     const schoolActivity = sequelize.define(aliasActividad ,colsActividad, configActividad)
+     const actividades = sequelize.define(aliasActividad ,colsActividad, configActividad)
 
      // Definir relación con el modelo Ciudad
-     actividad.associate = function(models) {
-        actividad.hasMany(models.escuela, {
-            as: 'escuela',
+     actividades.associate = function (modelos) {
+        actividades.hasMany(modelos.escuelas, {
+            as: 'escuelas',
             foreignKey: 'actividad_id'
              });
             }
  
-     return schoolActivity;
+     return actividades;
  
     }
 

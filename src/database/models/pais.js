@@ -1,4 +1,4 @@
-function paisData(sequelize, Datatypes){
+/*function paisData(sequelize, Datatypes){
    
     let aliasPais = 'pais'; //nombre de la tabla
 
@@ -16,17 +16,18 @@ function paisData(sequelize, Datatypes){
 
     let configPais = {timestamps: false};
  
-    const schoolCountry = sequelize.define(aliasPais, colsPais, configPais)
+    const paises = sequelize.define(aliasPais, colsPais, configPais)
 
-    pais.associate = function (models) {
-        pais.hasMany(models.ciudad, {
-            as: 'ciudad',
+    paises.associate = function (modelos) {
+        paises.hasMany(modelos.ciudades, {
+            as: 'ciudades',
             foreignKey: 'pais_id'
         });
     }
 
-    return schoolCountry;
+    return paises;
 
 }
 
      module.exports = paisData;
+     */

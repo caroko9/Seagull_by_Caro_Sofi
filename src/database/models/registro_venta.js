@@ -1,4 +1,4 @@
-function registro_venta_Data(sequelize, Datatypes) {
+/*function registro_venta_Data(sequelize, Datatypes) {
 
     let alias_registro_venta = 'venta'; //nombre de la tabla
 
@@ -12,15 +12,15 @@ function registro_venta_Data(sequelize, Datatypes) {
             allowNull: false
         },
         metodo_pago: {
-            type: DataTypes.ENUM('Debito', 'Credito'),
+            type: Datatypes.ENUM('Debito', 'Credito'),
             allowNull: false
         },
         direccion: {
-            type: DataTypes.STRING(50),
+            type: Datatypes.STRING(50),
             allowNull: false
         },
         email: {
-            type: DataTypes.STRING(25),
+            type: Datatypes.STRING(25),
             allowNull: false
         }
 
@@ -29,15 +29,16 @@ function registro_venta_Data(sequelize, Datatypes) {
     let config_registro_venta = { timestamps: false };
 
 
-    const sale_admin = sequelize.define(alias_registro_venta, cols_registro_venta, config_registro_venta)
+    const registro_ventas = sequelize.define(alias_registro_venta, cols_registro_venta, config_registro_venta)
 
-    registro_venta.associate = function (models) {
-        registro_venta.hasMany(models.venta, {
-            as: 'venta',
+    registro_ventas.associate = function (modelos) {
+        registro_ventas.hasMany(modelos.ventas, {
+            as: 'ventas',
             foreignKey: 'registro_venta_id'
         });
     }
-    return sale_admin;
+    return registro_ventas;
 }
 
 module.exports = registro_venta_Data;
+*/

@@ -1,4 +1,4 @@
-function escuelasData(sequelize, Datatypes){
+/*function escuelasData(sequelize, Datatypes){
    
    let aliasEscuelas = 'escuela'; //nombre de la tabla
 
@@ -20,7 +20,7 @@ function escuelasData(sequelize, Datatypes){
             allowNull: false
           },
           email: {
-            type: DataTypes.STRING(40),
+            type: Datatypes.STRING(40),
             allowNull: false
           },
           telefono: {
@@ -59,28 +59,29 @@ function escuelasData(sequelize, Datatypes){
 
   let configEscuelas = { timestamps: false };
 
-  const surfSchool = sequelize.define(aliasEscuelas, colsEscuelas, configEscuelas)
+  const escuelas = sequelize.define(aliasEscuelas, colsEscuelas, configEscuelas)
 
-  escuela.associate = function (models) {
-    escuela.belongsTo(models.actividad, {  // Definir relación con el modelo Ciudad
-      as: 'actividad',
+  escuelas.associate = function (modelos) {
+    escuelas.belongsTo(modelos.actividades, {  // Definir relación con el modelo Ciudad
+      as: 'actividades',
       foreignKey: 'actividad_id'
     });
 
-    escuela.belongsTo(models.ciudad, {
-      as: 'ciudad',
+    escuelas.belongsTo(modelos.ciudades, {
+      as: 'ciudades',
       foreignKey: 'ciudad_id'
     });
     //una escuela tiene id gestion escuela NO SE SI ESTA BIEN
-    escuela.associate = function (models) {
-      escuela.hasMany(models.gestion_escuela, {
-      as: 'gestion_escuela',
+    escuelas.associate = function (models) {
+      escuelas.hasMany(modelos.gestion_escuelas, {
+      as: 'gestion_escuelas',
       foreignKey: 'escuela_id'
       });
     }
   }
 
-  return surfSchool;
+  return escuelas;
 }
 
     module.exports = escuelasData;
+    */

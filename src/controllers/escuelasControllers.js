@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const escuelasFilePath = path.join(__dirname, '../../src/data/escuelas.json');
+//const db = require('../database/models');
 
 
 //JSON CON LA LISTA DE ESCUELAS
@@ -68,7 +69,7 @@ const controller = {
 	},
 //VISTA DE LA LISTA DE ESCUELAS
   list: (req, res) => {
-    res.render("escuelasList", { escuelasRegistradas: escuelas });
+   res.render("escuelasList", { escuelasRegistradas: escuelas });
   },
 
 //MÉTODO USADO PARA MOSTRAR LAS ESCUELAS FILTRADAS EN LA BARRA DE BÚSQUEDA DE LA VISTA ANTERIOR
@@ -132,7 +133,6 @@ editarEscuela: (req, res) => {
 
 module.exports = controller;
  
-
 
 
 
