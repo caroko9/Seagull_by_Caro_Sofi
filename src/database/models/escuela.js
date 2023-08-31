@@ -61,24 +61,25 @@ function escuelasData(sequelize, Datatypes){
  
    const escuelas = sequelize.define(aliasEscuelas, colsEscuelas, configEscuelas)
  
-  /* escuelas.associate = function (modelos) {
-     escuelas.belongsTo(modelos.actividades, {  // Definir relación con el modelo Ciudad
+  escuelas.associate = function (modelos) {
+     escuelas.belongsTo(modelos.actividad, {  // Definir relación con el modelo actividad
        as: 'actividades',
        foreignKey: 'actividad_id'
      });
- 
-     escuelas.belongsTo(modelos.ciudades, {
+    
+    escuelas.belongsTo(modelos.ciudad, {
        as: 'ciudades',
        foreignKey: 'ciudad_id'
      });
+
      //una escuela tiene id gestion escuela NO SE SI ESTA BIEN
-     escuelas.associate = function (models) {
-       escuelas.hasMany(modelos.gestion_escuelas, {
+     escuelas.associate = function (modelos) {
+       escuelas.hasMany(modelos.gestion_escuela, {
        as: 'gestion_escuelas',
        foreignKey: 'escuela_id'
        });
      }
-   }*/
+   }
  
    return escuelas;
  }

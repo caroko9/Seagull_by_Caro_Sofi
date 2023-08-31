@@ -39,24 +39,24 @@ function usuarioData(sequelize, Datatypes) {
 
     const usuarios = sequelize.define(aliasUsuario, colsUsuario, configUsuario)
 
-    /* usuarios.associate = function (modelos) {
-       usuarios.hasMany(modelos.gestion_escuelas, {
+   usuarios.associate = function (modelos) {
+       usuarios.hasMany(modelos.gestion_escuela, {
          as: 'gestion_escuelas',
          foreignKey: 'gestion_escuela_id'
        });
-       usuarios.hasMany(modelos.productos, {
+        usuarios.hasMany(modelos.producto, {
          as: 'productos',
          foreignKey: 'producto_id'
        });
    
-       //un usuario tiene id gestion escuela NO SE SI ESTA BIEN
+      //un usuario tiene id gestion escuela NO SE SI ESTA BIEN
        usuarios.associate = function (modelos) {
-         usuarios.hasMany(modelos.gestion_escuelas, {
+         usuarios.hasMany(modelos.gestion_escuela, {
            as: 'gestion_escuelas',
            foreignKey: 'usuario_id'
          });
        }
-     }*/
+     }
 
     return usuarios;
 }

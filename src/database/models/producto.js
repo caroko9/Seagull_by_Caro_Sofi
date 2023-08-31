@@ -42,17 +42,17 @@ function productoData(sequelize, Datatypes){
  
   const productos = sequelize.define(aliasProducto, colsProducto, configProducto)
 
-  // Definir relación con el modelo Actividad
- /* productos.associate = function (modelos) {
-    productos.belongsTo(modelos.usuarios, {
+  // Definir relación con el modelo usuario
+  productos.associate = function (modelos) {
+    productos.belongsTo(modelos.usuario, {
       as: 'usuarios',
       foreignKey: 'usuario_id'
     });
-    productos.hasMany(modelos.ventas, {
+    productos.hasMany(modelos.venta, {
       as: 'ventas',
       foreignKey: 'producto_id'
   });
-  }*/
+  }
 
   return productos;
 }

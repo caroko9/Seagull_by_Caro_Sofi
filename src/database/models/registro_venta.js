@@ -31,12 +31,12 @@ function registro_venta_Data(sequelize, Datatypes) {
 
     const registro_ventas = sequelize.define(alias_registro_venta, cols_registro_venta, config_registro_venta)
 
-    /*registro_ventas.associate = function (modelos) {
-        registro_ventas.hasMany(modelos.ventas, {
+    registro_ventas.associate = function (modelos) {
+        registro_ventas.hasMany(modelos.venta, {
             as: 'ventas',
             foreignKey: 'registro_venta_id'
         });
-    }*/
+    }
 
     return registro_ventas;
 }

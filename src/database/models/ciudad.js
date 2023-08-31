@@ -21,18 +21,18 @@ function ciudadData(sequelize, Datatypes){
  
     const ciudades = sequelize.define(aliasCiudad, colsCiudad, configCiudad)
 
-    // Definir relación con el modelo Ciudad
-   /* ciudades.associate = function (modelos) {
-        ciudades.belongsTo(modelos.paises, {
+    // Definir relación con el modelo pais
+   ciudades.associate = function (modelos) {
+        ciudades.belongsTo(modelos.pais, {
             as: 'paises',
             foreignKey: 'pais_id'
         });
 
-        ciudades.hasMany(modelos.escuela, {
+       ciudades.hasMany(modelos.escuela, {
             as: 'escuelas',
             foreignKey: 'ciudad_id'
         });
-    }*/
+    }
 
     return ciudades;
 

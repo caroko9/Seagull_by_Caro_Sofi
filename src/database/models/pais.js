@@ -18,13 +18,13 @@ function paisData(sequelize, Datatypes){
  
     const paises = sequelize.define(aliasPais, colsPais, configPais)
 
-   /* pais.associate = function (modelos) {
-        pais.hasMany(modelos.ciudad, {
+   paises.associate = function (modelos) {
+        paises.hasMany(modelos.ciudad, {
             as: 'ciudad',
             foreignKey: 'pais_id'
         });
     }
-   */
+   
 
     return paises;
 

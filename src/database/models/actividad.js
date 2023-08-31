@@ -23,17 +23,17 @@ function actividadData(sequelize, Datatypes){
     let configActividad = {timestamps: false};
 
 
- //variable donde pongo de parámetros las 3 variables anteriores
+ //variable donde pongo de parámetros las 3 variables anteriores. Esta constante la uso para definir las relaciones abajo
      const actividades = sequelize.define(aliasActividad ,colsActividad, configActividad)
 
-     // Definir relación con el modelo Ciudad
-    /* actividades.associate = function (modelos) {
-        actividades.hasMany(modelos.escuelas, {
+     // Definir relación con el modelo Ciudad (en el associate y el .hasMany va el "alias", mientras que en el modelos. va el nombre del modelo)
+   actividades.associate = function (modelos) {
+        actividades.hasMany(modelos.escuela, { 
             as: 'escuelas',
             foreignKey: 'actividad_id'
              });
             }
- */
+ 
      return actividades;
  
     }

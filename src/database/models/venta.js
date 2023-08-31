@@ -30,23 +30,24 @@ function ventasData(sequelize, Datatypes){
     let configVenta = { timestamps: false };
 
 
-    const ventas = sequelize.define(aliasVenta, colsVenta, configVenta)
+  const ventas = sequelize.define(aliasVenta, colsVenta, configVenta)
 
-    // Definir relación con el modelo Actividad
-    /*ventas.associate = function (modelos) {
-        ventas.belongsTo(modelos.registro_ventas, {
-            as: 'registro_ventas',
-            foreignKey: 'registro_venta_id'
-        });
+  // Definir relación con el modelo Actividad
+  ventas.associate = function (modelos) {/*
+    ventas.belongsTo(modelos.registro_venta, {
+      as: 'registro_ventas',
+      foreignKey: 'registro_venta_id'
+    });*/
 
-        // Definir relación con el modelo Ciudad
-        ventas.belongsTo(modelos.productos, {
-            as: 'productos',
-            foreignKey: 'producto_id'
-        });
-    }*/
+    // Definir relación con el modelo producto
+    ventas.belongsTo(modelos.producto, {
+      as: 'productos',
+      foreignKey: 'producto_id'
+    });
+  }
 
-    return ventas;
+  return ventas;
 }
- 
-     module.exports = ventasData;
+
+
+module.exports = ventasData;
