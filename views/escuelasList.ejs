@@ -3,37 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="/css/escuelasList.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-
+  <title>Escuelas</title>
+  <link rel="stylesheet" href="/css/productos.css">
 </head>
-<%- include ('partials/head.ejs') %>
 <body>
+  <%- include ('partials/head.ejs') %>
+  <%- include ('partials/header.ejs') %>
+  <main>
+    <div class="buscador mt-5 mx-auto text-center">
+      <h1 class="titulo">Escuelas</h1>
+      <div class="search container-sm">
+        <nav class="navbar navbar-#B0DEE4 bg-#B0DEE4">
+          <form class="form-inlin w-100">
+            <input class="form-control mx-auto" type="search" placeholder="¿Qué escuela estás buscando?" aria-label="Search">
+          </form>
+        </nav>
+      </div>
+    </div>
 
-  <%- include ('partials/header.ejs') %> 
-  
-<div class="ola">
-    <main>   
-      <p>ESCUELAS</p>
-      <p class="deportes">SURF BUCEO WINDSURF KITESURF SWIMMING</p>
-      <h4>Search</h4>
-      <form action="/escuelas/escuelasResults" method="GET">
-      <input type="text" name="buscar">
-      <input class="buscador" type="submit" value="Buscar">
+    <div class="contenedor">
+      <form action="/escuelas/escuela-detalle" method="GET">
+        <% for (let i = 0; i < escuelasRegistradas.length; i++) { %>
+          <article class="producto">
+            <div class="imagen">
+              <a href="/escuelas/escuela-detalle/<%= escuelasRegistradas[i].id %>">
+                <img src="/img/escuelas/<%= escuelasRegistradas[i].imagen[0].filename %>" class="product1" alt="<%= escuelasRegistradas[i].nombre %>">
+              </a>
+              <div class="linea"></div>
+              <div class="detalle">
+                <p class="nombre"><%= escuelasRegistradas[i].nombre %></p>
+                <p class="precio"><%= escuelasRegistradas[i].pais %></p>
+                <!-- You can add more details here if needed -->
+              </div>
+            </div>
+          </article>
+        <% } %>
       </form>
-        <ul>
-          <div class="linkss">
-          <% for (let i = 0; i < escuelasRegistradas.length; i++) { %>
-            <li>
-              <a href="/escuelas/escuela-detalle/<%= escuelasRegistradas[i].id %>"><%= escuelasRegistradas[i].nombre %> </a>
-            </li>
-          <% } %>   
-        </div>    
-        </ul>
-        </main>
-</div>
-  
+    </div>
+
+    <%- include ('partials/footer.ejs') %>
+  </main>
 </body>
 </html>

@@ -15,25 +15,26 @@
       </div>
       </div>
    
-    <div class="contenedor">
-       <form action="/productos/Productos" method="GET">   
-          
-          <% for (let i = 0; i < listadoProductos.length; i++) { %>
+      <div class="contenedor">
+        <form action="/escuelas/escuela-detalle" method="GET">
+          <% for (let i = 0; i < escuelasRegistradas.length; i++) { %>
             <article class="producto">
               <div class="imagen">
-                
-                <a href="/productos/idProducto/<%= listadoProductos[i].id %>"><img src="/img/productos/<%= listadoProductos[i].imagen %> %>" class="product1"></a>
+                <a href="/escuelas/escuela-detalle/<%= escuelasRegistradas[i].id %>">
+                  <img src="/img/escuelas/<%= escuelasRegistradas[i].imagen[0].filename %>" class="product1" alt="<%= escuelasRegistradas[i].nombre %>">
+                </a>
                 <div class="linea"></div>
                 <div class="detalle">
-                  <p class="nombre"><%= listadoProductos[i].nombre %></p>
-                  <p class="precio"><%= listadoProductos[i].precio %></p>
-                  <p class="descuento"><%= listadoProductos[i].descuento %></p>
+                  <p class="nombre"><%= escuelasRegistradas[i].nombre %></p>
+                  <p class="precio"><%= escuelasRegistradas[i].pais %></p>
+                  <!-- You can add more details here if needed -->
                 </div>
               </div>
             </article>
           <% } %>
-
-</div>
+        </form>
+      </div>
+      
 
 
   <%- include ('partials/footer.ejs') %>

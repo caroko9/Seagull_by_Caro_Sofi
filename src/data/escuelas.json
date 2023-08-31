@@ -1,13 +1,5 @@
 [
  {
-  "id": "0001",
-  "nombre": "Bai Bai",
-  "email": "ola@baibai.surf",
-  "descripcion": "Hace un poco más de 4 años Bai Bai eligió subirse a una combi y decirle chau a la ciudad para estar más cerca del mar, del surf y toda la magia que lo rodea.nace desde el estimulo de transmitir el surf con la gente que vive lejos del mar y contagiar el estilo de vida que el oceano propone.Proponemos actividades tales como yoga, gourmet experience, fogatas, entre otras muchas. Te invitamos a visitar nuestra pagina web: https://baibai.surf/ para conocer nuestros servicios y precios en detalle.",
-  "imagen": "baibai.jpg",
-  "pais": "Argentina"
- },
- {
   "id": "0002",
   "nombre": "la posada",
   "email": "laposada@gmail.com",
@@ -75,6 +67,42 @@
   "imagen": [
    {
     "filename": "1691200111218KiteSurf_Uruguay.jpg"
+   }
+  ],
+  "pais": "Uruguay"
+ },
+ {
+  "id": "0baa6ca1-a5fe-4a90-ae2a-def65002c37c",
+  "nombre": "Bai Bai",
+  "email": "baibai@gmail.com",
+  "descripcion": "La casa madre de BAI BAI, Donde todo comenzó.\r\nSu jardín con vista al mar y los acantilados empieza con una rampa de skate y termina con un fogón entre los árboles. Livings en el camino. Bicis para recorrer los acantilados. Equipados x Quiksilver & Corona\r\nLa casa por dentro, una obra de arte viva, desde 2014 artistas amigos van dejando sus huellas, muebles nuevos que reemplazan a los viejos que pasan a crear nuevos livings, libros, instrumentos, fotos. Todo está en movimiento siempre, la casa nunca es igual, mejorandose a si misma desde los espacios la armonía, el descanso, el encuentro, con otros, con uno. La definen arte, surf, mar, yoga, cocina, fogón, música, skate, literatura, permacultura, juego, experiencia viva.\r\nSumáte unas noches, vivi la magia del campo y mar. Traé la compu y hace beach office.\r\nVení a un trip y compartí con otros la experiencia en su máximo esplendor. Hacé tu propio trip con un camp de 5 días de surf, yoga, meditación y comida gourmet.",
+  "imagen": [
+   {
+    "filename": "1693525253670baibai.jpg"
+   }
+  ],
+  "pais": "Argentina"
+ },
+ {
+  "id": "3d5ab466-a69e-4a10-a1ea-9a761cf80b3d",
+  "nombre": "lapoint",
+  "email": "lapointst@gmail.com",
+  "descripcion": "Legendary surf, dreamy surroundings\r\nSecluded beaches, wild jungle and epic surf make Costa Rica a utopia for those wild at heart. Live only minutes from the beach at our surf camp in Costa Rica and enjoy the relaxed Pura Vida lifestyle of this beautiful country. During your stay at Lapoint, you can combine surfing with visiting waterfalls, snorkelling, action adventures and exploring the mesmerizing nature.",
+  "imagen": [
+   {
+    "filename": "1693525681240lapoint.jpg"
+   }
+  ],
+  "pais": "Costa Rica"
+ },
+ {
+  "id": "5f6b8aab-6902-4c10-ad21-318c54f35415",
+  "nombre": "la olla",
+  "email": "laollasurf@gmail.com",
+  "descripcion": "​Las clases de surf tienen una duración de 1hs 15min. Comienzan con 15 minutos de calentamiento, teoría y técnica en la orilla, donde se enseñan los movimientos y las reglas básicas del deporte, lectura de las condiciones y normas de seguridad en el mar. Luego, con una hora en el mar se practican los conceptos aprendidos. \r\n​\r\nTrabajamos en una zona específica autorizada para nuestra escuela, donde las olas son de excelente calidad para el aprendizaje del deporte. Las condiciones son especiales para todo tipo de nivel: un point break al fondo para avanzados y un beach break en la orilla para principiantes e intermedios.\r\n​\r\nLa playa La Olla es cuna del surf uruguayo, ya que fue una de las primeras en las que se realizó el deporte y también en recibir el primer evento deportivo internacional de surf en el año '78. ",
+  "imagen": [
+   {
+    "filename": "1693526016987laolla.jpg"
    }
   ],
   "pais": "Uruguay"
