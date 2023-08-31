@@ -27,13 +27,13 @@ function actividadData(sequelize, Datatypes){
      const actividades = sequelize.define(aliasActividad ,colsActividad, configActividad)
 
      // Definir relación con el modelo Ciudad
-     actividades.associate = function (modelos) {
+    /* actividades.associate = function (modelos) {
         actividades.hasMany(modelos.escuelas, {
             as: 'escuelas',
             foreignKey: 'actividad_id'
              });
             }
- 
+ */
      return actividades;
  
     }

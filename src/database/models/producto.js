@@ -1,4 +1,4 @@
-/*function productoData(sequelize, Datatypes){
+function productoData(sequelize, Datatypes){
    
     let aliasProducto = 'producto'; //nombre de la tabla
  
@@ -43,7 +43,7 @@
   const productos = sequelize.define(aliasProducto, colsProducto, configProducto)
 
   // Definir relación con el modelo Actividad
-  productos.associate = function (modelos) {
+ /* productos.associate = function (modelos) {
     productos.belongsTo(modelos.usuarios, {
       as: 'usuarios',
       foreignKey: 'usuario_id'
@@ -52,10 +52,9 @@
       as: 'ventas',
       foreignKey: 'producto_id'
   });
-  }
+  }*/
 
   return productos;
 }
  
      module.exports = productoData;
-     */

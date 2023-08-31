@@ -1,4 +1,4 @@
-/*function ciudadData(sequelize, Datatypes){
+function ciudadData(sequelize, Datatypes){
    
     let aliasCiudad = 'ciudad'; //nombre de la tabla
 
@@ -22,7 +22,7 @@
     const ciudades = sequelize.define(aliasCiudad, colsCiudad, configCiudad)
 
     // Definir relación con el modelo Ciudad
-    ciudades.associate = function (modelos) {
+   /* ciudades.associate = function (modelos) {
         ciudades.belongsTo(modelos.paises, {
             as: 'paises',
             foreignKey: 'pais_id'
@@ -32,11 +32,10 @@
             as: 'escuelas',
             foreignKey: 'ciudad_id'
         });
-    }
+    }*/
 
     return ciudades;
 
 }
 
      module.exports = ciudadData;
-*/

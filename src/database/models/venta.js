@@ -1,4 +1,4 @@
-/*function ventasData(sequelize, Datatypes){
+function ventasData(sequelize, Datatypes){
    
     let aliasVenta = 'venta'; //nombre de la tabla
  
@@ -33,7 +33,7 @@
     const ventas = sequelize.define(aliasVenta, colsVenta, configVenta)
 
     // Definir relación con el modelo Actividad
-    ventas.associate = function (modelos) {
+    /*ventas.associate = function (modelos) {
         ventas.belongsTo(modelos.registro_ventas, {
             as: 'registro_ventas',
             foreignKey: 'registro_venta_id'
@@ -44,10 +44,9 @@
             as: 'productos',
             foreignKey: 'producto_id'
         });
-    }
+    }*/
 
     return ventas;
 }
  
      module.exports = ventasData;
-     */

@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const escuelasFilePath = path.join(__dirname, '../../src/data/escuelas.json');
-//const db = require('../database/models');
+const db = require('../database/models');
 
 
 //JSON CON LA LISTA DE ESCUELAS
