@@ -190,5 +190,101 @@
    }
   ],
   "pais": "Brasil"
+ },
+ {
+  "id": "c73cb1a8-8e83-4e52-9a82-b42848566bf2",
+  "nombre": "Itacaré Surf School",
+  "email": "Itacaresurfschool@hotmail.com",
+  "descripcion": "La Escuela de Surf Itacaré ubicada en Itacaré, en la costa sur de Bahía, ofrece Clases y Tours de Surf. Actualmente imparte cursos a nivel principiante, intermedio y avanzado, utilizando las mejores técnicas para que sus alumnos tengan más facilidad y progresión para su desarrollo.",
+  "imagen": [
+   {
+    "filename": "16935389592725e.jpg"
+   }
+  ],
+  "pais": "Brasil"
+ },
+ {
+  "id": "f8053632-57c6-40e0-8650-fd866ed1efe6",
+  "nombre": "Corralejo Surf School",
+  "email": "info@corralejosurfschool.com",
+  "descripcion": "Para grupos o familias que buscan el 100% de atención del instructor y les garantice un aprendizaje mayor y experiencia inolvidable.",
+  "imagen": [
+   {
+    "filename": "169353914110701-home-curso-600x333.jpg"
+   }
+  ],
+  "pais": "España"
+ },
+ {
+  "id": "5f150dbf-0045-4f7a-b685-168743e0ff53",
+  "nombre": "WATSAY Surf School",
+  "email": "watsaysurf@gmail.com",
+  "descripcion": "Surf camp en Cantabria. Surf Camp menores y Surf Camp adultos.",
+  "imagen": [
+   {
+    "filename": "1693539324699escuela-surf-cantabria.jpg"
+   }
+  ],
+  "pais": "España"
+ },
+ {
+  "id": "9c7c66fe-0981-4bb0-90de-a84299d8795e",
+  "nombre": "Tiny Whale",
+  "email": "tinywhale@gmail.com",
+  "descripcion": "During our Surf & Yoga week you’ll get exactly the same high-quality surf coaching but with a healthy dose of daily surf-inspired yoga with our resident yoga guru Steffi. Physically it's a packed week but the surf-inspired yoga sessions are designed to stretch, relax and restore your body before the next days surfing so you feel energized each day. This week is perfect if you're either relatively new to yoga or have a current practice that you want to continue or evolve with a high-quality instructor. \r\n\r\n",
+  "imagen": [
+   {
+    "filename": "1693539533755mickfanning19-560x340.jpg"
+   }
+  ],
+  "pais": "Portugal"
+ },
+ {
+  "id": "543e10d7-ed3e-43ff-9d24-b84d5b03937a",
+  "nombre": "Imagine Surf School",
+  "email": "info@imaginesurfschool.com",
+  "descripcion": "\r\nA Imagine Surf School desenvolveu uma gama de serviços dirigida a todo o tipo de surfistas: iniciantes e avançados, crianças, turistas, familias ou apenas amantes da praia. Oferecemos aulas de qualidade certificada em toda a região da Comporta.",
+  "imagen": [
+   {
+    "filename": "1693539905224images.jpg"
+   }
+  ],
+  "pais": "Portugal"
+ },
+ {
+  "id": "31c99ff2-04b8-464f-aaee-ebf66e0000ab",
+  "nombre": "Alverge Surf School",
+  "email": "info@algarvesurfschool.com",
+  "descripcion": "For the last 25 years we have been running one of the oldest, most successful and popular Surf Schools in the Algarve region of Portugal. We offer group and private Surf Lessons for all levels, affordable Surf Camp packages year round, quality Surf Rentals and merchandise at our surf shop and a cozy, comfortable and fun surf hostel in the little surfing town of Sagres. Come see for yourself why most of our guests return year after year!",
+  "imagen": [
+   {
+    "filename": "1693540041386IMG_1711-scaled-435x535.jpg"
+   }
+  ],
+  "pais": "Portugal"
+ },
+ {
+  "id": "ce2041a3-147a-492a-8a5e-dcf6a69ef248",
+  "nombre": "Baleal Surf Camp",
+  "email": "info@balealsurfcamp.com",
+  "descripcion": "Established in 1993, we were Portugal’s first surf camp.\r\nBy focusing on customer service and the environment we have grown to become one of the best loved surf schools on Europe’s Atlantic coast.\r\nTeaching people how to surf and making sure they have the best possible surfing holiday is what we thrive on.\r\nThe surfcamp has a laid-back vibe and accommodation and equipment for all tastes and budgets.\r\nWe welcome everyone from singles to families, experts to novices.",
+  "imagen": [
+   {
+    "filename": "1693540226420images-1.jpg"
+   }
+  ],
+  "pais": "Portugal"
+ },
+ {
+  "id": "de3fa56d-a9a9-4bc1-8894-d15399bbdf63",
+  "nombre": "IN DA SURF CAMP AND SCHOOL",
+  "email": "info@indasurf.com",
+  "descripcion": "In Da Surf Camp is a family run surf camp in Bali.\r\nWe offer a personal approach and family atmosphere",
+  "imagen": [
+   {
+    "filename": "1693540434629inda.jpg"
+   }
+  ],
+  "pais": "Indonesia"
  }
 ]
