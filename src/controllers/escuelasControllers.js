@@ -99,9 +99,6 @@ idEscuela : (req, res) => {
   res.render('escuela-detalle', { escuela });
 },
 
-
-
-
 editarEscuela: (req, res) => {
   const escuelaId = req.params.id;
   const escuela = getSchoolById(escuelaId);

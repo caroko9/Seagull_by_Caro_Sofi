@@ -43,6 +43,8 @@ router.post('/register', usuarioimgUpload.single('imagenPerfil'), validations, c
 
 router.get('/login', guestMiddleWare, controladorUsers.iniciarSesion);
 
+router.get('/homeAdmin', controladorUsers.homeAdministration);
+
 router.post('/login', guestMiddleWare , [
     check('email').isEmail().withMessage('Email invalido'),
     check('contrasena').isLength({min: 8}).withMessage('la contraseña tiene que tener minimo 8 caracteres')

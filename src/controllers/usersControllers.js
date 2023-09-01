@@ -23,6 +23,13 @@ const controladorUsuario =
 
 {
 
+
+
+  homeAdministration: (req, res)=>{
+    res.render("homeAdmin")
+
+  },
+
   obtenerUsuario: (req, res) => {
     const userId = req.params.userId; // Obtener el ID del usuario de los parámetros de la URL
   
