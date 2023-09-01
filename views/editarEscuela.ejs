@@ -42,12 +42,33 @@
         <label for="pais" class="nombre-input">País</label>
         <input class="form-control" list="datalistOptions" name="pais" id="pais" placeholder="" value="<%= escuela ? escuela.pais : '' %>" required>
         <datalist id="datalistOptions">
-          <option value="Argentina">
-          <option value="Brasil">
-          <option value="Colombia">
-          <option value="Costa Rica">
-          <option value="Panama">
-          <option value="Uruguay">
+          <select name="surfingLocation">
+            <option value="Argentina">Argentina</option>
+            <option value="Brasil">Brasil</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Costa Rica">Costa Rica</option>
+            <option value="Panamá">Panamá</option>
+            <option value="Uruguay">Uruguay</option>
+            <option value="Australia">Australia</option>
+            <option value="Irlanda">Irlanda</option>
+            <option value="Chile">Chile</option>
+            <option value="Indonesia">Indonesia</option>
+            <option value="México">México</option>
+            <option value="Estados Unidos">Estados Unidos</option>
+            <option value="Francia">Francia</option>
+            <option value="Portugal">Portugal</option>
+            <option value="Nicaragua">Nicaragua</option>
+            <option value="Perú">Perú</option>
+            <option value="Nueva Zelanda">Nueva Zelanda</option>
+            <option value="Hawái">Hawái</option>
+            <option value="Fiyi">Fiyi</option>
+            <option value="Sudáfrica">Sudáfrica</option>
+            <option value="Japón">Japón</option>
+            <option value="Tahití">Tahití</option>
+            <option value="España">España</option>
+          </select>
+          
+          
         </datalist>
         <br>
         <button type="submit" class="boton-submit">Guardar Cambios</button>

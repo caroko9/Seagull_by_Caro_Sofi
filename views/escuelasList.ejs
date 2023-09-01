@@ -4,14 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Escuelas</title>
-  <link rel="stylesheet" href="/css/productos.css">
+  <link rel="stylesheet" href="/css/escuelasList.css">
 </head>
 <body>
   <%- include ('partials/head.ejs') %>
   <%- include ('partials/header.ejs') %>
   <main>
     <div class="buscador mt-5 mx-auto text-center">
-      <h1 class="titulo">Escuelas</h1>
+      <h1 class="titulo">ESCUELAS</h1>
+      <br>
       <div class="search container-sm">
         <nav class="navbar navbar-#B0DEE4 bg-#B0DEE4">
           <form class="form-inlin w-100">
@@ -20,27 +21,25 @@
         </nav>
       </div>
     </div>
-
-    <div class="contenedor">
-      <form action="/escuelas/escuela-detalle" method="GET">
-        <% for (let i = 0; i < escuelasRegistradas.length; i++) { %>
-          <article class="producto">
-            <div class="imagen">
-              <a href="/escuelas/escuela-detalle/<%= escuelasRegistradas[i].id %>">
-                <img src="/img/escuelas/<%= escuelasRegistradas[i].imagen[0].filename %>" class="product1" alt="<%= escuelasRegistradas[i].nombre %>">
-              </a>
-              <div class="linea"></div>
-              <div class="detalle">
-                <p class="nombre"><%= escuelasRegistradas[i].nombre %></p>
-                <p class="precio"><%= escuelasRegistradas[i].pais %></p>
-                <!-- You can add more details here if needed -->
-              </div>
+      <br>
+    <div class="escuelas-contenedor">
+      <% for (let i = 0; i < escuelasRegistradas.length; i++) { %>
+        <article class="escuela">
+          <div class="imagen">
+            <a href="/escuelas/escuela-detalle/<%= escuelasRegistradas[i].id %>">
+              <img src="/img/escuelas/<%= escuelasRegistradas[i].imagen[0].filename %>" class="product1" alt="<%= escuelasRegistradas[i].nombre %>">
+            </a>
+            <div class="linea"></div>
+            <div class="detalle">
+              <p class="nombre"><%= escuelasRegistradas[i].nombre %></p>
+              <p class="precio"><%= escuelasRegistradas[i].pais %></p>
+              <!-- Puedes agregar más detalles aquí si es necesario -->
             </div>
-          </article>
-        <% } %>
-      </form>
+          </div>
+        </article>
+      <% } %>
     </div>
-
+    
     <%- include ('partials/footer.ejs') %>
   </main>
 </body>

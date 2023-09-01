@@ -24,18 +24,6 @@
   "pais": "Brasil"
  },
  {
-  "id": "0004",
-  "nombre": "Piratas de Geribá",
-  "email": "piratasgeri@gmail.com",
-  "descripcion": "Escuela de surf y skate para niños. Aulong de longboards.",
-  "imagen": [
-   {
-    "filename": "piratasDeGeri.jpg"
-   }
-  ],
-  "pais": "Brasil"
- },
- {
   "id": "0005",
   "nombre": "Arreyes Academia",
   "email": "arreyesacademia@gmail.com",
@@ -106,5 +94,101 @@
    }
   ],
   "pais": "Uruguay"
+ },
+ {
+  "id": "1e7018bb-a9f0-4d12-9804-379124f3516d",
+  "nombre": "Piratas de Geribá",
+  "email": "piratasdegeriba@gmail.com",
+  "descripcion": "Piratas de Geriba Skate & Surf Brasil, 28950-000, Búzios - RJ, Estrada Canto Esquerdo de Geribá, 200 - Geribá",
+  "imagen": [
+   {
+    "filename": "1693535715237chico-surfeando-1.webp"
+   }
+  ],
+  "pais": "Brasil"
+ },
+ {
+  "id": "7d23dd29-8029-482e-8914-b42e45e92ea8",
+  "nombre": "Strandhill Surf School",
+  "email": "Strandhillsurf@gmail.com",
+  "descripcion": "Strandhill Surf School experience is the centre of surfing in Strandhill, Sligo, Ireland. Located in the adventure hub of the North West, Strandhill beach is a great place to learn to surf or improve your surfing skills. Come and experience the excitement of surfing with highly qualified instructors who have valuable knowledge of the local waves. The most popular surf school, with a great premises on the beachfront, we ensure easy access to the best surf for our lessons. We offer a variety of lessons catering for individuals, small and large groups and special occasions.",
+  "imagen": [
+   {
+    "filename": "1693536625863onda-grande-que-practica-surf-en-hawaii-13558322.webp"
+   }
+  ],
+  "pais": "Irlanda"
+ },
+ {
+  "id": "ac44f2e4-0c9f-4a68-9d4c-d1ea587fcd3c",
+  "nombre": "MOJO SURF",
+  "email": "Mmojosurf@gmail.com",
+  "descripcion": "Become a surfer with our 1 Month Academy Surf Development Course Our surf development courses are the ultimate learn to surf experiences. During your time at our camp you will be totally focused on improving your technical skills. Ocean experience, ocean awareness, fitness, and living the life of a surfer. We’ll challenge and coach you through various levels of your development and get you well on your way to becoming a surfer.  ",
+  "imagen": [
+   {
+    "filename": "1693536858022lembongan-mojosurf-surfergirl.jpg"
+   }
+  ],
+  "pais": "Indonesia"
+ },
+ {
+  "id": "fa187030-9c17-40d3-90a0-3ada65c2ebe8",
+  "nombre": "Pukana Surf",
+  "email": "pukanasurf@gmail.com",
+  "descripcion": "Clases de surf cada 2 horas, los 365 días del año ¡Empieza hoy! ¡Aprende surf en Perú! Escuela de surf Pukana: tu mejor guía para disfrutar las increíbles olas de Lima. ¡Reserva tu próxima clase de surf ahora!",
+  "imagen": [
+   {
+    "filename": "1693537381865gorka-yarritu-surf-eskola-sopelana-clases-de-surf-con-todo-incluido1.jpg"
+   }
+  ],
+  "pais": "Perú"
+ },
+ {
+  "id": "cacc5e39-4e8f-41f1-935f-a8150893fc70",
+  "nombre": "After SURF",
+  "email": "aftersurf@gmail.com",
+  "descripcion": "Clases grupales tanto para niños como para adultos que quieren iniciarse en la práctica del surf y mejorar su condición física disfrutando de las olas.",
+  "imagen": [
+   {
+    "filename": "1693537808755after-surf-hotel-fondo-1536x1024.jpg"
+   }
+  ],
+  "pais": "España"
+ },
+ {
+  "id": "116b00fb-dfa4-452f-a0e2-026820d7f45f",
+  "nombre": "Escuela de surf Mar Del Plata",
+  "email": "esmdp@gmail.com",
+  "descripcion": "Mar del Plata Surf School surgió hace 15 años respondiendo al interés de niños, jóvenes, padres que necesitaban de un lugar para el aprendizaje de este deporte, equipado con instructores idóneos, materiales adecuados para su enseñanza y todas las medidas de seguridad requeridas.\r\n\r\nPor estos motivos la escuela comenzó a difundir este deporte y su filosofía de vida enseñando a aquellos que se interesaban en esta disciplina y el contacto con la naturaleza.",
+  "imagen": [
+   {
+    "filename": "1693538012210IMG-20171206-WA0017.jpg"
+   }
+  ],
+  "pais": "Argentina"
+ },
+ {
+  "id": "97b601bd-18aa-4471-b241-298fdcbc8d46",
+  "nombre": "Surf Lesson Waikiki Private Group",
+  "email": "waikikipg@gmail.com",
+  "descripcion": "Learn the art of surfing in an iconic loction!",
+  "imagen": [
+   {
+    "filename": "1693538240874waikiki.jpg"
+   }
+  ],
+  "pais": "Hawai"
+ },
+ {
+  "id": "374534ec-aba7-44b1-976b-009f911ee343",
+  "nombre": "Meninas do Mar Surf School",
+  "email": "Meninadmasurf@gmail.com",
+  "descripcion": "Itacaré, Estado de Bahía, Brasil",
+  "imagen": [
+   {
+    "filename": "1693538477226meninas-do-mar-surf-school.jpg"
+   }
+  ],
+  "pais": "Brasil"
  }
 ]
