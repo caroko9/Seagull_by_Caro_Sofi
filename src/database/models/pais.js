@@ -31,4 +31,8 @@ function paisData(sequelize, Datatypes){
 }
 
      module.exports = paisData;
+
+
+
+     
      

@@ -1,137 +1,112 @@
-const fs = require('fs');
-const path = require('path');
-const escuelasFilePath = path.join(__dirname, '../../src/data/escuelas.json');
-const db = require('../database/models');
+const db = require('../database/models'); // Importa el modelo de Escuela de Sequelize
 
+const { escuela } = require('../database/models'); // Asegúrate de usar el nombre correcto del modelo
 
-//JSON CON LA LISTA DE ESCUELAS
-let escuelas = [];
-
-if (fs.existsSync(escuelasFilePath)) {
-  const fileContent = fs.readFileSync(escuelasFilePath, 'utf-8');
-
-  if (fileContent) {
-    escuelas = JSON.parse(fileContent);
-  } 
-  
-}
-
-const getSchoolById = (schoolId) => {
-  const foundSchool = escuelas.find((escuela) => escuela.id === schoolId);
-
-  if (!foundSchool) {
-    console.log(`School not found for ID: ${schoolId}`);
-  }
-
-  return foundSchool;
-};
-
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
 
+  
   sumaEscuela: (req, res) => {
-    
     res.render("escuelascreate");
   },
-//FORMULARIO ESCUELA NUEVA
-	creaEscuela: (req, res) => {
-  
-    let escuelaNueva = req.body;
-    let escuelaimgUpload = req.files;
-//el form de escuela acepta varias fotos. Este array toma las fotos subidas y las envia al JSON
-    let escuelaimagen = [];
-    escuelaimgUpload.forEach((file) => {
-      escuelaimagen.push({
-        filename: file.filename,
+
+  creaEscuela: async (req, res) => {
+    try {
+      const escuelaNueva = req.body;
+      const escuelaimgUpload = req.files;
+
+      // Crea una nueva escuela en la base de datos utilizando Sequelize
+      const nuevaEscuela = await db.escuela.create({
+        nombre: escuelaNueva.nombre,
+        email: escuelaNueva.email,
+        descripcion: escuelaNueva.descripcion,
+        pais: escuelaNueva.pais,
+        // Otras propiedades de la escuela
       });
-    });
-  
-		let objNuevaEscuela= {
-      id: generarId(),
-      nombre: escuelaNueva.nombre,
-			email: escuelaNueva.email,
-			descripcion: escuelaNueva.descripcion,
-			imagen: escuelaimagen, //viene de la var creada en el paso anterior
-      pais: escuelaNueva.pais,
-		};
 
-	  escuelas.push(objNuevaEscuela);
-		fs.writeFileSync(escuelasFilePath, JSON.stringify(escuelas,null,' '));
-    res.redirect("./escuelasList"); 
+      // Agrega las imágenes de la escuela a través de las relaciones de Sequelize (si es necesario)
 
-    function generarId() {
-
-      const { v4: uuidv4 } = require('uuid');
-      return uuidv4();
+      res.redirect("./escuelasList");
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error al crear la escuela');
     }
-
-	},
-//VISTA DE LA LISTA DE ESCUELAS
-  list: (req, res) => {
-   res.render("escuelasList", { escuelasRegistradas: escuelas });
   },
 
-//MÉTODO USADO PARA MOSTRAR LAS ESCUELAS FILTRADAS EN LA BARRA DE BÚSQUEDA DE LA VISTA ANTERIOR
-buscarEscuela: (req, res) => {
-  let escuelaEncontrada = req.query.buscar;
-  let escuelasBuscadasArray = [];
-
-  for (let i = 0; i < escuelas.length; i++) {
-    if ( (escuelas[i].nombre.includes(escuelaEncontrada.toUpperCase())) 
-    ||
-    (escuelas[i].nombre.includes(escuelaEncontrada.toLowerCase()))
-    
-    )  {
-      escuelasBuscadasArray.push(escuelas[i]);
+  list: async (req, res) => {
+    try {
+      // Consulta todas las escuelas desde la base de datos utilizando Sequelize
+      const escuelasRegistradas = await db.escuela.findAll();
+      res.render("escuelasList", { escuelasRegistradas });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error al obtener la lista de escuelas');
     }
-  }
+  },
 
-  console.log(escuelasBuscadasArray);
-  res.render("escuelasResults", { escuelasBuscadas: escuelasBuscadasArray });
-},
+  buscarEscuela: async (req, res) => {
+    try {
+      const escuelaEncontrada = req.query.buscar;
+      const escuelasBuscadasArray = await db.Escuela.findAll({
+        where: {
+          nombre: {
+            [db.Sequelize.Op.iLike]: `%${escuelaEncontrada}%`, // Búsqueda insensible a mayúsculas y minúsculas
+          },
+        },
+      });
 
-idEscuela : (req, res) => {
-  let escuelaId = req.params.id;
-  
-  let escuela = escuelas.find((escuela) => escuela.id === escuelaId);
+      res.render("escuelasResults", { escuelasBuscadas: escuelasBuscadasArray });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error al buscar escuelas');
+    }
+  },
 
-  res.render('escuela-detalle', { escuela });
-},
+  idEscuela: async (req, res) => {
+    try {
+      const escuelaId = req.params.id;
+      const escuela = await db.escuela.findByPk(escuelaId);
 
-editarEscuela: (req, res) => {
-  const escuelaId = req.params.id;
-  const escuela = getSchoolById(escuelaId);
+      if (!escuela) {
+        return res.status(404).send("Escuela no encontrada");
+      }
 
-  if (!escuela) {
-    return res.status(404).send("Escuela no encontrada");
-  }
+      res.render('escuela-detalle', { escuela });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error al obtener los detalles de la escuela');
+    }
+  },
 
-  if (req.method === "GET") {
-    // Si la solicitud es GET, renderiza la vista de edición con los detalles de la escuela
-    res.render("editarEscuela", { escuela });
-  } else if (req.method === "POST") {
-    // Si la solicitud es POST, actualiza los detalles de la escuela con los datos del formulario enviado
-    escuela.nombre = req.body.nombre;
-    escuela.email = req.body.email;
-    escuela.descripcion = req.body.descripcion;
-    escuela.imagen = req.body.imagen;
-    escuela.pais = req.body.pais;
+  editarEscuela: async (req, res) => {
+    try {
+      const escuelaId = req.params.id;
+      const escuela = await db.escuela.findByPk(escuelaId);
 
-    // Guarda la lista de escuelas actualizada de nuevo en el archivo JSON
-    fs.writeFileSync(escuelasFilePath, JSON.stringify(escuelas, null, " "));
+      if (!escuela) {
+        return res.status(404).send("Escuela no encontrada");
+      }
 
-    // Redirige a la página de detalle de la escuela con los detalles actualizados
-    res.redirect(`/escuelas/escuela-detalle/${escuelaId}`);
-  }
-},
+      if (req.method === "GET") {
+        // Si la solicitud es GET, renderiza la vista de edición con los detalles de la escuela
+        res.render("editarEscuela", { escuela });
+      } else if (req.method === "POST") {
+        // Si la solicitud es POST, actualiza los detalles de la escuela con los datos del formulario enviado
+        await escuela.update({
+          nombre: req.body.nombre,
+          email: req.body.email,
+          descripcion: req.body.descripcion,
+          pais: req.body.pais,
+          // Otras propiedades de la escuela
+        });
+
+        res.redirect(`/escuelas/escuela-detalle/${escuelaId}`);
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error al editar la escuela');
+    }
+  },
 };
 
-
 module.exports = controller;
- 
-
-
-
-  
-

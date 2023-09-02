@@ -1,4 +1,7 @@
 const express = require('express');
+const db = require('./src/database/models'); // Importa tus modelos de Sequelize
+
+// Sincroniza los modelos con la base de datos
 
 const productosRoutes = require('./src/routes/productosRoutes');
 const usersRoutes = require ('./src/routes/usersRoutes')
@@ -22,6 +25,15 @@ app.use (session({secret:"clave secreta",
 resave:false,
 saveUninitialized:false,
 }))
+
+db.sequelize.sync()
+  .then(() => {
+    console.log('Tablas de la base de datos sincronizadas');
+  })
+  .catch((error) => {
+    console.error('Error al sincronizar las tablas:', error);
+  });
+
 
 app.use ('/productos', productosRoutes);
 app.use('/users', usersRoutes); 

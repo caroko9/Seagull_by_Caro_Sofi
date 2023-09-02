@@ -1,64 +1,63 @@
-function usuarioData(sequelize, Datatypes) {
-
-    let aliasUsuario = 'usuario'; //nombre de la tabla
+function usuarioData(sequelize, DataTypes) {
+    let aliasUsuario = 'usuario'; // Nombre de la tabla
 
     let colsUsuario = {
         id: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             primaryKey: true,
         },
         nombre: {
-            type: Datatypes.STRING(25),
+            type: DataTypes.STRING(25),
             allowNull: false
         },
         email: {
-            type: Datatypes.STRING(40),
+            type: DataTypes.STRING(40),
             allowNull: false
         },
-
         clave: {
-            type: Datatypes.STRING(40),
+            type: DataTypes.STRING(40),
             allowNull: false
         },
         fecha_creacion: {
-            type: Datatypes.DATE,
+            type: DataTypes.DATE,
             allowNull: false
         },
         fecha_eliminacion: {
-            type: Datatypes.DATE,
+            type: DataTypes.DATE,
             allowNull: false
         },
         categoria: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         }
     }
 
-    let configUsuario = { timestamps: false };
+    let configUsuario = {
+        timestamps: false,
+        tableName: 'usuario' // Especifica el nombre de la tabla existente
+    };
 
+    const Usuario = sequelize.define(aliasUsuario, colsUsuario, configUsuario)
 
-    const usuarios = sequelize.define(aliasUsuario, colsUsuario, configUsuario)
+    Usuario.associate = function (modelos) {
+        Usuario.hasMany(modelos.gestion_escuela, {
+            as: 'gestion_escuelas',
+            foreignKey: 'usuario_id'
+        });
 
-   usuarios.associate = function (modelos) {
-       usuarios.hasMany(modelos.gestion_escuela, {
-         as: 'gestion_escuelas',
-         foreignKey: 'gestion_escuela_id'
-       });
-        usuarios.hasMany(modelos.producto, {
-         as: 'productos',
-         foreignKey: 'producto_id'
-       });
-   
-      //un usuario tiene id gestion escuela NO SE SI ESTA BIEN
-       usuarios.associate = function (modelos) {
-         usuarios.hasMany(modelos.gestion_escuela, {
-           as: 'gestion_escuelas',
-           foreignKey: 'usuario_id'
-         });
-       }
-     }
+        Usuario.hasMany(modelos.producto, {
+            as: 'productos',
+            foreignKey: 'usuario_id'
+        });
+    }
 
-    return usuarios;
+    return Usuario;
 }
 
 module.exports = usuarioData;
+
+
+
+
+
+

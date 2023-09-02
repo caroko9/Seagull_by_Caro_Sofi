@@ -1,149 +1,114 @@
-const fs = require ('fs');
-const path = require('path');
-const { validationResult} = require('express-validator');
-let bcrypt = require('bcryptjs');
-const { v4: uuidv4 } = require('uuid');
+const { validationResult } = require('express-validator');
+const bcrypt = require('bcryptjs');
+const db = require('../database/models'); // Importa el modelo de usuario
 
-
-
-const usuariosFilePath = path.join(__dirname, '../../src/data/usuarios.json');
-
-
-let usuarios = []
-
-if (fs.existsSync(usuariosFilePath)) {
-  const fileContent = fs.readFileSync(usuariosFilePath, 'utf-8');
-
-  if (fileContent) {
-    usuarios = JSON.parse(fileContent);
-  }
-}
-let contadorId = usuarios.length > 0 ? usuarios[usuarios.length - 1].id + 1 : 1;
-const controladorUsuario =
-
-{
-
-
-
-  homeAdministration: (req, res)=>{
-    res.render("homeAdmin")
-
+const controladorUsuario = {
+  homeAdministration: (req, res) => {
+    res.render("homeAdmin");
   },
 
-  obtenerUsuario: (req, res) => {
-    const userId = req.params.userId; // Obtener el ID del usuario de los parámetros de la URL
-  
-    // Buscar el usuario por su ID en el arreglo de usuarios
-    const usuario = usuarios.find(user => user.id === userId);
-  
-    if (!usuario) {
-      return res.status(404).send('Usuario no encontrado');
+  obtenerUsuario: async (req, res) => {
+    try {
+      const userId = req.params.userId;
+      const usuario = await db.usuario.findByPk(userId);
+
+      if (!usuario) {
+        return res.status(404).send('Usuario no encontrado');
+      }
+
+      res.render('perfil', { usuario: usuario });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error al obtener el usuario');
     }
-  
-    res.render('perfil', { usuario: usuario });
-  }
-,  
+  },
 
   iniciarSesion: (req, res) => {
     res.render("login");
-    console.log(req.session)
   },
 
-  processLogin: (req, res) => {
-    let errorsValidation = validationResult(req);
+  processLogin: async (req, res) => {
+    try {
+      const errorsValidation = validationResult(req);
 
-    if (errorsValidation.errors.length > 0) {
+      if (errorsValidation.errors.length > 0) {
         return res.render('login', {
-            errors: errorsValidation.array(), // Pasar los errores a la vista
-            oldData: req.body,
+          errors: errorsValidation.array(),
+          oldData: req.body,
         });
-    }
-
-  
-    const fileContent = fs.readFileSync(usuariosFilePath, 'utf-8');
-    const usuarios = JSON.parse(fileContent);
-  
-    let usuarioAloguearse = null;
-  
-    for (let i = 0; i < usuarios.length; i++) {
-      if (usuarios[i].email === req.body.email) {
-        if (bcrypt.compareSync(req.body.contrasena, usuarios[i].contrasena)) {
-          usuarioAloguearse = usuarios[i];
-          break;
-        }
       }
+
+      const { email, contrasena } = req.body;
+
+      const usuario = await db.usuario.findOne({
+        where: {
+          email: email,
+        },
+      });
+
+      if (!usuario || !bcrypt.compareSync(contrasena, usuario.contrasena)) {
+        return res.render('login', { errors: [{ msg: 'Credenciales inválidas' }] });
+      }
+
+      req.session.usuarioLogueado = usuario;
+      res.redirect('/users/homeAdmin');
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error al procesar la solicitud');
     }
-  
-    if (usuarioAloguearse === null) {
-      return res.render('login', { errors: errorsValidation.array() }); // Pasar los errores a la vista
-
-
-    }
-
-    req.session.usuarioLogueado = usuarioAloguearse;
-  
-    res.redirect ('/')
-
-
-  }
-  
-,  
+  },
 
   register: (req, res) => {
     res.render("register");
-  
   },
 
-  perfil: (req, res) => {
-    const userId = req.params.userId;
-    const usuario = usuarios.find(user => user.id === userId);
-  
-    if (!usuario) {
-      return res.status(404).send('Usuario no encontrado');
+  perfil: async (req, res) => {
+    try {
+      const userId = req.params.userId;
+      const usuario = await db.usuario.findByPk(userId);
+
+      if (!usuario) {
+        return res.status(404).send('Usuario no encontrado');
+      }
+
+      res.render('perfil', { usuario: usuario });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error al obtener el usuario');
     }
-  
-    res.render('perfil', { usuario: usuario });
-
-    
   },
-  
 
-  
-  create: (req, res) => {
-    const resultValidation = validationResult(req);
+  create: async (req, res) => {
+    try {
+      const resultValidation = validationResult(req);
 
-    if (resultValidation.errors.length > 0) {
-      return res.render('register', {
-        errors: resultValidation.mapped(),
-        oldData: req.body,
+      if (resultValidation.errors.length > 0) {
+        return res.render('register', {
+          errors: resultValidation.mapped(),
+          oldData: req.body,
+        });
+      }
+
+      const { nombre, email, contrasena, telefono } = req.body;
+      const hashedPassword = bcrypt.hashSync(contrasena, 10);
+
+      await db.usuario.create({
+        nombre: nombre,
+        email: email,
+        contrasena: hashedPassword,
+        telefono: telefono,
+        // Agrega otros campos si es necesario
       });
+
+      res.redirect('/');
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error al crear el usuario');
     }
-
-    let nuevosUsuarios = req.body;
-    let imgperfilUpload = req.file.filename;
-
-    // Generar el ID incrementado con formato "0001"
-    let idIncremental = contadorId.toString().padStart(4, '0');
-    contadorId++;
-
-    let objetoUsuariosNuevos = {
-      id: idIncremental,
-      nombre: nuevosUsuarios.nombre,
-      email: nuevosUsuarios.email,
-      contrasena: bcrypt.hashSync(nuevosUsuarios.contrasena, 10),
-      repetir_contrasena: nuevosUsuarios.repetir_contrasena,
-      telefono: nuevosUsuarios.telefono,
-      imagenPerfil: imgperfilUpload,
-    };
-    
-    usuarios.push(objetoUsuariosNuevos);
-    fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios,null,' '));
-    res.redirect("/");
-  }
-}
+  },
+};
 
 module.exports = controladorUsuario;
-
 
 
 

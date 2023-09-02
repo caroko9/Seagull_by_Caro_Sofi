@@ -42,3 +42,6 @@ function registro_venta_Data(sequelize, Datatypes) {
 }
 
 module.exports = registro_venta_Data;
+
+
+

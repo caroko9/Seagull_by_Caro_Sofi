@@ -1,91 +1,82 @@
-const fs = require('fs');
-const path = require('path');
+const db = require('../database/models'); // Importa el modelo de Producto de Sequelize
 
-const productosFilePath = path.join(__dirname, '../../src/data/productos.json');
-const carritoFilePath = path.join(__dirname, '../../src/data/carrito.json');
-
-let productos = [];
-
-let carrito = [] 
-  
-if (fs.existsSync(carritoFilePath)) {
-  const fileContent = fs.readFileSync(carritoFilePath, 'utf-8');
-
-  if (fileContent) {
-    carrito = JSON.parse(fileContent);
-  }
-}
-
-if (fs.existsSync(productosFilePath)) {
-  const fileContent = fs.readFileSync(productosFilePath, 'utf-8');
-
-  if (fileContent) {
-    productos = JSON.parse(fileContent);
-  }
-}
-
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
-function generarId() {
-  const { v4: uuidv4 } = require('uuid');
-  return uuidv4();
-}
+const { producto } = require('../database/models'); // Asegúrate de usar el nombre correcto del modelo
 
 
-let productosController = {
-
-  listadoProducto: (req, res) => {
-    res.render("productos", { listadoProductos: productos });
+const productosController = {
+  listadoProducto: async (req, res) => {
+    try {
+      // Consulta todos los productos desde la base de datos utilizando Sequelize
+      const listadoProductos = await db.producto.findAll();
+      console.log(listadoProductos); // Agrega esta línea para imprimir los datos
+      res.render("productos", { listadoProductos });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error al obtener el listado de productos');
+    }
   },
   
-  idProducto: (req, res) => {
-    let productoId = req.params.id;
-    let productoSeleccionado = productos.find((productoSeleccionado) => productoSeleccionado.id === productoId);
-    res.render('idProducto', { productoSeleccionado });
-  },
-
-  comprar: (req, res) => {
-    let productoId = req.body.productoId; 
-    let productoSeleccionado = productos.find((producto) => producto.id === productoId);
-    
+  
+  
+  idProducto: async (req, res) => {
+    try {
+      const productoId = req.params.id;
+      const productoSeleccionado = await db.producto.findByPk(productoId);
+      
       if (!productoSeleccionado) {
-        // Handle case when the selected product is not found
-        return res.status(404).send("Product not found");
+        return res.status(404).send("Producto no encontrado");
       }
-    
-      let productoEnCarrito = {
+      
+      res.render('idProducto', { productoSeleccionado });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error al obtener los detalles del producto');
+    }
+  },
+
+  comprar: async (req, res) => {
+    try {
+      const productoId = req.body.productoId;
+      const productoSeleccionado = await db.Producto.findByPk(productoId);
+      
+      if (!productoSeleccionado) {
+        return res.status(404).send("Producto no encontrado");
+      }
+      
+      const productoEnCarrito = {
         id: productoSeleccionado.id,
         nombre: productoSeleccionado.nombre,
         precio: productoSeleccionado.precio,
         imagen: productoSeleccionado.imagen
       };
-    
       
-      carrito.push(productoEnCarrito);
-
+      carrito.push(productoEnCarrito); // Asegúrate de tener la variable `carrito` definida
+      
       res.render('carrito', { carrito });
-    },
-    
-    
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error al agregar el producto al carrito');
+    }
+  },
+  
   vistaCarrito: (req, res) => {
-    res.render("carrito")
-    res.render('carrito', { carrito: carrito });
+    res.render("carrito");
+    res.render('carrito', { carrito: carrito }); // Asegúrate de tener la variable `carrito` definida
   },
   
-  deleteCarrito: (req, res) => {
-    
-    let productoId = req.params.id;
-    
-    carrito = carrito.filter((producto) => producto.id !== productoId);
-  
-    fs.writeFileSync(carritoFilePath, JSON.stringify(carrito), 'utf-8');
-  
-    res.render('carrito', { carrito: carrito });
+  deleteCarrito: async (req, res) => {
+    try {
+      const productoId = req.params.id;
+      carrito = carrito.filter((producto) => producto.id !== productoId); // Asegúrate de tener la variable `carrito` definida
+      
+      fs.writeFileSync(carritoFilePath, JSON.stringify(carrito), 'utf-8');
+      
+      res.render('carrito', { carrito: carrito });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error al eliminar el producto del carrito');
+    }
   },
-
 };
 
-
 module.exports = productosController;
-
-

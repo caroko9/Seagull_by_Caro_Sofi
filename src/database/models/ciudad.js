@@ -1,41 +1,42 @@
-function ciudadData(sequelize, Datatypes){
-   
-    let aliasCiudad = 'ciudad'; //nombre de la tabla
+function ciudadData(sequelize, DataTypes) {
+    let aliasCiudad = 'ciudad'; // Nombre de la tabla
 
     let colsCiudad = {
         id: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             primaryKey: true,
         },
         nombre: {
-            type: Datatypes.STRING(25),
-
+            type: DataTypes.STRING(25),
         },
         pais_id: {
-            type: Datatypes.INTEGER,
-    
-    }
+            type: DataTypes.INTEGER,
+        }
     }
 
-    let configCiudad = {timestamps: false};    
- 
-    const ciudades = sequelize.define(aliasCiudad, colsCiudad, configCiudad)
+    let configCiudad = {
+        timestamps: false,
+        tableName: 'ciudad' // Especifica el nombre de la tabla existente
+    };
 
-    // Definir relación con el modelo pais
-   ciudades.associate = function (modelos) {
-        ciudades.belongsTo(modelos.pais, {
+    const Ciudad = sequelize.define(aliasCiudad, colsCiudad, configCiudad)
+
+    Ciudad.associate = function (modelos) {
+        Ciudad.belongsTo(modelos.pais, {
             as: 'paises',
             foreignKey: 'pais_id'
         });
 
-       ciudades.hasMany(modelos.escuela, {
+        Ciudad.hasMany(modelos.escuela, {
             as: 'escuelas',
             foreignKey: 'ciudad_id'
         });
     }
 
-    return ciudades;
-
+    return Ciudad;
 }
 
-     module.exports = ciudadData;
+module.exports = ciudadData;
+
+
+
