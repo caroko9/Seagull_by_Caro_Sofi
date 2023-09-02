@@ -10,6 +10,7 @@ const controller = {
     res.render("escuelascreate");
   },
 
+
   creaEscuela: async (req, res) => {
     try {
       const escuelaNueva = req.body;
@@ -33,6 +34,7 @@ const controller = {
     }
   },
 
+
   list: async (req, res) => {
     try {
       // Consulta todas las escuelas desde la base de datos utilizando Sequelize
@@ -43,6 +45,7 @@ const controller = {
       res.status(500).send('Error al obtener la lista de escuelas');
     }
   },
+
 
   buscarEscuela: async (req, res) => {
     try {
@@ -62,6 +65,7 @@ const controller = {
     }
   },
 
+
   idEscuela: async (req, res) => {
     try {
       const escuelaId = req.params.id;
@@ -77,6 +81,7 @@ const controller = {
       res.status(500).send('Error al obtener los detalles de la escuela');
     }
   },
+
 
   editarEscuela: async (req, res) => {
     try {
@@ -106,7 +111,12 @@ const controller = {
       console.error(error);
       res.status(500).send('Error al editar la escuela');
     }
+    
   },
+
+
 };
+
+
 
 module.exports = controller;

@@ -22,11 +22,11 @@
                   <h2>  NUESTRO EMAIL </h2>        
                   <p><%= escuela.email %> </p>       
                 </div>
-              
                 <div class="container">
-                  <h2> ¿DÓNDE NOS PODES ENCONTRAR?</h2>
-                  <p> <%= escuela.pais %></p>            
+                  <h2>Ubicación</h2>
+                  <p><%= escuela.ubicacion %></p>
                 </div>
+                
               </div>
               
               <div class="rightColumn">
@@ -40,8 +40,6 @@
               </div>    
               
        </main>
-       <div class="contenedor_boton">
-        <a href="/escuelas/editarEscuela/<%= escuela.id %>" class="Boton_editar">EDITAR ESCUELA</a>
-      </div>
+       
     </body>
 </html>

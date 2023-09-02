@@ -1,6 +1,7 @@
 const db = require('../database/models'); // Importa el modelo de Producto de Sequelize
 
-const { producto } = require('../database/models'); // Asegúrate de usar el nombre correcto del modelo
+const { producto } = require('../database/models'); // wAsegúrate de usar el nombre correcto del modelo
+
 
 
 const productosController = {
@@ -8,7 +9,6 @@ const productosController = {
     try {
       // Consulta todos los productos desde la base de datos utilizando Sequelize
       const listadoProductos = await db.producto.findAll();
-      console.log(listadoProductos); // Agrega esta línea para imprimir los datos
       res.render("productos", { listadoProductos });
     } catch (error) {
       console.error(error);
