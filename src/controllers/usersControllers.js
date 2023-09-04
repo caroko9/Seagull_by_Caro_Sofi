@@ -91,13 +91,14 @@ const controladorUsuario = {
 
       const { nombre, email, contrasena, telefono } = req.body;
       const hashedPassword = bcrypt.hashSync(contrasena, 10);
+      let imgperfilUpload = req.file.filename;
 
       await db.usuario.create({
         nombre: nombre,
         email: email,
         contrasena: hashedPassword,
         telefono: telefono,
-        // Agrega otros campos si es necesario
+        imagenPerfil: imgperfilUpload,
       });
 
       res.redirect('/');

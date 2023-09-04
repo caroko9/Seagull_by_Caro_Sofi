@@ -1,43 +1,35 @@
-const db = require('../database/models'); // Importa el modelo de Escuela de Sequelize
-
-const { escuela } = require('../database/models'); // Asegúrate de usar el nombre correcto del modelo
-
+const db = require('../database/models');
+const { escuela } = require('../database/models'); 
 
 const controller = {
 
-  
   sumaEscuela: (req, res) => {
     res.render("escuelascreate");
   },
-
-
   creaEscuela: async (req, res) => {
     try {
       const escuelaNueva = req.body;
-      const escuelaimgUpload = req.files;
-
-      // Crea una nueva escuela en la base de datos utilizando Sequelize
+      const escuelaimgUpload = req.files; 
+      const primeraImagen = escuelaimgUpload[0].filename;
+    
       const nuevaEscuela = await db.escuela.create({
         nombre: escuelaNueva.nombre,
         email: escuelaNueva.email,
         descripcion: escuelaNueva.descripcion,
         pais: escuelaNueva.pais,
-        // Otras propiedades de la escuela
+        imagen: primeraImagen, 
       });
-
-      // Agrega las imágenes de la escuela a través de las relaciones de Sequelize (si es necesario)
-
+  
       res.redirect("./escuelasList");
     } catch (error) {
       console.error(error);
       res.status(500).send('Error al crear la escuela');
     }
   },
-
+  
 
   list: async (req, res) => {
     try {
-      // Consulta todas las escuelas desde la base de datos utilizando Sequelize
       const escuelasRegistradas = await db.escuela.findAll();
       res.render("escuelasList", { escuelasRegistradas });
     } catch (error) {
@@ -53,7 +45,7 @@ const controller = {
       const escuelasBuscadasArray = await db.Escuela.findAll({
         where: {
           nombre: {
-            [db.Sequelize.Op.iLike]: `%${escuelaEncontrada}%`, // Búsqueda insensible a mayúsculas y minúsculas
+            [db.Sequelize.Op.iLike]: `%${escuelaEncontrada}%`,
           },
         },
       });
@@ -93,16 +85,14 @@ const controller = {
       }
 
       if (req.method === "GET") {
-        // Si la solicitud es GET, renderiza la vista de edición con los detalles de la escuela
         res.render("editarEscuela", { escuela });
       } else if (req.method === "POST") {
-        // Si la solicitud es POST, actualiza los detalles de la escuela con los datos del formulario enviado
         await escuela.update({
           nombre: req.body.nombre,
           email: req.body.email,
           descripcion: req.body.descripcion,
           pais: req.body.pais,
-          // Otras propiedades de la escuela
+        
         });
 
         res.redirect(`/escuelas/escuela-detalle/${escuelaId}`);
