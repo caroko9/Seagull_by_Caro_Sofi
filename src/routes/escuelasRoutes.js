@@ -31,6 +31,7 @@ router.get('/escuela-detalle/:id', escuelasController.idEscuela); // muestra el 
 
 router.get('/editarEscuela/:id', escuelasController.editarEscuela);
 router.post('/editarEscuela/:id', escuelasController.editarEscuela);
+router.put('/editarEscuela/:id', escuelaimgUpload.array('imagen'), escuelasController.editarEscuela);
 
 
 
