@@ -1,23 +1,17 @@
-const db = require('../database/models'); // Importa el modelo de Escuela de Sequelize
-
-const { escuela } = require('../database/models'); // Asegúrate de usar el nombre correcto del modelo
- 
+const db = require('../database/models');
+const { escuela } = require('../database/models'); 
 
 const controller = {
-
 
   sumaEscuela: (req, res) => {
     res.render("escuelascreate");
   },
-
-
   creaEscuela: async (req, res) => {
     try {
       const escuelaNueva = req.body;
       const escuelaimgUpload = req.files; 
       const primeraImagen = escuelaimgUpload[0].filename;
     
-// Crea una nueva escuela en la base de datos utilizando Sequelize
       const nuevaEscuela = await db.escuela.create({
         nombre: escuelaNueva.nombre,
         email: escuelaNueva.email,
@@ -36,7 +30,6 @@ const controller = {
 
   list: async (req, res) => {
     try {
-// Consulta todas las escuelas desde la base de datos utilizando Sequelize
       const escuelasRegistradas = await db.escuela.findAll();
       res.render("escuelasList", { escuelasRegistradas });
     } catch (error) {
@@ -92,10 +85,6 @@ const controller = {
       }
 
       if (req.method === "GET") {
-        //GET renderiza la vista de edición con los detalles de la escuela
-        res.render("editarEscuela", { escuela });
-      } else if (req.method === "POST") {
-        // POST actualiza los detalles de la escuela con los datos del formulario enviado
         res.render("editarEscuela", { escuela });
       } else if (req.method === "POST") {
         await escuela.update({
