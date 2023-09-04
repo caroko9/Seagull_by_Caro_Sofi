@@ -22,7 +22,7 @@ const controller = {
         email: escuelaNueva.email,
         descripcion: escuelaNueva.descripcion,
         pais: escuelaNueva.pais,
-        // Otras propiedades de la escuela
+       
       });
 
       // Agrega las imágenes de la escuela a través de las relaciones de Sequelize (si es necesario)
@@ -93,16 +93,16 @@ const controller = {
       }
 
       if (req.method === "GET") {
-        // Si la solicitud es GET, renderiza la vista de edición con los detalles de la escuela
+        //GET renderiza la vista de edición con los detalles de la escuela
         res.render("editarEscuela", { escuela });
       } else if (req.method === "POST") {
-        // Si la solicitud es POST, actualiza los detalles de la escuela con los datos del formulario enviado
+        // POST actualiza los detalles de la escuela con los datos del formulario enviado
         await escuela.update({
           nombre: req.body.nombre,
           email: req.body.email,
           descripcion: req.body.descripcion,
           pais: req.body.pais,
-          // Otras propiedades de la escuela
+    
         });
 
         res.redirect(`/escuelas/escuela-detalle/${escuelaId}`);
