@@ -1,13 +1,12 @@
 const db = require('../database/models'); // Importa el modelo de Producto de Sequelize
 
-const { producto } = require('../database/models'); // wAsegúrate de usar el nombre correcto del modelo
+const { producto } = require('../database/models');
 
 
 
 const productosController = {
   listadoProducto: async (req, res) => {
     try {
-      // Consulta todos los productos desde la base de datos utilizando Sequelize
       const listadoProductos = await db.producto.findAll();
       res.render("productos", { listadoProductos });
     } catch (error) {
@@ -50,7 +49,7 @@ const productosController = {
         imagen: productoSeleccionado.imagen
       };
       
-      carrito.push(productoEnCarrito); // Asegúrate de tener la variable `carrito` definida
+      carrito.push(productoEnCarrito); 
       
       res.render('carrito', { carrito });
     } catch (error) {
@@ -61,13 +60,13 @@ const productosController = {
   
   vistaCarrito: (req, res) => {
     res.render("carrito");
-    res.render('carrito', { carrito: carrito }); // Asegúrate de tener la variable `carrito` definida
+    res.render('carrito', { carrito: carrito }); 
   },
   
   deleteCarrito: async (req, res) => {
     try {
       const productoId = req.params.id;
-      carrito = carrito.filter((producto) => producto.id !== productoId); // Asegúrate de tener la variable `carrito` definida
+      carrito = carrito.filter((producto) => producto.id !== productoId); 
       
       fs.writeFileSync(carritoFilePath, JSON.stringify(carrito), 'utf-8');
       

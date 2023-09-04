@@ -1,7 +1,7 @@
 const express = require('express');
-const db = require('./src/database/models'); // Importa tus modelos de Sequelize
+const db = require('./src/database/models'); 
 
-// Sincroniza los modelos con la base de datos
+
 
 const productosRoutes = require('./src/routes/productosRoutes');
 const usersRoutes = require ('./src/routes/usersRoutes')
@@ -18,8 +18,8 @@ app.use(express.static(path.resolve(__dirname, './public')));
 
 app.set ('view engine', 'ejs');
 
-app.use(express.urlencoded({extended: false})) //configuracion de express para seguridad de la info (post)
-app.use(express.json()) //capturar lo que venga de un formulario en un objeto literal
+app.use(express.urlencoded({extended: false})) /
+app.use(express.json()) 
 app.use(methodOverride("_method"))
 app.use (session({secret:"clave secreta",
 resave:false,
