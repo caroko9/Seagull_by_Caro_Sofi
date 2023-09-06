@@ -1,39 +1,45 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
+const cloudinary = require('cloudinary').v2;
 const multer = require('multer');
-
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const escuelasController = require('../controllers/escuelasControllers');
 
-
-let multerDiskStorage = multer.diskStorage({
-    destination: (req, file, cb) => 
-{let imgfolder = path.join(__dirname, '../../public/img/escuelas');
- cb(null, imgfolder)
-},
-    filename: (req, file, cb) => {
-let escuelaimg = Date.now() + file.originalname;
-cb(null, escuelaimg);   
-   },
+          
+cloudinary.config({ 
+  cloud_name: 'djpb4ilrq', 
+  api_key: '985976768223588', 
+  api_secret: 'YCHKWiVIW_0o9s4jvkYESAmfA_s' 
 });
-//Creamos una variable que la invocación de multer, pasamos como param la propiedad storage y asignamos la var creada en el paso anterior
-let escuelaimgUpload = multer({ storage : multerDiskStorage });
+
+
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: 'escuelas',
+    allowed_formats: ['jpg', 'png'], 
+    transformation: [{ width: 500, height: 500, crop: 'limit' }], 
+  },
+});
+
+const upload = multer({ storage: storage });
 
 router.get('/escuelascreate', escuelasController.sumaEscuela);
 
-router.post('/escuelascreate', escuelaimgUpload.array('imagen'), escuelasController.creaEscuela);
+router.post('/escuelascreate', upload.array('imagen'), escuelasController.creaEscuela);
 
-router.get('/escuelasList', escuelasController.list); //muestra el listado de escuela
+router.get('/escuelasList', escuelasController.list);
 
-router.get('/escuelasResults', escuelasController.buscarEscuela); //muestra el resultado de las escuelas buscadas por el usuario
+router.get('/escuelasResults', escuelasController.buscarEscuela);
 
-router.get('/escuela-detalle/:id', escuelasController.idEscuela); // muestra el detalle por escuela
+router.get('/escuela-detalle/:id', escuelasController.idEscuela);
 
 router.get('/editarEscuela/:id', escuelasController.editarEscuela);
 router.post('/editarEscuela/:id', escuelasController.editarEscuela);
-router.put('/editarEscuela/:id', escuelaimgUpload.array('imagen'), escuelasController.editarEscuela);
-
-
-
+router.put('/editarEscuela/:id', upload.array('imagen'), escuelasController.editarEscuela);
 
 module.exports = router;
+
+
+
+
