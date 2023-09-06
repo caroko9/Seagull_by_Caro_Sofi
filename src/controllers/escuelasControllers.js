@@ -12,23 +12,23 @@ const controller = {
       const escuelaimgUpload = req.files; 
       const primeraImagen = escuelaimgUpload[0].filename;
 
-    
+      // Construye la URL completa de Cloudinary
+      const imagenCloudinaryURL = `https://res.cloudinary.com/djpb4ilrq/image/upload/${primeraImagen}`;
+
       const nuevaEscuela = await db.escuela.create({
         nombre: escuelaNueva.nombre,
         email: escuelaNueva.email,
         descripcion: escuelaNueva.descripcion,
         pais: escuelaNueva.pais,
-        imagen: primeraImagen,
+        imagen: imagenCloudinaryURL, // Almacena la URL completa de Cloudinary en la base de datos
       });
       
-  
       res.redirect("./escuelasList");
     } catch (error) {
       console.error(error);
-   res.status(500).send(`Error al crear la escuela: ${error.message}`);
+      res.status(500).send(`Error al crear la escuela: ${error.message}`);
     }
   },
-  
 
   list: async (req, res) => {
     try {
@@ -39,7 +39,6 @@ const controller = {
       res.status(500).send('Error al obtener la lista de escuelas');
     }
   },
-
 
   buscarEscuela: async (req, res) => {
     try {
@@ -59,7 +58,6 @@ const controller = {
     }
   },
 
-
   idEscuela: async (req, res) => {
     try {
       const escuelaId = req.params.id;
@@ -75,7 +73,6 @@ const controller = {
       res.status(500).send('Error al obtener los detalles de la escuela');
     }
   },
-
 
   editarEscuela: async (req, res) => {
     try {
@@ -103,7 +100,6 @@ const controller = {
       console.error(error);
       res.status(500).send('Error al editar la escuela');
     }
-    
   },
 };
 
