@@ -22,23 +22,24 @@
       </div>
     </div>
       <br>
-    <div class="escuelas-contenedor">
-      <% for (let i = 0; i < escuelasRegistradas.length; i++) { %>
-        <article class="escuela">
-          <div class="imagen">
-            <a href="/escuelas/escuela-detalle/<%= escuelasRegistradas[i].id %>">
-              <img src="/img/escuelas/<%= escuelasRegistradas[i].imagen[0].filename %>" class="product1" alt="<%= escuelasRegistradas[i].nombre %>">
-            </a>
-            <div class="linea"></div>
-            <div class="detalle">
-              <p class="nombre"><%= escuelasRegistradas[i].nombre %></p>
-              <p class="precio"><%= escuelasRegistradas[i].pais %></p>
-              <!-- Puedes agregar más detalles aquí si es necesario -->
+      <div class="escuelas-contenedor">
+        <% for (let i = 0; i < escuelasRegistradas.length; i++) { %>
+          <article class="escuela">
+            <div class="imagen">
+              <a href="/escuelas/escuela-detalle/<%= escuelasRegistradas[i].id %>">
+                <img src="/img/escuelas/<%= escuelasRegistradas[i].imagen && escuelasRegistradas[i].imagen[0] ? escuelasRegistradas[i].imagen[0].filename : 'ruta/a/imagen/por/defecto.jpg' %>" class="product1" alt="<%= escuelasRegistradas[i].nombre %>">
+              </a>
+              <div class="linea"></div>
+              <div class="detalle">
+                <p class="nombre"><%= escuelasRegistradas[i].nombre %></p>
+                <p class="precio"><%= escuelasRegistradas[i].pais %></p>
+                <!-- Puedes agregar más detalles aquí si es necesario -->
+              </div>
             </div>
-          </div>
-        </article>
-      <% } %>
-    </div>
+          </article>
+        <% } %>
+      </div>
+      
     
     <br>
     

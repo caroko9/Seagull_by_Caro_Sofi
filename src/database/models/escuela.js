@@ -2,6 +2,7 @@ function escuelasData(sequelize, DataTypes) {
   const Escuela = sequelize.define('escuela', {
       id: {
           type: DataTypes.INTEGER,
+          autoIncrement: true,
           primaryKey: true,
       },
       nombre: {
@@ -26,32 +27,33 @@ function escuelasData(sequelize, DataTypes) {
       },
       ubicacion: {
           type: DataTypes.STRING(20),
-          allowNull: false
+          allowNull: true
       },
       precio_actividad: {
           type: DataTypes.FLOAT,
-          allowNull: false
+          allowNull: true
       },
       estado: {
           type: DataTypes.STRING(20),
-          allowNull: false
+          allowNull: true
       },
       fecha_creacion: {
           type: DataTypes.DATE,
-          allowNull: false
+          allowNull: true
       },
       fecha_eliminacion: {
           type: DataTypes.DATE,
-          allowNull: false
+          allowNull: true
       },
       actividad_id: {
           type: DataTypes.INTEGER,
-          allowNull: false
+          allowNull: true
       },
       ciudad_id: {
           type: DataTypes.INTEGER,
-          allowNull: false
+          allowNull: true
       }
+      
   }, {
       tableName: 'escuela', // Especifica el nombre de la tabla existente
       timestamps: false,

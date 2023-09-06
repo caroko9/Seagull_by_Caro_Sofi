@@ -11,19 +11,21 @@ const controller = {
       const escuelaNueva = req.body;
       const escuelaimgUpload = req.files; 
       const primeraImagen = escuelaimgUpload[0].filename;
+
     
       const nuevaEscuela = await db.escuela.create({
         nombre: escuelaNueva.nombre,
         email: escuelaNueva.email,
         descripcion: escuelaNueva.descripcion,
         pais: escuelaNueva.pais,
-        imagen: primeraImagen, 
+        imagen: primeraImagen,
       });
+      
   
       res.redirect("./escuelasList");
     } catch (error) {
       console.error(error);
-      res.status(500).send('Error al crear la escuela');
+   res.status(500).send(`Error al crear la escuela: ${error.message}`);
     }
   },
   
