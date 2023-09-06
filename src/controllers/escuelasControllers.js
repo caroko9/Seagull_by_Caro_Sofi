@@ -12,7 +12,7 @@ const controller = {
       const escuelaimgUpload = req.files; 
       const primeraImagen = escuelaimgUpload[0].filename;
 
-      // Construye la URL completa de Cloudinary
+      
       const imagenCloudinaryURL = `https://res.cloudinary.com/djpb4ilrq/image/upload/${primeraImagen}`;
 
       const nuevaEscuela = await db.escuela.create({
@@ -20,7 +20,7 @@ const controller = {
         email: escuelaNueva.email,
         descripcion: escuelaNueva.descripcion,
         pais: escuelaNueva.pais,
-        imagen: imagenCloudinaryURL, // Almacena la URL completa de Cloudinary en la base de datos
+        imagen: imagenCloudinaryURL, 
       });
       
       res.redirect("./escuelasList");
