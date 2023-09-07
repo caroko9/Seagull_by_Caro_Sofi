@@ -1,23 +1,32 @@
 *{
   font-family: 'Klee One';
+  color: #137DB0 !important;
+  text-align: center;
 }
 
 body {
   background-image: url(/img/fondoMar.png);
 }
+
+h2{
+  font-family: "Roboto Mono";
+  font-size: 20px;
+  color: #205a75 !important;
+}
  
-.boton1{  
-  width: 500px;
-  height: 500px;
-  margin-left: 170px;
-  border-radius: 9px;
+.contenedor{
+background-color: #b9e6fc59;
+border: 3px solid #49abd8;
+padding: 20px;
+margin-bottom: 20px;
+display: inline-block; 
+vertical-align: top;
+border-radius: 12px;
 }
 
-.boton2{  
-  width: 500px;
-  height: 500px;
-  margin-left: 170px;
-  border-radius: 9px;
+.boton{
+  font-family: "Roboto Mono";
+  font-size: 12px;
 }
 
 @media (min-width: 769px) {
