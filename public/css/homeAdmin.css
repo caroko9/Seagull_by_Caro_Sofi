@@ -7,17 +7,26 @@
 body {
   background-image: url(/img/fondoMar.png);
 }
- 
 
-.boton{  
-  width: 50px;
-  height: 50px;
-  border-radius: 5px;
-  padding: 30px;
-  font-family: "Klee One" !important;
-  color: white !important;
-  font-size: 15px;
-  background-color: #16818d !important; 
+h2{
+  font-family: "Roboto Mono";
+  font-size: 20px;
+  color: #205a75 !important;
+}
+ 
+.contenedor{
+background-color: #b9e6fc59;
+border: 3px solid #49abd8;
+padding: 20px;
+margin-bottom: 20px;
+display: inline-block; 
+vertical-align: top;
+border-radius: 12px;
+}
+
+.boton{
+  font-family: "Roboto Mono";
+  font-size: 12px;
 }
 
 @media (min-width: 769px) {
