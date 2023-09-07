@@ -1,23 +1,23 @@
 *{
   font-family: 'Klee One';
+  color: #137DB0 !important;
+  text-align: center;
 }
 
 body {
   background-image: url(/img/fondoMar.png);
 }
  
-.boton1{  
-  width: 500px;
-  height: 500px;
-  margin-left: 170px;
-  border-radius: 9px;
-}
 
-.boton2{  
-  width: 500px;
-  height: 500px;
-  margin-left: 170px;
-  border-radius: 9px;
+.boton{  
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  padding: 30px;
+  font-family: "Klee One" !important;
+  color: white !important;
+  font-size: 15px;
+  background-color: #16818d !important; 
 }
 
 @media (min-width: 769px) {
