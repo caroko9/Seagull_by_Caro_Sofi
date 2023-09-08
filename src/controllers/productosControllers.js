@@ -16,14 +16,17 @@ const productosController = {
       res.status(500).send('Error al obtener el listado de productos');
     }
   },
-
+ 
+  formularioCrearProducto: (req, res) => {
+    res.render('crearProducto'); 
+  },
 
   crearProducto: async (req, res) => {
     try {
       const productoNuevo = req.body;
       const productoimgUpload = req.files;
   
-      // Verifica si hay archivos subidos antes de acceder a req.files[0]
+      // Verifica si hay archivos subidos
       if (!productoimgUpload || !Array.isArray(productoimgUpload) || productoimgUpload.length === 0) {
         return res.status(400).send('No se han subido imágenes válidas.');
       }
@@ -39,15 +42,12 @@ const productosController = {
         imagen: imagenCloudinaryURL, 
       });
       
-      res.redirect("/producto");
+      res.redirect("/productos"); 
     } catch (error) {
       console.error(error);
       res.status(500).send(`Error al crear producto: ${error.message}`);
     }
   },
-  
-
-
   
   
   

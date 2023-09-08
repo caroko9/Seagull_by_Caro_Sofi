@@ -16,31 +16,43 @@
   <%- include ('partials/header.ejs') %>
   <div class="contenedor-celeste">
     <h2 class="titulo">Productos</h2>
-
-  <form action="/productos/productos" method="POST" enctype="multipart/form-data" name="productoNuevo">
-  <div class="input-1">
-    <div class="inputF">
-      <br>
-      <label for="exampleFormControlInput1" class="nombre-input">producto </label>
-      <input type="text" class="form-control"  name="nombre" placeholder="Nombre del producto">
-      
+    <form action="/productos/crearProducto" method="POST" enctype="multipart/form-data" name="productoNuevo" class="row g-3">
+      <div class="col-md-6">
+        <label for="nombre" class="form-label">Nombre del producto</label>
+        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre del producto" required>
       </div>
-    <div class="espaciador">
+      <div class="col-md-6">
+        <label for="descripcion" class="form-label">Descripción del producto</label>
+        <textarea class="form-control" name="descripcion" id="descripcion" rows="3" required></textarea>
+      </div>
+      <div class="col-md-6">
+        <label for="precio" class="form-label">Precio</label>
+        <input type="text" class="form-control" name="precio" id="precio" placeholder="Precio del producto" required>
+      </div>
+      <div class="col-md-6">
+        <label for="categoria" class="form-label">Categoría</label>
+        <select id="categoria" class="form-select" name="categoria" required>
+          <option selected disabled>Seleccione una categoría...</option>
+          <option value="Categoria1">Accesorios</option>
+          <option value="Categoria2">Ropa</option>
+        </select>
+      </div>
+      <div class="col-12">
+        <label for="imagen" class="form-label">Imágenes</label>
+        <input class="form-control" type="file" name="imagen" id="imagen" multiple accept="image/*" required>
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">Check me out</label>
+        </div>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Crear Producto</button>
+      </div>
+    </form>
 
-    </div>
-    <div class="inputF">
-      <label for="exampleFormControlTextarea1" class="nombre-input">Descripción del producto</label>
-      <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea required>
-    </div>
-  </div>
-<div class="contenedor-archivos">
-
- <div class="mb-3">
-  <label for="formFileMultiple" class="nombre-input"> Imagenes </label>
-  <input class="form-control" type="file" name="imagen" id="imagen" multiple accept="image/*" required>
 </div>
-
-
 </form>
 <script src="ruta/a/jquery.js"></script>
 <script src="ruta/a/bootstrap.js"></script>
