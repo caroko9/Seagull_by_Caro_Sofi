@@ -1,12 +1,8 @@
-const db = require('../database/models'); // Importa el modelo de Producto de Sequelize
-
+const db = require('../database/models'); 
 const { producto } = require('../database/models');
-
-
 
 const productosController = {
 
-  
   listadoProducto: async (req, res) => {
     try {
       const listadoProductos = await db.producto.findAll();
@@ -24,21 +20,23 @@ const productosController = {
   crearProducto: async (req, res) => {
     try {
       const productoNuevo = req.body;
-      const productoimgUpload = req.files;
-  
-      // Verifica si hay archivos subidos
-      if (!productoimgUpload || !Array.isArray(productoimgUpload) || productoimgUpload.length === 0) {
-        return res.status(400).send('No se han subido imágenes válidas.');
-      }
-  
-      const primeraImagen = productoimgUpload[0].filename;
+      const productoimgUpload = req.file;
       
+      if (!productoimgUpload) {
+        return res.status(400).send('No se ha subido una imagen válida.');
+      }
+      const primeraImagen = productoimgUpload.filename;
+      
+      console.log('req.body:', req.body);
+      console.log('req.file:', req.file); 
+       
       const imagenCloudinaryURL = `https://res.cloudinary.com/djpb4ilrq/image/upload/${primeraImagen}`;
   
       const nuevoProducto = await db.producto.create({
         nombre: productoNuevo.nombre,
         descripcion: productoNuevo.descripcion,
         precio: productoNuevo.precio,
+        categoria: productoNuevo.categoria,
         imagen: imagenCloudinaryURL, 
       });
       
