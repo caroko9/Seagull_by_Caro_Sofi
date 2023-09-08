@@ -1,0 +1,44 @@
+body{
+    background-color: #c9e7f5 !important;
+}
+
+
+
+h1{
+    font-family: "Klee One";
+    font-size: 10px;
+    color: #137DB0 !important;
+    margin-top: 10%;
+    text-align: center;
+}
+
+.contenedor-celeste{
+    background-color: #eaeff19d !important;
+    font-family: "Roboto Mono";
+    font-size: 16px;
+    margin: 5%;
+    border: 5px solid #92C1D0;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.form-control{
+    border-color: #137DB0;
+    max-width: 100%;
+}
+
+.btn-primary {
+    color: white !important;
+    font-family: "Klee One"!important;
+    font-size: 15px;
+    background-color:   #a2cdd3  !important;
+    border-color: #92C1D0 !important;
+    color: #FFFFFF;
+    align-items: center;
+    margin-left: 85%;
+  }
+  
+  .btn-primary:hover {
+    background-color: #038091 !important;
+  }
+
