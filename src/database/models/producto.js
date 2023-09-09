@@ -24,10 +24,12 @@ function productoData(sequelize, DataTypes) {
       },
       fecha_creacion: {
           type: DataTypes.DATE,
-          allowNull: false
+          defaultValue: DataTypes.NOW, 
+          allowNull: false,
       },
       fecha_eliminacion: {
           type: DataTypes.DATE,
+          defaultValue: DataTypes.NOW, 
           allowNull: false
       },
       categoria: {
@@ -38,12 +40,12 @@ function productoData(sequelize, DataTypes) {
 
   let configProducto = {
       timestamps: false,
-      tableName: 'producto' // Agrega el nombre de la tabla aquí
+      tableName: 'producto' 
   };
 
   const productos = sequelize.define(aliasProducto, colsProducto, configProducto)
 
-  // Definir relación con el modelo usuario
+  // Define relación con el modelo usuario
   productos.associate = function (modelos) {
       productos.belongsTo(modelos.usuario, {
           as: 'usuarios',

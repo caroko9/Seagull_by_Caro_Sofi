@@ -1,12 +1,8 @@
-const db = require('../database/models'); // Importa el modelo de Producto de Sequelize
-
+const db = require('../database/models'); 
 const { producto } = require('../database/models');
-
-
 
 const productosController = {
 
-  
   listadoProducto: async (req, res) => {
     try {
       const listadoProductos = await db.producto.findAll();
@@ -16,7 +12,10 @@ const productosController = {
       res.status(500).send('Error al obtener el listado de productos');
     }
   },
-
+ 
+  formularioCrearProducto: (req, res) => {
+    res.render('crearProducto'); 
+  },
 
   crearProducto: async (req, res) => {
     try {
@@ -48,7 +47,7 @@ const productosController = {
     }
   },
   
-
+  
   
   idProducto: async (req, res) => {
     try {
