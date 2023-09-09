@@ -1,6 +1,6 @@
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
-const db = require('../database/models'); // Importa el modelo de usuario
+const db = require('../database/models'); //Aca traemos a sequelize para interactuar con la db
 
 const controladorUsuario = {
   homeAdministration: (req, res) => {
