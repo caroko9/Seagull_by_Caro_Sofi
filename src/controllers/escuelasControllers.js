@@ -58,7 +58,7 @@ const controller = {
     }
   },
 
- idEscuela: async (req, res) => {
+  idEscuela: async (req, res) => {
     try {
       const escuelaId = req.params.id;
       const escuela = await db.escuela.findByPk(escuelaId);

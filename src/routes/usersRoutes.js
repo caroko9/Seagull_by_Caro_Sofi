@@ -39,9 +39,7 @@ let usuarioimgUpload = multer({ storage : usermulterDiskStorage });
 
 router.get('/register', guestMiddleWare, controladorUsers.register);
 
-//router.post('/register', usuarioimgUpload.single('imagenPerfil'), validations, controladorUsers.create);
-
-router.get('/registroExitoso', controladorUsers.registrofinalizado);
+router.post('/register', usuarioimgUpload.single('imagenPerfil'), validations, controladorUsers.create);
 
 router.get('/login', guestMiddleWare, controladorUsers.iniciarSesion);
 
@@ -51,9 +49,6 @@ router.post('/login', guestMiddleWare , [
     check('email').isEmail().withMessage('Email invalido'),
     check('contrasena').isLength({min: 8}).withMessage('la contraseña tiene que tener minimo 8 caracteres')
 ], controladorUsers.processLogin);  
-
-
-
 
 router.get('/perfil/:userId', controladorUsers.obtenerUsuario);
 

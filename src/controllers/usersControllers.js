@@ -62,10 +62,6 @@ const controladorUsuario = {
     res.render("register");
   },
 
-  registrofinalizado: (req, res) => {
-    res.render("registroExitoso");
-  },
-
   perfil: async (req, res) => {
     try {
       const userId = req.params.userId;
