@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('partials/head.ejs') %>
+<link rel="stylesheet" href="/css/register.css">
+
+<body>
+    <%- include ('partials/header.ejs') %>
+    
+    <main>
+        <div class="contenedor_form">
+            <!-- Para verificar errores en el formulario-->
+            <% if ( locals.errors ) { %>
+                <% for (let oneError in errors ) { %>
+                    <p>
+                        <%= errors[oneError].msg %>
+                    </p>
+                    <% } %>
+                        <% } %>
+
+            <div class="div_form">
+                <form  method="POST" action="/users/register" enctype="multipart/form-data" class="formulario" name="formularioUsuario">
+
+                    <P> Regístrate y serás parte de la familia Seagull</P>
+
+                    <div class="completar">
+                        <input name="nombre" type="text" placeholder="Nombre completo" class="nombre"
+                        value="<%= locals.oldData ? oldData.nombre : null %>">
+                      <!-- Para mostrar msjs de errores en el formulario-->
+                        <% if ( locals.errors && errors.nombre) { %>
+                            <div class="text-error" >
+                            <%= errors.nombre.msg %>
+                            </div>
+                            <% } %>
+
+                        <input name="email" type="email" placeholder="E-mail" class="nombre"
+                        value="<%= locals.oldData ? oldData.email : null %>">
+                         <!-- Para mostrar msjs de errores en el formulario-->
+                         <% if ( locals.errors && errors.mail) { %>
+                            <div class="text-error" >
+                            <%= errors.mail.msg %>
+                            </div>
+                            <% } %>
+                        <input name="contrasena" type="password" placeholder="Contraseña" class="nombre">
+                        <!-- Para mostrar msjs de errores en el formulario-->
+                        <% if ( locals.errors && errors.contrasena) { %>
+                            <div class="text-error" >
+                            <%= errors.contrasena.msg %>
+                            </div>
+                            <% } %>
+
+                        <input name="repetir_contrasena" type="password" placeholder="Repetir contraseña" class="nombre">
+                        <% if ( locals.errors && errors.repetir_contrasena) { %>
+                            <div class="text-error" >
+                            <%= errors.repetir_contrasena.msg %>
+                            </div>
+                            <% } %>
+
+                        <input name="telefono" type="tel" placeholder="Teléfono" class="nombre"
+                        value="<%= locals.oldData ? oldData.telefono : null %>">
+                        <% if ( locals.errors && errors.telefono) { %>
+                            <div class="text-error" >
+                            <%= errors.telefono.msg %>
+                            </div>
+                            <% } %>
+
+                        <label>Carga una foto de perfil</label>
+                        <input name="imagenPerfil" type="file" placeholder="usuarioimg" value="REGISTRARME" class="nombre">
+                        <% if ( locals.errors && errors.imagenPerfil) { %>
+                            <div class="text-error" >
+                            <%= errors.imagenPerfil.msg %>
+                            </div>
+                            <% } %>
+                    
+                    </div>
+                    <div class="boton text-center">
+                        <input type="submit" value="REGISTRARME" class="btn  btn-color" href="">
+                    </div>
+                    </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>

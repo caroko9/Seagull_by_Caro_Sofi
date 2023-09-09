@@ -1,0 +1,29 @@
+[
+ {
+  "id": "0001",
+  "nombre": "Bai Bai",
+  "email": "baibaisurftrip@gmail.com",
+  "contrasena": "$2a$10$84ZfQq6EASzMthGpyQ4LnOt36lYEWv4JQfFPv4yncjSgBb7fRHUsW",
+  "repetir_contrasena": "surfing",
+  "telefono": "1139290545",
+  "imagenPerfil": "baibai.jpg"
+ },
+ {
+  "id": "00011",
+  "nombre": "lucas rodriguez",
+  "email": "lucasr@gmail.com",
+  "contrasena": "$2a$10$C3GOl3kKRrbspyltshWOiuegtYzx7gD97DkKC43KRe9snl1uVl0fa",
+  "repetir_contrasena": "909090",
+  "telefono": "1139297897",
+  "imagenPerfil": "1692050762017Alan_Turing.jpg"
+ },
+ {
+  "id": "000111",
+  "nombre": "camila",
+  "email": "cami-estrada@hotmail.com",
+  "contrasena": "$2a$10$l4nKjHl52nTPTdfk6RScT.Tn8ZFB0QVBX1lGZj0wRexwiXrZyrAwC",
+  "repetir_contrasena": "espiuito",
+  "telefono": "1139290545",
+  "imagenPerfil": "1692070453537Ada_Lovelace_Chalon.jpg"
+ }
+]

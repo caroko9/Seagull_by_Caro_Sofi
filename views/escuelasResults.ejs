@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <link href="/css/escuelasResults.css" rel="stylesheet">
+    
+<%- include ('partials/head.ejs') %>
+<body>
+    <%- include('partials/header.ejs') %>
+
+    <main>   
+        <h3 class="TextEscuelas">Escuelas encontradas:</h3>
+       <div class="contenedorMayor"> 
+        <div class="contenedorEscuelas">
+        <ul>
+        <% for (let i = 0; i < escuelasBuscadas.length; i++) { %>
+            <li>
+                <a href="/escuelas/escuela-detalle/<%= escuelasBuscadas[i].id %>"><%=  escuelasBuscadas[i].nombre %></a>
+            </li>
+        <% } %>
+        </ul>
+    </div>  
+    </div> 
+       
+    </main>
+</body>
+
+</html>
+
+
+<%- include ('partials/footer.ejs') %>
