@@ -58,7 +58,7 @@ const controller = {
     }
   },
 
- /*idEscuela: async (req, res) => {
+ idEscuela: async (req, res) => {
     try {
       const escuelaId = req.params.id;
       const escuela = await db.escuela.findByPk(escuelaId);
@@ -72,7 +72,7 @@ const controller = {
       console.error(error);
       res.status(500).send('Error al obtener los detalles de la escuela');
     }
-  },*/
+  },
 
   editarEscuela: async (req, res) => {
     try {

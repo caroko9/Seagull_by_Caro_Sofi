@@ -21,25 +21,27 @@ const productosController = {
   crearProducto: async (req, res) => {
     try {
       const productoNuevo = req.body;
-      const productoimgUpload = req.files;
-  
-      // Verifica si hay archivos subidos antes de acceder a req.files[0]
-      if (!productoimgUpload || !Array.isArray(productoimgUpload) || productoimgUpload.length === 0) {
-        return res.status(400).send('No se han subido imágenes válidas.');
-      }
-  
-      const primeraImagen = productoimgUpload[0].filename;
+      const productoimgUpload = req.file;
       
+      if (!productoimgUpload) {
+        return res.status(400).send('No se ha subido una imagen válida.');
+      }
+      const primeraImagen = productoimgUpload.filename;
+      
+      console.log('req.body:', req.body);
+      console.log('req.file:', req.file); 
+       
       const imagenCloudinaryURL = `https://res.cloudinary.com/djpb4ilrq/image/upload/${primeraImagen}`;
   
       const nuevoProducto = await db.producto.create({
         nombre: productoNuevo.nombre,
         descripcion: productoNuevo.descripcion,
         precio: productoNuevo.precio,
+        categoria: productoNuevo.categoria,
         imagen: imagenCloudinaryURL, 
       });
       
-      res.redirect("/producto");
+      res.redirect("/productos"); 
     } catch (error) {
       console.error(error);
       res.status(500).send(`Error al crear producto: ${error.message}`);
@@ -47,9 +49,6 @@ const productosController = {
   },
   
 
-
-  
-  
   
   idProducto: async (req, res) => {
     try {
