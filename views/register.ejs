@@ -19,7 +19,7 @@
                         <% } %>
 
             <div class="div_form">
-                <form  method="POST" action="/users/register" enctype="multipart/form-data" class="formulario" name="formularioUsuario">
+                <form  method="GET" action="/users/register" enctype="multipart/form-data" class="formulario" name="formularioUsuario">
 
                     <P> Regístrate y serás parte de la familia Seagull</P>
 
@@ -64,7 +64,7 @@
                             </div>
                             <% } %>
 
-                        <label>Carga una foto de perfil</label>
+                      <!-- <label>Carga una foto de perfil</label>
                         <input name="imagenPerfil" type="file" placeholder="usuarioimg" value="REGISTRARME" class="nombre">
                         <% if ( locals.errors && errors.imagenPerfil) { %>
                             <div class="text-error" >
@@ -72,9 +72,9 @@
                             </div>
                             <% } %>
                     
-                    </div>
+                    </div> -->
                     <div class="boton text-center">
-                        <input type="submit" value="REGISTRARME" class="btn  btn-color" href="">
+                        <input type="submit" href="/users/registroExitoso" value="REGISTRARME" class="btn  btn-color" >
                     </div>
                     </form>
             </div>
