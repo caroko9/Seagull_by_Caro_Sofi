@@ -89,16 +89,13 @@ const controladorUsuario = {
         });
       }
 
-      const { nombre, email, contrasena, telefono } = req.body;
-      const hashedPassword = bcrypt.hashSync(contrasena, 10);
-      let imgperfilUpload = req.file.filename;
+      const { nombre, email, contrasena } = req.body;
+
 
       await db.usuario.create({
         nombre: nombre,
         email: email,
         contrasena: hashedPassword,
-        telefono: telefono,
-        imagenPerfil: imgperfilUpload,
       });
 
       res.redirect('/');
@@ -107,7 +104,10 @@ const controladorUsuario = {
       res.status(500).send('Error al crear el usuario');
     }
   },
+
 };
+
+
 
 module.exports = controladorUsuario;
 
