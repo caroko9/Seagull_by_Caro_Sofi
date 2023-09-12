@@ -39,7 +39,7 @@ let usuarioimgUpload = multer({ storage : usermulterDiskStorage });
 
 router.get('/register', guestMiddleWare, controladorUsers.register);
 
-router.post('/register', usuarioimgUpload.single('imagenPerfil'), validations, controladorUsers.create);
+//router.post('/register', usuarioimgUpload.single('imagenPerfil'), validations, controladorUsers.create);
 
 router.get('/login', guestMiddleWare, controladorUsers.iniciarSesion);
 

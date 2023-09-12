@@ -5,11 +5,17 @@ const multer = require('multer');
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const escuelasController = require('../controllers/escuelasControllers');
 
-          
+/*       
 cloudinary.config({ 
   cloud_name: 'djpb4ilrq', 
   api_key: '985976768223588', 
   api_secret: 'YCHKWiVIW_0o9s4jvkYESAmfA_s' 
+});*/
+
+cloudinary.config({ 
+  cloud_name: 'dgofs3hfj', 
+  api_key: '289734147884788', 
+  api_secret: 'efFl1VIjBlEoN9WlTe1gVe-KTNk' 
 });
 
 
