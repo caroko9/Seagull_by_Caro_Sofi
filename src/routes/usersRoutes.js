@@ -14,13 +14,6 @@ const validations = [
     body('email').notEmpty().withMessage('Tienes que ingresar tu email'),
     body('contrasena').notEmpty().withMessage('Tienes que ingresar una contraseña'),
     body('repetir_contrasena').notEmpty().withMessage('Tienes que ingresar repetir tu contraseña'),
-   /* body('telefono').notEmpty().withMessage('Tienes que ingresar tu teléfono'),
-    body('imagenPerfil').custom((value, { req }) => {
-        let file = req.file;
-        if(!file) {
-           throw new Error('Tienes que subir una imagen');}
-           return true;
-    }),*/
     ]
 
 //router.get('/register', guestMiddleWare, controladorUsers.register);
