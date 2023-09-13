@@ -14,7 +14,7 @@ function usuarioData(sequelize, DataTypes) {
             type: DataTypes.STRING(40),
             allowNull: false
         },
-        clave: {
+        contrasena: {
             type: DataTypes.STRING(40),
             allowNull: false
         },
@@ -28,7 +28,7 @@ function usuarioData(sequelize, DataTypes) {
         },
         categoria: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         }
     }
 

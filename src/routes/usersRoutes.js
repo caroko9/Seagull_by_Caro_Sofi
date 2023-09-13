@@ -23,9 +23,9 @@ const validations = [
     }),*/
     ]
 
-router.get('/register', guestMiddleWare, controladorUsers.register);
+//router.get('/register', guestMiddleWare, controladorUsers.register);
 
-router.post('/register', validations, controladorUsers.create);
+//router.post('/register', validations, controladorUsers.create);
 
 router.get('/login', guestMiddleWare, controladorUsers.iniciarSesion);
 

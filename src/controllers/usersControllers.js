@@ -42,13 +42,14 @@ const controladorUsuario = {
 
       const usuario = await db.usuario.findOne({
         where: {
-          email: email,
+         email: email,
+         contrasena: contrasena
         },
       });
 
-      if (!usuario || !bcrypt.compareSync(contrasena, usuario.contrasena)) {
+     /*if (!usuario || !bcrypt.compareSync(contrasena, usuario.contrasena)) {
         return res.render('login', { errors: [{ msg: 'Credenciales inválidas' }] });
-      }
+      }*/
 
       req.session.usuarioLogueado = usuario;
       res.redirect('/users/homeAdmin');
@@ -58,25 +59,11 @@ const controladorUsuario = {
     }
   },
 
+/* ESTO LO SACAMOS PORQUE EL UNICO USUARIO QUE EXISTE ES ADMIN
   register: (req, res) => {
     res.render("register");
   },
 
-  perfil: async (req, res) => {
-    try {
-      const userId = req.params.userId;
-      const usuario = await db.usuario.findByPk(userId);
-
-      if (!usuario) {
-        return res.status(404).send('Usuario no encontrado');
-      }
-
-      res.render('perfil', { usuario: usuario });
-    } catch (error) {
-      console.error(error);
-      res.status(500).send('Error al obtener el usuario');
-    }
-  },
 
   create: async (req, res) => {
     try {
@@ -95,13 +82,30 @@ const controladorUsuario = {
       await db.usuario.create({
         nombre: nombre,
         email: email,
-        contrasena: hashedPassword,
+        contrasena: contrasena,
       });
 
       res.redirect('/');
     } catch (error) {
       console.error(error);
       res.status(500).send('Error al crear el usuario');
+    }
+  },
+*/
+  
+  perfil: async (req, res) => {
+    try {
+      const userId = req.params.userId;
+      const usuario = await db.usuario.findByPk(userId);
+
+      if (!usuario) {
+        return res.status(404).send('Usuario no encontrado');
+      }
+
+      res.render('perfil', { usuario: usuario });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error al obtener el usuario');
     }
   },
 
