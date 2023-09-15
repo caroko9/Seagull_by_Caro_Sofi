@@ -5,11 +5,11 @@ Centros y locales de surf
 
 TEMÁTICA Y DESCRIPCIÓN DEL SITIO:
 El sitio buscar proporcionar soluciones a los aficionados de deportes acuáticos, ofreciéndoles ayuda con respecto a dónde y cuándo practicar, condiciones climáticas, y escuelas de surf.
-
+Al mismo tiempo ofrecemos el servicio a las escuelas de agregarlas a nuestra pagina y promocionarlas para el acceso de nuevos surfers. Por ultimo, merchandising de Seagull.
 
 PÚBLICO OBJETIVO:
-Practicantes de deportes acuáticos que necesiten precisión para planificar su día o estadía.
-
+Practicantes de deportes acuáticos que necesiten precisión para planificar su día o estadía. 
+Escuelas de deportes acuáticos que busquen promocionar sus servicios.
 
 LISTADO DE SITIOS REFERENTES EN LAS QUE SE BASA SU PROYECTO:
 
@@ -28,21 +28,15 @@ INTEGRANTES DEL GRUPO:
 
 Carolina Kobalenko: Soy Argentina, actualmente vivo en Brasil en la ciudad de Armação dos Búzios - RJ. Soy Analista en Economía y Negocios, título otorgado por la UNSAM - Universidad de San Martín. Trabajo en la empresa Lenovo desde 2008, actualmente ejerciendo el rol de Senior Commission Analyst.
 
-Felix Taquini: Buenas! Soy de Argentina, Buennos Aires pilar provincia. Tengo 18 años, mi tiempo esta mayormente dedicado hacia este curso ya que es mi unica y mayor tarea actualmente. Tengo varias pasiones como por ejemplo el deporte y la fotografia. Hasta el momento mi unico trabajo que me quita tiempo es en un torneo de futbol el cual asisto unicamente los miercoles de 20 a 23 hrs.
-
-Juan Bautista Taquini: Hola , Soy Argentino , de Buenos Aires Pilar. Tengo 23 años . Actualmente vivo en capital federal , me apasiona muchisimo la musica la fotografia y la pintura. Estudio Artes Multimediales en la Universidad de la artes. Me interesa muchisimo la electronica en general , estoy muy entusiasmado con el proyecto y espero que podamos aprender bien los conceptos y trabajar bien en equipo.
-Trabajo dias aislados segun la propuesta que me ofrezcan. De todos modos tengo mucha disponibilidad para trabajar en este proyecto. Saludos y bendiciones a todos.
-
 Sofia Guzmán Celedón: Hola! Vivo en Salta, Argentina. Tengo 24 años. Soy Profesora en Educación Inicial y trabajo de ello actualmente. Realice un curso de Diseño UX/UI debido a que amo todo lo relacionado con diseñar, con lo visual y las paletas de colores. Me encanta la música y el cine.
-
 
 TABLEROS DE TRABAJO:
 
-*https://www.figma.com/file/gPYwpR96zUNTCwFEL9RjaN/Tablero-de-Trabajo?type=whiteboard&t=RfnmPMmbjsLDxPe4-0
+FIGMA: https://www.figma.com/file/gPYwpR96zUNTCwFEL9RjaN/Tablero-de-Trabajo?type=whiteboard&t=RfnmPMmbjsLDxPe4-0
 
-*https://trello.com/b/qeQJ1PBP/dh-grupo-4
+TRELLO: https://trello.com/b/1RC0vO7S/seagull-caro-sofi
 
-*https://seagull-project.onrender.com
+RENDER: https://seagull-surfing.onrender.com/
 
 WIREFRAMES:
 
