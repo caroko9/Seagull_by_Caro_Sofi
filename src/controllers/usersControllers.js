@@ -47,7 +47,8 @@ const controladorUsuario = {
         },
       });
 
-     /*if (!usuario || !bcrypt.compareSync(contrasena, usuario.contrasena)) {
+     /* SOLUCIONAR LA ENCRIPTACION DEL USUARIO ADMIN
+     if (!usuario || !bcrypt.compareSync(contrasena, usuario.contrasena)) {
         return res.render('login', { errors: [{ msg: 'Credenciales inválidas' }] });
       }*/
 
