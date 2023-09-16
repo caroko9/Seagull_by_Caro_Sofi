@@ -60,18 +60,19 @@ const productosController = {
   },
   
   editarProducto: async (req, res) => {
-   try {
-     const productoId = req.params.id;
-     const producto = await obtenerProductoId (productoId);
-     if (!producto) {
-      return res.status(404).send("Producto no encontrado");
-     }
-     res.render("editProductosAdmin", { producto });
-   }
-   catch (error){
-    console.error(error);
-    res.status(500).send ("Error al mostrar detalles del producto solicitado")
-   }  
+    try {
+      const productoId = req.params.id;
+      const producto = await db.producto.findByPk(productoId);
+  
+      if (!producto) {
+        return res.status(404).send("Producto no encontrado");
+      }
+  
+      res.render("editProductosAdmin", { producto });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Error al mostrar detalles del producto solicitado");
+    }
   },
   
   idProducto: async (req, res) => {

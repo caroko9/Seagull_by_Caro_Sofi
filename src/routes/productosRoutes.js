@@ -33,7 +33,7 @@ router.get('/crearProducto', productosController.formularioCrearProducto);
 
 router.get('/idProducto/:id', productosController.idProducto);
 
-router.get('/editProductosAdmin/:id', productosController.editarProducto)
+router.post('/productos/editarProductos/:id', productosController.editarProducto);
 
 router.get('/carrito', productosController.vistaCarrito);
 
