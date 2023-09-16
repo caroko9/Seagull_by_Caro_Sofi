@@ -123,6 +123,12 @@ body {
   }
 
   
+  .botonEd{
+    font-family: "Klee One" !important;
+    color: rgb(108, 171, 230);
+  }
 
-
-  
+  .precio{
+    font-weight: bold;
+    color:rgb(96, 99, 102);
+  }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Edicion de productos - Adm</title>
+  <link rel="stylesheet" href="/css/formCrearProducto.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+</head>
+<%- include ('partials/head.ejs') %>
+<body>
+ 
+  <%- include ('partials/header.ejs') %>
+  <div class="contenedor-celeste">
+    <h1 class="titulo">FORMULARIO DE EDICIÓN DE PRODUCTOS</h1>
+    <form action="/productos/editarProducto/<%= producto.id %>" method="POST" enctype="multipart/form-data" name="productoEditado" class="row g-3">
+      <div class="col-md-6">
+        <label for="nombre" class="form-label">Nombre del producto</label>
+        <input type="text" class="form-control" name="nombre" id="nombre" value="<%= producto.nombre %>" required>
+      </div>
+      <div class="col-md-6">
+        <label for="descripcion" class="form-label">Descripción del producto</label>
+        <textarea class="form-control" name="descripcion" id="descripcion" required><%= producto.descripcion %></textarea>
+      </div>
+      <div class="col-md-6">
+        <label for="precio" class="form-label">Precio</label>
+        <input type="text" class="form-control" name="precio" id="precio" value="<%= producto.precio %>" required>
+      </div>
+      <div class="col-md-6">
+        <label for="categoria" class="form-label">Categoría</label>
+        <select id="categoria" class="form-select" name="categoria" required>
+          <option selected disabled>Seleccione una categoría...</option>
+          <option value="Categoria1" "< %= producto.categoria === 'Categoria1' ? 'selected' : '' %>">Ropa</option>
+          <option value="Categoria2" "< %= producto.categoria === 'Categoria2' ? 'selected' : '' %>">Accesorios</option>
+          <option value="Categoria3" "<%= producto.categoria === 'Categoria3' ? 'selected' : '' %>">Recipientes</option>
+          <option value="Categoria4" "<%= producto.categoria === 'Categoria4' ? 'selected' : '' %>">Cuidado personal</option>
+        </select>
+      </div>
+      <div class="col-12">
+        <label for="imagen" class="form-label">Imágenes</label>
+        <input class="form-control" type="file" name="imagen" id="imagen" accept="image/*" required>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">GUARDAR CAMBIOS</button>
+      </div>
+    </form>
+    <script src="ruta/a/jquery.js"></script>
+    <script src="ruta/a/bootstrap.js"></script>
+</div>
+</body>
+</html>
