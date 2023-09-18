@@ -1,9 +1,9 @@
 .titulo{
   font-family: 'Klee One';
-  font-size: 24px;
+  font-size: 30px;
   color: #137DB0;
   text-align: center;
-  font-style: bold;
+  font-weight: bold;
     }
 
 h2 {
@@ -79,5 +79,18 @@ h4{
 
 .nombreProd{
   text-transform: uppercase;
+}
+
+.precio{
+  font-size: 12px;
+  text-align: left;
+  color: #666666 !important;
+}
+
+.nombreProd{
+  font-family: "Klee One";
+  font-size: 24px !important;
+  color: #53a4ca !important;
+  font-weight: bold;
 }
 

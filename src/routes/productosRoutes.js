@@ -25,17 +25,22 @@ cloudinary.config({
 //ROUTES
 router.get('/productos', productosController.listadoProducto);
 
+router.get('/productosAdmin', productosController.listadoProductoAdmin);
+
 router.post('/crearProducto', upload.single('imagen'), productosController.crearProducto);
 
 router.get('/crearProducto', productosController.formularioCrearProducto);
 
 router.get('/idProducto/:id', productosController.idProducto);
 
+router.post('/productos/editarProductos/:id', productosController.editarProducto);
+
 router.get('/carrito', productosController.vistaCarrito);
 
 router.post('/carrito', productosController.comprar);
 
 router.delete('/carrito/:id', productosController.deleteCarrito);
+
 
 
 

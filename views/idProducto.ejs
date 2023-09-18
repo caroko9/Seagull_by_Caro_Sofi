@@ -15,46 +15,24 @@
   <% { %> 
   
   <div class="container text-center">
-    <h1 class="titulo">DETALLE DEL PRODUCTO SELECCIONADO</h1>
+    <h1 class="titulo">PRODUCTOS SEAGULL</h1>
   </div>
-<<<<<<< HEAD
 
   <div class="row g-2">
     <div class="col-6">
       <div class="p-3 no-border text-center">
-        <img src="/img/productos/<%= productoSeleccionado.imagen %>" width="60%">
+        <img src="<%= productoSeleccionado.imagen %>" width="60%">
     </div>
     
     </div>
 
     <div class="col-6">
       <div class="p-3 no-border">
-        <h3 class="nombreProd">
-          <%= productoSeleccionado.nombre %>
-        </h3>
+        <h3 class="nombreProd"> <%= productoSeleccionado.nombre %> </h3>
         <hr>
         <dl class="row">
-          <h4><%= productoSeleccionado.precio %></h4>
+          <h4 class="precio"> ARS $ <%= productoSeleccionado.precio %></h4>
           <h4><%= productoSeleccionado.descuento %></h4>
-=======
-    <div class="row g-2">
-      
-      <div class="col-6">
-        <div class="p-3 no-border text-center">
-          <img src="<%= productoSeleccionado.imagen %>">
-        </div>
-      </div>
-
-    <div class="col-6">
-      <div class="p-3 no-border">
-        <h2 class="nombreProd">
-          <%= productoSeleccionado.nombre %>
-        </h2>
-        <hr>
-        <dl class="row">
-          <h3>ARS $ <%= productoSeleccionado.precio %></h3>
-          <!-- esto no es necesario por ahora <h4><%= productoSeleccionado.descuento %></h4> -->
->>>>>>> 191f8d8a45d8518021a1f7c649ca9e7d41a0c281
         </dl>
         <hr>
 
@@ -64,8 +42,6 @@
           <img src="/img/shipping.svg" alt="icon shipping">
           <p>MEDIOS DE ENVIO</p>
         </div>
-<<<<<<< HEAD
-=======
 
         <hr>
 
@@ -80,23 +56,12 @@
 
         <hr>
 
->>>>>>> 191f8d8a45d8518021a1f7c649ca9e7d41a0c281
         <div class="boton de compra text-center">
           <form action="/productos/carrito" method="POST">
             <input type="hidden" name="productoId" value="<%= productoSeleccionado.id %>">
             <button type="submit" class="btn btn-color" id="Miboton">AGREGAR AL CARRITO</button>
           </form>
-<<<<<<< HEAD
-          
-          
         </div>        
-        
-
-        <hr>
-=======
-        </div>        
-
->>>>>>> 191f8d8a45d8518021a1f7c649ca9e7d41a0c281
       </div>
     </div>
   </div>
