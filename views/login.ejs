@@ -4,36 +4,39 @@
 <link href="/css/login.css" rel="stylesheet">
 <body>
     <%- include ('partials/header.ejs') %>
-    <main>
-        <section class="contenedor_form">
-            <div class="div_form borde-celeste">
-                <form action="/users/login" method="POST" class="formulario">
-                    <img class="icono" src="/img/iconografia/surf.png">
-                    <h1 class="iniciosesion">INICIO DE SESION</h1>
-                    <p>¡Bienvenido otra vez surfer, te extrañamos!</p>
-                    <div class="completar">
-                        <input type="email" placeholder="  e-mail" name="email" class="input">
-                        <input type="password" placeholder="  contraseña" name="contrasena" class="input">
+    <div class="contenedor-celeste">
+        <h1 class="titulo">LOGIN ADMINISTRADORES</h1>
+        <p>¡Bienvenido otra vez admin!</p>
+                <form action="/users/login" method="POST">
+                  <div class="mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="E-mail" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="password" name="contrasena" placeholder="Contraseña" required>
+                  </div>
+                  <!-- Mostrar errores de validación -->
+                  <% if (locals.errors) { %>
+                    <div class="error-message">
+                        <% for (let error of locals.errors) { %>
+                            <p><%= error.msg %></p>
+                        <% } %>
                     </div>
-                    <!-- Mostrar errores de validación -->
-                    <% if (locals.errors) { %>
-                        <div class="error-message">
-                            <% for (let error of locals.errors) { %>
-                                <p><%= error.msg %></p>
-                            <% } %>
-                        </div>
-                    <% } %>
-                    <a class="TextoOlvido">¡Ups! No recuerdo mi contraseña. </a>
-                 
-                    
-                        <div class="boton text-center">
-                            <button type="submit" class="btn btn-color">INICIAR SESION</button>
-                        </div>
-                    </div>
+                <% } %>
+                  <div class="mb-3 text-center">
+                    <a class="card-link" href="#">¡Ups! No recuerdo mi contraseña.</a>
+                  </div>
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary">INICIAR SESIÓN</button>
+                  </div>
                 </form>
+              </div>
             </div>
-        </section>
-    </main>
-    <%- include ('partials/footer.ejs') %>
+          </div>
+      
+      
 </body>
 </html>
+
+

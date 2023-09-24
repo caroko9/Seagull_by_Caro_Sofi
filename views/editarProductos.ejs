@@ -15,32 +15,32 @@
   <%- include ('partials/header.ejs') %>
   <div class="contenedor-celeste">
     <h1 class="titulo">FORMULARIO DE EDICIÓN DE PRODUCTOS</h1>
-    <form action="/productos/editarProducto/<%= producto.id %>" method="POST" enctype="multipart/form-data" name="productoEditado" class="row g-3">
+    <form action="/productos/editarProducto/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data" name="productoCreado" class="row g-3">
       
       <div class="col-md-6">
-        <label for="nombre" class="form-label">Nombre del producto</label>
+        <label for="nombre" class="nombre-input">Nombre del producto</label>
         <input type="text" class="form-control" name="nombre" id="nombre" value="<%= producto.nombre %>" required>
       </div>
       <div class="col-md-6">
-        <label for="descripcion" class="form-label">Descripción del producto</label>
+        <label for="descripcion" class="nombre-input">Descripción del producto</label>
         <textarea class="form-control" name="descripcion" id="descripcion" required><%= producto.descripcion %></textarea>
       </div>
       <div class="col-md-6">
-        <label for="precio" class="form-label">Precio</label>
+        <label for="precio" class="nombre-input">Precio</label>
         <input type="text" class="form-control" name="precio" id="precio" value="<%= producto.precio %>" required>
       </div>
       <div class="col-md-6">
-        <label for="categoria" class="form-label">Categoría</label>
-        <select id="categoria" class="form-select" name="categoria" required>
+        <label for="categoria" class="nombre-input">Categoría</label>
+        <select id="categoria" class= "nombre-input" name="categoria" required>
           <option selected disabled>Seleccione una categoría...</option>
-          <option value="Categoria1" "< %= producto.categoria === 'Categoria1' ? 'selected' : '' %>">Ropa</option>
-          <option value="Categoria2" "< %= producto.categoria === 'Categoria2' ? 'selected' : '' %>">Accesorios</option>
-          <option value="Categoria3" "<%= producto.categoria === 'Categoria3' ? 'selected' : '' %>">Recipientes</option>
-          <option value="Categoria4" "<%= producto.categoria === 'Categoria4' ? 'selected' : '' %>">Cuidado personal</option>
+          <option value="Categoria1">Ropa</option>
+          <option value="Categoria2">Accesorios</option>
+          <option value="Categoria3">Recipientes</option>
+          <option value="Categoria4">Cuidado personal</option>
         </select>
       </div>
       <div class="col-12">
-        <label for="imagen" class="form-label">Imágenes</label>
+        <label for="imagen" class="nombre-input">Imágenes</label>
         <input class="form-control" type="file" name="imagen" id="imagen" accept="image/*" required>
       </div>
       <div class="col-12">

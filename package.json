@@ -9,7 +9,7 @@
     "dev": "nodemon app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Caro y Sofi",
   "license": "ISC",
   "dependencies": {
     "basic-ftp": "^5.0.3",
@@ -31,5 +31,13 @@
     "sequelize-cli": "^6.6.1",
     "uuid": "^9.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caroko9/Seagull_by_Caro_Sofi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/caroko9/Seagull_by_Caro_Sofi/issues"
+  },
+  "homepage": "https://github.com/caroko9/Seagull_by_Caro_Sofi#readme"
 }

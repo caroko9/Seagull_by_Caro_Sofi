@@ -23,10 +23,16 @@
                   <p><%= escuela.email %> </p>       
                 </div>
                 <div class="container">
-                  <h2>UBICACIÓN</h2>
+                  <h2>Ubicación</h2>
                   <p><%= escuela.ubicacion %></p>
                 </div>
                 
+              </div>
+
+       <!--boton para editar para los administradores-->
+
+              <div class="contenedor_boton">
+                <a href="/escuelas/editarEscuela/<%= escuela.id %>" class="Boton_editar">EDITAR ESCUELA</a>
               </div>
 
 

@@ -24,33 +24,34 @@ body {
 p{
   font-family: 'Roboto Mono';
   font-size: 12px;
-  color: #1A545C;
+  color: #2095a5;
   text-align: center;
 }
 
-.formulario {
-  border: #92C1D0;
-}
-
-.contenedor_form {
+.contenedor-celeste {
+  background-color: #eaeff19d !important;
+  font-family: "Roboto Mono";
+  font-size: 12px !important;
+  border: 5px solid #92C1D0;
   border-radius: 10px;
-  border: #92C1D0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 50%; 
+  overflow: hidden; 
 }
 
-.div_form h1 {
+.titulo {
   display: flex;
   justify-content: center;
   font-family: 'Klee One';
   font-weight: 20;
-  font-size: 24px;
-  color: #5F6368;
+  font-size: 20px;
+  color:#1f5060 ;
   text-align: justify;
+  overflow: hidden; 
 }
 
 .div_form {
@@ -74,13 +75,7 @@ p{
   text-align: justify;
 }
 
-.icono {
-  width: 60px;
-  height: auto;
-  margin-left: 44%;
-  margin-top: 4%;
-  opacity: 1;
-}
+
 
 .TextoOlvido{
   display: flex;
@@ -106,38 +101,21 @@ p{
   text-decoration: underline;
 }
 
-.btn {
-  color: white;
-  font-family: "Klee One";
+.btn-primary {
+  color: white !important;
+  font-family: "Klee One"!important;
   font-size: 15px;
-}
-
-.btn-color {
-  background-color: #1A545C !important;
+  background-color:   #a2cdd3  !important;
+  border-color: #92C1D0 !important;
   color: #FFFFFF;
-}
-
-.btn-color:hover {
-  color: #a2cdd3 !important;
-}
-
-.borde-celeste {
-  border: 24px solid rgba(31, 99, 121, 0.5);
-}
-
-.iniciosesion {
-  font-size: 1rem;
-  text-align: center;
-  color: #FFFFFF;
+  align-items: center;
 
 }
-.completar{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  
+
+.btn-primary:hover {
+  background-color: #038091 !important;
 }
+
 
 .input {
   margin: 1.5vw;

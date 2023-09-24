@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listado de Escuelas</title>
+  <link rel="stylesheet" href="/css/escuelasList.css">
+  <%- include ('partials/head.ejs') %>
+</head>
+<body>
+  <%- include ('partials/header.ejs') %>
+  <main>
+    <div class="buscador mt-5 mx-auto text-center">
+      <h1 class="titulo"> GESTIÓN DE NUESTRAS ESCUELAS</h1>
+      <br>
+      <div class="search container-sm">
+        <nav class="navbar navbar-#B0DEE4 bg-#B0DEE4">
+          <form class="form-inlin w-100">
+            <input class="form-control mx-auto" type="search" placeholder="¿Qué escuela estás buscando?" aria-label="Search">
+          </form>
+        </nav>
+      </div>
+    </div>
+      <br>
+      <div class="escuelas-contenedor">
+        <% for (let i = 0; i < escuelasRegistradas.length; i++) { %>
+          <article class="escuela">
+            <div class="imagen">
+              <a href="/escuelas/escuela-detalle/<%= escuelasRegistradas[i].id %>">
+                <img src="<%= escuelasRegistradas[i].imagen %>" class="product1" alt="<%= escuelasRegistradas[i].nombre %>">
+
+
+
+
+              </a>
+              <div class="linea"></div>
+              <div class="detalle">
+                <p class="nombre"><%= escuelasRegistradas[i].nombre %></p>
+                <p class="precio"><%= escuelasRegistradas[i].pais %></p>
+              
+              </div>
+            </div>
+          </article>
+        <% } %>
+      </div>
+      
+    
+    <br>
+    
+    <%- include ('partials/footer.ejs') %>
+  </main>
+</body>
+</html>

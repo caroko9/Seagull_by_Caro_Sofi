@@ -1,0 +1,97 @@
+body{
+    background-image: url("https://res.cloudinary.com/dgofs3hfj/image/upload/v1695587608/backgrounds/920becb65c368415027f47b7f9306a73_so2dna.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1{
+    font-family: "Klee One" !important;
+    font-size: 25px !important;
+    color: #137DB0 !important;
+    margin-top: 5% !important;
+    text-align: center;
+}
+
+h2{
+    font-family: "Klee One" !important;
+    font-size: 15px !important;
+    color: #137DB0 !important;
+    margin-top: 10%;
+    text-align: center;
+    
+}
+
+h3{
+    font-family: "Klee One" !important;
+    font-size: 25px !important;
+    color: #137DB0 !important;
+    text-align: center;
+}
+
+p{
+    font-family: "Roboto Mono";
+    font-size: 10px;
+    color: rgb(66, 63, 63);
+    text-align: justify;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 10px; 
+    margin-top: 10px !important;
+}
+.contenedor-celeste{
+    background-color: #eaeff19d !important;
+    font-family: "Roboto Mono";
+    font-size: 12px !important;
+    margin: 5%;
+    border: 5px solid #92C1D0;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 40px;
+    margin-top: 30px;
+}
+
+.form-control{
+    border-color: #137DB0;
+    max-width: 100% !important;
+    width: 100%; 
+     font-size: 10px !important;
+     }
+
+.form-select{
+     font-size: 10px !important;
+     }
+
+
+.btn-primary {
+    color: white !important;
+    font-family: "Klee One"!important;
+    font-size: 15px;
+    background-color:   #a2cdd3  !important;
+    border-color: #92C1D0 !important;
+    color: #FFFFFF;
+    align-items: center;
+
+  }
+  
+  .btn-primary:hover {
+    background-color: #038091 !important;
+  }
+
+  .inputF {
+    margin-bottom: 20px; 
+  }
+  
+  .boton-submit{
+    color: white !important;
+    font-family: "Klee One"!important;
+    font-size: 15px;
+    background-color:   #a2cdd3  !important;
+    border-color: #92C1D0 !important;
+    color: #FFFFFF;
+    align-items: center !important;
+    
+  }
+
+  .boton-submit:hover {
+    background-color: #038091 !important;
+  }
