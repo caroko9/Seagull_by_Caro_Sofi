@@ -1,7 +1,10 @@
 const db = require('../database/models'); 
 const { producto } = require('../database/models');
 
+
 const productosController = {
+
+  carrito : [],// Inicializa un array vacío para el carrito de compra
 
   listadoProducto: async (req, res) => {
     try {
@@ -91,6 +94,8 @@ const productosController = {
     }
   },
 
+  
+
   comprar: async (req, res) => {
     try {
       const productoId = req.body.productoId;
@@ -106,7 +111,8 @@ const productosController = {
         precio: productoSeleccionado.precio,
         imagen: productoSeleccionado.imagen
       };
-      
+  
+
       carrito.push(productoEnCarrito); 
       
       res.render('carrito', { carrito });
@@ -117,8 +123,11 @@ const productosController = {
   },
   
   vistaCarrito: (req, res) => {
-    res.render("carrito");
-    res.render('carrito', { carrito: carrito }); 
+
+    let carrito = []; 
+
+    res.render('carrito', { carrito });
+    //res.render('carrito', { carrito: carrito }); 
   },
   
   deleteCarrito: async (req, res) => {

@@ -27,9 +27,9 @@ router.get('/productos', productosController.listadoProducto);
 
 router.get('/productosAdmin', productosController.listadoProductoAdmin);
 
-router.post('/crearProducto', upload.single('imagen'), productosController.crearProducto);
-
 router.get('/crearProducto', productosController.formularioCrearProducto);
+
+router.post('/crearProducto', upload.single('imagen'), productosController.crearProducto);
 
 router.get('/idProducto/:id', productosController.idProducto);
 
