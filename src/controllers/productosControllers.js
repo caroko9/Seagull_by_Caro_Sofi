@@ -1,10 +1,9 @@
 const db = require('../database/models'); 
 const { producto } = require('../database/models');
 
+let carrito = [];// Inicializa un array vacío para el carrito de compra
 
 const productosController = {
-
-  carrito : [],// Inicializa un array vacío para el carrito de compra
 
   listadoProducto: async (req, res) => {
     try {
@@ -87,7 +86,7 @@ const productosController = {
         return res.status(404).send("Producto no encontrado");
       }
       
-      res.render('idProducto', { productoSeleccionado });
+      res.render('idProducto', { producto: productoSeleccionado });
     } catch (error) {
       console.error(error);
       res.status(500).send('Error al obtener los detalles del producto');
@@ -99,7 +98,7 @@ const productosController = {
   comprar: async (req, res) => {
     try {
       const productoId = req.body.productoId;
-      const productoSeleccionado = await db.Producto.findByPk(productoId);
+      const productoSeleccionado = await db.producto.findByPk(productoId);
       
       if (!productoSeleccionado) {
         return res.status(404).send("Producto no encontrado");
