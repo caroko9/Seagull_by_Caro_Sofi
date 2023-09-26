@@ -13,3 +13,4 @@ function eliminarDelCarrito(id) {
   carrito = carrito.filter(producto => producto.id !== id);
   sessionStorage.setItem('carrito', JSON.stringify(carrito)); // Actualizar Session Storage
 }
+

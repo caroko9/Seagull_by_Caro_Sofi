@@ -50,15 +50,13 @@
           </div>
         </div>
         
-        <form action="/productos/carrito">
-          <input type="submit" name="productoId" value="<%= producto.id %>">
-        <!-- Botón para eliminar el producto desde el carrito -->
-       
-        <button id="eliminarDelCarritoButton" class="Boton_borrar" onclick="eliminarDelCarrito('<%= producto.id %>')">ELIMINAR PRODUCTO</button>
-     
-      </form>
+        <form onsubmit="eliminarDelCarrito(event, '<%= producto.id %>')">
+          <!-- Botón para eliminar el producto desde el carrito -->
+          <button class="Boton_borrar" type="submit">ELIMINAR PRODUCTO</button>
+        </form>
 
         <% }); %>
+
     </section>
     <div class="precio-total">
       <p>TOTAL</p>
@@ -71,7 +69,7 @@
 
     <% } %> 
 
-    <script src="../../public/js/carrito.js"></script>
+    <script src="/js/carrito.js"></script>
 
 </body>
 
