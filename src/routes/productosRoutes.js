@@ -42,9 +42,8 @@ router.post('/editarProducto/:id', productosController.editarProducto);
 //CARRITO DE PRODUCTOS
 router.get('/carrito', productosController.vistaCarrito);
 router.post('/carrito', productosController.comprar);
-router.delete('/carrito/:id', productosController.deleteCarrito);
-
 //router.delete('/carrito/:id', productosController.deleteCarrito);
+
 
 
 
