@@ -1,8 +1,6 @@
 const express = require('express');
 const db = require('./src/database/models'); 
 
-
-
 const productosRoutes = require('./src/routes/productosRoutes');
 const usersRoutes = require ('./src/routes/usersRoutes')
 const mainRoutes = require('./src/routes/mainRoutes')

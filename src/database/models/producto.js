@@ -16,11 +16,15 @@ function productoData(sequelize, DataTypes) {
           allowNull: false
       },
       imagen: {
-          type: DataTypes.BLOB,
+          type: DataTypes.STRING (70),
           allowNull: false
       },
       precio: {
         type: DataTypes.DECIMAL(10, 2), 
+        allowNull: false
+    },
+    categoria: {
+        type: DataTypes.STRING,
         allowNull: false
     },
       usuario_id: {
@@ -34,10 +38,6 @@ function productoData(sequelize, DataTypes) {
       fecha_eliminacion: {
           type: DataTypes.DATE,
           allowNull: true
-      },
-      categoria: {
-          type: DataTypes.STRING,
-          allowNull: false
       }
   }
 

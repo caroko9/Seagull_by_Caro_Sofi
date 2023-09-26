@@ -125,11 +125,14 @@ body::before {
 .escuelas-contenedor {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* Alinea las escuelas en filas */
+  justify-content: space-between; 
   gap: 20px;
-  max-width: 1000px; /* Establece un ancho máximo para el contenedor */
-  margin: 0 auto; /* Centra el contenedor en la página */
+  max-width: 1000px; 
+  margin: 0 auto; 
 }
 
-
+.boton-eliminar{
+  color: red;
+  font-family: "Klee One";
+}
 

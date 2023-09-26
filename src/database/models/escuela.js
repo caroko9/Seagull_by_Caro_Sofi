@@ -14,11 +14,15 @@ function escuelasData(sequelize, DataTypes) {
           allowNull: false
       },
       imagen: {
-          type: DataTypes.BLOB,
+          type: DataTypes.STRING(50),
           allowNull: false
       },
       email: {
           type: DataTypes.STRING(40),
+          allowNull: false
+      },
+      pagina_web: {
+          type: DataTypes.STRING(100),
           allowNull: false
       },
       telefono: {
@@ -26,12 +30,8 @@ function escuelasData(sequelize, DataTypes) {
           allowNull: true
       },
       ubicacion: {
-          type: DataTypes.STRING(20),
-          allowNull: true
-      },
-      precio_actividad: {
-          type: DataTypes.FLOAT,
-          allowNull: true
+          type: DataTypes.STRING(40),
+          allowNull: true,
       },
       estado: {
           type: DataTypes.STRING(20),
@@ -49,7 +49,7 @@ function escuelasData(sequelize, DataTypes) {
           type: DataTypes.INTEGER,
           allowNull: true
       },
-      ciudad_id: {
+      pais_id: {
           type: DataTypes.INTEGER,
           allowNull: true
       }

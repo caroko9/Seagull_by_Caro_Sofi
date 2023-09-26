@@ -28,26 +28,41 @@
             <div class="imagen">
               <a href="/escuelas/escuela-detalle/<%= escuelasRegistradas[i].id %>">
                 <img src="<%= escuelasRegistradas[i].imagen %>" class="product1" alt="<%= escuelasRegistradas[i].nombre %>">
-
-
-
-
               </a>
               <div class="linea"></div>
               <div class="detalle">
                 <p class="nombre"><%= escuelasRegistradas[i].nombre %></p>
-                <p class="precio"><%= escuelasRegistradas[i].pais %></p>
-              
+                <p class="pais"><%= escuelasRegistradas[i].pais %></p>
+                <!-- BOTÓN DE EDICIÓN-->
+                <div class="contenedor_boton">
+                  <a href="/escuelas/editarEscuela/<%= escuelasRegistradas[i].id %>" class="Boton_editar">EDITAR ESCUELA</a>
+                <!-- BOTÓN DE ELIMINACIÓN-->
+                 <a href="#" class="boton-eliminar" onclick="eliminarEscuela('<%= escuelasRegistradas[i].id %>')">ELIMINAR ESCUELA</a>
+                </div>
               </div>
             </div>
           </article>
         <% } %>
-      </div>
-      
-    
-    <br>
-    
-    <%- include ('partials/footer.ejs') %>
   </main>
+  <script>
+    function eliminarEscuela(escuelaId) {
+      if (confirm('¿Estás seguro de que deseas eliminar esta escuela?')) { //permite que salga una alerta de ventana en la que te aparece el mensaje
+        fetch(`/escuelas/eliminarEscuela/${escuelaId}`, {
+          method: 'DELETE'
+        })
+        .then(response => {
+          if (response.status === 200) {
+            window.location.reload();
+          } else {
+            console.error('Error al eliminar la escuela');
+          }
+        })
+        .catch(error => {
+          console.error('Error al eliminar la escuela:', error);
+        });
+      }
+    }
+    </script>
 </body>
 </html>
+

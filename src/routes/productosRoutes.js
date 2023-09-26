@@ -23,21 +23,26 @@ cloudinary.config({
 
   const upload = multer({ storage: storage });
 //ROUTES
-router.get('/productos', productosController.listadoProducto);
 
+//LISTAR PRODUCTOS
+router.get('/productos', productosController.listadoProducto);
 router.get('/productosAdmin', productosController.listadoProductoAdmin);
 
+//CREAR PRODUCTOS
 router.get('/crearProducto', productosController.formularioCrearProducto);
-
 router.post('/crearProducto', upload.single('imagen'), productosController.crearProducto);
 
+//DETALLE DEL PRODUCTO
 router.get('/idProducto/:id', productosController.idProducto);
 
-router.post('/productos/editarProductos/:id', productosController.editarProducto);
+//EDITAR PRODUCTO
+router.get('/editarProducto/:id', productosController.editarProducto);
+router.post('/editarProducto/:id', productosController.editarProducto);
 
+//CARRITO DE PRODUCTOS
 router.get('/carrito', productosController.vistaCarrito);
-
 router.post('/carrito', productosController.comprar);
+router.delete('/carrito/:id', productosController.deleteCarrito);
 
 //router.delete('/carrito/:id', productosController.deleteCarrito);
 
