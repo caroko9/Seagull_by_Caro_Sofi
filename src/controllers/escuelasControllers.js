@@ -6,6 +6,8 @@ const controller = {
   sumaEscuela: (req, res) => {
     res.render("escuelascreate");
   },
+
+
   creaEscuela: async (req, res) => {
     try {
       const escuelaNueva = req.body;
@@ -34,6 +36,16 @@ const controller = {
     try {
       const escuelasRegistradas = await db.escuela.findAll();
       res.render("escuelasList", { escuelasRegistradas });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error al obtener la lista de escuelas');
+    }
+  },
+
+  listadoEscuelasAdm: async (req, res) => {
+    try {
+      const escuelasRegistradas = await db.escuela.findAll();
+      res.render("adminEscuelasList", { escuelasRegistradas });
     } catch (error) {
       console.error(error);
       res.status(500).send('Error al obtener la lista de escuelas');

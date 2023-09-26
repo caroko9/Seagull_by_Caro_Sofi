@@ -33,10 +33,11 @@
               <div class="rightColumn">
                 <div class="containerImagen">
                   <img src="\img\escuelas\bordePolaroid.png" alt="Imagen polaroid">
-                  <!-- se crea un if para que tome las fotos subidas en el array dentro el JSON-->
-                  <% if (escuela.imagen && escuela.imagen.length > 0) { %>
-                  <img class= "imagenjson" src="/img/escuelas/<%= escuela.imagen[0].filename %>" alt="Imagen de la escuela">
+                  <!-- este if se supone conecta con la url de la foto de cloudinary-->
+                  <% if (escuela.imagenUrl) { %>
+                    <img class="imagenjson" src="<%= escuela.imagenUrl %>" alt="Imagen de la escuela">
                   <% } %>
+                  
                 </div>
               </div>    
               

@@ -30,16 +30,22 @@ const storage = new CloudinaryStorage({
 
 const upload = multer({ storage: storage });
 
+//CREACIÓN DE ESCUELAS 
 router.get('/escuelascreate', escuelasController.sumaEscuela);
-
 router.post('/escuelascreate', upload.array('imagen'), escuelasController.creaEscuela);
 
+//LISTA LAS ESCUELAS
 router.get('/escuelasList', escuelasController.list);
+router.get('/adminEscuelasList', escuelasController.listadoEscuelasAdm);
 
+//BUSCAR ESCUELAS
 router.get('/escuelasResults', escuelasController.buscarEscuela);
 
+//DETALLE DE ESCUELAS USUARIOS Y ADM
 router.get('/escuela-detalle/:id', escuelasController.idEscuela);
+//router.get('/adminEscuelaDetalle/:id', escuelasController.idEscuela); no resulto necesario pero lo dejo por slas dudas
 
+//EDITAR ESCUELAS
 router.get('/editarEscuela/:id', escuelasController.editarEscuela);
 router.post('/editarEscuela/:id', escuelasController.editarEscuela);
 router.put('/editarEscuela/:id', upload.array('imagen'), escuelasController.editarEscuela);
