@@ -20,7 +20,10 @@ const controller = {
       const nuevaEscuela = await db.escuela.create({
         nombre: escuelaNueva.nombre,
         email: escuelaNueva.email,
+        telefono: escuelaNueva.telefono,
+        pagina_web: escuelaNueva.pagina_web,
         descripcion: escuelaNueva.descripcion,
+        ubicacion: escuelaNueva.ubicacion,
         pais: escuelaNueva.pais,
         imagen: imagenCloudinaryURL, 
       });
@@ -82,7 +85,7 @@ const controller = {
       res.render('escuela-detalle', { escuela });
     } catch (error) {
       console.error(error);
-      res.status(500).send('Error al obtener los detalles de la escuela');
+      res.status(500).send(`Error al mostrar los detalles de la escuela la escuela: ${error.message}`);
     }
   },
 
@@ -101,7 +104,11 @@ const controller = {
         await escuela.update({
           nombre: req.body.nombre,
           email: req.body.email,
+          telefono: req.body.telefono,
+          pagina_web: req.body.pagina_web,
           descripcion: req.body.descripcion,
+          ubicacion: req.body.ubicacion,
+          imagen: req.body.imagenCloudinaryURL,
           pais: req.body.pais,
         
         });
