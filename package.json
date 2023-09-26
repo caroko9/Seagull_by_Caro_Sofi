@@ -21,6 +21,7 @@
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "express-validator": "^7.0.1",
+    "fs": "^0.0.1-security",
     "method-override": "^3.0.0",
     "moment": "^2.29.4",
     "multer": "^1.4.5-lts.1",
@@ -31,7 +32,6 @@
     "sequelize-cli": "^6.6.1",
     "uuid": "^9.0.0"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/caroko9/Seagull_by_Caro_Sofi.git"
