@@ -80,14 +80,15 @@ const productosController = {
           precio: req.body.precio,
           categoria: req.body.categoria,
         });
-  
-        res.redirect(`/productos/detalle/${productoId}`);
+
+        res.redirect(`/productos/idProducto/${productoId}`);
       }
     } catch (error) {
       console.error(error);
       res.status(500).send("Error al editar el producto");
     }
   },
+
 
   idProducto: async (req, res) => {
     try {

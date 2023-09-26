@@ -32,10 +32,12 @@ router.get('/productosAdmin', productosController.listadoProductoAdmin);
 router.get('/crearProducto', productosController.formularioCrearProducto);
 router.post('/crearProducto', upload.single('imagen'), productosController.crearProducto);
 
-//EDITAR PRODUCTO
-router.get('/productos/idProducto/:id', productosController.idProducto);
-router.post('/productos/editarProducto/:id', productosController.editarProducto);
+//DETALLE DEL PRODUCTO
+router.get('/idProducto/:id', productosController.idProducto);
 
+//EDITAR PRODUCTO
+router.get('/editarProducto/:id', productosController.editarProducto);
+router.post('/editarProducto/:id', productosController.editarProducto);
 
 //CARRITO DE PRODUCTOS
 router.get('/carrito', productosController.vistaCarrito);
