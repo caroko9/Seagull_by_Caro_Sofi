@@ -33,8 +33,9 @@ router.get('/crearProducto', productosController.formularioCrearProducto);
 router.post('/crearProducto', upload.single('imagen'), productosController.crearProducto);
 
 //EDITAR PRODUCTO
-router.get('/idProducto/:id', productosController.idProducto);
-router.post('/productos/editarProductos/:id', productosController.editarProducto);
+router.get('/productos/idProducto/:id', productosController.idProducto);
+router.post('/productos/editarProducto/:id', productosController.editarProducto);
+
 
 //CARRITO DE PRODUCTOS
 router.get('/carrito', productosController.vistaCarrito);

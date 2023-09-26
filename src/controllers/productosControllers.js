@@ -70,13 +70,25 @@ const productosController = {
         return res.status(404).send("Producto no encontrado");
       }
   
-      res.render("editProductosAdmin", { producto });
+      if (req.method === "GET") {
+        res.render("editarProducto", { producto });
+      } else if (req.method === "POST") {
+        await producto.update({
+          nombre: req.body.nombre,
+          descripcion: req.body.descripcion,
+          imagen: req.body.imagenCloudinaryURL,
+          precio: req.body.precio,
+          categoria: req.body.categoria,
+        });
+  
+        res.redirect(`/productos/detalle/${productoId}`);
+      }
     } catch (error) {
       console.error(error);
-      res.status(500).send("Error al mostrar detalles del producto solicitado");
+      res.status(500).send("Error al editar el producto");
     }
   },
-  
+
   idProducto: async (req, res) => {
     try {
       const productoId = req.params.id;
