@@ -120,6 +120,23 @@ const controller = {
       res.status(500).send('Error al editar la escuela');
     }
   },
+// NO FUNCIONA ELIMINAR ESCUELA LA DEJO AQUI POR SI VOS LO LOGRAS CARO
+eliminarEscuela: async (req, res) => {
+  try {
+    const escuelaId = req.params.id;
+    const escuela = await db.escuela.findByPk(escuelaId);
+    if (!escuela) {
+      return res.status(404).send("Escuela no encontrada");
+    }
+
+    await escuela.destroy();
+    res.redirect('/adminEscuelasList');
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error al eliminar la escuela');
+  }
+},
 };
+
 
 module.exports = controller;

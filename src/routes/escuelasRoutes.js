@@ -50,6 +50,9 @@ router.get('/editarEscuela/:id', escuelasController.editarEscuela);
 router.post('/editarEscuela/:id', escuelasController.editarEscuela);
 router.put('/editarEscuela/:id', upload.array('imagen'), escuelasController.editarEscuela);
 
+//ELIMINAR ESCUELAS
+router.delete('/escuelas/eliminarEscuela/:id', escuelasController.eliminarEscuela);
+
 module.exports = router;
 
 
