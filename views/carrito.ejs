@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,55 +8,71 @@
   <link rel="stylesheet" href="/css/carrito.css">
   <%- include ('partials/head.ejs') %>
 </head>
-<body>
-  <%- include ('./partials/header.ejs') %> 
 
-  <h1 class="titulo">CARRITO DE COMPRA</h1>
-  <section class="contenedor">
-    <% carrito.forEach(function (producto) { %>
-      <div class="contenedor-items">
-        <div class="item-1">
-          <div class="item-contenedor">
-            <div class="img-container">
-              <img src="<%= producto.imagen %>" alt="<%= producto.nombre %>">
-            </div>
-            <div class="texto-contenedor">
-              <h2 class="nombreProd"><%= producto.nombre %></h2> 
-              <h3>Resumen del pedido</h3>
-              <div class="texto-bajo">
-                <div class="texto-izquierda">
-                  <span>Productos (1 item)</span>
-                  <span>Descuentos</span>
-                  <span>Envio</span>
-                </div>
-                <div class="texto-derecha">
-                  <span><%= producto.precio %> ARS</span> 
-                  <span>0</span>
-                  <span>Gratis</span>
+<body>
+  <%- include ('./partials/header.ejs') %>
+
+  <% { %> 
+
+    <h1 class="titulo">CARRITO DE COMPRA</h1>
+    <section class="contenedor">
+      <% carrito.forEach(function (producto) { %>
+        <div class="contenedor-items">
+          <div class="item-1">
+            <div class="item-contenedor">
+              <div class="img-container">
+                <!--  <img src="<%= producto.imagen %>" alt="<%= producto.nombre %>">-->
+              </div>
+              <div class="texto-contenedor">
+                <h2 class="nombreProd">
+                  <%= producto.nombre %>
+                </h2>
+                <h3>Resumen del pedido</h3>
+                <div class="texto-bajo">
+                  <div class="texto-izquierda">
+                    <span>Productos (1 item)</span>
+                    <span>Descuentos</span>
+                    <span>Envio</span>
+                  </div>
+                  <div class="texto-derecha">
+                    <span>
+                      <%= producto.precio %> ARS
+                    </span>
+                    <span>0</span>
+                    <span>Gratis</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <div class="espaciador"></div>
+          <div class="contenedor-iconos">
+          </div>
         </div>
-        <div class="espaciador"></div>
-        <div class="contenedor-iconos">
-        </div>        
-      </div>
-      <form action="/productos/carrito/<%=producto.id%>?_method=DELETE" method="POST" >
-        <input type="submit" class="Boton_borrar" value="ELIMINAR PRODUCTO">
+        
+        <form action="/productos/carrito">
+          <input type="submit" name="productoId" value="<%= producto.id %>">
+        <!-- Botón para eliminar el producto desde el carrito -->
+       
+        <button id="eliminarDelCarritoButton" class="Boton_borrar" onclick="eliminarDelCarrito('<%= producto.id %>')">ELIMINAR PRODUCTO</button>
+     
       </form>
-    <% }); %>
-  </section>
-  <div class="precio-total">
-    <p>TOTAL</p>
 
-     <p></p>   
-  </div>
-  <div class="boton text-center"> 
-    <a class="btn btn-color" id="Miboton" href="/productos/carrito">PAGAR</a>
-  </div>
+        <% }); %>
+    </section>
+    <div class="precio-total">
+      <p>TOTAL</p>
 
-  <script src="../../public/js/carrito.js"></script>
-  
+      <p></p>
+    </div>
+    <div class="boton text-center">
+      <a class="btn btn-color" id="Miboton" href="/productos/carrito">PAGAR</a>
+    </div>
+
+    <% } %> 
+
+    <script src="../../public/js/carrito.js"></script>
+
 </body>
+
 </html>

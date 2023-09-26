@@ -1,3 +1,4 @@
+const fs = require('fs'); //utilizamos Filesystem para el mpetodo delete carrito linea 138
 const db = require('../database/models'); 
 const { producto } = require('../database/models');
 
@@ -128,20 +129,21 @@ const productosController = {
     res.render('carrito', { carrito });
     //res.render('carrito', { carrito: carrito }); 
   },
-  
-  deleteCarrito: async (req, res) => {
+
+  // Éste método estaba para eliminar productos publicados en Json. Hay redefinir
+ /* deleteCarrito: async (req, res) => {
     try {
       const productoId = req.params.id;
-      carrito = carrito.filter((producto) => producto.id !== productoId); 
-      
+      carrito = carrito.filter((producto) => producto.id !== productoId);
+
       fs.writeFileSync(carritoFilePath, JSON.stringify(carrito), 'utf-8');
-      
+
       res.render('carrito', { carrito: carrito });
     } catch (error) {
       console.error(error);
       res.status(500).send('Error al eliminar el producto del carrito');
     }
-  },
+  },*/
 };
 
 module.exports = productosController;
