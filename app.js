@@ -11,6 +11,8 @@ const path = require ('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
 
+//EXPRESS VALIDATOR
+//const { query } = require('express-validator');
 
 app.use(express.static(path.resolve(__dirname, './public')));
 

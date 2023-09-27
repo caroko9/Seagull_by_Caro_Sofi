@@ -23,7 +23,7 @@ function escuelasData(sequelize, DataTypes) {
       },
       pagina_web: {
           type: DataTypes.STRING(100),
-          allowNull: false
+          allowNull: true
       },
       telefono: {
           type: DataTypes.STRING(15),
@@ -34,8 +34,8 @@ function escuelasData(sequelize, DataTypes) {
           allowNull: true,
       },
       estado: {
-          type: DataTypes.STRING(20),
-          allowNull: true
+        type: DataTypes.ENUM('Aprobada', 'Desaprobada', 'Pendiente'),
+          allowNull: true,
       },
       fecha_creacion: {
           type: DataTypes.DATE,

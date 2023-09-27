@@ -33,12 +33,16 @@
               <div class="detalle">
                 <p class="nombre"><%= escuelasRegistradas[i].nombre %></p>
                 <p class="pais"><%= escuelasRegistradas[i].pais %></p>
+                
                 <!-- BOTÓN DE EDICIÓN-->
                 <div class="contenedor_boton">
                   <a href="/escuelas/editarEscuela/<%= escuelasRegistradas[i].id %>" class="Boton_editar">EDITAR ESCUELA</a>
-                <!-- BOTÓN DE ELIMINACIÓN-->
+                
+                  <!-- BOTÓN DE ELIMINACIÓN-->
+                <form method="POST" action="/escuelas/<%= escuelasRegistradas[i].id %>?_method=DELETE">
                  <a href="#" class="boton-eliminar" onclick="eliminarEscuela('<%= escuelasRegistradas[i].id %>')">ELIMINAR ESCUELA</a>
-                </div>
+                </form>
+              </div>
               </div>
             </div>
           </article>
