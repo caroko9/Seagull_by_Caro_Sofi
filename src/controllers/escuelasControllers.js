@@ -14,8 +14,6 @@ const controller = {
       const escuelaNueva = req.body;
       const escuelaimgUpload = req.files; 
       const primeraImagen = escuelaimgUpload[0].filename;
-
-      
       const imagenCloudinaryURL = `https://res.cloudinary.com/djpb4ilrq/image/upload/${primeraImagen}`;
 
       const nuevaEscuela = await db.escuela.create({
@@ -27,9 +25,10 @@ const controller = {
         ubicacion: escuelaNueva.ubicacion,
         pais: escuelaNueva.pais,
         imagen: imagenCloudinaryURL, 
+        estado: "Pendiente",
       });
       
-      res.redirect("./escuelasList");
+      res.redirect("/");
     } catch (error) {
       console.error(error);
       res.status(500).send(`Error al crear la escuela: ${error.message}`);
@@ -57,13 +56,23 @@ const controller = {
 
   listadoEscuelasAdm: async (req, res) => {
     try {
-      const escuelasRegistradas = await db.escuela.findAll();
+      const escuelasRegistradas = await db.escuela.findAll({where: { fecha_eliminacion: null }}); 
       res.render("adminEscuelasList", { escuelasRegistradas });
     } catch (error) {
       console.error(error);
       res.status(500).send('Error al obtener la lista de escuelas');
     }
   },
+
+ escuelasPendientes:  async (req, res) => {
+try {
+  const escuelasPendientes = await db.escuela.findAll({where: { estado: "Pendiente"}}); 
+  res.render("escuelasPendientes", { escuelasPendientes } )
+} catch (error) {
+  console.error(error);
+  res.status(500).send('Error al obtener la lista de escuelas');
+}
+},
 
   buscarEscuela: async (req, res) => {
     try {
@@ -130,15 +139,16 @@ const controller = {
       res.status(500).send('Error al editar la escuela');
     }
   },
-// NO FUNCIONA ELIMINAR ESCUELA LA DEJO AQUI POR SI VOS LO LOGRAS CARO
-eliminarEscuela: async (req, res) => {
+
+  
+eliminarEscuela: async (req, res) => { //que modifique la fecha_eliminacion
   try {
     const escuelaId = req.params.id;
     const escuela = await db.escuela.findByPk(escuelaId);
     if (!escuela) {
       return res.status(404).send("Escuela no encontrada");
     }
-
+    
     await escuela.destroy();
     res.redirect('/adminEscuelasList');
   } catch (error) {

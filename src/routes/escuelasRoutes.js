@@ -37,14 +37,17 @@ router.post('/escuelascreate', upload.array('imagen'), escuelasController.creaEs
 //LISTA LAS ESCUELAS
 router.get('/', escuelasController.listApi); //ruta que arroja la info en un json para que pueda ser consumida por una api
 router.get('/escuelasList', escuelasController.list);
-router.get('/adminEscuelasList', escuelasController.listadoEscuelasAdm);
+router.get('/adminEscuelasList', escuelasController.listadoEscuelasAdm); //En estas se elimina, se edita y se aprueba.
+router.get('/escuelasPendientes', escuelasController.escuelasPendientes);
 
 //BUSCAR ESCUELAS
 router.get('/escuelasResults', escuelasController.buscarEscuela);
 
 //DETALLE DE ESCUELAS USUARIOS Y ADM
 router.get('/escuela-detalle/:id', escuelasController.idEscuela);
-//router.get('/adminEscuelaDetalle/:id', escuelasController.idEscuela); no resulto necesario pero lo dejo por slas dudas
+
+//APROBAR ESCUELAS PENDIENTES
+//router.post('/escuela/aprobar/:id', escuelaController.aprobarEscuelaPendiente);
 
 //EDITAR ESCUELAS
 router.get('/editarEscuela/:id', escuelasController.editarEscuela);
@@ -52,7 +55,11 @@ router.post('/editarEscuela/:id', escuelasController.editarEscuela);
 router.put('/editarEscuela/:id', upload.array('imagen'), escuelasController.editarEscuela);
 
 //ELIMINAR ESCUELAS
-router.delete('/escuelas/eliminarEscuela/:id', escuelasController.eliminarEscuela);
+//router.delete('/escuelas/eliminarEscuela/:id', escuelasController.eliminarEscuela);
+//router.post('/escuelas/eliminarEscuela/:id', escuelasController.eliminarEscuela);
+
+router.delete('/:id', escuelasController.eliminarEscuela); 
+
 
 module.exports = router;
 
