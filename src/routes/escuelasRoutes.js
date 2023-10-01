@@ -35,6 +35,7 @@ router.get('/escuelascreate', escuelasController.sumaEscuela);
 router.post('/escuelascreate', upload.array('imagen'), escuelasController.creaEscuela);
 
 //LISTA LAS ESCUELAS
+router.get('/', escuelasController.listApi); //ruta que arroja la info en un json para que pueda ser consumida por una api
 router.get('/escuelasList', escuelasController.list);
 router.get('/adminEscuelasList', escuelasController.listadoEscuelasAdm);
 

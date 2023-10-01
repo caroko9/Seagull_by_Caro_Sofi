@@ -1,6 +1,7 @@
 const db = require('../database/models');
 const { escuela } = require('../database/models'); 
 
+
 const controller = {
 
   sumaEscuela: (req, res) => {
@@ -37,13 +38,22 @@ const controller = {
 
   list: async (req, res) => {
     try {
-      const escuelasRegistradas = await db.escuela.findAll();
+      const escuelasRegistradas = await db.escuela.findAll({where: { estado: "Aprobada", fecha_eliminacion: null}}); //escuelas aprobadas?
       res.render("escuelasList", { escuelasRegistradas });
     } catch (error) {
       console.error(error);
       res.status(500).send('Error al obtener la lista de escuelas');
     }
   },
+
+  //creación de una API: en este caso enviamos la request a un json para que la info pueda ser consumida como si fuera una API 
+  listApi: (req,res) => {
+    db.escuela
+    .findAll()
+    .then(escuelas => {
+    return res.json(escuelas)
+    })
+},
 
   listadoEscuelasAdm: async (req, res) => {
     try {
@@ -140,3 +150,5 @@ eliminarEscuela: async (req, res) => {
 
 
 module.exports = controller;
+
+
