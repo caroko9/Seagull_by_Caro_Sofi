@@ -45,15 +45,7 @@ const controller = {
     }
   },
 
-  //creación de una API: en este caso enviamos la request a un json para que la info pueda ser consumida como si fuera una API 
-  listApi: (req,res) => {
-    db.escuela
-    .findAll()
-    .then(escuelas => {
-    return res.json(escuelas)
-    })
-},
-
+  
   listadoEscuelasAdm: async (req, res) => {
     try {
       const escuelasRegistradas = await db.escuela.findAll({where: { fecha_eliminacion: null }}); 
@@ -156,6 +148,31 @@ eliminarEscuela: async (req, res) => { //que modifique la fecha_eliminacion
     res.status(500).send('Error al eliminar la escuela');
   }
 },
+
+//METODOS APIS
+
+//creación de una API: en este caso enviamos la request a un json para que la info pueda ser consumida como si fuera una API 
+listApi: (req,res) => {
+  db.escuela
+  .findAll()
+  .then(escuelas => {
+  return res.status(200).json({
+    total: escuelas.length,
+    data: escuelas,
+    status: 200})
+         })
+}, //data a mostrar en el json. Podemos ver esta info en postman
+
+mostrarEscuelaId: (req,res) => {
+  db.escuela
+  .findByPk(req.params.id)
+  .then(escuela => {
+  return res.status(200).json({
+data: escuela,
+status: 200})
+  })
+},
+
 };
 
 

@@ -157,6 +157,32 @@ const productosController = {
       res.status(500).send('Error al eliminar el producto del carrito');
     }
   },*/
+
+  //METODOS APIS
+
+  
+//creación de una API: en este caso enviamos la request a un json para que la info pueda ser consumida como si fuera una API 
+listProdApi: (req,res) => {
+  db.producto
+  .findAll()
+  .then(productos => {
+  return res.status(200).json({
+    total: productos.length,
+    data: productos,
+    status: 200})
+         })
+}, //data a mostrar en el json. Podemos ver esta info en postman
+
+mostrarProductoId: (req,res) => {
+  db.producto
+  .findByPk(req.params.id)
+  .then(producto => {
+  return res.status(200).json({
+data: producto,
+status: 200})
+  })
+},
+
 };
 
 module.exports = productosController;
