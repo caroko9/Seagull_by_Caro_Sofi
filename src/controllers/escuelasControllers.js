@@ -1,5 +1,6 @@
 const db = require('../database/models');
 const { escuela } = require('../database/models'); 
+const Op = db.Sequelize.Op;
 
 
 const controller = {
@@ -172,6 +173,37 @@ data: escuela,
 status: 200})
   })
 },
+ //este no funciona, no encuentro el error
+ search: (req, res) => {
+    const keyword = req.query.keyword; // Guarda req.query.keyword en una variable
+  
+    db.escuela
+      .findAll({
+        where: {
+          nombre: { [Op.like]: '%' + keyword + '%' }
+        }
+      })
+      .then(escuelas => {
+        return res.status(200).json(escuelas);
+      })
+      .catch(error => {
+        console.error(error);
+        res.status(500).json({ error: 'Error al buscar escuelas' });
+      });
+    }
+
+     //Opción B del mismo método. Ninguno trae resultados
+      /* search: async (req, res) => {
+        try {
+          const keyword = req.query.keyword;
+          const searchkeyword = await db.escuela.findAll({nombre: { [Op.like]: '%' + keyword + '%'}}); //escuelas aprobadas?
+          res.json({ searchkeyword });
+        } catch (error) {
+          console.error(error);
+          res.status(500).send('Error al obtener la lista de escuelas');
+        }
+      },*/
+  
 
 };
 

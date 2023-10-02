@@ -62,6 +62,7 @@ router.delete('/:id', escuelasController.eliminarEscuela);
 //Rutas APIS
 router.get('/', escuelasController.listApi); //ruta que arroja la info en un json para que pueda ser consumida por una api
 router.get('/:id', escuelasController.mostrarEscuelaId);
+router.get('/search', escuelasController.search);
 
 module.exports = router;
 
