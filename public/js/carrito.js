@@ -14,6 +14,7 @@ function eliminarDelCarrito(id) {
   sessionStorage.setItem('carrito', JSON.stringify(carrito)); // Actualizar Session Storage
 }
 
+// Evento que muestra una alerta al clickear el botón de pago
 window.addEventListener("load", function () {
   let pagarbutton = document.querySelector(".pagarbutton")
 
@@ -22,13 +23,6 @@ window.addEventListener("load", function () {
   })
 })
 
-window.addEventListener("load", function () {
-  let crearProducto = document.querySelector(".crearProductoButton")
-
-  crearProducto.addEventListener("click", function () {
-    alert("Producto cargado con éxito!")
-  })
-})
 
 
 
