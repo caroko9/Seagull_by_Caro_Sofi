@@ -13,3 +13,13 @@ function eliminarDelCarrito(id) {
   carrito = carrito.filter(producto => producto.id !== id);
   sessionStorage.setItem('carrito', JSON.stringify(carrito)); // Actualizar Session Storage
 }
+
+window.addEventListener("load", function () {
+  let pagarbutton = document.querySelector(".pagarbutton")
+
+  pagarbutton.addEventListener("click", function () {
+    alert("Te enviaremos los medios de pagos via email!")
+  })
+})
+
+
