@@ -22,4 +22,14 @@ window.addEventListener("load", function () {
   })
 })
 
+window.addEventListener("load", function () {
+  let crearProducto = document.querySelector(".crearProductoButton")
+
+  crearProducto.addEventListener("click", function () {
+    alert("Producto cargado con éxito!")
+  })
+})
+
+
+
 
