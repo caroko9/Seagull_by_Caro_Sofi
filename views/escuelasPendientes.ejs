@@ -33,14 +33,12 @@
               <div class="detalle">
                 <p class="nombre"><%= escuelasPendientes[i].nombre %></p>
                 <p class="precio"><%= escuelasPendientes[i].pais %></p>
-              <div class="estado">
-              <input type="radio" name="estado" value="Pendiente"> PENDIENTE
-                <br>
-                <input type="radio" name="estado" value="Aprobada"> APROBADA
-                <br>
-                <input type="radio" name="estado" value="Desaprobada"> DESAPROBADA
-            
-              </div>
+
+                <!-- BOTÓN DE EDICIÓN-->
+                <div class="contenedor_boton">
+                  <a href="/escuelas/editarEscuela/<%= escuelasPendientes[i].id %>" class="Boton_editar">EDITAR ESCUELA</a>
+                
+             
               </div>
             </div>
           </article>

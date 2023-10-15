@@ -49,7 +49,7 @@ const controller = {
   
   listadoEscuelasAdm: async (req, res) => {
     try {
-      const escuelasRegistradas = await db.escuela.findAll({where: { fecha_eliminacion: null }}); 
+      const escuelasRegistradas = await db.escuela.findAll({where: { fecha_eliminacion: null, estado: "Aprobada" }}); 
       res.render("adminEscuelasList", { escuelasRegistradas });
     } catch (error) {
       console.error(error);

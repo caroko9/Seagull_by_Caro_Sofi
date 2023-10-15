@@ -5,7 +5,9 @@
 }
 
 body {
-  background-image: url(/img/fondoMar.png);
+  background-image: url(https://res.cloudinary.com/dgofs3hfj/image/upload/v1695587609/backgrounds/a28c63849546d6df9597030598c7ad37_ij3pr7.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h2{
@@ -15,8 +17,8 @@ h2{
 }
  
 .contenedor{
-background-color: #b9e6fc59;
-border: 3px solid #49abd8;
+background-color: #b9e6fc0c;
+border: 2.5px solid #53849bc5;
 padding: 20px;
 margin-bottom: 20px;
 display: inline-block; 
