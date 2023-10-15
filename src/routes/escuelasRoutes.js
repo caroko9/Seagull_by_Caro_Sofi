@@ -57,7 +57,7 @@ router.put('/editarEscuela/:id', upload.array('imagen'), escuelasController.edit
 //router.delete('/escuelas/eliminarEscuela/:id', escuelasController.eliminarEscuela);
 //router.post('/escuelas/eliminarEscuela/:id', escuelasController.eliminarEscuela);
 
-router.delete('/:id', escuelasController.eliminarEscuela); 
+router.delete('/eliminarEscuela/:id', escuelasController.eliminarEscuela); 
 
 //Rutas APIS
 router.get('/', escuelasController.listApi); //ruta que arroja la info en un json para que pueda ser consumida por una api

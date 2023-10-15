@@ -39,7 +39,7 @@
                   <a href="/escuelas/editarEscuela/<%= escuelasRegistradas[i].id %>" class="Boton_editar">EDITAR ESCUELA</a>
                 
                   <!-- BOTÓN DE ELIMINACIÓN-->
-                <form method="POST" action="/escuelas/<%= escuelasRegistradas[i].id %>?_method=DELETE">
+                <form method="POST" action="/escuelas/eliminarEscuela/<%= escuelasRegistradas[i].id %>?_method=DELETE">
                  <a href="#" class="boton-eliminar" onclick="eliminarEscuela('<%= escuelasRegistradas[i].id %>')">ELIMINAR ESCUELA</a>
                 </form>
               </div>

@@ -169,7 +169,7 @@ listProdApi: (req,res) => {
   return res.status(200).json({
     total: productos.length,
     data: productos,
-    status: 200})
+    status: 200})//indica que la petición se concretó correctamente
          })
 }, //data a mostrar en el json. Podemos ver esta info en postman
 
@@ -183,6 +183,55 @@ status: 200})
   })
 },
 
+//para hacer total por categoría, averiguar métodos
+categoriaProducto: (req,res) => {
+
+    db.producto
+      .findAll({
+        attributes: ['categoria'], // Selecciona la columna de categoría
+        group: ['categoria'], // Agrupa por categoría
+      })
+      .then((categorias) => {
+        const countByCategory = {};
+        categorias.forEach((categoria) => {
+          countByCategory[categoria.categoria] = categoria.count;
+        });
+  
+        return res.status(200).json({
+          countByCategory,
+          status: 200,
+        });
+      })
+      .catch((error) => {
+        console.error('Error al contar productos por categoría:', error);
+        return res.status(500).json({
+          error: 'Hubo un error al contar productos por categoría.',
+        });
+      });
+
+ 
+//const categorias = req.params.categoria;
+
+  // db.producto
+  //   .count({
+  //     where: {
+  //       categoria: categorias,
+  //     },
+  //   })
+  //   .then((count) => {
+  //     return res.status(200).json({
+  //       [categorias]: count, // Utiliza la categoría como clave en el objeto
+  //       status: 200,
+  //     });
+  //   })
+  //   .catch((error) => {
+  //     console.error('Error al contar productos por categoría:', error);
+  //     return res.status(500).json({
+  //       error: 'Hubo un error al contar productos por categoría.',
+  //     });
+  //   });
+
+  },
 };
 
 module.exports = productosController;

@@ -40,7 +40,7 @@ const controller = {
     try {
       const escuelasRegistradas = await db.escuela.findAll({where: { estado: "Aprobada", fecha_eliminacion: null}}); //escuelas aprobadas?
       res.render("escuelasList", { escuelasRegistradas });
-    } catch (error) {
+        } catch (error) {
       console.error(error);
       res.status(500).send('Error al obtener la lista de escuelas');
     }
@@ -136,13 +136,13 @@ try {
   
 eliminarEscuela: async (req, res) => { //que modifique la fecha_eliminacion
   try {
-    const escuelaId = req.params.id;
+ /*   const escuelaId = req.params.id;
     const escuela = await db.escuela.findByPk(escuelaId);
     if (!escuela) {
       return res.status(404).send("Escuela no encontrada");
-    }
-    
-    await escuela.destroy();
+    }*/
+  
+    await escuela.destroy({where: { id: req.params.id }});
     res.redirect('/adminEscuelasList');
   } catch (error) {
     console.error(error);
@@ -175,21 +175,20 @@ status: 200})
 },
  //este no funciona, no encuentro el error
  search: (req, res) => {
-    const keyword = req.query.keyword; // Guarda req.query.keyword en una variable
+   // const keyword = req.query.keyword; // Guarda req.query.keyword en una variable
   
     db.escuela
       .findAll({
         where: {
-          nombre: { [Op.like]: '%' + keyword + '%' }
+          estado: req.params.estado
         }
       })
       .then(escuelas => {
-        return res.status(200).json(escuelas);
+        return res.status(200).json({
+          total: estado.length,
+          data: escuelas,
+          status: 200});
       })
-      .catch(error => {
-        console.error(error);
-        res.status(500).json({ error: 'Error al buscar escuelas' });
-      });
     }
 
      //Opción B del mismo método. Ninguno trae resultados
