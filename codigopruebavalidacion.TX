@@ -1,0 +1,45 @@
+se agrega en el form //onsubmit="return validacion()"//
+
+window.addEventListener('load', function () {
+    let formulario = document.querySelector('.inscripcion');
+    formulario.addEventListener("submit", function(e) {
+      e.preventDefault();
+      validacion();
+    });
+  });
+  
+function validacion() {
+    let nombre = document.getElementById("nombre");
+    let email = document.getElementById("email");
+    let telefono = document.getElementById("telefono");
+    let paginaWeb = document.getElementById("paginaWeb");
+    let descripcion = document.getElementById("descripcion");
+    let ubicacion = document.getElementById("ubicacion");
+    let pais = document.getElementById("pais");
+  
+    if (nombre.value == "") {
+        alert("El campo de nombre debe completarse");
+      return false;
+    } else if (email.value == "") {
+      console.log('[ERROR] El campo de email debe completarse con un email válido');
+      return false;
+    } else if (telefono.value == "") {
+      console.log('[ERROR] El campo de teléfono debe completarse');
+      return false;
+    } else if (paginaWeb.value == "") {
+      console.log('[ERROR] El campo debe completarse con una página web válida');
+      return false;
+    } else if (descripcion.value == "") {
+      console.log('[ERROR] El campo de descripción debe estar completo');
+      return false;
+    } else if (ubicacion.value == "") {
+      console.log('[ERROR] El campo de ubicación debe estar completo');
+      return false;
+    } else if (pais.value == "") {
+      console.log('[ERROR] El campo de país debe estar completo');
+      return false;
+    }
+  
+    return true;
+  }
+  
