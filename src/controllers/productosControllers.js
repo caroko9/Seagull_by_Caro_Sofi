@@ -143,7 +143,9 @@ const productosController = {
     //res.render('carrito', { carrito: carrito }); 
   },
 
-  // Éste método estaba para eliminar productos publicados en Json. Hay redefinir
+ 
+
+  // Éste método estaba para eliminar productos publicados en Json. 
  /* deleteCarrito: async (req, res) => {
     try {
       const productoId = req.params.id;
