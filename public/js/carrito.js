@@ -1,6 +1,9 @@
+// Esto permite recuperar los datos dentro del carrito desde sessionStorage
+const carritoJSON = sessionStorage.getItem('carrito');
+carrito = JSON.parse(carritoJSON) || [];
 
 // Variable carrito donde van los productos agregados, usando sessionStorage
-let carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
+//let carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
 
 // Función para agregar un producto al carrito
 function agregarAlCarrito(producto) {
@@ -19,7 +22,7 @@ window.addEventListener("load", function () {
   let pagarbutton = document.querySelector(".pagarbutton")
 
   pagarbutton.addEventListener("click", function () {
-    alert("Te enviaremos los medios de pagos via email!")
+    alert("Te redirigiremos al formulario de pago para continuar con tu compra")
   })
 })
 

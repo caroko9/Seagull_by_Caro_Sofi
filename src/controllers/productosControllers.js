@@ -1,8 +1,7 @@
 const fs = require('fs'); //utilizamos Filesystem para el mpetodo delete carrito linea 138
 const db = require('../database/models'); 
 const { producto } = require('../database/models');
-
-let carrito = [];// Inicializa un array vacío para el carrito de compra
+const carrito = [];// Inicializa un array vacío para el carrito de compra
 
 const productosController = {
 
@@ -136,11 +135,7 @@ const productosController = {
   },
   
   vistaCarrito: (req, res) => {
-
-    let carrito = []; 
-
     res.render('carrito', { carrito });
-    //res.render('carrito', { carrito: carrito }); 
   },
 
  

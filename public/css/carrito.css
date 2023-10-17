@@ -1,5 +1,5 @@
 body {
-  background-image: url(/img/fondoMar.png);
+  background-image: url(https://res.cloudinary.com/dgofs3hfj/image/upload/v1697437603/backgrounds/54fcfa02079fb1c3d8f1837aad2c0bd4_hgyqha.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -9,13 +9,12 @@ body {
   margin: 0;
 }
 
-/* Estilos por defecto */
+
 .titulo {
-  font-family: 'Klee One';
+  font-family: 'Chelsea Market';
   font-size: 24px;
-  color: #7cb1b8;
+  color: #fbfbfb;
   text-align: center;
-  font-weight: bold;
   margin-top: 1%;
   margin-bottom: 150px;
 }
@@ -59,30 +58,33 @@ body {
 }
 
 .img-container {
-  width: 150px;
+  width: 15px;
   height: auto;
   margin-right: 10px;
   display: flex;
   align-items: center;
 }
-
-.img-item {
-  width: 80%;
-  height: auto;
-  margin-left: 7%;
-}
+  .producto-imagen {
+    width: 100px !important;
+    height: auto !important;
+    position: relative;
+  }
 
 .texto-contenedor {
   display: flex;
   flex-direction: column;
   color: rgb(17, 15, 15);
   margin-top: 0%;
+  margin-left: 15% !important;
+  align-items: center; 
+  position: relative;
 }
+
 
 .texto-bajo {
   display: flex;
   flex-direction: row;
-  font-size: 12px;
+  font-size: 10px;
   font-family: 'Roboto Mono' !important;
 }
 
@@ -96,16 +98,18 @@ body {
 .texto-bajo .texto-derecha {
   display: flex;
   flex-direction: column;
-  margin-left: 8vw;
+  margin-left: 8vw ;
   margin-top: -2px;
 }
 
 .nombreProd {
   color: #165A7A;
   font-family: 'Klee One';
-  font-size: 20px !important;
-  text-align: left;
+  font-size: 17px !important;
+  text-align: right ;
   font-weight: bold;
+  text-transform: uppercase;
+  
 }
 
 .espaciador {
