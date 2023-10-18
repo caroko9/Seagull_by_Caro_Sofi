@@ -7,7 +7,7 @@ body {
   }
   
   .finpagina {
-    background-color: #d2f6fc;
+    background-color: #3d525c18;
     width: 100%;
     padding-top: 20px;
   }
@@ -18,7 +18,7 @@ body {
   
   .final {
     text-align: center;
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Chelsea Market', monospace;
     font-size: 10px;
     line-height: 25px;
     letter-spacing: 1px;
@@ -28,16 +28,14 @@ body {
 
 .email {
     text-decoration: none;
-    color: #5a717c;
+    color: #6e9cb2;
+    font-size: 15px !important;
    } 
 
 ul {
     list-style-type: none;
 }
 
-.copyright{
-    font-size: 10px;
-}
 
 .sponsor{
     display: flex;
@@ -59,7 +57,21 @@ ul {
      margin-bottom: 2%;
 }
 
+.nosotras{
+  font-family: "Chelsea Market";
+  color:#4386a5;
+  text-align: end;
+  font-size: 30px !important;
+  
+}
 
+.copyright{
+  font-family: "Chelsea Market";
+  color:#6e8c9a;
+  text-align: end;
+  font-size: 15px !important;
+  
+}
 
      .socialmedia {
     font-size: 1.3rem;
