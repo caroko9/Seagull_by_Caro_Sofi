@@ -139,7 +139,7 @@ const productosController = {
   },
 
   // Éste método estaba para eliminar productos publicados en Json. Hay redefinir
- /* deleteCarrito: async (req, res) => {
+deleteCarrito: async (req, res) => {
     try {
       const productoId = req.params.id;
       carrito = carrito.filter((producto) => producto.id !== productoId);
@@ -151,7 +151,7 @@ const productosController = {
       console.error(error);
       res.status(500).send('Error al eliminar el producto del carrito');
     }
-  },*/
+  },
 
   //METODOS APIS
 

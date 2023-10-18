@@ -16,6 +16,7 @@
     "bcryptjs": "^2.4.3",
     "bootstrap": "^5.3.2",
     "cloudinary": "^1.40.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
@@ -39,6 +40,5 @@
   "bugs": {
     "url": "https://github.com/caroko9/Seagull_by_Caro_Sofi/issues"
   },
-  "homepage": "https://github.com/caroko9/Seagull_by_Caro_Sofi#readme",
-  "devDependencies": {}
+  "homepage": "https://github.com/caroko9/Seagull_by_Caro_Sofi#readme"
 }

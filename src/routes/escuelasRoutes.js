@@ -32,7 +32,7 @@ const upload = multer({ storage: storage });
 
 //CREACIÓN DE ESCUELAS 
 router.get('/escuelascreate', escuelasController.sumaEscuela);
-router.post('/escuelascreate', upload.array('imagen'), escuelasController.creaEscuela);
+router.post('/escuelascreate', upload.any('imagen'), escuelasController.creaEscuela);
 
 //LISTA LAS ESCUELAS
 router.get('/escuelasList', escuelasController.list);

@@ -4,7 +4,7 @@ window.addEventListener('load', function () {
     let formulario = document.querySelector('.inscripcion');
     formulario.addEventListener("submit", function(e) {
       e.preventDefault();
-      validacion();
+      validacion()
     });
   });
   
