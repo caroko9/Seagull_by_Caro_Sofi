@@ -9,15 +9,15 @@ body {
 
 h1{
     font-family: "Chelsea Market";
-    color: #3f8bae !important;
+    color: #2f6c86 !important;
     font-size: 52px !important;
     text-transform: uppercase;
     margin-left: 20px !important;
 }
 
 h2{
-    font-family: "Klee One";
-    color: #165A7A !important;
+    font-family: "Chelsea market";
+    color: #408bac !important;
     font-size: 20px !important;
 }
 
@@ -42,7 +42,7 @@ p{
     margin-left: 20px !important;
     margin-bottom: 20px;
     background-color: rgba(255, 255, 255, 0.466);
-    border: 5px solid #afe3f5a6;
+    border: 5px solid #5092a872;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -84,7 +84,7 @@ p{
     left: -15px;
     right: -15px;
     bottom: -15px;
-    background-image: url("/img/escuelas/bordePolaroid.png");
+    background-image: url("/https://res.cloudinary.com/dgofs3hfj/image/upload/v1697666961/backgrounds/bordePolaroid_peh5vw.png");
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
