@@ -1,5 +1,5 @@
 body {
-    background-image: url("/img/escuelas/fondoPlaya.png");
+    background-image: url("https://res.cloudinary.com/dgofs3hfj/image/upload/v1695587608/backgrounds/920becb65c368415027f47b7f9306a73_so2dna.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -8,9 +8,9 @@ body {
   }
 
 h1{
-    font-family: "Klee One";
-    color: #137DB0 !important;
-    font-size: 90px !important;
+    font-family: "Chelsea Market";
+    color: #3f8bae !important;
+    font-size: 52px !important;
     text-transform: uppercase;
     margin-left: 20px !important;
 }
