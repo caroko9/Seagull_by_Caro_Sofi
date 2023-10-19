@@ -1,27 +1,25 @@
-/* Estilo para la barra de navegación */
 .navbar-seagull {
   font-family: "Chelsea Market";
   font-size: 13px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10px; /* Agrega espacio en los bordes */
+  padding: 0 10px; 
   background-color: rgba(42, 107, 134, 0.231) !important;
 }
 
-/* Estilo para los elementos de la lista */
+
 .nav-item {
-  list-style: none; /* Elimina las viñetas de la lista */
-  margin-right: 70px; /* Espacio entre elementos a la derecha */
+  list-style: none; 
+  margin-right: 70px; 
   margin-left: 90px;
   display: flex;
   align-items: center;
   color: black;
 }
 
-/* Estilo para el logotipo en el centro */
 .navbar-logo {
-  margin: 0; /* Elimina los márgenes predeterminados */
+  margin: 0; /
 }
 
 .imagenlogo {
@@ -29,12 +27,12 @@
   height: 50px;
 }
 
-/* Estilo para el icono de carrito */
+
 .iconos {
   width: 25px;
   height: auto;
   opacity: 0.5;
-  margin-left: auto; /* Coloca el carrito contra el borde derecho */
+  margin-left: auto; 
 }
 
 .nav-link{

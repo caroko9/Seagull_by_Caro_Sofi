@@ -62,9 +62,15 @@ ul {
   color:#4386a5;
   text-align: end;
   font-size: 30px !important;
-  
-  
 }
+
+.accesoAdm{
+  text-align: end !important;
+  margin: auto !important;
+  margin-right: 5% !important ;
+margin-top: -5px;
+}
+
 
 .copyright{
   font-family: "Chelsea Market";
