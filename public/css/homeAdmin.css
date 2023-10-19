@@ -1,6 +1,6 @@
 *{
   font-family: 'Chelsea Market';
-  color: #137DB0 !important;
+
   font-size: 12px;
   text-align: center;
 }
@@ -11,10 +11,18 @@ body {
   background-size: cover;
 }
 
+h1{
+  font-family: 'Chelsea Market';
+  color: #497d96!important;
+  font-size: 20px;
+  text-align: center;
+
+}
+
 h2{
   font-family: "Chelsea Market";
   font-size: 15px;
-  color: #205a75 !important;
+  color: #4182a0 !important;
 }
  
 .contenedor{
@@ -30,6 +38,7 @@ border-radius: 12px;
 .boton{
   font-family: "Roboto Mono";
   font-size: 11px;
+  color: rgb(59, 55, 55);
 }
 
 @media (min-width: 769px) {
