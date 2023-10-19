@@ -1,76 +1,28 @@
 <header class="navbar-seagull">
- 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-    <div>
-      <a class="navbar-logo" href="/">
-        <img class= "imagenlogo" src="\img\iconografia\logoseagull.png" alt="Logo">
-      </a>
-    </div>
-      
-      <div class="nav-bar iconografia justify-content" id="navbarNav">
-        <ul class="navbar-nav justify-content-center">
-
-          <!-- ESCUELAS DE SURF -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="icono1Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img class= "icono-tabla" src="\img\iconografia\surf.png" alt="Icono Escuela">
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="iconoDropdown">
-                <li><a class="dropdown-item" href="/escuelas/escuelasList">Escuelas</a></li>
-                <li><a class="dropdown-item" href="/escuelas/escuelascreate">¡Suma tu escuela!</a></li> <!--crear un link que lleve a un email para contactarnos-->
-                <li><a class="dropdown-item" href="/users/login">Acceso Admin</a></li>
-               </ul>
-  
-          
-           <!-- TIENDA DE SURF -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="icono1Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img class= "iconoTienda" src="\img\iconografia\tienda-de-surf.png" alt="Icono Tienda">
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="iconoDropdown">
-                <li><a class="dropdown-item" href="/productos/productos">Productos Online</a></li>
-                <li><a class="dropdown-item" href="#">Tiendas fisicas</a></li>
-               </ul>
-
-
-          <!-- FURGONETA -->
-           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="icono1Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img class= "icono-furgoneta" src="\img\iconografia\furgoneta-de-surf.png" alt="Icono Furgoneta">
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="iconoDropdown">
-              <li><a class="dropdown-item" href="/">Nuestros lugares</a></li>
-              <li><a class="dropdown-item" href="/">Tips para tus viajes</a></li>
-             </ul>
-
-          
-           <!-- NOSOTROS (MANITO)-->
-           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="icono1Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img class= "icono-nosotros" src="\img\iconografia\icononosotros.png" alt="Icono Nosotros">
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="iconoDropdown">
-              <li><a class="dropdown-item" href="#">¿Quiénes somos?</a></li>
-              <li><a class="dropdown-item" href="/escuelas/escuelascreate">Trabaja con nosotros</a></li>
-             </ul>
-          
-          
-          <!-- CARRITO -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="icono1Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img class= "iconos" src="\img\iconografia\carrito-de-compras.png" alt="Icono Carrito">
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="iconoDropdown">
-              <li><a class="dropdown-item" href="/productos/carrito">Mi carrito</a></li>
-              <li><a class="dropdown-item" href="#">Mis compras</a></li>
-             </ul>
-        </ul>
-      </div>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/escuelas/escuelasList">ESCUELAS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/escuelas/escuelascreate">¡SUMA TU ESCUELA!</a>
+        </li>
+        <a class="navbar-logo" href="/">
+          <img class="imagenlogo" src="https://res.cloudinary.com/dgofs3hfj/image/upload/v1697649666/backgrounds/Component_15_mrrrgw.png" alt="Logo">
+        </a>
+        <li class="nav-item">
+          <a class="nav-link" href="/productos/productos">NUESTROS PRODUCTOS</a>
+        </li>
+        <a class="nav-item" href="/productos/carrito" role="button">
+          <img class="iconos" src="\img\iconografia\carrito-de-compras.png" alt="Icono Carrito">
+        </a>
+      </ul>
     </div>
   </nav>
-</header>
- 
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+</header>
