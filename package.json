@@ -40,5 +40,6 @@
   "bugs": {
     "url": "https://github.com/caroko9/Seagull_by_Caro_Sofi/issues"
   },
-  "homepage": "https://github.com/caroko9/Seagull_by_Caro_Sofi#readme"
+  "homepage": "https://github.com/caroko9/Seagull_by_Caro_Sofi#readme",
+  "devDependencies": {}
 }
