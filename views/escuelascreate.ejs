@@ -16,16 +16,16 @@
   <p> Agrega los datos de tu escuela para sumarla a nuestra página de surfers, luego de que envies el formulario, lo revisaremos y nos comunicaremos con ustedes para el pago y aprobación. 
     Si tienes alguna duda te puedes comunicar con nosotros seagull.workplace.cs@gmail.com y te contactaremos lo antes posible! </p>
   <div class="contenedor-celeste">
-  <form class= "inscripcion" action="/escuelas/escuelascreate" method="POST" enctype="multipart/form-data" name="escuelaCreada">
+  <form class= "inscripcion" id="formescuela"action="/escuelas/escuelascreate" method="POST" enctype="multipart/form-data" name="escuelaCreada">
   <div class="input-1">
     <div class="inputF">
       <br>
       <label for="exampleFormControlInput1" class="nombre-input">Escuela de Surf</label>
-      <input type="text" class="form-control"  name="nombre" id="nombre" placeholder="Nombre de la Escuela" required>
+      <input type="text" class="form-control"  name="nombre" id="nombre" placeholder="Nombre de la Escuela">
       <br>
       <div class="col-md-6">
      <label for="exampleFormControlInput1" class="nombre-input">Email</label>
-      <input type="email" class="form-control" name="email" id="email" placeholder="nombre@ejemplo.com" required>
+      <input type="email" class="form-control" name="email" id="email" placeholder="nombre@ejemplo.com">
       </div>
       <br>
       <div class="col-md-6">
@@ -44,7 +44,7 @@
     <div class="col-md-6">
     <div class="inputF">
       <label for="exampleFormControlTextarea1" class="nombre-input">Descripción de los servicios de tu escuela</label>
-      <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea required>
+      <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea >
       </div>
         <div class="col-md-6">
         <label for="exampleFormControlTextarea1" class="nombre-input">Ubicación de tu escuela de surf</label>

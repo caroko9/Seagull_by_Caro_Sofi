@@ -10,9 +10,17 @@ const app = express ();
 const path = require ('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const cors = require('cors');
 
 //EXPRESS VALIDATOR
 //const { query } = require('express-validator');
+
+//Para llamar a las apis desde mi proyecto de front.
+app.use(
+  cors({
+    origin:"*" //el asterisco indica que puedo hacer llamadas de todos lados
+  })
+)
 
 app.use(express.static(path.resolve(__dirname, './public')));
 
