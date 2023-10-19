@@ -50,10 +50,9 @@
           </div>
         </div>
         
-        <form onsubmit="eliminarDelCarrito(event, '<%= producto.id %>')">
-          <!-- Botón para eliminar el producto desde el carrito -->
-          <button class="Boton_borrar" type="submit">ELIMINAR PRODUCTO</button>
-        </form>
+      
+<button class="Boton_borrar" data-product-id="<%= producto.id %>">ELIMINAR PRODUCTO</button>
+
 
         <% }); %>
 

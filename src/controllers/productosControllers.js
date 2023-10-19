@@ -106,7 +106,7 @@ const productosController = {
     }
   },
 
-  
+  // CARRITO
 
   comprar: async (req, res) => {
     try {
