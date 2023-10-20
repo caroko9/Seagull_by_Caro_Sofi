@@ -7,4 +7,4 @@ const usuario = {
 
   guardarSesion(usuario, 15);
 
-  window.location.href = '/users/login';
+  window.location.href = '/users/homeAdmin';

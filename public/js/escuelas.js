@@ -4,7 +4,8 @@ window.addEventListener('load', function () {
     let formulario = document.querySelector('#formescuela');
 
     formulario.addEventListener("submit", function (e) {
-        e.preventDefault();
+      
+    let errores= [];
 
         let nombreInput = document.getElementById('nombre');
         let emailInput = document.getElementById("email");
@@ -17,31 +18,44 @@ window.addEventListener('load', function () {
                
 
         if (nombreInput.value == "") {
-            alert("Por favor revisa y completa todos los campos");
+          errores.push( alert("Por favor revisa y completa todos los campos"));
         }
         else if (emailInput.value == "") {
-            alert("Por favor revisa y completa todos los campos");
+            errores.push( alert("Por favor revisa y completa todos los campos"));
         }
         else if (telefonoInput.value == "") {
-            alert("Por favor revisa y completa todos los campos");
+            errores.push( alert("Por favor revisa y completa todos los campos"));
         }
         else if (paginaWebInput.value == "") {
-            alert("Por favor revisa y completa todos los campos");
+            errores.push( alert("Por favor revisa y completa todos los campos"));
         }
         else if (descripcionInput.value == "") {
-            alert("Por favor revisa y completa todos los campos");
+            errores.push( alert("Por favor revisa y completa todos los campos"));
         }
          else if (ubicacionInput.value == "") {
-            alert("Por favor revisa y completa todos los campos");
+            errores.push( alert("Por favor revisa y completa todos los campos"));
         } 
         else if (paisInput.value == "") {
-            alert("Por favor revisa y completa todos los campos");
+            errores.push( alert("Por favor revisa y completa todos los campos"));
         }
 
-    formulario.submit()
+        if (errores.length > 0) {
+            e.preventDefault();
+        } else {
 
-    }
+            formulario.submit()
+        }
+
+           }
     )}
 )
 
-  
+
+window.addEventListener("load", function () {
+    let enviar = document.querySelector(".submit")
+
+    enviar.addEventListener("click", function () {
+      alert("Gracias por registrarte! Te enviaremos por email el formulario de pago")
+    })
+})
+
