@@ -1,106 +1,79 @@
-h1{
-    font-family: 'Klee One';
-    font-size: medium;
-    color: #061D28;
+body{
+  margin-right: 2px;
 }
 
+.banner {
+    background-image: url("https://res.cloudinary.com/dgofs3hfj/image/upload/v1697442157/backgrounds/54fcfa02079fb1c3d8f1837aad2c0bd4_hgyqha_1_2_zxmx6d.png") !important;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      height: 350px;
+      width: auto;
+    }
+  
+  h1 {
+  font-family: 'Chelsea Market';
+  font-size: 20px;
+  color: #497d96 ;
+  text-align: center;
+    }
 
-p
-{
-    font-family: 'Roboto Mono', monospace;
-    font-size: 2vw;
-    color: #0d7f8e;
-}
-
-.inicio {
-    background-image: url("/img/olashome.png");
-    background-position: center;
-    background-size: cover;
-    opacity: 0.8;
-
-}
-
-.fondo {
-    background-image: linear-gradient(black, white);
+  .collage{
+    background-image: url("https://res.cloudinary.com/dgofs3hfj/image/upload/v1697444511/backgrounds/Component_14_i2m3pe.png") !important;
     background-repeat: no-repeat;
-}
-
-
-.logo {
-    width: 30%;
-    height: 30%;
-    margin-left: 10%;
-}
-
-.ubicacion {
-    margin-top: 150px;
-    border-top-color: #CC0000;
-    border-right-color: blue;
-    border-bottom-color: #00FF00;
-    border-left-color: #CCC;
-}
-
-.cuadro {
-    border: none;
-    width: 40em;
-    opacity: 0.8;
-}
-
-.search input[type="search"] {
-    font-family: 'Klee One', cursive;
-    font-size: 12px;
-    color: #333333;
-}
-
-.search .form-inline label {
-    font-family: 'Klee One';
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-
-.d-flex {
-    width: 30em;
-}
-
-#Botones {
-    font-family: 'Klee One';
-    color: #03131a;
-    background-color: #c9ebf0;
-    border: #FFFFFF;
-    font-size: 16px;
-}
-
-.search{
-    width: 500px; 
-    height: 40px; 
-}
-
-.figure {
-    padding: 2%;
-    max-width: 100%;
-    justify-content: center;
-}
-
-.linkpais {
-    border: #00FF00;
-}
-
-
-
-
-@media (min-width: 769px) {
-    .imagenes {
-        display: flex;
-        justify-content: center;
-    }
-}
-
-@media (min-width: 361px) {
-    .imagenes {
-        display: flex;
-        justify-content: center;
+    background-size: contain;
+    background-position: center center;
+    height: 400px;
+    width: auto;
 
     }
 
+    h2 {
+      font-family: 'Chelsea Market';
+      font-size: 25px !important;
+      color: #497d96 ;
+      text-align: center;
+      margin-top: auto;
+      margin: 5%;
+    }
+
+    p{
+      font-family: "Roboto Mono";
+      font-size: 12px !important;
+      margin-right: 80px !important; 
+      text-align: justify; 
+      margin: 3%;
 }
+
+
+.bg-row {
+  background-color: #497e9618;
+}
+
+.row{
+  justify-content: center;
+}
+
+.imgInfo{
+  max-width: 100%; 
+  width: 190px;
+  height: auto; 
+  margin: 5%;
+  margin-left: 20%;
+}
+
+.accesoRapido{
+ font-family: "Klee One";
+ text-align: center;
+ justify-content: center;
+}
+
+
+ .accesoRapido a.boton {
+  color: #539cc0 !important;
+  padding: 10px 20px; /* Ajusta el relleno para controlar el tamaño del botón */
+  display: inline-block; /* Hace que el botón ocupe solo el espacio necesario */
+  text-align: center;
+  justify-content: center;
+ }
+

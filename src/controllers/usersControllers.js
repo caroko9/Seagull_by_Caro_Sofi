@@ -60,39 +60,39 @@ const controladorUsuario = {
     }
   },
 
-/* ESTO LO SACAMOS PORQUE EL UNICO USUARIO QUE EXISTE ES ADMIN
-  register: (req, res) => {
-    res.render("register");
-  },
+ //ESTO LO SACAMOS PORQUE EL UNICO USUARIO QUE EXISTE ES ADMIN
+  // register: (req, res) => {
+  //   res.render("register");
+  // },
 
 
-  create: async (req, res) => {
-    try {
-      const resultValidation = validationResult(req);
+  // create: async (req, res) => {
+  //   try {
+  //     const resultValidation = validationResult(req);
 
-      if (resultValidation.errors.length > 0) {
-        return res.render('register', {
-          errors: resultValidation.mapped(),
-          oldData: req.body,
-        });
-      }
+  //     if (resultValidation.errors.length > 0) {
+  //       return res.render('register', {
+  //         errors: resultValidation.mapped(),
+  //         oldData: req.body,
+  //       });
+  //     }
 
-      const { nombre, email, contrasena } = req.body;
+  //     const { nombre, email, contrasena } = req.body;
 
 
-      await db.usuario.create({
-        nombre: nombre,
-        email: email,
-        contrasena: contrasena,
-      });
+  //     await db.usuario.create({
+  //       nombre: nombre,
+  //       email: email,
+  //       contrasena: contrasena,
+  //     });
 
-      res.redirect('/');
-    } catch (error) {
-      console.error(error);
-      res.status(500).send('Error al crear el usuario');
-    }
-  },
-*/
+  //     res.redirect('/');
+  //   } catch (error) {
+  //     console.error(error);
+  //     res.status(500).send('Error al crear el usuario');
+  //   }
+  // },
+
   
   perfil: async (req, res) => {
     try {

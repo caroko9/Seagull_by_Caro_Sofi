@@ -18,16 +18,20 @@
   <p> Agrega los datos de tu escuela para sumarla a nuestra página de surfers, luego de que envies el formulario, lo revisaremos y nos comunicaremos con ustedes para el pago y aprobación. 
     Si tienes alguna duda te puedes comunicar con nosotros seagull.workplace.cs@gmail.com y te contactaremos lo antes posible! </p>
   <div class="contenedor-celeste">
-  <form class= "inscripcion" action="/escuelas/escuelascreate" method="POST" enctype="multipart/form-data" name="escuelaCreada">
+  <form class= "inscripcion" id="formescuela"action="/escuelas/escuelascreate" method="POST" enctype="multipart/form-data" name="escuelaCreada">
   <div class="input-1">
     <div class="inputF">
       <br>
       <label for="exampleFormControlInput1" class="nombre-input">Escuela de Surf</label>
+<<<<<<< HEAD
       <input type="text" class="form-control"  name="nombre" id="nombre" placeholder="Nombre de la Escuela" required  >
+=======
+      <input type="text" class="form-control"  name="nombre" id="nombre" placeholder="Nombre de la Escuela">
+>>>>>>> 3cb519ead2ab23e8cfe477358ae49fc345622695
       <br>
       <div class="col-md-6">
      <label for="exampleFormControlInput1" class="nombre-input">Email</label>
-      <input type="email" class="form-control" name="email" id="email" placeholder="nombre@ejemplo.com" required>
+      <input type="email" class="form-control" name="email" id="email" placeholder="nombre@ejemplo.com">
       </div>
       <br>
       <div class="col-md-6">
@@ -35,18 +39,18 @@
       <input type="text" class="form-control" name="telefono" id="telefono" placeholder="(codigo de área) + número de telefono">
       </div>
       <br>
-      <!-- <div class="col-md-6">
+      <div class="col-md-6">
       <label for="exampleFormControlInput1" class="nombre-input"> Pagina web </label>
       <input type="url" class="form-control" name="paginaWeb" id="paginaWeb" placeholder="copia y pega aqui el URL de tu escuela" required>
       </div>
-   -->
+  
     </div>
     <div class="espaciador">
     </div>
     <div class="col-md-6">
     <div class="inputF">
       <label for="exampleFormControlTextarea1" class="nombre-input">Descripción de los servicios de tu escuela</label>
-      <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea required>
+      <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea >
       </div>
         <div class="col-md-6">
         <label for="exampleFormControlTextarea1" class="nombre-input">Ubicación de tu escuela de surf</label>
@@ -96,7 +100,7 @@
       <option value="Otro"> Otro</option>
   </datalist>
   <br>
-  <input type="submit" value="ENVIAR" class="boton-submit">
+  <input type="submit" class="submit" value="ENVIAR" class="boton-submit">
 
 </form>
 

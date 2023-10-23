@@ -1,13 +1,12 @@
 .titulo{
-  font-family: 'Klee One';
-  font-size: 30px;
-  color: #137DB0;
+  font-family: 'Chelsea Market' !important;
+  font-size: 24px;
+  color: #497d96 ;
   text-align: center;
-  font-weight: bold;
     }
 
 h2 {
-  font-family: 'Klee One', cursive;
+  font-family: 'Chelsea Market', cursive;
   font-weight: normal;
   font-size: 50px;
   color: #165A7A;
@@ -35,13 +34,13 @@ h2 {
 .parrafo-2 {
   font-family: 'Roboto Mono', monospace;
   color: #696A6C;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .row {
   font-family: 'Roboto Mono', monospace;
   color: #696A6C;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .btn {
@@ -67,7 +66,7 @@ h3{
 
 h4{
   font-family: "Klee One";
-  font-size: 18px !important;
+  font-size: 15px !important;
   color: #277396 !important; 
   text-align: center;
   font-weight: bold !important;
@@ -77,9 +76,6 @@ h4{
   font-size: 14px;
 }
 
-.nombreProd{
-  text-transform: uppercase;
-}
 
 .precio{
   font-size: 12px;
@@ -89,8 +85,9 @@ h4{
 
 .nombreProd{
   font-family: "Klee One";
-  font-size: 24px !important;
+  font-size: 16px !important;
   color: #53a4ca !important;
   font-weight: bold;
+  text-transform: uppercase;
 }
 

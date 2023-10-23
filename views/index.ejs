@@ -7,69 +7,72 @@
   <%- include ('partials/header.ejs') %>
 
   <header class="inicio">
-    
-    <div>
-      <img src="/img/loguito.svg" class="logoseagull" alt="Logo-Seagull">
-    </div>
+      <div class="banner"></div>
   </header>
-    
-<div class="buscador mt-5 mx-auto text-center">
-  <h1>¿EN DÓNDE TE ENCUENTRAS?</h1>
-  <div class="search container-sm">
-    <nav class="navbar navbar-#B0DEE4 bg-#B0DEE4">
-      <form class="form-inlin w-100">
-        <input class="form-control mx-auto" type="search" placeholder= "En cualquier lugar del mundo" aria-label="Search">
+<br>
+<div class="frase">
+  <h1> SOMOS LA SUMA DE TODO LO QUE NOS APASIONA </h1>
 </div>
+<br>
+<div class="collage"></div>
+
+<br>
+<!-- INFORMACION -->
+<div class="container">
+  <!-- MARCA -->
+  <div class="row bg-row">
+    <div class="col-md-6">
+      <h2 class="display-4">a-MAR</h2>
+      <p class="lead">El simbolismo de seagull (gaviota) está definido por la idea de que frente a las mayores adversidades se puede encontrar una salida, que siempre hay oportunidades en todo, incluso en los lugares más insólitos. </p>
+      <p class="lead">Su significado sigue la filosofía de que estamos en un lugar y tiempo por una razón, que debemos confiar en los instintos y ser optimistas frente a lo que nos sucede. Estos seres nos recuerdan que todo tiene un propósito. Es la idea que queremos reflejar tanto en nuestra página como en las escuelas que forman parte, y sobre todo el amor por el mar.</p>
+    </div>
+    <div class="col-md-6">
+      <img class="img-fluid imgInfo" src="https://res.cloudinary.com/dgofs3hfj/image/upload/v1697445087/backgrounds/image_7_u0ts9f.png" alt="imagen">
+    </div>
+  </div>
+<br>
+  <!-- SOBRE NOSOTRAS -->
+  <div class="row bg-row">
+     <div class="col-md-6">
+      <img class="img-fluid imgInfo" src="https://res.cloudinary.com/dgofs3hfj/image/upload/v1697445086/backgrounds/image_4_kbi8an.png" alt="imagen">
+    </div>
+    <div class="col-md-6">
+      <h2 class="display-4">sobre nosotros</h2>
+      <p class="lead">Somos un equipo apasionado de entusiastas de los deportes acuáticos comprometidos en hacer que tu experiencia en el agua sea inolvidable.</p>
+      <p class="lead"> En nuestro sitio, fusionamos nuestra pasión por el surf, el viento y las olas para ofrecerte el mejor servicio. Queremos ser tu compañero confiable, proporcionándote la información y las herramientas necesarias para sacar el máximo provecho de tus aventuras acuáticas en tus viajes.</p>
+    </div>
+   
+  </div>
+  <br>
+  <!-- ESCUELAS -->
+  <div class="row bg-row">
+    <div class="col-md-6">
+      <h2 class="display-4">escuelas</h2>
+      <p class="lead">Las escuelas de Surf ofrecen múltiples actividades, yoga, campamentos, clases de diferentes deportes acuáticos, alojamientos, fogatas, experiencias musicales y culinarias. Si necesitas encontrar una escuela cerca de dónde vives, o estás de vacaciones y quieres aprovechar el tiempo libre, este es tu momento para encontrar tu lugar.</p>
+      <div class="accesoRapido">  <a href="/escuelas/escuelasList" class="boton">EXPLORA LAS ESCUELAS</a> </div>
+      <p class="lead">¿Tienes una escuela y quieres sumarte a la comunidad Seagull? Completa el formulario y pronto tu escuela estará disponible para todos los apasionados por estos deportes.</p>
+      <div class="accesoRapido"> <a href="/escuelas/escuelascreate" class="boton">¡SUMA TU ESCUELA!</a></div>
+    </div>
+    <div class="col-md-6">
+      <img class="img-fluid imgInfo" src="https://res.cloudinary.com/dgofs3hfj/image/upload/v1697445089/backgrounds/image_5_mmxmtm.png" alt="imagen">
+    </div>
+  </div>
+<br>
+  <!-- PRODUCTOS -->
+  <div class="row bg-row">
+     <div class="col-md-6">
+      <img class="img-fluid imgInfo" src="https://res.cloudinary.com/dgofs3hfj/image/upload/v1697445087/backgrounds/perfume_1_hpb6z5.png" alt="imagen">
+    </div>
+    <div class="col-md-6">
+      <h2 class="display-4">nuestros productos</h2>
+      <p class="lead">Nuestra colección de productos está diseñada pensando en la pasión por el surf y el amor por el mar. Cada artículo ha sido cuidadosamente seleccionado y elaborado para brindarte comodidad, estilo y funcionalidad en tus aventuras junto a las olas. </p>
+      <p class="lead">Desde nuestras botellas térmicas que mantienen tus bebidas a la temperatura perfecta durante horas en la playa, nuestro protector solar de alto rendimiento que mantiene tu piel protegida hasta nuestros buzos de alta calidad que te abrazan con calidez en las aguas frías, nuestros productos se adaptan a cada aspecto de tu día en la costa.</p>
+      <div class="accesoRapido"> <a href="/productos/productos" class="boton mx-auto">COLECCIÓN SEAGULL</a></div>
+    </div>
+   
+  </div>
 </div>
-
-  <div class="imagenes">
-
-    <figure class="figure">
-      <img src="\img\brasil-home-.jpg" class="figure-img img-fluid rounded" alt="Responsive image">
-      <div class="text-center">
-        <button type="button" id= "Botones" class="btn btn-sm btn-primary" disabled> BRASIL </button>
-      </div>
-    </figure>
-    
-    <figure class="figure">
-      <img src="/img/img-home-arg.jpg" class="figure-img img-fluid rounded" alt="Responsive image">
-      <div class="text-center">
-        <button type="button" id= "Botones" class="btn btn-sm btn-primary" disabled> ARGENTINA </button>
-      </div>
-    </figure>
-  
-    <figure class="figure">
-      <img src="\img\img-home-colombia.jpg" class="figure-img img-fluid rounded" alt="Responsive image">
-      <div class="text-center">
-        <button type="button"  id= "Botones" class="btn btn-sm btn-primary" disabled> COLOMBIA </button>
-      </div>
-    </figure>
-  
-    <figure class="figure">
-      <img src="\img\costarica-home.jpg" class="figure-img img-fluid rounded" alt="Responsive image">
-      <div class="text-center">
-        <button type="button" id= "Botones" class="btn btn-sm btn-primary" disabled> COSTA RICA </button>
-      </div>
-    </figure>
-    
-    <figure class="figure">
-      <img src="\img\chile-home.png" class="figure-img img-fluid rounded" alt="Responsive image">
-      <div class="text-center">
-        <button type="button" id= "Botones" class="btn btn-sm btn-primary" disabled> CHILE </button>
-      </div>
-    </figure>
-  
-    <figure class="figure">
-      <img src="\img\uruguay-home.png" class="figure-img img-fluid rounded" alt="Responsive image">
-      <div class="text-center">
-        <button type="button"  id= "Botones" class="btn btn-sm btn-primary" disabled> URUGUAY </button>
-      </div>
-    </figure>
-  </div>
-
-  <div>
-    
-  </div>
+<br>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"

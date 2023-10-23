@@ -1,86 +1,40 @@
-.navbar-seagull{
-  font-family: 'Roboto Mono', monospace;
-  font-size: 7px;
-}
-
-.dropdown-menu{
-  opacity: 0.5;
-}
-
-.nav-item{
-  justify-items: flex-center;
+.navbar-seagull {
+  font-family: "Chelsea Market";
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px; 
+  background-color: rgba(42, 107, 134, 0.231) !important;
 }
 
 
-.dropdown-item{
-  font-size: 11px;
-  justify-content: center;
+.nav-item {
+  list-style: none; 
+  margin-right: 70px; 
+  margin-left: 90px;
+  display: flex;
+  align-items: center;
+  color: black;
 }
 
-.imagenlogo{
+.navbar-logo {
+  margin: 0; /
+}
+
+.imagenlogo {
   width: auto;
   height: 50px;
-
 }
 
-.iconos{
-  width: 30px;
+
+.iconos {
+  width: 25px;
   height: auto;
   opacity: 0.5;
+  margin-left: auto; 
 }
 
-.iconoTienda {
-  width: 30px;
-  height: auto;
-  opacity: 0.5;
+.nav-link{
+color: blueviolet;
 }
-
-.icono-furgoneta{
-  width: 35px;
-  height: auto;
-  opacity: 0.5;
-}
-
-.icono-nosotros{
-  width: 34px;
-  height: auto;
-  opacity: 0.5;
-}
-
-.icono-tabla{
-  width: 32px;
-  height: auto;
-  opacity: 0.5;
-}
-
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 80;
-  z-index: 1000;
-}
-
-
-@media (max-width: 768px) {
-  .navbar-seagull {
-    flex-direction: column;
-  }
-
-  .navbar-nav {
-    margin-top: 10px;
-    text-align: right;
-  }
-
-  .navbar-nav .nav-item {
-    margin: 5px;
-  }
-
-  .navbar-nav .dropdown-menu {
-    right: auto;
-    left: -120px;
-  }
-}
-
-
-

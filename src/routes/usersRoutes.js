@@ -9,16 +9,16 @@ const guestMiddleWare = require('../../middleware/guestMiddleWare');
 
 
 //middleware que se usa en la ruta POST de register
-const validations = [
-    body('nombre').notEmpty().withMessage('Tienes que ingresar tu nombre'),
-    body('email').notEmpty().withMessage('Tienes que ingresar tu email'),
-    body('contrasena').notEmpty().withMessage('Tienes que ingresar una contraseña'),
-    body('repetir_contrasena').notEmpty().withMessage('Tienes que ingresar repetir tu contraseña'),
-    ]
+// const validations = [
+//     body('nombre').notEmpty().withMessage('Tienes que ingresar tu nombre'),
+//     body('email').notEmpty().withMessage('Tienes que ingresar tu email'),
+//     body('contrasena').notEmpty().withMessage('Tienes que ingresar una contraseña'),
+//     body('repetir_contrasena').notEmpty().withMessage('Tienes que ingresar repetir tu contraseña'),
+//     ]
 
-//router.get('/register', guestMiddleWare, controladorUsers.register);
+// router.get('/register', guestMiddleWare, controladorUsers.register);
 
-//router.post('/register', validations, controladorUsers.create);
+// router.post('/register', validations, controladorUsers.create);
 
 router.get('/login', guestMiddleWare, controladorUsers.iniciarSesion);
 

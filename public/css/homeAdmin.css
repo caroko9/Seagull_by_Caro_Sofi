@@ -1,19 +1,28 @@
 *{
-  font-family: 'Klee One';
-  color: #137DB0 !important;
+  font-family: 'Chelsea Market';
+
+  font-size: 12px;
   text-align: center;
 }
 
 body {
-  background-image: url(https://res.cloudinary.com/dgofs3hfj/image/upload/v1695587609/backgrounds/a28c63849546d6df9597030598c7ad37_ij3pr7.jpg);
+  background-image: url("https://res.cloudinary.com/dgofs3hfj/image/upload/v1697442157/backgrounds/54fcfa02079fb1c3d8f1837aad2c0bd4_hgyqha_1_2_zxmx6d.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-h2{
-  font-family: "Roboto Mono";
+h1{
+  font-family: 'Chelsea Market';
+  color: #497d96!important;
   font-size: 20px;
-  color: #205a75 !important;
+  text-align: center;
+
+}
+
+h2{
+  font-family: "Chelsea Market";
+  font-size: 15px;
+  color: #4182a0 !important;
 }
  
 .contenedor{
@@ -28,7 +37,8 @@ border-radius: 12px;
 
 .boton{
   font-family: "Roboto Mono";
-  font-size: 12px;
+  font-size: 11px;
+  color: rgb(59, 55, 55);
 }
 
 @media (min-width: 769px) {
