@@ -181,15 +181,17 @@ status: 200})
       .findAll({
         where: {
           estado: req.params.estado
-        }
-      })
+        },
+          })
       .then(escuelas => {
         return res.status(200).json({
           total: estado.length,
           data: escuelas,
           status: 200});
+         
       })
-    }
+        }
+
 
      //Opción B del mismo método. Ninguno trae resultados
       /* search: async (req, res) => {

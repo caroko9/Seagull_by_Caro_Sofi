@@ -196,13 +196,8 @@ categoriaProducto: (req,res) => {
           countByCategory,
           status: 200,
         });
-      })
-      .catch((error) => {
-        console.error('Error al contar productos por categoría:', error);
-        return res.status(500).json({
-          error: 'Hubo un error al contar productos por categoría.',
-        });
       });
+     
 
  
 //const categorias = req.params.categoria;
