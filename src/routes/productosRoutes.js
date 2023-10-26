@@ -42,7 +42,7 @@ router.post('/editarProducto/:id', productosController.editarProducto);
 //CARRITO DE PRODUCTOS
 router.get('/carrito', productosController.vistaCarrito);
 router.post('/carrito', productosController.comprar);
-//router.delete('/carrito/:id', productosController.deleteCarrito); 
+router.delete('/carrito/:id', productosController.deleteCarrito); 
 
 //Rutas APIS
 router.get('/', productosController.listProdApi); //ruta que arroja la info en un json para que pueda ser consumida por una api

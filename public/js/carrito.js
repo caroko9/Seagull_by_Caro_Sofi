@@ -11,6 +11,11 @@ function agregarAlCarrito(producto) {
   sessionStorage.setItem('carrito', JSON.stringify(carrito)); // Guardar en Session Storage
 }
 
+//Función para eliminar un producto del carrito
+function eliminarDelCarrito(id) {
+  carrito = carrito.filter(producto => producto.id !== id);
+  sessionStorage.setItem('carrito', JSON.stringify(carrito)); // Actualizar Session Storage
+}
 
 // Evento que muestra una alerta al clickear el botón de pago
 window.addEventListener("load", function () {
@@ -22,19 +27,20 @@ window.addEventListener("load", function () {
 })
 
 
+
+// function eliminarDelCarrito(producto) {
+
+
+
 // Funcionalidad a los botones de eliminar productos
-//function ready(){
-  // var botonesEliminarItem = document.getElementsByClassName ("Boton_borrar");
-  // for(var i=0; i < botonesEliminarItem.length; i++){
-   // var button = botonesEliminarItem[i];
-   // button.addEventListener ("click", eliminarItemCarrito);
-  // }
-  // }
-// Función para eliminar un producto del carrito
-//function eliminarDelCarrito(id) {
-  //carrito = carrito.filter(producto => producto.id !== id);
-  //sessionStorage.setItem('carrito', JSON.stringify(carrito)); // Actualizar Session Storage
-//}
+// function ready(){
+//   var botonesEliminarItem = document.getElementsByClassName ("Boton_borrar");
+//   for(var i=0; i < botonesEliminarItem.length; i++){
+//    var button = botonesEliminarItem[i];
+//    button.addEventListener ("click", eliminarItemCarrito);
+//   }
+//   }
+
 // funcion elimino el item seleccionado
 //function eliminarItemCarrito(event){
   //var buttonClicked = event.target;

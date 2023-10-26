@@ -67,25 +67,25 @@ try {
 }
 },
 
-  buscarEscuela: async (req, res) => {
-    try {
-      const escuelaEncontrada = req.query.buscar;
-      const escuelasBuscadasArray = await db.Escuela.findAll({
-        where: {
-          nombre: {
-            [db.Sequelize.Op.iLike]: `%${escuelaEncontrada}%`,
-          },
+buscarEscuela: async (req, res) => {
+  try {
+    const escuelaEncontrada = req.query.buscar;
+    const escuelasBuscadasArray = await db.Escuela.findAll({
+      where: {
+        nombre: {
+          [db.Sequelize.Op.iLike]: `%${escuelaEncontrada}%`,
         },
-      });
+      },
+    });
+    res.render("escuelasResults", { escuelasBuscadas: escuelasBuscadasArray });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error al buscar escuelas');
+  }
+},
 
-      res.render("escuelasResults", { escuelasBuscadas: escuelasBuscadasArray });
-    } catch (error) {
-      console.error(error);
-      res.status(500).send('Error al buscar escuelas');
-    }
-  },
 
-  idEscuela: async (req, res) => {
+    idEscuela: async (req, res) => {
     try {
       const escuelaId = req.params.id;
       const escuela = await db.escuela.findByPk(escuelaId);
