@@ -51,11 +51,11 @@ window.addEventListener('load', function () {
 )
 
 
-window.addEventListener("load", function () {
-    let enviar = document.querySelector(".submit")
+// window.addEventListener("load", function () {
+//     let enviar = document.querySelector(".submit")
 
-    enviar.addEventListener("click", function () {
-      alert("Gracias por registrarte! Te enviaremos por email el formulario de pago")
-    })
-})
+//     enviar.addEventListener("click", function () {
+//       alert("Gracias por registrarte! Te enviaremos por email el formulario de pago")
+//     })
+// })
 
