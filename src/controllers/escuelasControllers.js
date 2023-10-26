@@ -134,14 +134,8 @@ try {
   },
 
   
-eliminarEscuela: async (req, res) => { //que modifique la fecha_eliminacion
+eliminarEscuela: async (req, res) => { //permite eliminarla por completo
   try {
- /*   const escuelaId = req.params.id;
-    const escuela = await db.escuela.findByPk(escuelaId);
-    if (!escuela) {
-      return res.status(404).send("Escuela no encontrada");
-    }*/
-  
     await escuela.destroy({where: { id: req.params.id }});
     res.redirect('/adminEscuelasList');
   } catch (error) {
