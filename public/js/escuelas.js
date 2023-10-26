@@ -10,10 +10,11 @@ window.addEventListener('load', function () {
         let nombreInput = document.getElementById('nombre');
         let emailInput = document.getElementById("email");
         let telefonoInput = document.getElementById("telefono");
-        let paginaWebInput = document.getElementById("paginaWeb");
+        // let paginaWebInput = document.getElementById("paginaWeb");
         let descripcionInput = document.getElementById("descripcion");
         let ubicacionInput = document.getElementById("ubicacion");
         let paisInput = document.getElementById("pais");
+        let imagenInput = document.getElementById("imagen");
         
                
 
@@ -26,9 +27,9 @@ window.addEventListener('load', function () {
         else if (telefonoInput.value == "") {
             errores.push( alert("Por favor revisa y completa todos los campos"));
         }
-        else if (paginaWebInput.value == "") {
-            errores.push( alert("Por favor revisa y completa todos los campos"));
-        }
+        // else if (paginaWebInput.value == "") {
+        //     errores.push( alert("Por favor revisa y completa todos los campos"));
+        // }
         else if (descripcionInput.value == "") {
             errores.push( alert("Por favor revisa y completa todos los campos"));
         }
@@ -36,6 +37,9 @@ window.addEventListener('load', function () {
             errores.push( alert("Por favor revisa y completa todos los campos"));
         } 
         else if (paisInput.value == "") {
+            errores.push( alert("Por favor revisa y completa todos los campos"));
+        }
+        else if (imagenInput.value == "") {
             errores.push( alert("Por favor revisa y completa todos los campos"));
         }
 
